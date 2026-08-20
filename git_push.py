@@ -22,7 +22,8 @@ def main():
 
     # 2. git status（只跟踪已入库的文件）
     tracked = ['视频提示词库-多模型-191条-V1.1.html', '提示词库说明.md',
-               '库维护工具.py', '追加提示词.py', '.gitignore']
+               '库维护工具.py', '追加提示词.py', '.gitignore',
+               'git_push.py', 'index.html', '.nojekyll']
     files_to_add = [f for f in tracked if os.path.exists(os.path.join(ROOT, f))]
     if not files_to_add:
         print('没有需要提交的文件')
@@ -37,7 +38,7 @@ def main():
     # 4. add + commit
     msg = sys.argv[1] if len(sys.argv) > 1 else '更新提示词库'
     run(f'git add {" ".join(files_to_add)}')
-    c = run(f'git commit -m {msg}')
+    c = run(f'git commit -m "{msg}"')
     if c.returncode != 0:
         print('× commit 失败:', c.stderr.strip())
         sys.exit(1)
