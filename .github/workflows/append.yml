@@ -10,8 +10,29 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: download test
+      - name: taxonomy
+        run: python3 提取分类.py || true
+      - name: append and verify
         run: |
-          curl -fL --retry 2 "$(cat 新条目url.txt)" -o /tmp/payload
-          wc -c /tmp/payload
-          head -c 300 /tmp/payload
+          set -o pipefail
+          {
+            echo "== download =="
+            curl -fL --retry 2 "$(cat 新条目url.txt)" -o 新条目.json
+            wc -c 新条目.json
+            echo "== append =="
+            python3 追加提示词.py 视频提示词库-多模型.html 新条目.json
+            echo "== verify =="
+            python3 库维护工具.py verify 视频提示词库-多模型.html
+          } 2>&1 | tee 追加结果.log
+      - name: commit results
+        if: always()
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          rm -f 新条目.json
+          git rm -f --ignore-unmatch --quiet 新条目url.txt || true
+          git add -f 追加结果.log 视频提示词库-多模型.html || true
+          git add -f 分类清单.txt || true
+          git add -f 视频提示词库_备份 || true
+          git commit -m "CI: 追加提示词执行结果" || echo nothing-to-commit
+          git push || true
