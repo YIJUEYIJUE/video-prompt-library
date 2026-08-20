@@ -3,3 +3,9 @@
 __pycache__/
 *.pyc
 .DS_Store
+.gh_token
+新条目.json
+build_*.py
+analyze_*.py
+extract_*.py
+probe_*.py
