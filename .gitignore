@@ -1,0 +1,5 @@
+视频提示词库_备份/
+.workbuddy/
+__pycache__/
+*.pyc
+.DS_Store
