@@ -23,7 +23,7 @@ def main():
     # 2. git status（只跟踪已入库的文件）
     tracked = ['视频提示词库-多模型-191条-V1.1.html', '提示词库说明.md',
                '库维护工具.py', '追加提示词.py', '.gitignore',
-               'git_push.py', 'index.html', '.nojekyll']
+               'git_push.py', 'index.html', '.nojekyll', 'README.md']
     files_to_add = [f for f in tracked if os.path.exists(os.path.join(ROOT, f))]
     if not files_to_add:
         print('没有需要提交的文件')
