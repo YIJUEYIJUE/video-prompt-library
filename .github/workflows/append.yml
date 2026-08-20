@@ -1,0 +1,17 @@
+name: append-prompts
+on:
+  push:
+    branches: ["append-20260821"]
+    paths: ["新条目url.txt"]
+permissions:
+  contents: write
+jobs:
+  append:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: download test
+        run: |
+          curl -fL --retry 2 "$(cat 新条目url.txt)" -o /tmp/payload
+          wc -c /tmp/payload
+          head -c 300 /tmp/payload
