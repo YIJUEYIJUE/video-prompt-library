@@ -1,4 +1,5 @@
 name: 待入库自动追加
+
 on:
   push:
     branches: [main]
@@ -18,32 +19,55 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-      - name: 逐个追加并校验
+
+      - name: 下载直链、逐个追加并校验
         id: doit
         run: |
           shopt -s nullglob
+          mkdir -p 已入库 运行记录
+          log=运行记录/最近入库.log
+          {
+            echo "运行时间(UTC)：$(date -u '+%F %T')"
+            echo "触发提交：$GITHUB_SHA"
+          } > "$log"
+          for u in 待入库/*.url; do
+            url=$(sed -n '1p' "$u" | tr -d '\r')
+            want=$(sed -n '2p' "$u" | tr -d '\r ')
+            out="待入库/$(basename "${u%.url}").json"
+            echo "== 下载 $u ==" | tee -a "$log"
+            curl -fsSL --retry 3 "$url" -o "$out"
+            if [ -n "$want" ]; then
+              echo "$want  $out" | sha256sum -c - | tee -a "$log"
+            else
+              sha256sum "$out" | tee -a "$log"
+            fi
+            mv "$u" "已入库/$(date +%Y%m%d-%H%M%S)__$(basename "$u")"
+          done
           files=(待入库/*.json)
           if [ ${#files[@]} -eq 0 ]; then
-            echo "无待入库 JSON，跳过"
+            echo "无待入库 JSON，跳过" | tee -a "$log"
             echo "changed=0" >> "$GITHUB_OUTPUT"
             exit 0
           fi
           for f in "${files[@]}"; do
-            echo "== 追加 $f =="
-            python "追加提示词.py" "视频提示词库-多模型.html" "$f"
-            mkdir -p 已入库
+            echo "== 追加 $f ==" | tee -a "$log"
+            python "追加提示词.py" "视频提示词库-多模型.html" "$f" | tee -a "$log"
             mv "$f" "已入库/$(date +%Y%m%d-%H%M%S)__$(basename "$f")"
           done
-          python "库维护工具.py" verify "视频提示词库-多模型.html"
+          python "库维护工具.py" verify "视频提示词库-多模型.html" | tee -a "$log"
+          grep -oE '"全库指纹"[^,}]*' "视频提示词库-多模型.html" | head -1 | tee -a "$log" || true
           echo "changed=1" >> "$GITHUB_OUTPUT"
+
       - name: 提交入库结果
         if: steps.doit.outputs.changed == '1'
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add -A
-          git commit -m "CI 自动入库：处理 待入库/ 批次"
+          msg=$(grep -oE '追加 [0-9]+ 条 → 共 [0-9]+ 条' 运行记录/最近入库.log | tail -1 || true)
+          git commit -m "CI 自动入库：${msg:-处理待入库批次}"
           git push
