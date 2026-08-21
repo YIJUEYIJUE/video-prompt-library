@@ -1,0 +1,24 @@
+name: 库完整性校验
+on:
+  push:
+    branches: [main]
+    paths:
+      - "视频提示词库-多模型.html"
+      - "追加提示词.py"
+      - "库维护工具.py"
+      - ".github/workflows/verify.yml"
+  pull_request:
+    paths:
+      - "视频提示词库-多模型.html"
+  workflow_dispatch:
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: verify 必须全绿
+        run: python "库维护工具.py" verify "视频提示词库-多模型.html"
