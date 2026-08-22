@@ -1,0 +1,37 @@
+[
+ {
+  "model": "Seedance 2.0",
+  "cat": "喜剧·动画·萌趣",
+  "sub": "3D动画·英雄",
+  "name": "沙漠英雄·能量归还的动画短打",
+  "desc": "15秒风格化3D动画：白色编发女英雄在干旱沙漠对峙巨型宇宙实体，吸收其能量反击，最终把能量归还，完成对峙到和解的完整弧线。",
+  "tags": [
+   "3D动画",
+   "风格化",
+   "沙漠",
+   "能量",
+   "关键帧"
+  ],
+  "lang": "en",
+  "original": "@image is the first keyframe and style reference. Cinematic stylized 3D animation — photorealistic desert environment, stylized characters. Hero: young woman, white braided hair, blue sleeves and leggings, brown leather vest and belt pouch, light build — uses speed and agility. Monster: colossal cosmic entity — massive glowing spherical body radiating neon rainbow energy (green, pink, red, blue, orange), multiple long dark blue tentacles, small vicious face with green glowing eyes and wide mouth, surrounded by swirling dust storm. Setting: vast arid desert — red-brown rocky terrain, massive dust storm wall, dramatic split sky blue and storm grey. High FPS, realistic particle physics. 0–3s: WIDE SHOT from @image. Hero sprints directly at the monster — tiny against its colossal scale. Monster fires a tentacle down like a whip — hero slides under it, the impact craters the desert floor, shockwave of dust and debris. She bounces up, runs along the tentacle as it retracts, reaches the main body. Drives her fist into the glowing surface — rainbow energy repels her, blasts her backward 10 meters skidding across desert sand. She lands, digs in. Looks at her hand — it's glowing faintly. Realizes something. 3–6s: Hero charges again — this time ABSORBING the energy on contact instead of fighting it. Her blue sleeves begin pulsing with absorbed rainbow light. Monster fires two tentacles simultaneously — she grabs one with both hands, swings on it, uses momentum to launch herself at the second, grabs it mid-air. Now holding two tentacles — she pulls them together, ties them in a knot using her whole body as leverage. Monster confused — tentacles tangled. She runs up the knotted tentacles toward the face. Half-second slo-mo — her mid-air between tentacles, rainbow light streaming off her arms, the monster's glowing face filling the sky behind her — SMASH full speed. 6–9s: She reaches the monster's face — drives both glowing hands directly into its eyes. Massive rainbow energy discharge explodes outward — the monster screams, the sound sending visible ripples through the dust storm. It convulses — tentacles flailing wildly, smashing into the desert floor creating craters. She holds on as the face bucks and writhes. The absorbed energy in her arms surges — she releases it all at once directly into the monster's core. Explosion of pure white light from the impact point, rainbow colors fragmenting outward like shattered glass. 9–12s: The monster's rainbow energy begins flickering — unstable. It rears back, swelling larger — about to explode or unleash everything. Hero drops to desert floor, sprints away full speed. The monster's energy builds — visible pressure distorting the air around it, colors strobing. It RELEASES — massive omnidirectional energy shockwave tears across the desert, flattening everything, the dust storm wall blasting apart. Hero dives behind a rocky outcropping — the shockwave passes over, sand and light washing across the entire landscape. Silence. 12–15s: Hero emerges from behind the rock. The monster still floats — but smaller, dimmer, energy depleted. Its tentacles hang limp. It looks at her — green eyes flickering. She walks toward it slowly. Raises one glowing hand — still holding its energy. Holds it out toward the monster. The energy flows back — she returns it. The monster's colors restore softly, gently. It slowly descends toward the desert floor, tentacles settling. They face each other. A moment. Monster turns, drifts away across the desert into the remaining dust. She watches it go. Wind catches her white braid. Cinematic stylized 3D animation matching @image, photorealistic desert particle simulation, volumetric dust storm, rainbow neon energy VFX, absorbed energy glow on character, realistic sand physics, fast dynamic cuts. 2.35:1, 24fps. Total: 15s / 1 shot / 16:9",
+  "src": "用户直供·Seedance2.0提示词合集｜动画1：沙漠英雄",
+  "zh": "`@image` 是第一个关键帧及风格参考。电影化风格的 3D 动画：沙漠环境采用照片级写实表现，角色采用风格化设计。英雄：年轻女性，白色编发，穿蓝色袖套和紧身裤、棕色皮革背心，腰间带收纳袋，体型轻盈，依靠速度与敏捷性战斗。怪物：巨型宇宙实体，拥有庞大的发光球形身体，向外放射霓虹彩虹能量，包括绿色、粉色、红色、蓝色和橙色；生有多条深蓝色长触手，脸部较小但凶恶，双眼发出绿色光芒，嘴巴宽大，周围被旋转沙尘暴包围。场景：辽阔干旱的沙漠，红棕色岩石地貌，巨大的沙尘暴墙，天空被戏剧性地分割为蓝色晴空与灰色风暴区。高帧率，真实粒子物理模拟。 0–3 秒：以 `@image` 为基础的广角镜头。英雄径直冲向怪物，在对方巨大的体量映衬下显得极其渺小。怪物像挥鞭一样向下抽出一条触手，英雄贴地滑行从下方躲过。触手撞击在沙漠地面上形成弹坑，掀起尘土和碎石冲击波。她迅速弹起，在触手回缩时沿其表面奔跑，抵达怪物主体。她一拳击入发光表面，却被彩虹能量排斥，整个人被轰飞 10 米，在沙地上滑行。她落地后稳住身体，望向自己的手，发现手掌正在微弱发光，并意识到了某件事。 3–6 秒：英雄再次冲锋，这一次她不再抵抗，而是在接触时吸收能量。她的蓝色袖套开始涌动已经吸收的彩虹光芒。怪物同时射出两条触手，她双手抓住其中一条并借其摆荡，利用惯性将自己发射向第二条触手，在空中将其抓住。此时她同时控制两条触手，将它们拉到一起，并以全身力量为杠杆把触手打成结。怪物感到困惑，触手纠缠在一起。她沿打结的触手向怪物面部奔跑。进入半秒慢动作：她腾空位于两条触手之间，彩虹光芒从双臂向后拖曳，怪物发光的脸占满她身后的天空。随后猛然恢复全速。 6–9 秒：她抵达怪物面部，将两只发光的手直接插向它的双眼。巨量彩虹能量向外爆发，怪物发出尖叫，声波在沙尘暴中形成肉眼可见的波纹。怪物剧烈抽搐，触手疯狂挥舞并砸向沙漠地面，形成多个弹坑。怪物的面部不断颠簸扭动，她仍牢牢抓住不放。双臂中吸收的能量急剧增强，她将全部能量一次性释放进怪物核心。撞击点爆发出纯白强光，彩虹色能量如碎裂玻璃般向外迸散。 9–12 秒：怪物的彩虹能量开始闪烁并变得不稳定。它向后仰起，身体进一步膨胀，仿佛即将爆炸或一次性释放全部力量。英雄落回沙漠地面，以全速向远处奔跑。怪物的能量持续积聚，可见压力使周围空气发生扭曲，各种颜色高速闪烁。能量终于释放：巨大的全向冲击波横扫沙漠，将一切夷平，沙尘暴墙也被炸散。英雄飞扑到一处岩石突出部后方，冲击波从她上方掠过，沙粒与光芒席卷整片地貌。随后一片寂静。 12–15 秒：英雄从岩石后方走出。怪物仍悬浮在空中，但体型已经缩小，光芒暗淡，能量耗尽，触手无力垂落。它望向她，绿色双眼闪烁不定。她缓慢走近，举起一只仍保留着怪物能量的发光手掌，并朝怪物伸出。能量开始回流，她将其归还。怪物身上的色彩以柔和、平静的方式恢复。它缓缓降向沙漠地面，触手逐渐落稳。双方短暂地面对彼此。随后怪物转身，穿过沙漠，漂向残余沙尘深处。她注视着它离开，风吹动她的白色辫发。 与 `@image` 一致的电影化风格 3D 动画；照片级写实的沙漠粒子模拟、体积沙尘暴、彩虹霓虹能量视觉特效、角色吸收能量后的发光效果、真实沙粒物理、快速且富有动势的剪辑。画面比例 2.35:1，24fps。 总计：15 秒 / 1 个镜头 / 16:9"
+ },
+ {
+  "model": "Seedance 2.0",
+  "cat": "喜剧·动画·萌趣",
+  "sub": "3D·2D混合",
+  "name": "三维对二维·极简对战实验",
+  "desc": "只有一个概念的极简提示词实验：让3D角色与2D角色正面对战，不用参考图、不加设定，直接测试模型的风格混合能力。",
+  "tags": [
+   "极简提示",
+   "风格混合",
+   "3D",
+   "实验"
+  ],
+  "lang": "en",
+  "original": "Fight of a 3D person with 2D",
+  "src": "用户直供·Seedance2.0提示词合集｜动画2：3D对战2D",
+  "zh": "一个 3D 人物与 2D 角色之间的战斗。"
+ }
+]

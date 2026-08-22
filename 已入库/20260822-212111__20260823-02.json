@@ -1,0 +1,54 @@
+[
+ {
+  "model": "Seedance 2.0",
+  "cat": "写实人物·剧情",
+  "sub": "广告·商业",
+  "name": "旷野保时捷·风与自由的跳剪",
+  "desc": "冷峻青橙调的公路情绪片：低角度仰拍旷野强风压低枯草，跳剪串起笔尖书写、抬头望云、跳下车头点火启程，全程用风声与引擎声推动情绪。",
+  "tags": [
+   "跳剪",
+   "广角仰拍",
+   "公路",
+   "风感",
+   "汽车"
+  ],
+  "lang": "zh",
+  "original": "AIGC短视频生成专项提示（前置概括）基础概括： 这是一个强调环境质感与心理跨越的跳剪片段。开篇完全还原参考图：旷野中强风掠过，压低了枯草，吹乱了男子的发丝，他静默地倚靠在暗绿色保时捷上。随后画面通过跳剪加速，从笔尖书写开始，内心OS切入，直到他轻松跳下车头、入座点火，整段戏在风声与引擎声中达到高潮。关联补充： 第一镜无OS。第二镜起OS持续至全片结束。画面色调保持冷峻青橙，强调风的流动感。\n\n镜头序号： 01 精准景别标注： 全景（LS），24mm广角镜头拍摄角度与朝向： 低角度仰拍。男子侧身倚靠在保时捷911前机盖。画面主体与构图： 完全还原参考图。 男子低头垂眸，画面中背景的枯草丛呈波浪状剧烈摇摆，男子的衬衫领口和碎发在风中不断翻飞。光影与氛围感提示： 清晨的冷冽色调。利用极浅景深使远山模糊，凸显近处飞扬的尘土和被风压低的草坪纹理。角色演绎与台词：内在逻辑： 【核心过往经历】初获自由。【显性动机】静默共处。【情绪层级】轻度（沉静）。外在细节： 【微反应】眼神专注低垂，对狂风毫无反应，表现出极度的心流状态。【生理反应】呼吸节奏与风声同步，身体随风力有极轻微的自然晃动。台词： 无（此镜无OS）。音效/音乐设计： 极高频率的强风呼啸声、枯草剧烈摩擦的“哗啦”声、衬衫面料被风吹响的“噼啪”声。\n\n镜头序号： 02 精准景别标注： 特写（CU），100mm微距镜头拍摄角度与朝向： 俯拍，对焦纸面与指尖。画面主体与构图： 钢笔尖在羊皮纸上快速划过，留下狂草字迹。风吹过纸页边缘，纸张不断震颤。光影与氛围感提示： 侧光强调纸张纹理，光线在笔尖金属面上产生细小的眩光点。角色演绎与台词：内心OS： “（低沉男声开始）我希望你去更野的地方……”外在细节： 【生理反应】指尖由于风力干扰，握笔力度极稳，体现心理定力。音效/音乐设计： 风声略微调低，钢笔划纸的“沙沙”声被放大，带有一种撕裂感。\n\n镜头序号： 03精准景别标注： 中近景（MCU），35mm变形宽银幕镜头拍摄角度与朝向： 侧斜方仰拍。人物抬头看天。画面主体与构图： 人物位于黄金分割线。发丝被风完全吹向镜头后方，露出清晰的额头和释然的眼神。光影与氛围感提示： 云层快速流动的倒影映射在车漆和人物瞳孔中。角色演绎与台词：内心OS： “……去犯错……”外在细节： 【微反应】眼睑轻微颤动，随后嘴角露出一抹极淡的、带有攻击性的自由感笑容。音效/音乐设计： 风声中混入极高频的哨音，模拟山口的风切变声。\n\n镜头序号： 04 精准景别标注： 远景（LS），200mm长焦镜头。拍摄角度与朝向： 仰拍天空。画面主体与构图： 阴云翻滚的天空，一群大雁排成凌乱而有力的阵型，逆风划过画面。光影与氛围感提示： 云缝中漏出一缕冷调微光。角色演绎与台词：内心OS： “……去狂奔……”音效/音乐设计： 刺耳且具有穿透力的大雁长鸣，与风声交织。\n\n镜头序号： 05 精准景别标注： 中景（MS），35mm镜头。拍摄角度与朝向： 平视。人物由车身跳下地面。画面主体与构图： 动作起伏感极强。男子单手抓着笔记本，双脚轻盈落地，衣摆随动作和强风高高扬起。光影与氛围感提示： 强调落地时地面卷起的草屑与微尘，在逆光下形成光晕。角色演绎与台词：内心OS： “……去成为……”外在细节： 【微反应】落地瞬间动作极其放松，没有丝毫迟疑，眼神已锁定车门。音效/音乐设计： 沉重的落地踩踏音，紧接着是笔记本皮革与衬衫摩擦的细碎响声。\n\n镜头序号： 06 精准景别标注： 近景（MCU），50mm镜头。拍摄角度与朝向： 车内主观视角看车门关闭过程。画面主体与构图： 男子已经坐稳在桶形座椅上，右手握住内门把手，伴随动作将外界的荒野风景瞬间切断。光影与氛围感提示： 关门瞬间，车内原本幽暗的空间被车窗透进的最后一道光照亮。角色演绎与台词：内心OS： “……你……”外在细节： 【生理反应】关门动作利落干脆，指关节呈现出有力的抓握状态。音效/音乐设计： 一声沉重到极点的“砰”——属于经典保时捷的机械关门声，声音厚实且带回响。外界风声在这一刻瞬间消失，转为车内沉闷的死寂。\n\n镜头序号： 07 精准景别标注： 特写（CU），35mm变形宽银幕镜头拍摄角度与朝向： 低位平视，镜头对准车头一侧的大灯与机盖边缘画面主体与构图： 构图重心在大灯处。背景中被风压低的枯草在极浅景深下形成快速流动的色块。光影与氛围感提示： 随着点火声，大灯瞬间亮起，白色强光直射镜头，产生明显的变形宽银幕水平蓝色炫光（Lens Flare）。光束中清晰可见飞舞的尘埃和被风卷起的草屑。角色演绎与台词：内心OS： “……去成为……”外在细节： 车辆由于引擎启动产生轻微的、富有机械美感的震颤（抖动感）。音效/音乐设计： 马达转动的急促机械声，紧接着是“轰”的一声低沉有力的排气浪声，音效呈现明显的空间包围感。\n\n镜头序号： 08 精准景别标注： 全景（LS），24mm广角镜头拍摄角度与朝向： 低角度后景深构图，镜头斜对公路/野地延伸方向画面主体与构图： 画面中心是深绿色的保时捷。车辆尾部排气管喷出一团稀薄的冷雾，随即车轮卷起碎石与黄土，车辆由画面中心极速向斜前方驶出，最终彻底消失在画框边缘。光影与氛围感提示： 强化环境风感，漫天的草浪向着车辆行驶的反方向倾斜。冷峻的青蓝色调天空中，那抹橙黄色的车灯残影在视网膜上停留。角色演绎与台词：内心OS： “……你自己。”（台词结束，伴随引擎远去声）外在细节： 车辆加速时车尾轻微下沉，体现出强大的动力输出与决绝的离去感。音效/音乐设计： 引擎声由重而远，逐渐变小。风声重新占据声场主位，最终在大雁的最后一声远鸣中，伴随画面切黑，所有声音消失。",
+  "src": "用户直供·真实电影质感提示词｜4月14日(5).mp4"
+ },
+ {
+  "model": "可灵 3.0",
+  "cat": "写实人物·剧情",
+  "sub": "古装·历史",
+  "name": "楚营帐内·项羽视角的诀别",
+  "desc": "15秒第一人称主观镜头：火盆映着暗红帷幔，虞姬含泪走近，镜头随呼吸起伏，问答之间以吸鼻子声与颤抖锦缎收束在“生死无悔”的落泪特写。",
+  "tags": [
+   "第一人称",
+   "古装",
+   "火光",
+   "情绪特写",
+   "呼吸感"
+  ],
+  "lang": "zh",
+  "original": "15秒第一人称（项羽）视角，镜头带有强烈的物理呼吸起伏感。楚营内，暖黄暗调光线随背景火盆剧烈跳动，帷幔在风中飘摇。画面边缘可见战甲护臂。虞姬含泪出场，身体在极力克制下微微颤抖，眼眶通红，伴随隐忍吸鼻子的动作。她强忍悲恸说完台词后，带着决绝的微颤猛地扑向镜头拥抱，画面瞬间被绯红衣料完全遮蔽，直接切入纯黑幕结束。整体氛围压抑、悲壮、真实。\n\n15秒“一镜到底”分镜脚本（听觉压迫强化版）\n\n【镜头 1】画面主体动作与构图： 手持镜头带有沉重、滞涩的“呼吸感”上下起伏，完全贴合背景音效中男人的呼吸节奏。画面左下角，战甲护臂边缘虚化。暗红帷幔被风吹得微微鼓动。虞姬的手指从帷幔边缘探出，指节因用力抓握而泛白。她拉开帷幔，身体单薄，双肩有着极细微且高频的生理性颤抖。 动态实景光。火盆的火光在两人之间狂乱跳动，光影在虞姬苍白的脸上不断切割。空气中的微尘在剧烈的暖光中翻滚。\n\n虞姬的身体控制不住地微微发抖；下颌肌肉紧绷，试图稳住颤抖的嘴唇。\n\n【镜头 2】画面主体动作与构图： 镜头随着项羽的视线微微抬起，呼吸感的晃动加剧。虞姬缓步靠近，绯红锦缎在火光下泛着暗芒。她每走一步，身体的颤抖就牵动衣料产生细微的波纹。\n\n项羽（画外音）： “虞姬，你可有悔？”（声音干涩，伴随镜头猛烈的一下起伏）。\n\n虞姬： 听到问话，她瞳孔骤然一缩，眼眶瞬间逼红。为了不让眼泪掉下来，她用力地、短促地吸了一下鼻子，随之胸口剧烈起伏了一次，强行将哽咽咽了下去。\n\n音效设计： 男人的呼吸声在开口前有一个明显的屏气停顿，问出台词后化为更为压抑、沙哑的粗喘；虞姬清晰且令人心碎的“吸鼻子”声；衣料微颤的摩擦声。\n\n【镜头 3】\n\n画面主体动作与构图： 虞姬的脸庞充斥整个画面，镜头的呼吸感与她急促的呼吸频率在这一刻产生同频共振。背后的帷幔剧烈摆动，火光将她眼底的泪水照得晶莹剔透。\n\n虞姬： 眼眶里满是打转的泪水，但眼神死死钉在镜头（项羽）上。她的声音因为颤抖而带着易碎的沙哑：“妾随大王，生死无悔。” 说完最后四个字，她的眼角有一滴泪失去控制，顺着脸颊急速滑落（不受控的细节）。",
+  "src": "用户直供·真实电影质感提示词｜项羽虞姬 raw.mp4"
+ },
+ {
+  "model": "Seedance 2.0",
+  "cat": "脑洞·超现实",
+  "sub": "变身·异化",
+  "name": "汉堡女孩·黄昏怪物变身",
+  "desc": "六镜头黑色喜剧变身：黄昏立交桥下坐在皮卡引擎盖上吃汉堡的女孩，遇丧尸冲来后化作苍白獠牙巨兽一口吞下，再缩回人形继续吃汉堡。",
+  "tags": [
+   "变身",
+   "黑色喜剧",
+   "多镜头",
+   "丧尸",
+   "手持摄影"
+  ],
+  "lang": "en",
+  "original": "Montage, multi-shot action Hollywood movie, don't use one camera angle or single cut, cinematic lighting, photorealistic, 35mm film quality, professional color grading, sharp focus, high detail texture, film grain, depth of field mastery, ARRI ALEXA aesthetic A pink-haired girl with glasses, cream top and jeans sits on the hood of a white pickup truck under a concrete overpass at dusk, casually eating a burger. A shallow river channel stretches behind her, power lines and distant bridges framing the golden sky. A pale zombie with wet dark hair, bruised eyes and a blood-stained white shirt sprints toward her from the shadows of the channel. The girl calmly sets down the burger, her body erupts into a massive pale tusked creature with elongated limbs and clawed hands, devours the zombie whole, then shrinks back to human form and picks up the burger. Handheld shake throughout, dark comedy pacing with horror undertones. Shot 1: Medium shot of the girl sitting cross-legged on the truck hood, chewing the burger lazily, golden dusk light catching her glasses and pink hair. Camera sways gently, ambient and calm. Shot 2: Wide shot of the concrete channel as the zombie bursts from the shadows under the bridge, sprinting with jerky unnatural strides across the dry riverbed toward the truck. Camera shakes tracking the approaching threat. Shot 3: Close-up on the girl's face as she notices the zombie, chewing slows, eyebrows rise with mild annoyance rather than fear. She sets the burger down on the hood beside her. Shot 4: Medium shot as the girl drops off the hood and her body violently expands and twists upward into the massive pale tusked creature, spine cracking, limbs stretching, jaws splitting open wide, towering over the truck. Camera jolts with each bone-snap of the transformation. Shot 5: Wide low-angle as the creature lunges forward and catches the charging zombie in its enormous clawed hand, lifts it off the ground and swallows it whole in one grotesque bite, jaw unhinging. Camera shudders with the impact. Shot 6: Medium shot as the creature rapidly shrinks back into the girl, standing calmly beside the truck. She hops back onto the hood, picks up the burger, takes another bite and keeps chewing as if nothing happened. Total: 15s / 6 shots / 16:9",
+  "src": "用户直供·Seedance2.0提示词合集｜变身1：汉堡",
+  "zh": "蒙太奇、多镜头的好莱坞动作电影；不要只使用单一机位或单次剪切；电影级灯光、照片级写实、35mm 胶片质感、专业调色、清晰对焦、高细节纹理、胶片颗粒、精确控制景深，呈现 ARRI ALEXA 摄影机美学。 黄昏时分，一名戴眼镜的粉发女孩身穿奶油色上衣和牛仔裤，坐在混凝土高架桥下的一辆白色皮卡车引擎盖上，悠闲地吃着汉堡。她身后是一条浅水河道，电线和远处的桥梁衬托着金色天空。一只皮肤苍白、深色湿发、眼周淤青、白衬衫染血的丧尸从河道阴影中向她狂奔。女孩平静地放下汉堡，身体猛烈膨胀，变成一只苍白、长有獠牙的巨型生物，四肢细长、双手带利爪。它将丧尸整个吞下，随后缩回人形并重新拿起汉堡。全程带手持摄影晃动，采用带恐怖底色的黑色喜剧节奏。 镜头 1：中景。女孩盘腿坐在皮卡车引擎盖上，懒洋洋地咀嚼汉堡。黄昏的金色光线落在她的眼镜和粉色头发上。摄影机轻轻摇晃，环境平静而自然。 镜头 2：混凝土河道的广角镜头。丧尸突然从桥下阴影中冲出，以抽搐、不自然的步伐穿过干涸河床，奔向皮卡车。摄影机在追踪逼近的威胁时不断晃动。 镜头 3：女孩面部特写。她发现丧尸后，咀嚼动作逐渐放慢，眉毛微微抬起，表现出的不是恐惧，而是一丝不耐烦。她将汉堡放在身旁的引擎盖上。 镜头 4：中景。女孩从引擎盖上跳下，身体剧烈膨胀并向上扭曲，变成巨大的苍白獠牙怪物。脊柱发出断裂般的声响，四肢拉长，下颌大幅裂开，身形高高耸立在皮卡车上方。变身过程中每一次骨骼爆响都会引发摄影机猛烈震动。 镜头 5：广角低机位。怪物向前猛扑，用巨大的利爪抓住冲来的丧尸，将其提离地面，下颌脱臼般张开，以怪诞的一口将丧尸整个吞下。摄影机随冲击剧烈震颤。 镜头 6：中景。怪物迅速缩小并恢复成女孩，平静地站在皮卡车旁。她重新跳上引擎盖，拿起汉堡又咬了一口，若无其事地继续咀嚼。 总计：15 秒 / 6 个镜头 / 16:9"
+ }
+]
