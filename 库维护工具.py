@@ -14,7 +14,7 @@ META_RE = re.compile(r'(<script id="meta" type="application/json">)(.*?)(</scrip
 MODEL_TREE = [
     {'family': 'Seedance', 'versions': {'Seedance 2.0': 'sd2', 'Seedance 2.5': 'sd25'}},
     {'family': '海螺', 'versions': {'海螺 H3': 'hl3'}},
-    {'family': '可灵', 'versions': {'可灵 O3': 'klo3'}},
+    {'family': '可灵', 'versions': {'可灵 O3': 'klo3', '可灵 3.0': 'kl3'}},
 ]
 PREFIX = {m: pf for f in MODEL_TREE for m, pf in f['versions'].items()}
 def fam_of(m):
