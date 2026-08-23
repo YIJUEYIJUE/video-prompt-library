@@ -252,8 +252,8 @@ footer{max-width:1240px;margin:0 auto;padding:0 24px 40px;font-size:11px;color:v
 .tback{display:inline-flex;align-items:center;gap:6px;height:30px;padding:0 12px;border-radius:8px;
   border:1px solid var(--line);background:var(--card);color:var(--sub);font-size:12.5px;margin-bottom:14px;transition:color .15s,border-color .15s}
 .tback:hover{color:var(--ink);border-color:var(--acc)}
-/* 教程详情：阶段分组 + 步骤单列窄栏（全直出无折叠） */
-.tdetail{max-width:860px;margin:0 auto}
+/* 教程详情：阶段分组 + 步骤双列紧凑网格（全直出无折叠） */
+.tdetail{max-width:1180px;margin:0 auto}
 .tdhead{border:1px solid var(--line);border-radius:14px;background:var(--card);box-shadow:var(--sh);
   padding:16px 18px;margin-bottom:14px;display:flex;gap:16px;align-items:flex-start;flex-wrap:wrap}
 .tdhead-img{width:168px;height:auto;border-radius:9px;border:1px solid var(--line);flex-shrink:0}
@@ -268,9 +268,10 @@ footer{max-width:1240px;margin:0 auto;padding:0 24px 40px;font-size:11px;color:v
   display:flex;align-items:center;gap:8px;margin:0 0 10px}
 .tlzone h5:after{content:"";flex:1;height:1px;background:var(--line2)}
 .tlzone h5 span{background:var(--acc-soft);border:1px solid var(--acc-line);border-radius:999px;padding:2px 12px}
-.tlgrid{display:grid;grid-template-columns:1fr;gap:12px;align-items:start}
+.tlgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(400px,1fr));gap:12px;align-items:start}
+@media(max-width:860px){.tlgrid{grid-template-columns:1fr}}
 .tstep{border:1px solid var(--line);border-radius:12px;background:var(--card);box-shadow:var(--sh);
-  padding:12px 14px;transition:border-color .15s}
+  padding:12px 14px;transition:border-color .15s;overflow:hidden}
 .tstep:hover{border-color:var(--acc-line)}
 .tstep .thead{display:flex;align-items:center;gap:9px;margin-bottom:8px}
 .tstep .tnum{width:20px;height:20px;border-radius:50%;background:var(--acc-soft);border:1px solid var(--acc-line);
@@ -278,7 +279,7 @@ footer{max-width:1240px;margin:0 auto;padding:0 24px 40px;font-size:11px;color:v
 .tstep h4{font-size:13px;font-weight:600;line-height:1.4;flex:1;min-width:0}
 .tlb{font-size:10px;font-weight:600;border-radius:5px;padding:1px 6px;letter-spacing:.03em;flex-shrink:0}
 .tlb.p{background:var(--acc-soft);color:var(--acc);border:1px solid var(--acc-line)}
-.tstep img{display:block;width:120px;height:auto;border-radius:7px;border:1px solid var(--line);float:right;margin:0 0 8px 10px}
+.tstep img{display:block;width:104px;height:auto;border-radius:7px;border:1px solid var(--line);float:right;margin:2px 0 8px 10px}
 .tstep .trole{font-size:12px;color:var(--sub);line-height:1.6;white-space:pre-wrap}
 .tstep .trole:after{content:"";display:block;clear:both}
 .tstep .pane{margin:10px 0 0}
