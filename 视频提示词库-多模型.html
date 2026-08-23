@@ -277,11 +277,13 @@ footer{max-width:1240px;margin:0 auto;padding:0 24px 40px;font-size:11px;color:v
 .tlb{font-size:10px;font-weight:600;border-radius:5px;padding:1px 6px;letter-spacing:.03em;flex-shrink:0}
 .tlb.p{background:var(--acc-soft);color:var(--acc);border:1px solid var(--acc-line)}
 .tstep .tbody{flex:1;min-height:0;overflow:auto;scrollbar-width:thin}
-.tstep img{display:block;width:96px;height:auto;border-radius:7px;border:1px solid var(--line);float:right;margin:2px 0 8px 10px}
+.tstep .tbody:not(:last-child){flex:none;max-height:170px}
+.tstep img{display:block;width:130px;height:auto;border-radius:7px;border:1px solid var(--line);float:right;margin:2px 0 8px 10px}
 .tstep .trole{font-size:12px;color:var(--sub);line-height:1.6;white-space:pre-wrap}
 .tstep .trole:after{content:"";display:block;clear:both}
-.tstep .pane{flex:none;margin-top:10px}
-.tstep .pv{height:128px}
+.tstep .pane{flex:1;min-height:120px;margin-top:10px;display:flex;flex-direction:column}
+.tstep .pane .phead{flex:none}
+.tstep .pv{flex:1;min-height:0}
 </style>
 <meta name="description" content="Seedance 视频生成提示词知识库：中英双语对照、分类导航、标签筛选与全文搜索，单文件离线可用。">
 <script>try{var s=localStorage.getItem('sd-theme');if(s?s==='d':matchMedia('(prefers-color-scheme: dark)').matches)document.documentElement.classList.add('dark')}catch(e){}</script>
