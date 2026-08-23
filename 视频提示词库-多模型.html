@@ -165,7 +165,7 @@ main{min-width:0}
 .expf label{display:flex;align-items:center;gap:6px;cursor:pointer}
 
 /* ============ grid & cards ============ */
-#grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(352px,1fr));gap:14px;align-items:start}
+#grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(352px,1fr));gap:14px;align-items:stretch}
 .card{background:var(--card);border:1px solid var(--line);border-radius:11px;padding:15px 16px 12px;min-width:0;
   transition:border-color .15s,box-shadow .15s}
 .card:hover{border-color:color-mix(in srgb,var(--ink) 16%,var(--line));box-shadow:var(--sh)}
@@ -228,16 +228,16 @@ footer{max-width:1240px;margin:0 auto;padding:0 24px 40px;font-size:11px;color:v
 /* ============ zones（顶层区域切换）============ */
 .zonseg{margin-left:4px}
 /* ---- 通用区：多列网格（与提示词库同规格）---- */
-#ggrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(352px,1fr));gap:14px;align-items:start}
+#ggrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(352px,1fr));gap:14px;align-items:stretch}
 .gcard .chead h3{font-size:15px}
 .gcard .cno{font-size:10.5px;max-width:52%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-.gcard{height:400px;display:flex;flex-direction:column}
+.gcard{display:flex;flex-direction:column}
 .gcard .gbody{flex:1;min-height:0;overflow:auto;scrollbar-width:thin}
 .gcard .cdesc{display:block;-webkit-line-clamp:unset;overflow:visible}
 .gcard .pane{flex:none}
 .gcard .pv{height:112px;max-height:none}
 .gcard .cfoot{flex:none}
-.gcard .gimg{display:block;float:right;width:132px;height:138px;object-fit:cover;margin:2px 0 8px 10px;border-radius:7px;border:1px solid var(--line);background:var(--pane)}
+.gcard .gimg{display:block;float:right;width:150px;height:auto;margin:2px 0 8px 10px;border-radius:7px;border:1px solid var(--line);background:var(--pane)}
 .gname-en{display:block;font-size:11.5px;font-weight:500;color:var(--faint);letter-spacing:.02em;margin-top:1px}
 @media(max-width:760px){#ggrid{grid-template-columns:1fr}}
 /* ---- 教程列表：紧凑网格卡（整卡可点） ---- */
