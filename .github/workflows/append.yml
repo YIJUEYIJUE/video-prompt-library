@@ -72,6 +72,6 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add -A
-          msg=$(grep -oE '追加 [0-9]+ 条 → 共 [0-9]+ 条' 运行记录/最近入库.log | tail -1 || true)
-          git commit -m "CI 自动入库：${msg:-处理待入库批次}"
+          msg=$(grep -oE '入库 [0-9]+ 条（[0-9]+ → [0-9]+' 运行记录/最近入库.log | tail -1 | sed -E 's/入库 ([0-9]+) 条（[0-9]+ → ([0-9]+)/CI 自动入库：追加 \1 条 → 共 \2 条/' || true)
+          git commit -m "${msg:-CI 自动入库：处理待入库批次}"
           git push
