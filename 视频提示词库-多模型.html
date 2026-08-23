@@ -224,6 +224,47 @@ footer{max-width:1240px;margin:0 auto;padding:0 24px 40px;font-size:11px;color:v
   .cbtn,.sbtn{flex:none;min-height:32px}
   #grid{grid-template-columns:1fr}
 }
+
+/* ============ zones（顶层区域切换）============ */
+.zonseg{margin-left:4px}
+/* ---- 通用区 ---- */
+.gcard .chead h3{font-size:15px}
+.gcard .cno{font-size:10.5px;max-width:52%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.gname-en{display:block;font-size:11.5px;font-weight:500;color:var(--faint);letter-spacing:.02em;margin-top:1px}
+/* ---- 教程区 ---- */
+.tcover{border:1px solid var(--line);border-radius:14px;background:var(--card);box-shadow:var(--sh);
+  padding:20px 22px;margin-bottom:14px;transition:border-color .15s,box-shadow .15s}
+.tcover:hover{border-color:var(--acc-line)}
+.tcover h3{font-size:16px;line-height:1.4;margin-bottom:8px}
+.tcover .tdesc{font-size:13px;color:var(--sub);line-height:1.65;margin-bottom:12px}
+.tcover .tmeta{display:flex;align-items:center;gap:10px;flex-wrap:wrap;font-size:12px;color:var(--faint)}
+.tcover .tmeta a{color:var(--acc);text-decoration:none}
+.tcover .tmeta a:hover{text-decoration:underline}
+.topen{height:30px;padding:0 14px;border-radius:8px;border:1px solid var(--acc-line);background:var(--acc-soft);
+  color:var(--acc);font-size:12.5px;font-weight:600;margin-top:14px;transition:filter .15s}
+.topen:hover{filter:brightness(.96)}
+.tback{display:inline-flex;align-items:center;gap:6px;height:30px;padding:0 12px;border-radius:8px;
+  border:1px solid var(--line);background:var(--card);color:var(--sub);font-size:12.5px;margin-bottom:16px;transition:color .15s,border-color .15s}
+.tback:hover{color:var(--ink);border-color:var(--acc)}
+/* 时间线 */
+.tl{list-style:none;position:relative;margin:6px 0 0;padding:0 0 0 30px}
+.tl:before{content:"";position:absolute;left:10px;top:8px;bottom:8px;width:2px;
+  background:linear-gradient(180deg,var(--acc-line),var(--line));border-radius:2px}
+.tlphase{position:relative;margin:22px 0 10px;font-size:12px;font-weight:650;color:var(--acc);
+  letter-spacing:.05em;display:flex;align-items:center;gap:8px}
+.tlphase:first-child{margin-top:0}
+.tlphase:after{content:"";flex:1;height:1px;background:var(--line2)}
+.tlphase span{background:var(--acc-soft);border:1px solid var(--acc-line);border-radius:999px;padding:2px 12px}
+.tlstep{position:relative;margin:0 0 12px}
+.tlnum{position:absolute;left:-30px;top:2px;width:22px;height:22px;border-radius:50%;background:var(--card);
+  border:2px solid var(--acc-line);color:var(--acc);font-size:11px;font-weight:650;display:grid;place-items:center}
+.tlstep h4{font-size:13.5px;font-weight:600;line-height:1.45;margin-bottom:4px}
+.tlbody{border:1px solid var(--line);border-radius:12px;background:var(--card);box-shadow:var(--sh);padding:14px 16px;transition:border-color .15s}
+.tlbody:hover{border-color:var(--acc-line)}
+.tlrole{font-size:12.5px;color:var(--sub);line-height:1.6;margin-bottom:10px;white-space:pre-wrap}
+.tlbody .pane{margin:0}
+.zstat{font-size:12.5px;color:var(--faint);margin:0 0 12px}
+.zstat b{color:var(--ink);font-weight:600}
 </style>
 <meta name="description" content="Seedance 视频生成提示词知识库：中英双语对照、分类导航、标签筛选与全文搜索，单文件离线可用。">
 <script>try{var s=localStorage.getItem('sd-theme');if(s?s==='d':matchMedia('(prefers-color-scheme: dark)').matches)document.documentElement.classList.add('dark')}catch(e){}</script>
@@ -233,7 +274,12 @@ footer{max-width:1240px;margin:0 auto;padding:0 24px 40px;font-size:11px;color:v
   <div class="bar">
     <div class="brand">
       <span class="mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.2 6 3 11l-.9-2.4c-.3-1.1.3-2.2 1.3-2.5l13.5-4c1.1-.3 2.2.3 2.5 1.3Z"/><path d="m6.2 5.3 3.1 3.9"/><path d="m12.4 3.4 3.1 4"/><path d="M3 11h18v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2Z"/></svg></span>
-      <span class="bt"><b>视频提示词库</b><i>多模型 · 双语对照</i></span>
+      <span class="bt"><b>视频提示词库</b><i>多模型 · 双语对照 · 运镜词典与教程</i></span>
+    </div>
+    <div class="seg zonseg" id="zonseg" role="tablist" aria-label="区域切换">
+      <button type="button" data-z="lib" class="on">提示词库<s id="zn-lib"></s></button>
+      <button type="button" data-z="gen">通用区<s id="zn-gen"></s></button>
+      <button type="button" data-z="tut">教程区<s id="zn-tut"></s></button>
     </div>
     <div class="search">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
@@ -288,6 +334,13 @@ footer{max-width:1240px;margin:0 auto;padding:0 24px 40px;font-size:11px;color:v
       </div>
     </div>
     <div id="grid"></div>
+  <section id="zone-gen" hidden>
+    <div class="catbar" id="gcatbar"></div>
+    <div id="ggrid"></div>
+  </section>
+  <section id="zone-tut" hidden>
+    <div id="tgrid"></div>
+  </section>
   </main>
 </div>
 <footer id="note"></footer>
@@ -333,7 +386,7 @@ footer{max-width:1240px;margin:0 auto;padding:0 24px 40px;font-size:11px;color:v
 {
  "库名": "视频提示词库",
  "version": "V1.1",
- "updatedAt": "2026-08-23",
+ "updatedAt": "2026-08-24",
  "schemaVersion": 1,
  "顶层结构": "模型系列（顶层）→ 模型版本（第二层）→ 大类 cat → 小类 sub → 条目",
  "模型注册表": {
@@ -497,6 +550,10 @@ footer{max-width:1240px;margin:0 auto;padding:0 24px 40px;font-size:11px;color:v
   {
    "日期": "2026-08-23",
    "内容": "追加 2 条（Seedance 2.5），版本标签保持 V1.1"
+  },
+  {
+   "日期": "2026-08-24",
+   "内容": "新增顶层「通用区」（运镜词典 46 条，Higgsfield Camera Prompt Bank）与「教程区」（Higgsfield 耳机案例 3 步工作流 27 步）；网页增加区域切换导航"
   }
  ],
  "导出说明": {
@@ -847,7 +904,18 @@ footer{max-width:1240px;margin:0 auto;padding:0 24px 40px;font-size:11px;color:v
   ],
   "交付规则": "交付分两种场景：① 同一个 AI 会话内的日常改动/追加——只交付新版库 HTML 一份（另存新版本文件名，旧版封存），不必每次附说明文档；② 跨 AI 交接（用户说「我要去别的 AI」）——固定交付两份：最新库 HTML + README.md（AI 协作手册：入库规则 + 维护工具源码）+ AGENTS.md（代理最小作业卡）。知识库包/导读索引/JSONL/JSON/Markdown/TXT/维护日志均为派生文件，按需现场导出，不默认交付。"
  },
- "维护记录": "本文件内保留一句话版本摘要与逐条指纹。完整维护日志不随库交付，需要时用库维护工具 export 生成（维护日志.md）。随库交付的唯一说明文档是 README.md（AI 协作手册：入库规则 + 维护工具源码）与 AGENTS.md（代理最小作业卡）。"
+ "维护记录": "本文件内保留一句话版本摘要与逐条指纹。完整维护日志不随库交付，需要时用库维护工具 export 生成（维护日志.md）。随库交付的唯一说明文档是 README.md（AI 协作手册：入库规则 + 维护工具源码）与 AGENTS.md（代理最小作业卡）。",
+ "扩展区": {
+  "说明": "通用区(general)与教程区(tutorials)独立数据块；指纹算法与 data 块一致",
+  "general": {
+   "条目数": 46,
+   "全块指纹": "087117e3aabc0fcd"
+  },
+  "tutorials": {
+   "条目数": 1,
+   "全块指纹": "097ff3f0773bb812"
+  }
+ }
 }
 </script>
 <script id="data" type="application/json">
@@ -8991,6 +9059,994 @@ footer{max-width:1240px;margin:0 auto;padding:0 24px 40px;font-size:11px;color:v
  }
 ]
 </script>
+<script id="tutorials" type="application/json">
+[
+ {
+  "id": "tut-001",
+  "title": "用 3 步工作流制作超写实 AI 广告（Higgsfield 耳机案例）",
+  "desc": "Higgsfield 官方完整案例：先搭建可复用的锁定资产（产品表/角色表/场景/道具），再用 shotlist skill 生成统一风格前缀的逐场景提示词，最后在 Seedance 2.0 里动画化 5 大场景——厨房咖啡蒙太奇、体育场奔跑转播、街道跳舞、办公室反转、包装镜头。全程提示词逐字收录。",
+  "tags": [
+   "Higgsfield",
+   "工作流",
+   "产品广告",
+   "资产锁定",
+   "Seedance 2.0",
+   "运镜"
+  ],
+  "src": "Higgsfield Blog · cinematic_headphones",
+  "url": "https://higgsfield.ai/blog/cinematic_headphones",
+  "steps": [
+   {
+    "t": "开始之前：先把资产搭好",
+    "body": "先搭好所有资产——产品、角色、场景、道具。它们会在每个场景里反复出现，提前锁定才能保证摄影机一动起来一切保持一致。\n\n搭建靠三个工具：GPT Image 2 负责产品表、修改和示意图；Soul Cinema 与 Cinematic Locations 负责照片级静帧——角色和场景；场景本身在 Seedance 2.0 里生成。\n\nSeedance 提示词不用手写：在 Claude 里用一个 Skill（higgsfield-seedance-shotlist-director）直接产出 Seedance 要求的格式的 shotlist 和逐场景提示词。",
+    "prompt": null
+   },
+   {
+    "t": "第一阶段 · 耳机 — 产品表",
+    "body": "从单张产品图生成干净的产品表（正面 + 3/4 视角），让模型从各个角度都认识这个产品。把自己的产品图作为 @image_1 放入即可。",
+    "prompt": "Make a product sheet with front and 3/4 perspective views of the headphones from @image_1."
+   },
+   {
+    "t": "第一阶段 · 主角 — 角色表",
+    "body": "生成主角的参考表：一张锁定脸部的特写，以及正面/背面全身照锁定体型。灰色背景能提高出图成功率——没有别的东西和角色抢戏。",
+    "prompt": "Cinematic character reference sheet, split-frame layout, photorealistic.\nLeft panel — facial close-up: a 20-year-old white American young man, fair skin tone, the entire head fully inside the frame including all the hair, nothing cropped, short curly hair, soft natural freckles across nose and cheeks, real skin texture with subtle pores, calm neutral expression, looking straight into lens. Shot on 85mm portrait lens, shallow depth of field, soft cinematic key light with gentle fill.\nRight panel — full-body front and back views side by side: the same young man shown twice within this panel — on the left, a full-body front view facing the camera; on the right, a full-body back view photographed from directly behind. In both, he stands straight in a normal relaxed pose, arms hanging down at his sides, full height in frame head-to-toe, tall lean build (1.85m), fair skin, short curly hair, same streetwear outfit. The front view shows his face and the front of the garment; the back view shows the back of his head, hair, shoulders, garment seams and the rear of the pants and shoes. Both figures matched in framing, scale and lighting for consistency. Shot on 35mm lens, even full-length lighting.\nLook: clean studio character sheet, plain solid grey background, consistent character across all views, soft diffused cinematic lighting, muted natural color grade, fine detail, true-to-life skin tones, vertical divider lines separating each view."
+   },
+   {
+    "t": "第一阶段 · 小贴士 — 锁定一张脸",
+    "body": "角色表里有不止一张脸入镜，会让视频模型『漂移』。这条把多余的脸擦掉，只留一张可锁定的脸。对老板的角色表也做同样处理。",
+    "prompt": "Erase the face from the full-body shot on the right panel."
+   },
+   {
+    "t": "第一阶段 · 主角 — 最终造型（粉色穿搭）",
+    "body": "把他喜欢的造型合并成一套穿搭，并据此重建角色表——粉色衬衫敞开穿在白色背心外、搭配水洗牛仔裤——同时保持脸和身份锁定。这是他在厨房、街道、办公室场景里的日常造型。",
+    "prompt": "three-panel character sheet of the man, keeping his face, curly auburn hair, and identity exactly consistent across all panels. Dress him in the short-sleeve button-down shirt from Image 2 but recolored to a soft pastel pink, worn open over a white ribbed tank top, paired with the light-wash faded blue jeans and black Converse sneakers from Image 1. Left panel: tight front-facing close-up portrait. Center panel: full-body front view, arms relaxed at sides. Right panel: full-body rear view. Even neutral studio lighting, flat light-grey seamless"
+   },
+   {
+    "t": "第一阶段 · 主角 — 运动造型（@s_hero）",
+    "body": "把主角角色表改成蓝色运动服，搭配跑鞋——作为体育场场景的锁定参考，避免服装在不同镜头间『跳变』。",
+    "prompt": "Edit this character sheet so he's wearing a blue athletic outfit, with these sneakers (@sneakers)."
+   },
+   {
+    "t": "第一阶段 · 主角 — 流汗版（@s_hero_wet）",
+    "body": "为同一个运动主角再建一张『跑后出汗』的角色表。他起跑时干爽、冲刺结束时湿透，所以把汗水单独『烘焙』进一张锁定参考，能防止他在场景中段换状态时脸部漂移。",
+    "prompt": "same character sheet, post-run, sweaty chest, sweat stains on the shirt."
+   },
+   {
+    "t": "第一阶段 · 老板 — 配角",
+    "body": "生成配角：一位 50 多岁、略微发福、穿着西装的愤怒办公室老板。",
+    "prompt": "An office boss in his 50s with a pot belly, wearing a suit."
+   },
+   {
+    "t": "第一阶段 · 厨房",
+    "body": "生成公寓厨房。3/4 视角给房间带来纵深，方便摄影机在空间中运动，比正面平拍稳得多。",
+    "prompt": "Modern apartment kitchen, 3/4 angle, bright clean daylight, high-end commercial look."
+   },
+   {
+    "t": "第一阶段 · 体育场",
+    "body": "生成体育场场景的跑道，采用 3/4 视角以制造纵深。",
+    "prompt": "A cinematic wide establishing shot of a quiet open-air track-and-field stadium on a city riverfront, early morning around 8–9 AM. The view is taken from the shaded upper grandstand, looking out across the track and field toward the water and a distant skyline. Almost empty and still.\nTHE FOREGROUND & ROOF: in the top of the frame, the underside of a large dark cantilever grandstand roof with an exposed steel lattice truss structure cuts across the shot, framing the scene and casting the near seating in cool shadow. Below it, long curving rows of empty grandstand seats (muted gray and dark tones) sweep down toward the track, catching warm light at the edges.\nTHE TRACK: a classic warm terracotta / brick-red all-weather running track with crisp white lane lines, curving around the field. Faint painted lane numbers. A couple of tiny distant figures stand on the track for scale. Clean and well-kept.\nTHE FIELD: a large lush green natural-grass field inside the track, freshly mowed with subtle mowing patterns and white markings, with tall white rugby/football goalposts standing on the grass. A low dark electronic scoreboard sits at the far end.\nTHE BACKDROP: beyond the far side, a calm wide river separates the stadium from a distant urban skyline — a long row of tall high-rise apartment towers and low-rise buildings along the far bank, softened by morning haze. A tall stadium floodlight tower rises near the center against the sky. Green trees line the waterfront.\nTHE LIGHT & SKY: soft, bright, hazy morning light, warm and diffused, with gentle low-angle sun creating soft long shadows and a luminous bright sky near the horizon. A high pale-blue sky with thin wispy clouds. Fresh, calm, peaceful early-morning atmosphere.\nCOLOR GRADE: a neutral, naturalistic cinematic grade — warm sunlight with balanced, slightly muted color, gentle low contrast, soft lifted blacks, subtle film-like halation in the bright hazy areas, restrained saturation, and a calm warm-neutral white balance. Real photochemical film-stock feel, understated and true-to-life, lived-in and documentary-realistic — not a glossy ad look.\nCAMERA & LENS: shot on a high-end cinema camera (ARRI / large-format look) with a clean spherical prime, wide establishing framing, slightly elevated angle from the stands, deep focus, subtle natural lens character and mild vignetting, no distortion.\nPhotorealistic, ultra high detail, 16:9, no on-screen text, no visible brand logos or advertising, no crowd."
+   },
+   {
+    "t": "第一阶段 · 街道",
+    "body": "生成布鲁克林街角，3/4 视角。",
+    "prompt": "Pedestrian street, 3/4 view"
+   },
+   {
+    "t": "第一阶段 · 办公室",
+    "body": "生成老板的办公室，3/4 视角。",
+    "prompt": "Warm color palette office, 3/4 view"
+   },
+   {
+    "t": "第一阶段 · 道具 — 跑鞋",
+    "body": "生成跑鞋的干净道具表。",
+    "prompt": "A product prop sheet / orthographic turnaround of a single ORIGINAL running shoe on a flat neutral light-gray studio background.\nLAYOUT: the same shoe shown from multiple angles in an even grid: lateral side profile, medial side profile, top-down into the laces, front three-quarter hero angle, rear/heel view, and bottom outsole view. Consistent scale, even spacing, soft contact shadow under each, soft even studio product lighting.\nDESIGN — a \"super-trainer\" that blends a fast performance racing shoe with a plush comfort trainer. It should look quick AND soft at the same time:\n- Midsole: a tall, energetic, responsive foam stack with a smooth propulsive rocker and a gently flared, stable base — clearly performance-oriented like a modern racing super-shoe, BUT with soft rounded sculpted edges and a pillowy, cushioned look rather than stiff, thin, or knife-edged. Visible soft foam thickness that reads as comfortable. A subtle propulsion line through the midsole (soft, not a harsh exposed carbon blade).\n- Fit/comfort: generously padded tongue and a plush cushioned heel collar, a secure sporty midfoot, and a roomy rounded comfort toe box with a gentle toe-spring.\n- Upper: lightweight breathable engineered mesh/knit with sleek bonded overlays — athletic and streamlined but soft to the touch.\nCOLORWAY — modern sportswear: crisp off-white / cream base across upper and midsole, with a bold sunset orange-to-coral accent (hint of warm yellow) sweeping dynamically along the lateral midsole and side panel, plus sharp black detailing around the eyestay/laces and a thin black outsole. Clean, premium, energetic athletic look — white base, bold orange accent, black accents.\nSIGNATURE: a single ownable sweeping arc / wing line where the upper meets the midsole as the recognizable design motif.\nSTRICTLY NO branding: no brand names, logos, swooshes, stripe-logos, wordmarks, text, trademarks, or brand-resembling motifs anywhere on the shoe, laces, tongue, sole, or sheet. Fully original and unbranded.\nSTYLE: photorealistic 3D product render, ultra sharp detail, accurate materials (knit/mesh, soft responsive foam, rubber), true-to-life color, soft cinematic studio lighting, flat light-gray seamless background, footwear design presentation board."
+   },
+   {
+    "t": "第一阶段 · 道具 — 背包",
+    "body": "生成背包的道具表。",
+    "prompt": "A larger-capacity classic casual daypack backpack in forest / hunter green cotton canvas, generous roomy size with a full, slightly oversized body, studio product photography on a plain solid grey background, front-facing view, standing upright. Lightly worn, gently lived-in look — softly faded fabric with subtle scuffs and a few natural creases, slightly broken-in shape, but still in good overall condition. Features: a rounded teardrop silhouette, a top zipper main compartment, a large front pocket with two dangling drawstring zip pulls, two short webbing carry handles, and webbing strap ends at the bottom. Decorated with three small custom embroidered patches arranged across the front, each patch compact and modest in size relative to the bigger bag: (1) a small round patch with a cream background and black border showing a fluffy white cartoon sheep wearing black sunglasses riding a black skateboard; (2) a tiny rectangular travel-ticket patch shaped like a boarding pass with the embroidered text \"ADVENTURE AWAITS\", a little airplane, and yellow/blue colors; (3) a small cross-stitch style patch of a pink cartoon starfish character in colorful shorts. Patches stitched on neatly with plenty of empty canvas space around them. Personalized streetwear / traveler aesthetic, even soft studio lighting, sharp focus, high detail, photorealistic, centered composition.\nNegative prompt: brand logos, watermark, hand, cluttered background, harsh shadows, blurry, distorted letters, misspelled text, heavy wear, large rips, holes, oversized patches, large patches, tiny small bag"
+   },
+   {
+    "t": "第一阶段 · 道具 — 摩卡壶",
+    "body": "生成咖啡蒙太奇用的摩卡壶，保证逐镜一致。",
+    "prompt": "A stovetop moka pot — eight-sided, high-gloss black base, matte cream top chamber, black handle and knob, brass safety valve on the lower half. Studio product shot, soft directional light, neutral background, sharp focus."
+   },
+   {
+    "t": "第一阶段 · 道具 — 马克杯",
+    "body": "生成配套马克杯。",
+    "prompt": "A ceramic mug with a reddish-orange pinstripe around the rim. Clean studio light, neutral background, centered, product photography."
+   },
+   {
+    "t": "第二阶段 — 提示词框架（The Prompting Framework）",
+    "body": "下载这个 skill，然后在 Claude 里进入 Customize → Skills 上传它。开一个全新对话，把脚本和第一阶段锁定的所有资产一起附上——Claude 能『看见』得越多，返回的提示词越好。\n\n（skill 文件名：higgsfield-seedance-shotlist-director.skillapplication/zip，请在 Higgsfield 官方页面下载后上传到 Claude。）\n\n**元素清单（命名需与 Higgsfield 中完全一致）：**\n\n\n@hero — 主角@boss — 老板，配角@headphones — 产品，米色带橙色环@sneakers — 道具@bag — 道具@skydancer — 充气舞人@kitchen — 公寓厨房，灶台+门@stadium — 跑道@street — 布鲁克林街角@office — 老板的办公室\n\n最后，在 Higgsfield 里把每个资产作为 Element 添加，并用完全相同的名字命名。因为名字一致，skill 写出的每条提示词在生成时都会自动附上正确的图片。\n\nskill 返回一条连通的 shotlist：一个粘在每条提示词前的风格前缀，加上可单独编辑的具名提示词（1a、1b、2a…）。改一次前缀，处处更新；改一条提示词，其余保持不变。\n\n下面是这个广告里 skill 写出的完整 shotlist——所有场景和提示词都在一个文件里。打开它，把你的产品和资产换进去，你就领先一步了。\n\n[⬇ 下载完整 shotlist（final-shotlist-headphones-ad.html）](https://static.higgsfield.ai/final-shotlist-headphones-ad.html)",
+    "prompt": null
+   },
+   {
+    "t": "第三阶段 · 场景 1 — 1a · 厨房",
+    "body": "动画化开场：主角走进厨房，透过窗户瞥见邻居在剪草，戴上耳机，轰鸣声瞬间变成低沉的嗡嗡声。",
+    "prompt": "Style: 8K IMAX commercial, 16:9 widescreen. Photorealistic — no 3D render, no game engine. Lighting: Natural light only — soft, even morning daylight, gentle atmospheric haze throughout. Key light from sky and garden doors only. No contre-jour, no rim backlight, no forced shadow-side framing. No artificial lightning. Color: 60:30:10 — dominant / secondary / accent. Camera: Physical cine lens. 180° shutter motion blur. Skin: Pore-level realism — vellus hair, asymmetric moles, capillary flush, pore-shadow matching on-set light. Acting: Hollywood — micro-pauses before reactions, precise eye-line, living eyes with catch-lights, chest rise from breathing. Characters never standing, always reacting. Physics: Gravity and inertia respected — mass has real weight, correct contact shadows. No floating props. Composition: Rule of thirds + golden ratio. Every person moving from frame one. Continuity: Characters, props, environment identical across every cut. No identity drift. Technical: 24fps smooth motion. 8K detail. No jitter. Audio: Diegetic dialogue and environmental SFX only. No music. No subtitles.\n\nCharacters: HERO (@hero) — lean man, late 20s, reddish-brown curly hair, fair freckled skin, small gold hoop earrings, dusty-rose short-sleeve shirt open over a white tee, light-wash baggy jeans, black-and-white low-top Converse. Cream/ivory over-ear ANC headphones (@headphones — tan camel-leather cushions, thin orange accent ring) rest on the counter to the right of the gas range; a stovetop moka pot, an empty espresso cup, the cream running sneakers (@sneakers) and the open dark-green canvas backpack (@bag) sit on the same counter.\n\nScene: A sage-green country kitchen (@kitchen), early morning. A stainless gas range sits under a window on the left wall, with a stretch of counter to the right of it (moka pot, empty cup, headphones, sneakers and backpack on it); a white marble island fills the centre; French glass garden doors stand stage-right (his exit). Through the window above the range a NEIGHBOUR is mowing the lawn outside. Soft, even morning daylight throughout. A lawnmower drone is already droning outside from the first frame.\n\nCUT 1 — Behind Hero into profile, 35mm, slow follow as he steps to the range: Hero crosses empty-handed to the gas range on the left wall; the camera starts behind him — his back and curly head — then eases round to his side profile. Through the window above the range the NEIGHBOUR pushes a roaring lawnmower across the lawn, grass spraying — the neighbour established here, once, this single time. Hero watches it for a beat, then a small amused exhale — a quiet \"heh\" — tugs one corner of his mouth.\n\nCUT 2 — Medium close at the counter, 50mm, push-in to chest: Hero picks up the cream headphones (@headphones) from the counter and lifts them over his ears in one smooth motion; the cushioned cups seal and the roar drops into a low muffled hum — shoulders dropping a full inch, eyes half-closing for a beat, a calm exhale, his head already starting to bob. Then his eyes open again, bright and pleased, and he settles into a loose head-bobbing groove, shoulders rolling.\n\nCUT 3 — Jump-cut coffee montage, 50mm, three hard in-camera jump-cuts, Hero grooving through every stage: STAGE 1 — he sets the stovetop moka pot onto the gas range; a small, low amber flame catches under it, kept minimal, barely licking the base. JUMP CUT. STAGE 2 — closer in: the moka pot now gurgling on the flame, a curl of steam rising, Hero's fingers drumming the counter to the beat. JUMP CUT. STAGE 3 — he pours the fresh coffee into the espresso cup, lifts it and takes an unhurried sip, a soft satisfied smile spreading, head still nodding to the beat."
+   },
+   {
+    "t": "第三阶段 · 场景 1 — 1b · 咖啡蒙太奇",
+    "body": "把冲咖啡拍成汽车广告——快速跳切蒙太奇：舀粉、点火、倒咖啡、第一口，每个动作都踩在节拍上。锁定 @moka_cream 和 @mug_cream 作为精确参考，避免特写里『漂移』。",
+    "prompt": "Style: 8K IMAX commercial, 16:9 widescreen. Photorealistic — no 3D render, no game engine. Lighting: Natural light only — soft, even morning daylight, gentle atmospheric haze throughout, density 15%, visible at 15 meters depth. Key light from sky and garden doors only; every light source in frame is natural daylight. The subject is lit softly and evenly from the camera side. Color: 60:30:10 — dominant / secondary / accent. Camera: Physical cine lens. 180° shutter motion blur. Skin: Pore-level realism — vellus hair, asymmetric moles, capillary flush, pore-shadow matching on-set light. Acting: Hollywood — micro-pauses before reactions, precise eye-line, living eyes with catch-lights, chest rise from breathing. Characters are always in motion, always reacting. Physics: Gravity and inertia respected — mass has real weight, correct contact shadows. No floating props. Composition: Rule of thirds + golden ratio. Every person moving from frame one. Continuity: Characters, props, environment identical across every cut. No identity drift. Technical: 24fps smooth motion. 8K detail. No jitter. Audio: Diegetic dialogue and environmental SFX only. No music. No subtitles.\n\nCharacters: HERO (@hero) — lean man, late 20s, reddish-brown curly hair, fair freckled skin, dusty-rose short-sleeve shirt open over a white tee, cream/ivory over-ear ANC headphones (@headphones — tan camel-leather cushions, thin orange accent ring) on his ears from the first frame to the last in every cut, head bobbing to an inner beat through every stage.\n\nProps: MOKA POT (@moka_cream) — stovetop moka pot: cream octagonal upper chamber, glossy black lower chamber, black handle and black lid knob, brushed-steel band at the waist, small brass safety valve. 100% matches the reference. MUG (@mug_cream) — cream ceramic mug, thin burnt-orange stripe just under the rim. 100% matches the reference.\n\nScene: A sage-green country kitchen (@kitchen), early morning. The stainless gas range under the window on the left wall; on the counter beside it the moka pot (@moka_cream), a tin of dark ground coffee, a small spoon and the empty cream mug (@mug_cream). Soft, even morning daylight. A faint beat leaks from his headphones and sets one steady tempo — every action lands on that beat.\n\nCUT 1 — HIGH ANGLE close-up on the moka pot, 12° FOV tele detail, camera above the counter looking down at roughly 45°, static: Looking down from above at the open moka pot (@moka_cream) — the glossy black lower chamber on the counter, the metal filter basket open and empty, the brushed-steel waist catching the morning light. Hero's hand brings the small spoon in and pours a heaped scoop of dark ground coffee into the basket — the mound rising, grains tumbling off the edges, a wisp of coffee dust drifting up through the light — then the spoon sweeps it level in one clean pass on the beat, stray grounds skittering onto the counter. At the top edge of frame his other hand drums the counter to the beat.\n\nCUT 2 — SAME HIGH ANGLE, identical camera position and framing as the previous cut, 12° FOV tele detail, static: The exact same high-angle framing — Hero's hands screw the cream octagonal upper chamber of the moka pot (@moka_cream) onto the glossy black base in two firm twists, the black handle swinging round, then flip the hinged lid shut with a crisp metal snap landing exactly on the beat, his finger giving the black lid knob one light confirming tap. Both hands wrap the pot and lift it up out of frame toward the stove, leaving the counter with the coffee tin and scattered grounds in the settling light.\n\nCUT 3 — WORM'S EYE close-up under the moka pot, 84° FOV, camera at burner level looking up, static: Snake-cam framing — the lens sits low at the level of the burner, looking up at the glossy black underside of the moka pot (@moka_cream) looming overhead, the brass safety valve glinting at its flank, hypertrophied in the wide close framing, the kitchen window blooming soft and bright far behind it. The igniter clicks — tick, tick — and the gas catches GRADUALLY: one small blue jet lights first, then the flame creeps around the burner ring jet by jet, blue tongues spreading one after another until a full low ring of amber-blue fire breathes under the pot's black base, heat shimmer starting to ripple the air. The flame stays small and controlled, barely licking the metal.\n\nCUT 4 — Close-up on the mug, 12° FOV tele detail, counter height, static: Tight on the cream mug (@mug_cream) on the counter, the thin burnt-orange stripe under the rim crisp in the morning light. Hero's hand tilts the moka pot (@moka_cream) into frame and pours the fresh coffee in one smooth dark stream landing on the beat — the coffee swirling up the mug's walls, a curl of steam rising through the light, the last drop falling exactly on the beat as the pot lifts back out of frame.\n\nCUT 5 — Medium close-up on Hero, bust framing from mid-chest to the top of his head, 29° FOV, static, eye-level: Hero (@hero) fills the frame from mid-chest up — the dusty-rose shirt over the white tee, the cream headphones (@headphones) on his ears with the orange-ringed cups catching the soft window light, the sage-green kitchen melting soft behind him. A warm easy smile already on his face from the very first frame and held the entire shot; smiling, he lifts the cream mug (@mug_cream) — the thin burnt-orange stripe under the rim crisp in the morning light — and takes an unhurried sip, eyes half-closing for a beat over the rim, then opening bright and pleased, the smile staying on as he lowers the mug, head bobbing gently on the beat."
+   },
+   {
+    "t": "第三阶段 · 场景 1 — 1c · 跳舞离场",
+    "body": "动画化离场：他收好跑鞋、拉上背包拉链、跳着舞走向门口。动作被一拍一拍写清楚——只写『他跳舞』会得到 generic 的乱晃，所以每一步都写明——最后以敲一下耳罩收尾。",
+    "prompt": "Style: 8K IMAX commercial, 16:9 widescreen. Photorealistic — no 3D render, no game engine. Lighting: Natural light only — soft, even morning daylight, gentle atmospheric haze throughout. Key light from sky and garden doors only. No contre-jour, no rim backlight, no forced shadow-side framing. No artificial lightning. Color: 60:30:10 — dominant / secondary / accent. Camera: Physical cine lens. 180° shutter motion blur. Skin: Pore-level realism — vellus hair, asymmetric moles, capillary flush, pore-shadow matching on-set light. Acting: Hollywood — micro-pauses before reactions, precise eye-line, living eyes with catch-lights, chest rise from breathing. Characters never standing, always reacting. Physics: Gravity and inertia respected — mass has real weight, correct contact shadows. No floating props. Composition: Rule of thirds + golden ratio. Every person moving from frame one. Continuity: Characters, props, environment identical across every cut. No identity drift. Technical: 24fps smooth motion. 8K detail. No jitter. Audio: Diegetic dialogue and environmental SFX only. No music. No subtitles.\n\nCharacters: HERO (@hero) — lean man, late 20s, reddish-brown curly hair, fair freckled skin, small gold hoop earrings, dusty-rose short-sleeve shirt open over a white tee, light-wash baggy jeans, black-and-white low-top Converse, cream/ivory over-ear ANC headphones (@headphones — tan camel-leather cushions, thin orange accent ring) now on his ears, head bobbing to an inner beat. The cream running sneakers (@sneakers) and the open dark-green canvas backpack (@bag) sit on the counter to the right of the gas range; his coffee cup rests beside them.\n\nScene: A sage-green country kitchen (@kitchen), early morning, continuous from the previous shot. Hero stands at the counter to the right of the gas range on the left wall; the open green backpack (@bag) and cream sneakers (@sneakers) are on the counter in front of him; a white marble island fills the centre. His exit is the glass French garden door on the right wall — the one set BETWEEN the two windows (the small sink window to its left, the double-hung window to its right), leading out to the green garden. Soft, even morning daylight throughout.\n\nCUT 1 — Tight close-up on the backpack, 50mm macro, on the counter: Push in tight on the open dark-green canvas backpack (@bag) on the counter — the \"ADVENTURE\" woven label and round patch in crisp focus. Hero's hands enter frame and drop the cream sneakers (@sneakers) inside, then pull the zipper shut in one decisive tug, the metallic zip travelling across frame. He lifts the bag out of frame as the shot widens.\n\nCUT 2 — Medium, 35mm, slow pan following Hero to the garden doors: Hero swings the bag onto one shoulder and grooves toward the doors, the move breaking down beat by beat: first two crisp head nods, chin dipping on each beat; then his shoulders roll back one at a time — right, then left; he steps off on his right foot with a soft knee-dip and drags the left foot in to meet it with a small heel-bounce, hips swaying side to side; halfway across he throws a loose finger-snap with his free right hand and points it forward toward the doors; a wide easy grin on his face, eyes bright and alive, lips mouthing along to the beat; he finishes with a light quarter-spin on the ball of his foot as he reaches the glass French door between the two windows on the right wall.\n\nCUT 3 — Tight side close-up of Hero's head, left-side profile, at the open glass French door between the two windows: At the threshold of the glass French door, the bright garden haze just beyond him, Hero raises his right hand to the headphones and taps the orange-ringed ear cup twice — tap, tap — a small knowing smile pulling at his mouth as he steps out into the garden."
+   },
+   {
+    "t": "第三阶段 · 场景 2 — 2a · 奔跑",
+    "body": "动画化奔跑：开场敲击、戴着耳机稳稳冲刺、以及湿透的终点。",
+    "prompt": "Style: 8K IMAX commercial, 16:9 widescreen. Photorealistic — no 3D render, no game engine. Lighting: Natural light only — bright, genuinely sunny midday, strong direct sunlight from high and frontal, the sun in front of and above the hero and behind the camera, deep blue sky, crisp hard-edged shadows on the track, vivid saturated colour, low haze, density 10%, visible at 300 meters depth. Key light from the sky only; the hero's face and body are lit fully from the front. Color: 60:30:10 — dominant / secondary / accent. Camera: Physical cine lens. 180° shutter motion blur. Skin: Pore-level realism — vellus hair, asymmetric moles, capillary flush, pore-shadow matching on-set light. Acting: Hollywood — micro-pauses before reactions, precise eye-line, living eyes with catch-lights, chest rise from breathing. Characters are always in motion, always reacting. Physics: Gravity and inertia respected — mass has real weight, correct contact shadows. No floating props. Composition: Rule of thirds + golden ratio. Every person moving from frame one. Continuity: Characters, props, environment identical across every cut. No identity drift. Technical: 24fps smooth motion. 8K detail. No jitter. Audio: Diegetic dialogue and environmental SFX only. No music. No subtitles.\n\nCharacters: HERO (@s_hero) — same man, now in athletic running form/kit, reddish-brown curls, freckled skin, cream over-ear headphones (@headphones — tan cushions, orange accent ring) on. Dry and fresh at first; later, post-run, he is sweat-soaked (@s_hero_wet) — hair damp, skin sheened and dripping, kit darkened with sweat.\n\nScene: A red running track (@stadium), bright sunny day, white lane lines, empty grey concrete bleachers stage-left, leafy trees and a white event tent on the infield, deep blue sky with low haze. Hero occupies a single lane, the curve of the track sweeping behind him. The sun sits high and frontal, behind the camera, throwing crisp hard-edged shadows onto the red track.\n\nCUT 1 — Medium close-up of Hero's head, right-side profile, camera set just behind his right shoulder at a slight rear three-quarter angle: Hard jump-cut in — the camera sits a touch behind Hero (@s_hero), a sliver of his upper back and right shoulder in the near foreground, his head in right-side profile angled slightly away so the line of his cheek and jaw still reads clearly; the red track soft behind him. A small knowing smile already on his face from the very first frame and held the entire shot; smiling, he raises his hand and taps the orange-ringed ear cup of the cream headphones (@headphones) one tap — ready to go, the smile staying on. His face is lit evenly from the front, the sun behind the camera.\n\nCUT 2 — Wide, 63° FOV, low-angle, static: Hero runs through his warm-up in lane — a deep lunging leg stretch, two crisp jumps in place, a roll of the neck and a swing of the arms. He drops into a ready stance, weight forward, then explodes out of frame-right into a sprint.\n\nCUT 3 — Tracking side profile, 29° FOV, lateral dolly matching his speed, shallow depth: He sprints flat-out, white lane lines streaking in motion blur, bleachers smearing behind; the cream headphones (@headphones) stay locked rock-solid on his ears through every stride.\n\nCUT 4 — Medium close portrait, framed chest-down to top of head, 29° FOV, static, eye-level (~2s): Hero (@s_hero_wet) fills the frame from mid-chest to the top of his head — sweat-sheened, in his athletic kit only, hands free, the cream headphones (@headphones) on his ears. He stands on the red track, the lane lines and bleachers soft behind him, bright direct sunlight on his face from the front, the sun behind the camera, a small satisfied smirk already on his face from the very first frame and held the entire shot. Smirking, he faces the camera directly and, with his right index finger, simply taps the orange-ringed ear cup once — firm and deliberate — the smirk staying on as it lands."
+   },
+   {
+    "t": "第三阶段 · 场景 2 — 2b · 转播机位与匹配剪辑",
+    "body": "动画化转播式镜头——大全景、跟拍腿部的特写、以及从镜头正上方俯冲而过的虫眼视角。开场的敲击与场景 1 结尾的敲击形成匹配剪辑。",
+    "prompt": "Style: 8K IMAX commercial, 16:9 widescreen. Photorealistic — no 3D render, no game engine. Lighting: Natural light only — bright, genuinely sunny midday, strong direct sunlight from high and frontal, the sun in front of and above the hero and behind the camera, deep blue sky, crisp hard-edged shadows on the track, vivid saturated colour, low haze, density 10%, visible at 300 meters depth. Key light from the sky only; the hero's face and body are lit fully from the front. Color: 60:30:10 — dominant / secondary / accent. Camera: Physical cine lens. 180° shutter motion blur. Skin: Pore-level realism — vellus hair, asymmetric moles, capillary flush, pore-shadow matching on-set light. Acting: Hollywood — micro-pauses before reactions, precise eye-line, living eyes with catch-lights, chest rise from breathing. Characters are always in motion, always reacting. Physics: Gravity and inertia respected — mass has real weight, correct contact shadows. No floating props. Composition: Rule of thirds + golden ratio. Every person moving from frame one. Continuity: Characters, props, environment identical across every cut. No identity drift. Technical: 24fps smooth motion. 8K detail. No jitter. Audio: Diegetic dialogue and environmental SFX only. No music. No subtitles.\n\nCharacters: HERO (@s_hero) — same man, in athletic running form/kit, reddish-brown curls, freckled skin, cream over-ear headphones (@headphones — tan cushions, orange accent ring) on. Dry and fresh at first; in the final cut, post-run, he is sweat-soaked (@s_hero_wet) — hair damp, skin sheened and dripping, kit darkened with sweat.\n\nScene: A red running track (@stadium), bright sunny day, white lane lines, empty grey concrete bleachers stage-left, leafy trees and a white event tent on the infield, deep blue sky with low haze. Hero occupies a single lane, the curve of the track sweeping behind him. The sun sits high and frontal, behind the camera, throwing crisp hard-edged shadows onto the red track.\n\nCUT 1 — Medium close-up of Hero's head, right-side profile, camera set just behind his right shoulder at a slight rear three-quarter angle: Hard jump-cut in — the camera sits a touch behind Hero (@s_hero), a sliver of his upper back and right shoulder in the near foreground, his head in right-side profile angled slightly away so the line of his cheek and jaw still reads clearly; the red track soft behind him. A small knowing smile already on his face from the very first frame and held the entire shot; smiling, he raises his right hand and taps the orange-ringed ear cup of the cream headphones (@headphones) twice — tap, tap — ready to go, the smile staying on. His face is lit evenly from the front, the sun behind the camera.\n\nCUT 2 — WORM'S EYE, 84° FOV, camera lying flat on the red track in his lane, lens pointing up the lane: Hero sprints straight over the camera at full speed, around 25 km/h — his figure towers against the deep blue sky, arms pumping, his running shoes striking the rubber inches from the lens with each stride throwing tiny red track granules, hard contact shadows snapping under each footfall. He passes directly over the lens and out of frame, the sky holding the frame for a final beat.\n\nCUT 3 — SPORTS BROADCAST, 8° FOV super-telephoto, handheld with a fine 1–2 cm tremor, camera anchored far across the infield, finding the action: Extreme compression — Hero sprints through the curve of the track, his stride pounding, heat shimmer rising off the red rubber and compressing into a wall of haze in the long air column between camera and subject; the bleachers stack flat as a backdrop, lane lines collapsing into stripes. The handheld frame breathes and corrects, tracking him through the curve like a broadcast operator.\n\nCUT 4 — Ground-level detail, 12° FOV tele, camera skimming the track surface at lane height, static: Tight on the strike zone of the lane — Hero's legs and running shoes slam through frame left to right at full sprint, each footfall compressing the red rubber, granules kicking up in motion blur, his hard-edged shadow sweeping across the white lane line. Two strides cross the frame and he is gone.\n\nCUT 5 — Front shot on the track axis, 47° FOV, static, eye-level: Hero (@s_hero_wet) sprints straight at the camera from deep in his lane at full speed, around 25 km/h, growing fast in frame — sweat-sheened, athletic kit only, hands free, the cream headphones (@headphones) locked on his ears. Over the last few metres he decelerates hard: stride shortening step by step, arms dropping, torso rising upright — and comes to a full stop filling the frame from mid-chest to the top of his head, chest heaving, the lane lines and bleachers soft behind him. A small satisfied smirk already on his face through the whole run-up and held the entire shot. Standing still, breathing hard, he raises his right index finger and taps the orange-ringed ear cup once — firm and deliberate — the smirk staying on as it lands. His face lit evenly from the front, the sun behind the camera."
+   },
+   {
+    "t": "第三阶段 · 场景 2 — 2c · 身体支架产品镜头",
+    "body": "动画化纯产品镜头：身体支架 snorricam 锁定耳罩，耳机居正中央，整条跑道在运动模糊中飞驰而过。",
+    "prompt": "Style: 8K IMAX commercial, 16:9 widescreen. Photorealistic — no 3D render, no game engine. Lighting: Natural light only — bright, genuinely sunny midday, strong direct sunlight from high and frontal, the sun in front of and above the hero and behind the camera, deep blue sky, crisp hard-edged shadows on the track, vivid saturated colour, low haze, density 10%, visible at 300 meters depth. Key light from the sky only; the hero's face and body are lit fully from the front. Color: 60:30:10 — dominant / secondary / accent. Camera: Physical cine lens. 180° shutter motion blur. Skin: Pore-level realism — vellus hair, asymmetric moles, capillary flush, pore-shadow matching on-set light. Acting: Hollywood — micro-pauses before reactions, precise eye-line, living eyes with catch-lights, chest rise from breathing. Characters are always in motion, always reacting. Physics: Gravity and inertia respected — mass has real weight, correct contact shadows. No floating props. Composition: Rule of thirds + golden ratio. Every person moving from frame one. Continuity: Characters, props, environment identical across every cut. No identity drift. Technical: 24fps smooth motion. 8K detail. No jitter. Audio: Diegetic dialogue and environmental SFX only. No music. No subtitles.\n\nCharacters: HERO (@s_hero) — same man, in athletic running form/kit, reddish-brown curls, freckled skin, cream over-ear headphones (@headphones — tan cushions, orange accent ring) on. Dry and fresh at first; in the final cut, post-run, he is sweat-soaked (@s_hero_wet) — hair damp, skin sheened and dripping, kit darkened with sweat.\n\nScene: A red running track (@stadium), bright sunny day, white lane lines, empty grey concrete bleachers stage-left, leafy trees and a white event tent on the infield, deep blue sky with low haze. Hero occupies a single lane, the curve of the track sweeping behind him. The sun sits high and frontal, behind the camera, throwing crisp hard-edged shadows onto the red track.\n\nCUT 1 — Medium close-up of Hero's head, right-side profile, camera set just behind his right shoulder at a slight rear three-quarter angle: Hard jump-cut in — the camera sits a touch behind Hero (@s_hero), a sliver of his upper back and right shoulder in the near foreground, his head in right-side profile angled slightly away so the line of his cheek and jaw still reads clearly; the red track soft behind him. A small knowing smile already on his face from the very first frame and held the entire shot; smiling, he raises his right hand and taps the orange-ringed ear cup of the cream headphones (@headphones) twice — tap, tap — ready to go, the smile staying on. His face is lit evenly from the front, the sun behind the camera.\n\nCUT 2 — BODY-RIG SHOT, one long continuous take, 29° FOV, camera hard-mounted to a rig on Hero's right shoulder, locked on the headphones: The camera is rigged to Hero's body, snorricam-style — zero relative motion between the lens and his head. The right ear cup of the cream headphones (@headphones) and the side of his face fill the frame, tack-sharp and rock-steady, the orange accent ring crisp in the sunlight. He launches into a full sprint, around 25 km/h — his head and the headphones stay perfectly stable in the centre of frame while everything behind him whips past in heavy motion blur: red track, white lane lines, smearing bleachers, streaking sky. His curls vibrate with each footfall, jaw set, breath driving harder; over the length of the shot a sheen of sweat builds on his cheek and a first bead traces down past the orange-ringed cup — the cup itself locked solid on his ear through every stride. The frame rides his rhythm — a slight bob on each footfall transmitted through the rig, the headphones never shifting.\n\nCUT 3 — Front shot on the track axis, 47° FOV, static, eye-level: Hero (@s_hero_wet) sprints straight at the camera from deep in his lane at full speed, around 25 km/h, growing fast in frame — sweat-sheened, athletic kit only, hands free, the cream headphones (@headphones) locked on his ears. Over the last few metres he decelerates hard: stride shortening step by step, arms dropping, torso rising upright — and comes to a full stop filling the frame from mid-chest to the top of his head, chest heaving, the lane lines and bleachers soft behind him. A small satisfied smirk already on his face through the whole run-up and held the entire shot. Standing still, breathing hard, he raises his right index finger and taps the orange-ringed ear cup once — firm and deliberate — the smirk staying on as it lands. His face lit evenly from the front, the sun behind the camera."
+   },
+   {
+    "t": "第三阶段 · 场景 3 — 街道（示意图）",
+    "body": "生成俯视示意图，把消防栓和充气舞人（skydancer）钉死在固定位置。文字锁不住位置，地图可以——这样尺寸和位置在每一镜都保持一致。",
+    "prompt": "make a schematic - mark the fire hydrant, and lock the skydancer to its right, it should be two times a person's height, located on the same line."
+   },
+   {
+    "t": "第三阶段 · 场景 3 — 沿街跳舞",
+    "body": "动画化街道场景：他敲一下入场，沿人行道跳舞，镜像模仿充气舞人，边跳边接电话而不破功。音乐作为 @music_track 输入，让每个动作都踩在节拍上，编舞逐镜写好。",
+    "prompt": "Style: 8K IMAX commercial, 16:9 widescreen. Photorealistic — no 3D render, no game engine. Lighting: Natural light only — overhead midday sun, hard short shadows directly below figures, slight atmospheric haze. Key light from directly above. No artificial lighting. Color: 60:30:10 — dominant / secondary / accent. Camera: Physical cine lens. 180° shutter motion blur (1/50s at 24fps) — natural motion blur on moving subjects, not time-lapse. Skin: Pore-level realism — vellus hair, asymmetric moles, capillary flush, pore-shadow matching on-set light. Acting: Hollywood — micro-pauses before reactions, precise eye-line, living eyes with catch-lights, chest rise from breathing. Characters never standing, always reacting. Physics: Gravity and inertia respected — mass has real weight, correct contact shadows. No floating props. Composition: Rule of thirds + golden ratio. Every person moving from frame one. Continuity: Characters, props, environment identical across every cut. No identity drift. Technical: 24fps smooth motion. 8K detail. No jitter. Audio: @music_track (audio_1.wav) — hero's movement and energy locked to the rhythm of this track throughout. Otherwise diegetic SFX only. No subtitles.\n\nLocation reference: @street_schematic (image_1.png) — corner of Brooklyn Deli & Grocery. Red fire hydrant on the sidewalk in front of the store. Pedestrian crosswalk at the corner intersection. @skydancer POSITION LOCKED: on the sidewalk immediately to the right of the fire hydrant, replacing the potted plant that previously stood there. This position is fixed and identical across all cuts.\n\nCharacters: @hero — young male, early 20s, curly brown hair, light freckled skin, small silver earring in left ear. Pink short-sleeve button-up shirt worn open over a white t-shirt, light-wash wide-leg baggy jeans, black belt, black and white low-top canvas sneakers. @headphones on both ears, @bag worn on his back with both straps over both shoulders — backpack always on his back, never on one shoulder, identical across all cuts. @headphones — over-ear wireless. Cream/off-white matte housing, tan caramel leather oval ear cushions, thin orange accent ring around each cup edge. No cable. @bag — dark olive/forest green washed canvas backpack, medium size, two small patches on front pocket, drawstring zipper pulls. @skydancer — teal/turquoise inflatable tube dancer, orange and white zigzag chevron pattern across entire body, cartoon face with wide smile and orange headphones on its head, dreadlock-style tendrils at top, mounted on black blower base.\n\nScene: City street (@street), midday. Brooklyn Deli & Grocery corner building per @street_schematic (image_1.png). Overhead sun — short hard shadows directly underfoot. Sidewalk populated with pedestrians walking throughout. Cars moving on the road throughout all cuts. @skydancer stands on the sidewalk to the right of a red fire hydrant, in the spot where a plant pot previously stood — three times taller than @hero, visible from distance.\n\nCUT 1 — Medium close portrait, framed chest-down to top of head, 29° FOV, static, eye-level (2 sec): @hero fills the frame from mid-chest to the top of his head — the chest fully visible, shirt collar and open pink shirt over the white tee readable in frame. He stands on the sidewalk, pedestrians flowing past him in the background, cars visible on the road behind. Sunlight filters through tree leaves above, casting dappled moving light and shadow across his face and chest. He faces the camera directly. With his right index finger he taps the @headphones cup once — firm, deliberate, the cup solid and unyielding. Immediately a second tap, same right index finger. The instant the second tap lands: both hands drop fast to his collar — he grabs the lapels of the open pink shirt and pops them with a single sharp flick of the wrists. In the same breath, a smirk crosses his face — one corner of the mouth pulling up immediately, eyes lighting, like the first note of his favorite track just dropped. Gaze directed slightly above the lens. The smirk holds, then eases into a slow head-bob: left, right, finding the rhythm. He starts to walk forward. SFX: two firm taps, ANC engages, track drops under the hum, ambient sidewalk footfall.\n\nCUT 2 — Close, frontal, 107° FOV, camera low at knee height, dolly backward as @hero walks toward camera (2 sec): Camera at knee level facing @hero head-on as he walks directly toward the lens, the camera pulling steadily backward to maintain the same close framing on his legs and feet throughout. He is dancing as he walks — feet doing sharp rhythmic steps, occasional small hops leaving the ground entirely, knees lifting with energy and bounce. The footwork is precise and expressive: quick weight transfers, a skip, a stomp, a light jump landing soft. Pavement stretches behind him, other pedestrians' feet and legs visible on the sidewalk beside him, blurred by 1/50s shutter. Cars visible on the road in the wide peripheral background. Overhead midday sun casts short hard shadows directly beneath his feet. SFX: footfall rhythm, ambient traffic — filtered under ANC hum.\n\nCUT 3 — Medium, side angle, 47° FOV, tracking shot keeping @hero center-frame (2 sec): Camera at the side of the sidewalk, tracking @hero as he walks left to right. Full body visible — locking-style dance moves: arms shooting wide to full extension then freezing in crisp geometric poses, shoulders popping in isolation, head snapping to accent the beat. Movements broad and theatrical — elbows out, wrists articulating, the whole upper body alive. @hero sharp and in focus at center frame. Pedestrians walk past on the sidewalk in both foreground and background — 1/50s shutter, natural motion streaks, none watching. Cars moving on the road visible behind. Overhead midday sun, short hard shadows below his feet. SFX: crowd footfall, ambient traffic — filtered under ANC hum.\n\nCUT 4 — Overhead drone, 45° down, 3/4 angle, camera tracks @hero center-frame (3 sec): Shot from directly above and slightly forward — @hero visible in 3/4 from above. He continues down the sidewalk, hip-hop dancing as he walks — wide, loose, expressive: shoulders rolling, arms swinging with elastic energy, weight shifting side to side with each step. Short midday shadow pools directly beneath his feet. Pedestrians visible on the sidewalk around him, cars on the road beside. He comes level with the red fire hydrant at camera-left — immediately to its right stands the @skydancer, three times taller than @hero, thrashing in the wind. As the @skydancer enters frame, @hero keeps walking past it — but his head turns and his gaze tracks back over his shoulder toward the @skydancer, eyes locking on it while his body and feet keep moving forward in their groove. He takes two more steps, stops, and places himself two steps to the right of the @skydancer, in the same straight line as the hydrant and the @skydancer. From above: hydrant — @skydancer — @hero, all three in one line. He stays, continuing to dance in place. SFX: @skydancer fabric snapping, muffled by headphone hum.\n\nCUT 5 — Ground level, frontal, 47° FOV, static (3 sec): Camera locked at street level. Three figures in one line on the sidewalk: fire hydrant at far left edge of frame, @skydancer center-left — three times taller than @hero, arms flailing wildly — and @hero two steps to its right. All three in the same straight line. Pedestrians cross foreground and background on the sidewalk, cars visible on the road behind the figures — 1/50s shutter, natural blur throughout. @hero is fully committed to dancing — wide, expressive, energetic hip-hop: arms sweeping to full reach, shoulders isolating, legs stepping wide with elastic rebound. A professional at work, completely unselfconscious. @hero dances for a beat, then comes to a natural stop, still standing in line. In that moment of stillness, the @headphones cup vibrates. Without urgency, @hero raises his right index finger and gives the cup a firm double-tap — two clean contacts, the housing solid and unyielding. SFX: vibration pulse layered over ANC hum — buzzing, insistent.\n\nCUT 6 — Low angle tilted up, 107° FOV rectilinear, static (3 sec): Camera dropped low near the sidewalk and tilted steeply upward. @hero stands in the lower-right of frame, head and shoulders against the deep blue midday sky, shot from below so we look up at him. Looming directly behind and over his right shoulder, the @skydancer fills the upper-left of the frame — three times his height, towering up out of the low angle, its teal body thrashing and writhing in the wind, orange-and-white chevrons rippling, arms whipping overhead. It dominates the sky behind him, huge and alive, while @hero stays cool and grounded beneath it. Pedestrians and cars small in the deep background. With a light, unhurried smile: \"I'm on my way.\" Voice easy, not apologetic, not rushed — just a fact. He reaches up with his right index finger and gives the @headphones cup a firm double-tap. Vibration stops. His expression stays easy, the giant inflatable still writhing above and behind him. SFX: two firm taps, vibration cuts clean. ANC hum resumes."
+   },
+   {
+    "t": "第三阶段 · 场景 4 — 办公室",
+    "body": "动画化高潮：他跳进办公室，老板一句话说到一半爆发，主角淡定地把耳机扣在老板耳边，直到怒气融成一个微笑。以一次敲击开场，与场景 3 形成匹配剪辑。",
+    "prompt": "Style: 8K IMAX commercial, 16:9 widescreen. Photorealistic — no 3D render, no game engine. Lighting: Natural light only — soft, even midday daylight (around noon), gentle atmospheric haze throughout. Key light from sky and windows only. No contre-jour, no rim backlight, no forced shadow-side framing. No artificial lighting. Color: 60:30:10 — dominant / secondary / accent. Camera: Physical cine lens. 180° shutter motion blur. Skin: Pore-level realism — vellus hair, asymmetric moles, capillary flush, pore-shadow matching on-set light. Acting: Hollywood — micro-pauses before reactions, precise eye-line, living eyes with catch-lights, chest rise from breathing. Characters never standing still, always reacting. Physics: Gravity and inertia respected — mass has real weight, correct contact shadows. No floating props. Composition: Rule of thirds + golden ratio. Every person moving from frame one. Continuity: Characters, props, environment identical across every cut. No identity drift. Technical: 24fps smooth motion. 8K detail. No jitter. Audio: Diegetic dialogue and environmental SFX only. No music. No subtitles.\n\nCharacters: HERO (@hero) — same man, reddish-brown curls, dusty-rose shirt over white tee, light baggy jeans, dark-green backpack (@bag) on one shoulder, cream headphones (@headphones — tan cushions, orange accent ring) on, faint head-bob held throughout. Relaxed and amused. 100% matches the reference. BOSS (@boss) — heavy-set man, 50s, grey slicked-back hair, thin rimless glasses, dark navy suit, white shirt, dark maroon tie. Furious, jaw tight — his skin tone stays even and constant the whole time. 100% matches the reference. COWORKERS — three or four office employees in smart-casual workwear, all seated in their chairs at the surrounding dark-wood desks working (one on a cream push-button telephone, others at paperwork), background players who stay seated and only glance over at the commotion.\n\nScene: A warm corporate office (@office — 100% matches the reference). A band of horizontal-slat windows runs along the back-right wall, filling the room with bright, even midday sun (around noon) over a distant city/hills view. FIXED BLOCKING: the boss (@boss) STANDS beside his heavy dark-wood desk in the foreground-right corner, his black office chair pushed back behind him, the windows to his back and right, facing left toward the entrance, already mid-tirade. A chrome wire shelving rack with file boxes and a glowing EXIT sign line the left wall; an open stretch of beige carpet runs between the left doorway and the desk. Several coworkers are at the surrounding dark-wood desks across the open-plan floor, working at phones and paperwork. The scene opens on Hero just outside the glass office door at camera-left — he taps his ear cup, pushes the door open, and strides across the beige carpet toward the boss's desk in the foreground-right.\n\nCUT 1 — Tight close-up, 47° FOV rectilinear lens with straight verticals, camera placed CLOSE and low, angled slightly upward in 3/4: Tight and close on Hero alone — only Hero in frame; his head and shoulders fill the right half of the screen, large and near the lens, body turned slightly to face camera-right, shot from slightly below. The dark-green backpack (@bag) strap runs over his camera-left shoulder only; his camera-right shoulder is bare. The office behind him is soft bokeh, thrown deep out of focus (shallow depth of field). With a light, unhurried, easy smile, he reaches up with his right index finger and gives the orange-ringed cup of the cream headphones (@headphones) a firm double-tap — tap, tap. His expression stays easy.\n\nCUT 2 — 47° FOV normal lens, BEHIND Hero, handheld, uneasy and tense with a fine 1–2 cm tremor: Hero pushes the glass office door open and dance-walks through into the open-plan office, the groove broken down beat by beat on one steady even tempo: two crisp head nods, chin dipping on each beat; shoulders rolling back one at a time — right, then left; he steps off on his right foot with a soft knee-dip and drags the left foot in to meet it with a small heel-bounce, hips swaying side to side; then a sharp knee lift, driving one knee up high on the beat; a loose finger-snap with his free hand — and the move lands on a smirk, one corner of his mouth pulling up, eyes bright and alive, lips mouthing along to the beat. He holds the rhythm the whole way, past the seated coworkers working at their desks. The camera settles behind Hero — his shoulder and one orange-ringed headphone cup (@headphones) soft in the foreground at camera-left — looking past him to the boss (@boss) standing beside his dark-wood desk camera-right, mid-tirade. The boss yells, arms slashing the air, jowls shaking, temple veins rising and nostrils flaring on the stressed shouts; he jabs a finger toward Hero, holding the glare with locked, unblinking eyes. BOSS (shouting): \"Where the hell have you been?! This is the third time this week — and you think you can just waltz in here whenever —\" At the surrounding desks a couple of coworkers glance up at the shouting, then drop their eyes awkwardly back to their work.\n\nCUT 3 — Medium two-shot into close, 47° FOV, the desk camera-right: Still calm, Hero steps to the standing boss, lifts the cream headphones (@headphones) off his own ears and settles them over the boss's ears, just clearing his glasses. The instant the cushioned cups seal, the boss's shout dies — face freezing mid-word, eyes darting left then right, fingers rising to the cup — then the fury drains away, shoulders sinking, the tension melting from his face, skin tone even and constant throughout, and a slow, blissed-out smile spreads across his face. A tiny nod, won over. Behind them a coworker at a desk watches the sudden calm, bemused.\n\nAUDIO: Diegetic only — the soft tap of a fingertip on the headphone cup, the glass door swinging open, footsteps muffled on carpet, a single finger-snap, office ambience of a push-button phone and shuffling paperwork, the boss's shouting cutting to near-silence the instant the cups seal.\n\nPOSITIVE LOCKS: The backpack strap stays on one shoulder only — Hero's camera-left shoulder in CUT 1. The boss stands beside his desk in every cut, chair pushed back behind him. The boss's skin tone stays even and constant in every frame. Hero holds his rhythm and easy smile in every frame he appears. Headphones (@headphones) keep tan cushions and orange accent ring identical in every cut. Coworkers remain seated throughout. Bright even midday sun from the back-right windows in every shot."
+   },
+   {
+    "t": "第三阶段 · 场景 5 — 包装镜头",
+    "body": "动画化收尾：老板戴着耳机、西装皱巴巴，在狂舞的充气舞人身旁尽情甩手波浪舞，路人微笑围观。笑点全在反差。",
+    "prompt": "Style: 8K IMAX commercial, 16:9 widescreen. Photorealistic — no 3D render, no game engine. Lighting: Natural light only — overhead midday sun, hard short shadows directly below figures, slight atmospheric haze. No artificial lighting. Color: 60:30:10 — dominant / secondary / accent. Camera: Physical cine lens. 180° shutter motion blur (1/50s at 24fps) — natural motion blur on moving subjects. Skin: Pore-level realism — vellus hair, asymmetric moles, capillary flush, pore-shadow matching on-set light. Acting: Hollywood — micro-pauses before reactions, precise eye-line, living eyes with catch-lights, chest rise from breathing. Characters never standing, always reacting. Physics: Gravity and inertia respected — mass has real weight, correct contact shadows. No floating props. Composition: Rule of thirds + golden ratio. Every person moving from frame one. Continuity: Characters, props, environment identical across every cut. No identity drift. Technical: 24fps smooth motion. 8K detail. No jitter. Audio: @music_track (audio_1.wav) — the boss's movement and energy locked to the rhythm of this track throughout. Otherwise diegetic SFX only. No subtitles.\n\nLocation reference: @street_schematic — exact positions of @skydancer and @boss on set are marked on this map. Follow it precisely across all cuts.\n\nCharacters: @boss — male, early 50s, heavyset build. Grey suit jacket slightly rumpled, tie loosened, @headphones sealed on both ears. @headphones — over-ear wireless. Cream/off-white matte housing, tan caramel leather oval ear cushions, thin orange accent ring around each cup edge. No cable. Eyes half-closed or fully closed, face transformed — transported, loose, completely at peace. Dancing with total abandon, no inhibition left. @skydancer — teal/turquoise inflatable tube dancer, orange and white zigzag chevron pattern across entire body, cartoon face with wide smile and orange headphones on its head, dreadlock-style tendrils at top, mounted on black blower base. Arms in full chaotic frenzy throughout every cut.\n\nPositions (per @street_schematic): Fire hydrant — @skydancer — @boss, all three in one straight line on the sidewalk. @boss stands approximately 1 meter to the right of @skydancer. This alignment is fixed and identical across all cuts. @skydancer is three times taller than @boss — this size relationship must be visible and consistent in every cut.\n\nScene: City street (@street), midday. Corner per @street_schematic. Overhead sun — short hard shadows directly underfoot. Sidewalk populated: multiple pedestrians actively walking around @boss — most continue without looking, some slow and glance back over their shoulder at him with a surprised or amused expression, none stopping. @skydancer thrashes in wind at full height the entire time.\n\nDance style reference (apply to @boss across all cuts): The boss is imitating the skydancer. His arms do loose, floppy, undulating wave motions — rolling ripples that travel from one shoulder, down the arm, and out through the fingertips, then back, mimicking the wild rubbery flailing of @skydancer above him. Arms whip up overhead and snake side to side, elbows soft and rubbery, hands trailing loosely like the tube dancer's limp arms catching wind. Underneath this, a wide low stance, knees bent, feet planted shoulder-width — weight shifts hip to hip on every beat. Shoulder and chest isolations pop independently. Occasional full body wave rolling from hips up through the chest, mirroring the tube dancer's vertical ripple. Head bobs loosely. Feet stay grounded — no jumping — weight transfers through the heels and balls of the feet. All of this on a heavyset man in a rumpled suit: the movement reads as joyful, rubbery, and slightly absurd — a human trying to become the skydancer — but fully committed and on the beat. He keeps stealing glances up at @skydancer and copying its arm flails.\n\nCUT 1 — Wide, eye-level, camera at chest height (8 sec): The signature shot — held long. Framing per reference: @skydancer stands full height in the left third with arms thrown wide and up in joyful chaotic frenzy; @boss occupies the right third, full body from belt to @headphones, the green deli awning and shuttered storefront filling the background center, city skyline and a parked truck visible at the right edge. @boss faces forward toward camera, eyes closed behind his glasses, fully lost in the music in his headphones — blissful, transported, grinning faintly. His movement is smooth and fluid, riding the groove with total ease. His arms flow in continuous undulating waves: a ripple travels from one shoulder down the arm and out through the fingertips, the other arm answering in turn, both rising and snaking gently overhead, elbows soft, hands flowing loose and rubbery — the same liquid wave the skydancer makes in the wind, performed smoothly and confidently. Between arm waves he sinks into a wide low stance, weight rolling hip to hip, chest gliding forward on the beat, a full body wave rolling up from his hips through his chest. Loose, easy head bob. The long take lets the rhythm build through multiple full wave cycles and a second body wave, growing looser and more joyful as it goes. Sidewalk and background pedestrians in the center third — over the duration several people stroll past, a couple casually glancing toward @boss with light smiles and continuing on their way. SFX: muffled ANC hum, @skydancer snap and flap, ambient street noise."
+   }
+  ]
+ }
+]
+</script>
+<script id="general" type="application/json">
+[
+ {
+  "id": "gen-001",
+  "cat": "运镜词典",
+  "sub": "固定机位 · Static",
+  "name": "Static shot",
+  "name_zh": "静止镜头 / 固定机位",
+  "desc": "零运动铁则：机位、构图、视距全程冻结，一切运动只来自场景本身，首尾帧精确到像素级一致。",
+  "original": "The camera stays planted in one immovable position from the first frame to the last. Zero motion — no drift, no shake, no breathing, no stabilization float, no micro-drift; absolute rock-solid stillness throughout. Angle, elevation, distance to the scene and the overall composition are frozen and never altered; every ounce of motion comes from the scene itself, never from the camera. The clip closes on precisely the framing it began with, identical down to the pixel.",
+  "zh": "摄像机从第一帧到最后一帧牢牢固定在一个不可移动的位置。零运动——无漂移、无晃动、无呼吸感、无稳定器浮动、无微小位移；全程保持如磐石般的绝对静止。拍摄角度、机位高度、与场景的距离以及整体构图完全冻结且绝不更改；画面的每一丝运动全部来自场景本身，绝不来自摄像机。片段结尾定格在与起始完全一致的构图上，精确到像素级相同。",
+  "tags": [
+   "运镜",
+   "固定机位",
+   "零运动"
+  ],
+  "chars": 471,
+  "lang": "en",
+  "src": "Higgsfield Camera Prompt Bank#1"
+ },
+ {
+  "id": "gen-002",
+  "cat": "运镜词典",
+  "sub": "摇镜 · Pan & tilt",
+  "name": "Pan right",
+  "name_zh": "向右水平摇镜头",
+  "desc": "原地站定的水平摇镜：机位不动、视线如转头般从左扫到右，揭示画面外空间。",
+  "original": "Rotate the camera horizontally from left to right from one fixed point, like a standing head-turn, starting on [composition A] and sweeping across [the environment]; no sideways travel, no dolly, no truck, no arc, no slide, no zoom, no tilt. Speed: smooth constant rotation, decelerating gently at the end. Framing: keep the horizon level while new space enters from the right side of the frame only through rotation; [the landing subject] stays beyond the right edge until the rotation brings them in. End: settle on a clear final composition on [the landing subject] and hold.",
+  "zh": "从一个固定点将摄像机从左向右水平旋转，宛如站立时转头一般，从[构图 A]开始扫过[环境]；无侧向移动、无前后推拉、无横向平移、无弧形运动、无滑轨滑动、无变焦、无俯仰。速度：平滑匀速旋转，在末尾轻柔减速。构图：保持地平线水平，新空间仅通过旋转从画面右侧进入；[落幅主体]在旋转将其带入画面之前保持在右边缘之外。结尾：清晰定格在[落幅主体]的最终构图上并保持。",
+  "tags": [
+   "运镜",
+   "摇镜",
+   "水平摇镜"
+  ],
+  "chars": 578,
+  "lang": "en",
+  "src": "Higgsfield Camera Prompt Bank#2"
+ },
+ {
+  "id": "gen-003",
+  "cat": "运镜词典",
+  "sub": "摇镜 · Pan & tilt",
+  "name": "Tilt up",
+  "name_zh": "向上俯仰摇镜头 / 仰摇",
+  "desc": "机位不动、镜头从水平缓缓仰起，常用于揭示高度与仰望感。",
+  "original": "Fixed camera position at [lens height]. Pure TILT UP: the camera rotates vertically upward at one constant smooth speed from [the lower anchor] to [the upper framing], no crane rise, no pedestal, no dolly, no zoom, no horizontal drift; the camera's position never changes. The tilt starts on [the lower anchor] and finishes framing [the subject] in the upper third, decelerating into a static hold.",
+  "zh": "摄像机固定在[镜头高度]机位。纯粹向上仰摇：摄像机以恒定平稳的速度从[下方锚定点]垂直向上旋转至[上方构图]，无摇臂升起、无机身垂直升降、无推拉、无变焦、无水平漂移；摄像机机位绝不改变。仰摇从[下方锚定点]开始，最终将[主体]构图在画面上三分之一处，并减速定格保持静止。",
+  "tags": [
+   "运镜",
+   "摇镜",
+   "仰摇"
+  ],
+  "chars": 398,
+  "lang": "en",
+  "src": "Higgsfield Camera Prompt Bank#3"
+ },
+ {
+  "id": "gen-004",
+  "cat": "运镜词典",
+  "sub": "变焦与焦点 · Zoom & focus",
+  "name": "Zoom in",
+  "name_zh": "镜头变焦推近 / 变焦放大",
+  "desc": "光学变焦推近：焦距平滑放大把视线推向主体，画面透视不变而构图收紧。",
+  "original": "Locked tripod, zero rotation, zero travel — the entire move is optical, a focal-length change only: one slow perfectly even continuous zoom in from [84] degrees to [29 or 18] degrees across the full duration, no speed changes, no steps, no wobble. The camera position is fixed and never moves; only the field of view changes; perspective stays constant and there is no parallax — the background keeps the exact same apparent size relative to the subject while the framing tightens.",
+  "zh": "锁定三脚架，零旋转，零位移——整个运动完全是光学变焦，仅改变焦距：在整个片段时长内，从 [84] 度视场角极其平稳、匀速且连续地推近放大至 [29 或 18] 度，无速度突变、无顿挫阶梯感、无晃动。摄像机位置固定且绝不移动；仅改变视场角；透视关系保持不变且无视差——在构图收紧的同时，背景相对于主体保持完全相同的视大小。",
+  "tags": [
+   "运镜",
+   "变焦与焦点",
+   "变焦推近"
+  ],
+  "chars": 481,
+  "lang": "en",
+  "src": "Higgsfield Camera Prompt Bank#4"
+ },
+ {
+  "id": "gen-005",
+  "cat": "运镜词典",
+  "sub": "变焦与焦点 · Zoom & focus",
+  "name": "Dolly zoom",
+  "name_zh": "滑动变焦 / 希区柯克变焦",
+  "desc": "希区柯克变焦：推进与变焦反向抵消，主体大小不变而空间关系坍缩/展开，制造眩晕感。",
+  "original": "The camera physically dollies forward from [6] meters to [2.5] meters while the lens simultaneously zooms out from [18] to [84] degrees field of view, in one continuous, perfectly synchronized ramp. The subject's head size stays EXACTLY constant in frame the entire time; the background behind them visibly stretches, elongates and recedes into depth, [the repeating background elements] pulling away. Constant lens height, no pan, no tilt, no handheld drift; the two motions start and end together.",
+  "zh": "摄像机物理上从 [6] 米向前推至 [2.5] 米，同时镜头同步将视场角从 [18] 度变焦拉远至 [84] 度，呈现一次连续且完美同步的线性过渡。主体头部在画面中的大小全程保持绝对恒定；其身后的背景肉眼可见地拉伸、纵深延展并向深处退去，[重复的背景元素]向远处抽离。镜头高度恒定，无摇摄、无俯仰、无手持漂移；前后推镜头与光学变焦两个动作同时开始、同时结束。",
+  "tags": [
+   "运镜",
+   "变焦与焦点",
+   "希区柯克"
+  ],
+  "chars": 499,
+  "lang": "en",
+  "src": "Higgsfield Camera Prompt Bank#5"
+ },
+ {
+  "id": "gen-006",
+  "cat": "运镜词典",
+  "sub": "变焦与焦点 · Zoom & focus",
+  "name": "Rack focus",
+  "name_zh": "焦点转换 / 变焦对焦",
+  "desc": "焦点转移：焦平面在前后景之间平滑切换，引导注意力不靠机位只靠焦点。",
+  "original": "The camera hard-locked on a tripod with no pan, no tilt, no push, no drift; the only optical change is FOCUS. Hold sharp on [plane A — the far anchor]; then rack once to [plane B — the near subject]; then follow focus on the subject if they move toward the lens. Speed: the rack is slow, smooth and continuous with no hunting and no overshoot; the follow focus tracks without breathing. Framing: the composition never changes; exactly one plane is sharp at any moment, the other melts into clean bokeh; the subject grows in frame only by physically approaching the lens. End: settle sharp on [the final subject framing], the far plane dissolved to soft bokeh behind.",
+  "zh": "摄像机牢牢锁定在三脚架上，无摇摄、无俯仰、无推镜头、无漂移；唯一的光学变化是对焦。先在[焦平面 A——远景锚定点]保持锐利；随后进行一次变焦平移至[焦平面 B——近景主体]；若主体向镜头移动，则继续跟焦。速度：焦点转换缓慢、平滑且连续，无拉风箱对焦搜索，无过冲；跟焦过程无镜头呼吸效应。构图：构图绝不改变；任何时刻仅有一个平面清晰锐利，另一平面则融化为干净的虚化焦外；主体仅因自身物理靠近镜头而在画面中放大。结尾：清晰定格在[最终主体构图]，远景平面在身后完全化为柔和虚化。",
+  "tags": [
+   "运镜",
+   "变焦与焦点",
+   "焦点转移"
+  ],
+  "chars": 666,
+  "lang": "en",
+  "src": "Higgsfield Camera Prompt Bank#6"
+ },
+ {
+  "id": "gen-007",
+  "cat": "运镜词典",
+  "sub": "航拍与摇臂 · Aerial & crane",
+  "name": "Crane up",
+  "name_zh": "摇臂升起 / 升机俯拍",
+  "desc": "摇臂升起：机位垂直爬升并保持俯瞰目标，揭示全场的史诗感抬升。",
+  "original": "A smooth jib rise from [1.2] meters to [9] meters altitude over the shot, with a gentle continuous downward tilt that keeps the subject anchored in [the lower third] of frame as the world opens above and around them. No lateral orbit, no truck, no zoom, no speed ramps; one continuous vertical reveal easing into a high hold.",
+  "zh": "在镜头运行过程中，摇臂（jib）平稳地从 [1.2] 米高度升至 [9] 米高空，同时伴随平缓且连续的向下俯仰摇动，使主体始终锚定在画面[下三分之一]处，而周围及上方的宏大世界随之展开。无横向环绕、无平移、无变焦、无速度突变；一次连续的垂直升起大揭示，平缓过渡至高空定格。",
+  "tags": [
+   "运镜",
+   "航拍与摇臂",
+   "摇臂升起"
+  ],
+  "chars": 325,
+  "lang": "en",
+  "src": "Higgsfield Camera Prompt Bank#7"
+ },
+ {
+  "id": "gen-008",
+  "cat": "运镜词典",
+  "sub": "航拍与摇臂 · Aerial & crane",
+  "name": "Drone orbit",
+  "name_zh": "无人机环绕航拍",
+  "desc": "无人机环绕：围绕主体做持续圆周飞行，360° 展示主体与环境的立体关系。",
+  "original": "A smooth constant-speed circular drone flight around the subject — [8]-meter radius, [4]-meter altitude, traveling screen-[right] (clockwise seen from above), covering roughly a [200]-degree arc across the shot. The horizon rotates continuously behind the subject; no altitude change, no radius drift, no zoom, no speed ramps.",
+  "zh": "无人机围绕主体进行平滑匀速的圆周飞行——半径为 [8] 米，高度为 [4] 米，向画面[右侧]飞行（自上而下俯视为顺时针方向），在整个镜头中覆盖大约 [200] 度的弧线。地平线在主体身后持续旋转；无高度变化、无半径漂移、无变焦、无速度突变。",
+  "tags": [
+   "运镜",
+   "航拍与摇臂",
+   "环绕航拍"
+  ],
+  "chars": 326,
+  "lang": "en",
+  "src": "Higgsfield Camera Prompt Bank#8"
+ },
+ {
+  "id": "gen-009",
+  "cat": "运镜词典",
+  "sub": "航拍与摇臂 · Aerial & crane",
+  "name": "Aerial pullback",
+  "name_zh": "航拍后拉拉远",
+  "desc": "航拍后拉：高空视角持续拉远，主体缩小、场面展开，收尾揭示全景。",
+  "original": "The camera starts [2.5] meters ahead of the subject at [3] meters altitude and flies backward and upward along the axis in one continuous accelerating move, reaching about [40] meters distance and [25] meters altitude by the end. The subject stays centered, then the whole [craft / scene] centers itself in frame as it shrinks; the horizon line rises steadily through the frame. No orbit, no zoom, no speed reversals.",
+  "zh": "摄像机起始于主体前方 [2.5] 米、高度 [3] 米处，沿轴线以连续加速的方式向后方及上方飞去，最终达到约 [40] 米距离和 [25] 米高度。主体起初保持居中，随着体积缩小，整个[飞行器 / 场景]在画面中居中呈现；地平线在画面中平稳上升。无环绕、无变焦、无速度反转。",
+  "tags": [
+   "运镜",
+   "航拍与摇臂",
+   "航拍后拉"
+  ],
+  "chars": 417,
+  "lang": "en",
+  "src": "Higgsfield Camera Prompt Bank#9"
+ },
+ {
+  "id": "gen-010",
+  "cat": "运镜词典",
+  "sub": "推轨与跟拍 · Dolly & tracking",
+  "name": "Dolly in",
+  "name_zh": "轨道推镜头 / 向前推进",
+  "desc": "轨道推进：机位物理前移逐渐逼近主体，透视随之变化，比变焦更有纵深压迫感。",
+  "original": "One continuous decisive dolly in on straight ground rails — pure forward travel at constant speed along the axis toward the subject, at a locked constant lens height of [1.5] meters, decelerating smoothly into a static hold at the end framing. The field of view never changes — no zoom: the perspective shifts because the camera physically approaches, near objects sweeping out past the frame edges with strong parallax. No pan, no tilt, no crane, no handheld drift; dead-level travel from first frame to last.",
+  "zh": "在地面平直轨道上进行一次连续且果断的推镜头（dolly in）——沿轴线以恒定速度纯粹向前向主体移动，镜头高度锁定在 [1.5] 米，平稳减速定格在最终构图。视场角绝不改变——无变焦：透视关系的改变完全由于摄像机物理靠近产生，近处物体伴随强烈的视差迅速掠出画面边缘。无摇摄、无俯仰、无升降、无手持漂移；从首帧到尾帧保持绝对水平前行。",
+  "tags": [
+   "运镜",
+   "推轨与跟拍",
+   "轨道推进"
+  ],
+  "chars": 510,
+  "lang": "en",
+  "src": "Higgsfield Camera Prompt Bank#10"
+ },
+ {
+  "id": "gen-011",
+  "cat": "运镜词典",
+  "sub": "推轨与跟拍 · Dolly & tracking",
+  "name": "Tracking",
+  "name_zh": "横向平移跟拍",
+  "desc": "横向平移跟拍：机位与运动主体同速横移，主体清晰、背景流动。",
+  "original": "One continuous lateral tracking move — the camera glides parallel to the subject at exactly the speed that keeps their framing constant, strict 90-degree side view at all times. Three clean parallax layers: nearest — [posts / mullions / table edges] sweeping fast past the lens, briefly occluding the subject; middle — the subject, constant size at frame center; farthest — [the background row] sliding by slower behind. No zoom, no pan drift, no push-in.",
+  "zh": "一次连续的横向平移跟拍运镜——摄像机与主体平行滑动，速度完全匹配以保持构图恒定，全程保持严格的90度正侧视视角。三个清晰的视差层：最近层——[立柱 / 窗棂 / 桌边]快速掠过镜头前方并短暂遮挡主体；中间层——画面中心大小恒定的主体；最远层——后方较慢滑过的[背景行]。无变焦、无平移摇摆漂移、无向前推进。",
+  "tags": [
+   "运镜",
+   "推轨与跟拍",
+   "横移跟拍"
+  ],
+  "chars": 455,
+  "lang": "en",
+  "src": "Higgsfield Camera Prompt Bank#11"
+ },
+ {
+  "id": "gen-012",
+  "cat": "运镜词典",
+  "sub": "推轨与跟拍 · Dolly & tracking",
+  "name": "Push in",
+  "name_zh": "缓慢微移推进 / 慢速推镜头",
+  "desc": "缓慢微推：比 dolly in 更轻的 inch-in，用于对话或情绪落点时不易察觉地收紧构图。",
+  "original": "A slow continuous creeping forward drift from [7] meters to [2] meters over the full shot — gimbal-smooth floating advance at [1.5]-meter height with barely perceptible organic sway, no rails feel, no speed changes, no zoom, no pan, no tilt. The approach should feel like held breath, decelerating into a near-stop at the end framing.",
+  "zh": "在整个镜头时长内，从 [7] 米到 [2] 米进行缓慢且连续的潜行式向前推进——在 [1.5] 米高度上如云台般平滑悬浮前行，伴随几乎难以察觉的自然有机晃动，无轨道机械感、无速度突变、无变焦、无摇摄、无俯仰。靠近的过程如同屏住呼吸一般，在结尾构图处减速至接近静止。",
+  "tags": [
+   "运镜",
+   "推轨与跟拍",
+   "缓慢微推"
+  ],
+  "chars": 334,
+  "lang": "en",
+  "src": "Higgsfield Camera Prompt Bank#12"
+ },
+ {
+  "id": "gen-013",
+  "cat": "运镜词典",
+  "sub": "特殊运镜 · Specialty",
+  "name": "Handheld",
+  "name_zh": "手持肩扛摄影",
+  "desc": "手持肩扛：呼吸感晃动+随时微调构图，纪实感与临场紧张的标配。",
+  "original": "Raw handheld shoulder-rig throughout — visible shake, operator breathing, rolling horizon, imperfect reframes that always recover. Path: [opening angle] → [rough half-circle drift around the subject] → [lean-in to close-up] → [loose pull-back and hold]. Never stabilized, no gimbal float, no rails feel.",
+  "zh": "全程保持原始的手持肩扛设备质感——清晰可见的抖动、摄影师的呼吸起伏、滚动的地平线、不完美但总能重新纠正的主体重新构图。运动路径：[起始角度] → [围绕主体粗略的半圆漂移] → [身体前倾推向特写] → [松弛地拉回并保持]。绝无数码防抖，无云台悬浮感，无轨道滑行感。",
+  "tags": [
+   "运镜",
+   "特殊运镜",
+   "手持感"
+  ],
+  "chars": 303,
+  "lang": "en",
+  "src": "Higgsfield Camera Prompt Bank#13"
+ },
+ {
+  "id": "gen-014",
+  "cat": "运镜词典",
+  "sub": "特殊运镜 · Specialty",
+  "name": "POV",
+  "name_zh": "第一人称主观视角镜头",
+  "desc": "第一人称主观视角：镜头即角色之眼，看到什么就是角色看到什么。",
+  "original": "The camera is a person's eyes at [1.7]-meter height walking forward from [the start point] to [the end mark]. Natural human walking cadence — gentle vertical bob synced to the steps, slight lateral sway, small organic head micro-rotations glancing around the space. The person's hands appear in frame only for [the interaction], then drop out of frame. The walk stops when [the trigger event].",
+  "zh": "摄像机代表位于 [1.7] 米高度的人眼视角，从[起点]向前步行至[终点标记]。自然的真人步行节奏——与步伐同步的轻柔垂直起伏、轻微侧向晃动、环顾空间时头部自然的微小转动。人物双手仅在进行[特定互动]时出现在画面中，随后移出画外。当[触发事件发生]时步行停止。",
+  "tags": [
+   "运镜",
+   "特殊运镜",
+   "主观视角"
+  ],
+  "chars": 393,
+  "lang": "en",
+  "src": "Higgsfield Camera Prompt Bank#14"
+ },
+ {
+  "id": "gen-015",
+  "cat": "运镜词典",
+  "sub": "特殊运镜 · Specialty",
+  "name": "360 orbit",
+  "name_zh": "360度全景环绕镜头",
+  "desc": "360° 全景环绕：绕主体整整一周的连续环绕，动作片与产品展示的经典炫技镜头。",
+  "original": "One continuous 360-degree orbit — the camera travels a full circle around the subject on a locked constant radius of [2.5] meters at a locked constant height, panning continuously to keep the subject dead-center at constant size, one full revolution in ONE direction at one constant angular speed, returning exactly to the opening framing at the end. The subject stays planted, facing one fixed direction in the world the entire time — it is the camera that circles them; the background streams continuously through the full compass behind their shoulders. No radius drift, no height drift, no speed changes, no reversal, no turntable effect where the subject spins in place.",
+  "zh": "一次连续的360度环绕运镜——摄像机在锁定的 [2.5] 米恒定半径和恒定高度下围绕主体转动一整圈，持续摇摄以保持主体在画面正中心且大小恒定，以单一恒定角速度沿一个方向旋转整整一周，在结尾精确回到起始构图。主体全程站立不动，始终朝向现实世界中的一个固定方向——运动的是环绕主体的摄像机；背景在其肩后沿360度方位持续流转。无半径漂移、无高度漂移、无速度突变、无方向反转、无主体原地自转的转盘效应。",
+  "tags": [
+   "运镜",
+   "特殊运镜",
+   "环绕一周"
+  ],
+  "chars": 675,
+  "lang": "en",
+  "src": "Higgsfield Camera Prompt Bank#15"
+ },
+ {
+  "id": "gen-016",
+  "cat": "运镜词典",
+  "sub": "特殊运镜 · Specialty",
+  "name": "Bullet time",
+  "name_zh": "子弹时间 / 时空凝结环绕",
+  "desc": "子弹时间：时空凝结中环绕飞行，全场静止唯摄影机自由。",
+  "original": "Bullet time orbit: time inside the scene slams to a near-freeze — the subject hangs suspended mid-action, with droplets, debris and particles locked motionless in mid-air, every suspended object holding its exact position and angle with zero drift — while the camera alone keeps moving at normal speed, sweeping along a smooth circular arc around the frozen moment. The camera's travel through the curve is fluid, constant and unaffected by the stopped world. Distance to the subject and camera height stay fixed; the suspended figure remains centered, sharp and fully readable as the perspective wheels around them and the background rotates past. The orbit settles on a striking new angle of the frozen instant and holds that composition before time is released again.",
+  "zh": "子弹时间环绕运镜：场景内部的时间骤然几乎冻结——主体在动作进行中悬停在半空，水滴、碎片和微粒静止凝固在空气中，每一个悬浮物体都保持其精确位置和角度且零漂移——而唯独摄像机保持正常速度持续运动，围绕这凝固的瞬间扫过一条平滑的圆弧。摄像机沿弧线的行进流畅、恒定且不受停滞世界的影响。与主体的距离和摄像机高度保持固定；当视角围绕主体转动且背景旋转掠过时，悬浮的人物始终保持居中、锐利且清晰可读。环绕运镜最终定格在凝固瞬间的一个惊艳新角度构图上，随后时间恢复流动。",
+  "tags": [
+   "运镜",
+   "特殊运镜",
+   "子弹时间"
+  ],
+  "chars": 770,
+  "lang": "en",
+  "src": "Higgsfield Camera Prompt Bank#16"
+ },
+ {
+  "id": "gen-017",
+  "cat": "运镜词典",
+  "sub": "变焦与焦点 · Zoom & focus",
+  "name": "Crush zoom",
+  "name_zh": "极速急推/急拉变焦 Crash Zoom",
+  "desc": "极速急推急拉：crash zoom 以突发暴力感变焦制造震惊或喜剧效果。",
+  "original": "Camera locked on a tripod — a perfectly static hold on the tight [18]-degree frame, then a violent optical crash zoom OUT — about 0.4 seconds, zoom-ring only, with real motion blur and a hard stop — landing on a locked wide [84]-degree frame held perfectly static to the end. No dolly, no handheld, no speed ramps; the camera position never moves, only the field of view changes, and there is no parallax.",
+  "zh": "摄像机锁定在三脚架上——先在紧凑的 [18] 度视场角特写构图上保持完全静止，随后执行一次剧烈的光学急拉变焦（Crash Zoom Out）——约0.4秒，仅转动变焦环，带有真实的动态模糊并猛然骤停——落幅在锁定的广角 [84] 度构图上并完全静止保持至结尾。无推拉轨道、无手持晃动、无速度坡度平滑过渡；摄像机位置绝不移动，仅视场角改变，且无视差。",
+  "tags": [
+   "运镜",
+   "变焦与焦点",
+   "极速变焦"
+  ],
+  "chars": 405,
+  "lang": "en",
+  "src": "Higgsfield Camera Prompt Bank#17"
+ },
+ {
+  "id": "gen-018",
+  "cat": "运镜词典",
+  "sub": "特殊运镜 · Specialty",
+  "name": "Robot arm",
+  "name_zh": "机械臂程序化控制运镜 Bolt/Robot Arm",
+  "desc": "机械臂运镜：Bolt 类高速机械臂的编程轨迹，速度精度超越人体极限、完全可复现。",
+  "original": "The camera flies one fast, perfectly smooth stabilized motion-control path through four positions — [front eye-level medium close-up] → [side arc at eye level] → [sinking into a low angle with a slight dutch tilt] → [craning up and over into a top-down 3/4 view]. Each glide takes about [1] second with soft ease-in/out and brief readable holds at every position; machined gimbal/crane quality — no shake, no whip pans, no speed ramps, no motion blur.",
+  "zh": "摄像机沿一条高速、完美平滑且稳定的机械化运动控制路径穿过四个机位点——[正前方视平线中近景] → [视平线侧面弧形移动] → [下沉至带有轻微荷兰角的低角度] → [向上扬起越过并转为俯视四分之三全景]。每次滑行约耗时 [1] 秒，带有柔和的缓冲减速，并在每个机位点做短暂清晰的停顿定格；具备机械工业级云台/摇臂的高精度质感——无抖动、无急甩、无突兀变速、无杂乱动态模糊。",
+  "tags": [
+   "运镜",
+   "特殊运镜",
+   "机械臂"
+  ],
+  "chars": 451,
+  "lang": "en",
+  "src": "Higgsfield Camera Prompt Bank#18"
+ },
+ {
+  "id": "gen-019",
+  "cat": "运镜词典",
+  "sub": "特殊运镜 · Specialty",
+  "name": "Body-mounted camera: Snorricam",
+  "name_zh": "身体穿戴固定支架镜头 Snorricam",
+  "desc": "Snorricam 身体支架：机位锁在演员身上，人不动景狂动的主观迷失感。",
+  "original": "A rigid chest-mounted rig facing back at the subject — their face and torso locked to the frame center for the entire shot, unable to leave it; the subject's walk transfers to the WORLD as a slow gentle bob and sway, [the background elements] gliding past behind their shoulders, never lurching. No stabilization beyond the rig's rigidity, no independent camera motion, no zoom.",
+  "zh": "胸部安装刚性穿戴支架直面主体——主体的面部和躯干在整个镜头中死死锁定在画面正中央，绝不偏离；主体的步行运动被反向传递给周围世界，表现为背景世界缓慢温和的起伏与摇晃，[背景元素]在其肩后平稳滑过，绝不出现剧烈颠簸。除支架本身的刚性外无额外数码稳定，无独立摄像机运动，无变焦。",
+  "tags": [
+   "运镜",
+   "特殊运镜",
+   "身体支架"
+  ],
+  "chars": 378,
+  "lang": "en",
+  "src": "Higgsfield Camera Prompt Bank#19"
+ },
+ {
+  "id": "gen-020",
+  "cat": "运镜词典",
+  "sub": "特殊运镜 · Specialty",
+  "name": "Timelapse",
+  "name_zh": "延时摄影与双速时空对比镜头",
+  "desc": "延时摄影：云流车河在数秒内奔涌，可叠加双速对比（前景常速+天空延时）。",
+  "original": "A single slow, perfectly smooth constant pull-back, the frame gradually widening — no shake, no orbit, no speed changes, no zoom substitution. Two speeds of time in one frame: the world runs in time-lapse — [day → night → morning → rainy twilight → day], smooth in-frame light morphs — while the subject moves in real time at normal human speed.",
+  "zh": "一次单一、缓慢、极其平滑且匀速的镜头后拉，画面逐渐开阔变宽——无抖动、无环绕、无速度突变、不用变焦替代。单一画面内存在两种时间流速：周围世界处于延时摄影状态——[白天 → 黑夜 → 清晨 → 雨天暮色 → 白天]，光影在画面内平滑渐变流转——而主体则以正常人类的实时速度进行自然运动。",
+  "tags": [
+   "运镜",
+   "特殊运镜",
+   "延时摄影"
+  ],
+  "chars": 345,
+  "lang": "en",
+  "src": "Higgsfield Camera Prompt Bank#20"
+ },
+ {
+  "id": "gen-021",
+  "cat": "运镜词典",
+  "sub": "推轨与跟拍 · Dolly & tracking",
+  "name": "Chase shot",
+  "name_zh": "追逐镜头 / 奔跑手持跟拍",
+  "desc": "追逐跟拍：奔跑手持+贴身追随，喘息般的晃动强化追逐的生理紧张。",
+  "original": "Sweep the camera in toward the running subject, then follow them handheld across [the terrain], lurching and shaking with each impact. Speed: fast and unstable, with sharp jolts on every [tremor / collision], imperfect reframes that always recover the subject. Framing: keep the subject in frame while [the hazards] enter and pass through it. End: the shake eases; settle on a clear final composition.",
+  "zh": "将摄像机快速切入奔跑的主体，随后以手持方式跟随其穿过[地形]，伴随每一步落地冲击产生剧烈晃动与颠簸。速度：快速且不稳定，在每一次[震动 / 碰撞]时产生剧烈顿挫，构图虽不完美但始终能迅速重新咬住主体。构图：在[各种危险障碍]进入并穿过画面的同时，始终将主体保持在画幅内。结尾：抖动逐渐平息；稳定定格在一个清晰的最终构图上。",
+  "tags": [
+   "运镜",
+   "推轨与跟拍",
+   "追逐跟拍"
+  ],
+  "chars": 401,
+  "lang": "en",
+  "src": "Higgsfield Camera Prompt Bank#21"
+ },
+ {
+  "id": "gen-022",
+  "cat": "运镜词典",
+  "sub": "推轨与跟拍 · Dolly & tracking",
+  "name": "Truck right",
+  "name_zh": "向右水平横移 Truck Right",
+  "desc": "向右横移：truck 镜头整体平行右移，与 pan 的原地转头区别在于机位在物理位移。",
+  "original": "One continuous truck right — pure lateral travel of the camera to the right at constant speed with the lens axis locked straight ahead, no panning to compensate: the scene slides through the frame with strong natural parallax, near objects sweeping past fast, the far layer drifting slow, the subject crossing gradually toward the left frame edge. No pan, no arc, no dolly, no zoom, no handheld drift; the lens points the same world direction in the first and last frame.",
+  "zh": "一次连续的向右横移——摄像机以恒定速度纯粹向右侧平移，镜头光轴锁定直视前方，不做任何旋转摇摄补偿：场景以强烈的自然视差滑过画面，近处物体快速掠过，远处图层缓慢漂移，主体逐渐向画面左边缘穿行。无水平摇摄、无弧形移动、无前后推拉、无变焦、无手持漂移；镜头在首帧和尾帧始终指向现实世界中的同一方向。",
+  "tags": [
+   "运镜",
+   "推轨与跟拍",
+   "向右横移"
+  ],
+  "chars": 471,
+  "lang": "en",
+  "src": "Higgsfield Camera Prompt Bank#22"
+ },
+ {
+  "id": "gen-023",
+  "cat": "运镜词典",
+  "sub": "推轨与跟拍 · Dolly & tracking",
+  "name": "Low tracking",
+  "name_zh": "贴地低机位慢动作跟拍",
+  "desc": "贴地慢动作跟拍：镜头贴地与目标同速，低速下地面细节放大、速度感倍增。",
+  "original": "Extreme slow motion throughout — a \\~1000fps look with no speed ramps and no real-time moments — the camera at ground height below knee level the entire time: a smooth lateral track gliding alongside the subject at slow-mo pace, strict side view, never rising, never tilting up, no push, no orbit, no zoom. The track never stops: the shot ends mid-motion on a live frame — no cut to black, no fade, no freeze.",
+  "zh": "全程保持极限慢动作——呈现约 1000fps 的超慢速质感，无变速坡度，无实时时刻——摄像机全程处于低于膝盖的贴地高度：在慢动作节奏下沿主体侧面平滑滑动横向跟拍，保持严格的正侧视视角，绝不升高、绝不上仰、无推进、无环绕、无变焦。跟拍运镜绝不停止：镜头在运动进行中的动态画面上戛然而止——不切黑、不淡出、不画面定格。",
+  "tags": [
+   "运镜",
+   "推轨与跟拍",
+   "贴地跟拍"
+  ],
+  "chars": 409,
+  "lang": "en",
+  "src": "Higgsfield Camera Prompt Bank#23"
+ },
+ {
+  "id": "gen-024",
+  "cat": "运镜词典",
+  "sub": "摇镜 · Pan & tilt",
+  "name": "Pan left",
+  "name_zh": "向左水平摇镜头",
+  "desc": "向左水平摇镜：pan right 的镜像，转头式向左扫视揭示空间。",
+  "original": "The camera body is locked on the fixed tripod at [lens height]; the only motion is one smooth continuous horizontal rotation LEFT of about [90] degrees across the full shot — no travel, no dolly, no truck, no arc, no zoom, no tilt. Constant unhurried rotational speed with a gentle settle in the final half second, timed so the landing composition and [the landing event] arrive together. The horizon stays level throughout; new space enters from the left frame edge only through rotation. End: settle on a clear final composition and hold.",
+  "zh": "摄像机机身锁定在位于[镜头高度]的固定三脚架上；唯一的运动是在整个镜头中向左平滑连续水平旋转约 [90] 度——无物理位移、无前后推拉、无横向平移、无弧形运动、无变焦、无俯仰。恒定从容的旋转速度，在最后半秒轻柔停稳，使得落幅构图与[落幅事件]精准同步到位。地平线全程保持水平；新空间仅通过旋转从画面左边缘进入。结尾：定格在清晰的最终构图上并保持。\n\n---\n\n## 第二页 (Page 2\\) — 共 22 项",
+  "tags": [
+   "运镜",
+   "摇镜",
+   "水平摇镜"
+  ],
+  "chars": 540,
+  "lang": "en",
+  "src": "Higgsfield Camera Prompt Bank#24"
+ },
+ {
+  "id": "gen-025",
+  "cat": "运镜词典",
+  "sub": "摇镜 · Pan & tilt",
+  "name": "Pedestal down",
+  "name_zh": "垂直降机升降 Pedestal Down",
+  "desc": "垂直降机：机位直线下沉，从高处俯视落回平视，交代环境后回归人物。",
+  "original": "The whole camera body sinks straight down along a clean vertical line from lens height [2.2] to [0.8] meters. The descent runs at an even, fluid, uninterrupted rate. Throughout the lowering, the lens stays perfectly horizontal and locked on its original heading — no tilting, no turning, no crane arc, no dolly, no zoom: the horizon holds its exact angle while the framing slides down the subject like an elevator window. The camera's horizontal position is identical in the first and last frame; the move comes to rest with the new lower vantage clearly established and easy to read.",
+  "zh": "整个摄像机机身沿着一条干净的垂直线从镜头高度 [2.2] 米笔直下沉至 [0.8] 米。下降过程保持均匀、流畅且不间断的速率。在整个降低过程中，镜头保持绝对水平并锁定在其原始朝向上——没有俯仰（tilt）、没有转动（turn）、没有摇臂弧线（crane arc）、没有推拉（dolly）、没有变焦（zoom）：地平线保持其精确的角度，而构图如电梯视窗般沿着主体向下滑动。摄像机在第一帧和最后一帧的水平位置完全一致；运镜停止时，新的低视角机位被清晰确立且易于辨识。",
+  "tags": [
+   "运镜",
+   "摇镜",
+   "垂直降机"
+  ],
+  "chars": 584,
+  "lang": "en",
+  "src": "Higgsfield Camera Prompt Bank#25"
+ },
+ {
+  "id": "gen-026",
+  "cat": "运镜词典",
+  "sub": "摇镜 · Pan & tilt",
+  "name": "Pedestal up",
+  "name_zh": "垂直升机升降 Pedestal Up",
+  "desc": "垂直升机：机位直线爬升，人物渐小、环境渐显，收尾常用于升华或离场。",
+  "original": "The entire camera ascends straight upward along a pure vertical path from lens height [0.8] to [2.2] meters. The lift proceeds at a steady, seamless, constant pace from bottom to top. While climbing, the lens holds dead level and keeps facing its original direction — no tilt creeps in, no rotation, no crane arc, no dolly, no zoom: the horizon holds its exact angle while the framing slides up the subject like an elevator window. The camera's horizontal position is identical in the first and last frame; the motion settles with the elevated viewpoint plainly legible in the final frame.",
+  "zh": "整个摄像机沿着纯粹的垂直路径从镜头高度 [0.8] 米笔直向上攀升至 [2.2] 米。升起过程自底向顶保持平稳、无缝且恒定的节奏。在上升过程中，镜头保持绝对水平并始终朝向其原始方向——无俯仰介入、无旋转、无摇臂弧线、无推拉、无变焦：地平线保持其精确角度，而构图如电梯视窗般沿着主体向上滑动。摄像机在第一帧和最后一帧的水平位置完全一致；运动停止时，升高的视点在最终画面中清晰明确。",
+  "tags": [
+   "运镜",
+   "摇镜",
+   "垂直升机"
+  ],
+  "chars": 589,
+  "lang": "en",
+  "src": "Higgsfield Camera Prompt Bank#26"
+ },
+ {
+  "id": "gen-027",
+  "cat": "运镜词典",
+  "sub": "推轨与跟拍 · Dolly & tracking",
+  "name": "Side tracking",
+  "name_zh": "侧面平移跟拍",
+  "desc": "侧面平移跟拍：与行进主体呈 90° 同速横移，主体居中、世界横掠而过。",
+  "original": "One continuous lateral tracking move — the camera glides parallel to the subject at exactly the speed that keeps their framing constant, strict 90-degree side view at all times. Three clean parallax layers: nearest — [posts / mullions / table edges] sweeping fast past the lens, briefly occluding the subject; middle — the subject, constant size at frame center; farthest — [the background row] sliding by slower behind. No zoom, no pan drift, no push-in.",
+  "zh": "一次连续的横向跟拍运镜——摄像机与主体平行滑动，速度完全匹配以保持主体在画面中的构图恒定，始终保持严格的90度正侧视视角。三个清晰的视差层：最近层——[立柱 / 窗棂 / 桌边]快速掠过镜头前方并短暂遮挡主体；中间层——画面中心大小恒定的主体；最远层——后方较慢滑过的[背景行]。无变焦、无水平摇摆漂移、无向前推进。",
+  "tags": [
+   "运镜",
+   "推轨与跟拍",
+   "侧面跟拍"
+  ],
+  "chars": 455,
+  "lang": "en",
+  "src": "Higgsfield Camera Prompt Bank#27"
+ },
+ {
+  "id": "gen-028",
+  "cat": "运镜词典",
+  "sub": "推轨与跟拍 · Dolly & tracking",
+  "name": "Slider left",
+  "name_zh": "滑轨向左平移 Slider Left",
+  "desc": "滑轨左移：slider 的丝滑横向平移，比 truck 更细腻的小幅位移。",
+  "original": "The camera eases sideways over a compact distance — about [40] centimeters — riding a smooth slider track toward the left, the lens axis locked straight ahead, with a soft ease-in and ease-out at both ends. Its pace is deliberately slow, held constant, and under full control at every moment. During the travel the depth planes separate cleanly — near objects, the central subject and the distant background each sliding at distinct rates, keeping the parallax legible. The travel never exceeds the slider's short throw — no pan, no zoom, no full truck, no handheld drift. The move closes on an elegant, resolved frame where the newly gained left-hand angle reads clearly.",
+  "zh": "摄像机在紧凑的距离内（约 [40] 厘米）向侧方移动，沿着平滑的滑轨向左行进，镜头光轴锁定直视前方，并在两端带有柔和的淡入与淡出缓冲。其节奏刻意放慢、保持恒定且每时每刻都处于完全受控状态。在移动过程中，各个纵深平面清晰分离——近处物体、中心主体和远处背景各自以不同速率滑动，保持视差层次分明。行程绝不超过滑轨的短行程范围——无摇摄、无变焦、无大幅机身横移、无手持漂移。运镜在典雅大方的定格画面中结束，新获得的左侧角度清晰可辨。",
+  "tags": [
+   "运镜",
+   "推轨与跟拍",
+   "滑轨左移"
+  ],
+  "chars": 672,
+  "lang": "en",
+  "src": "Higgsfield Camera Prompt Bank#28"
+ },
+ {
+  "id": "gen-029",
+  "cat": "运镜词典",
+  "sub": "变焦与焦点 · Zoom & focus",
+  "name": "Fast zoom in",
+  "name_zh": "快速镜头推近 / 急推变焦",
+  "desc": "快速急推：zoom in 的暴烈版，一记变焦重拳直接砸到主体脸上。",
+  "original": "Locked tripod, zero rotation, zero travel — the entire move is optical. Hold the wide [84]-degree frame perfectly static; then ONE sharp continuous zoom from [84] degrees to [18] degrees — a single decisive ramp of about 1.2 seconds with no steps and no wobble, flying the framing from [the wide composition] to [the tight landing framing]; then hold the tight frame perfectly static to the end. The camera position is fixed and never moves; only the field of view changes; perspective stays constant and there is no parallax.",
+  "zh": "锁定三脚架，零旋转，零位移——整个运动完全是光学变焦。先将广角 [84] 度画面保持完全静止；随后进行一次从 [84] 度到 [18] 度的剧烈且连续的变焦放大——大约1.2秒的一次果断线性加速，无阶梯顿挫，无晃动，将构图从[广角构图]急速拉入[紧凑落幅构图]；随后将紧凑构图完全静止保持至结尾。摄像机位置固定且绝不移动；仅改变视场角；透视关系保持不变且无视差。",
+  "tags": [
+   "运镜",
+   "变焦与焦点",
+   "快速急推"
+  ],
+  "chars": 526,
+  "lang": "en",
+  "src": "Higgsfield Camera Prompt Bank#29"
+ },
+ {
+  "id": "gen-030",
+  "cat": "运镜词典",
+  "sub": "变焦与焦点 · Zoom & focus",
+  "name": "Fast zoom out",
+  "name_zh": "快速镜头拉远 / 急拉变焦",
+  "desc": "快速急拉：zoom out 的暴烈版，瞬间从特写炸开成全景。",
+  "original": "Locked tripod, zero rotation, zero travel — the entire move is optical. Hold the tight [18]-degree frame perfectly static; then ONE sharp continuous zoom out from [18] degrees to [84] degrees — a single decisive ramp of about 1.2 seconds with no steps, no wobble and no overshoot, blowing the framing open from [the tight composition] to [the wide landing framing]; then hold the wide frame perfectly static to the end. The camera position is fixed and never moves; only the field of view changes; perspective stays constant and there is no parallax.",
+  "zh": "锁定三脚架，零旋转，零位移——整个运动完全是光学变焦。先将紧凑的 [18] 度特写画面保持完全静止；随后进行一次从 [18] 度到 [84] 度的剧烈且连续的变焦拉远——大约1.2秒的一次果断线性加速，无阶梯顿挫，无晃动且无过冲，将构图从[紧凑特写构图]瞬间炸开扩展至[广角落幅构图]；随后将广角构图完全静止保持至结尾。摄像机位置固定且绝不移动；仅改变视场角；透视关系保持不变且无视差。",
+  "tags": [
+   "运镜",
+   "变焦与焦点",
+   "快速急拉"
+  ],
+  "chars": 550,
+  "lang": "en",
+  "src": "Higgsfield Camera Prompt Bank#30"
+ },
+ {
+  "id": "gen-031",
+  "cat": "运镜词典",
+  "sub": "摇镜 · Pan & tilt",
+  "name": "Tilt down",
+  "name_zh": "向下俯摇 Tilt Down",
+  "desc": "向下俯摇：机位不动镜头从水平压向地面，常用于失落、放弃或揭示脚下事物。",
+  "original": "One slow continuous tilt down — a pure vertical rotation on the locked tripod head from [+35] degrees to [-10] degrees — traveling from [the upper anchor], along [the mid-path detail], down to [the lower landing framing]. No crane rise, no pedestal, no dolly, no truck, no zoom, no horizontal drift; the camera's position never changes, and the tilt decelerates into a static hold on the final framing.",
+  "zh": "一次缓慢且连续的向下俯摇——在锁定的三脚架云台上进行从 [+35] 度到 [-10] 度的纯垂直旋转——视线从[上方锚定点]，沿着[中途路径细节]，一路向下移动至[下方落幅构图]。无摇臂上升、无垂直升降、无前后推拉、无横向移动、无变焦、无水平漂移；摄像机机位绝不改变，俯摇平缓减速定格在最终构图上。",
+  "tags": [
+   "运镜",
+   "摇镜",
+   "俯摇"
+  ],
+  "chars": 402,
+  "lang": "en",
+  "src": "Higgsfield Camera Prompt Bank#31"
+ },
+ {
+  "id": "gen-032",
+  "cat": "运镜词典",
+  "sub": "推轨与跟拍 · Dolly & tracking",
+  "name": "Push past",
+  "name_zh": "擦身推进 / 越过主体推镜头",
+  "desc": "擦身推进：镜头越过前景主体肩膀继续深进，制造空间层次穿越感。",
+  "original": "One continuous forward travel on a lane offset about 0.6 meters to the subject's right — the camera approaches at constant speed and constant height, the subject growing in frame, then slides past their shoulder: the subject exits cleanly at the left frame edge while the camera continues WITHOUT stopping toward the reveal beyond, focus racking from the subject to the far point at the moment of the pass. The camera passes BESIDE the subject, never through them, never stopping at them. No pan correction, no zoom, no tilt.",
+  "zh": "摄像机在偏向主体右侧约 0.6 米的轨道上持续向前行进——以恒定速度和恒定高度靠近，主体在画面中逐渐放大，随后从其肩侧滑过：主体干净利落地从画面左边缘移出，而摄像机毫不停歇地继续向前行进以展现前方的景物，在擦身而过的瞬间焦点从主体转换对焦至远处的景物。摄像机从主体身旁掠过，绝不穿透主体，绝不在主体处停下。不进行水平摇镜修正补偿，无变焦，无俯仰。",
+  "tags": [
+   "运镜",
+   "推轨与跟拍",
+   "擦身推进"
+  ],
+  "chars": 525,
+  "lang": "en",
+  "src": "Higgsfield Camera Prompt Bank#32"
+ },
+ {
+  "id": "gen-033",
+  "cat": "运镜词典",
+  "sub": "推轨与跟拍 · Dolly & tracking",
+  "name": "Follow shot",
+  "name_zh": "背身跟随镜头 Follow Shot",
+  "desc": "背身跟随：镜头跟在主体身后同速前进，看它所看、代入前路未知。",
+  "original": "A follow shot locked 0.8 meters behind the subject's shoulder for the entire take, matching their walking speed exactly, the back of the head and near shoulder anchored in soft near focus in the left third of frame, the focus plane locked at depth down the axis ahead; a gentle organic bob transmitted from the stride — no stabilizer glide, no handheld chaos, no overtaking, no pan away.",
+  "zh": "全程锁定在主体肩后 0.8 米的跟随拍摄，速度与主体的步行速度完全匹配，后脑勺和靠前的一侧肩膀以柔和的浅景深锚定在画面左侧三分之一处，对焦平面沿镜头前方轴线深度锁定；伴随步伐传递出轻柔自然的起伏——无稳定器过度滑行感，无手持混乱晃动，无超车超越，无摇镜移开。",
+  "tags": [
+   "运镜",
+   "推轨与跟拍",
+   "背身跟随"
+  ],
+  "chars": 387,
+  "lang": "en",
+  "src": "Higgsfield Camera Prompt Bank#33"
+ },
+ {
+  "id": "gen-034",
+  "cat": "运镜词典",
+  "sub": "推轨与跟拍 · Dolly & tracking",
+  "name": "Arc right",
+  "name_zh": "向右环形弧形运镜",
+  "desc": "向右弧形环绕：沿右侧圆弧接近/离开主体，比直线推进多一层旋转动势。",
+  "original": "One continuous arc right — the camera travels along a circular path around the subject through about [60] degrees on a locked constant radius of [2.5] meters at a locked constant height, panning continuously to keep the subject dead-center at constant size while the background sweeps behind them. Travel through the arc is calm, even and precisely controlled; the subject stays planted, facing one fixed direction in the world — it is the camera that travels. No radius drift, no height change, no zoom, no turntable effect where the subject rotates in place. The path concludes at a fresh right-side perspective.",
+  "zh": "一次连续的向右弧形运镜——摄像机在锁定的 [2.5] 米恒定半径和恒定高度下，围绕主体沿圆弧路径移动约 [60] 度，持续摇摄以使主体始终居中且大小恒定，同时背景在其身后扫过流转。沿圆弧的移动沉稳、均匀且受精准控制；主体站立不动，始终朝向现实世界中的一个固定方向——运动的是摄像机。无半径漂移、无高度变化、无变焦、无主体原地自转的转盘效应。运镜路径终结在一个全新的右侧视角上。",
+  "tags": [
+   "运镜",
+   "推轨与跟拍",
+   "弧形运镜"
+  ],
+  "chars": 614,
+  "lang": "en",
+  "src": "Higgsfield Camera Prompt Bank#34"
+ },
+ {
+  "id": "gen-035",
+  "cat": "运镜词典",
+  "sub": "推轨与跟拍 · Dolly & tracking",
+  "name": "Dolly out",
+  "name_zh": "轨道后拉 / 匀速后退运镜",
+  "desc": "轨道后拉：机位匀速后退拉开距离，主体渐远、语境渐全，收尾经典。",
+  "original": "One continuous decisive dolly out on straight ground rails — pure rearward travel at constant confident speed along the axis, at a locked constant lens height of [1.6] meters. The camera NEVER rises: no crane, no jib, no pedestal up, no drone pull-away, no gain in altitude of any kind; the lens stays dead-level with zero tilt, so [a fixed horizontal edge of the set — table edge, balustrade rail] holds the exact same height in frame from the first frame to the last. Near objects sweep past the frame edges close and fast with strong parallax while the subject recedes at the center. No zoom, no pan, no handheld drift.",
+  "zh": "在地面平直轨道上进行一次连续且果断的后拉运镜（dolly out）——以恒定且自信的速度沿轴线纯粹向后移动，镜头高度锁定在 [1.6] 米。摄像机绝不上浮：无吊臂升起、无摇臂上扬、无升降台上升、无无人机拉升、无任何形式的高度增加；镜头保持绝对水平且零俯仰，因此[布景中的固定水平边缘——如桌沿、栏杆轨道]从首帧到尾帧在画面中保持完全相同的高度。近处物体以强烈的视差贴近并快速掠出画面边缘，而中心处的主体逐渐后退远去。无变焦、无摇摄、无手持漂移。",
+  "tags": [
+   "运镜",
+   "推轨与跟拍",
+   "轨道后拉"
+  ],
+  "chars": 622,
+  "lang": "en",
+  "src": "Higgsfield Camera Prompt Bank#35"
+ },
+ {
+  "id": "gen-036",
+  "cat": "运镜词典",
+  "sub": "摇镜 · Pan & tilt",
+  "name": "Whip pan left",
+  "name_zh": "向左急甩镜头 Whip Pan Left",
+  "desc": "向左急甩：whip pan 的镜头闪切衔接利器，甩动的模糊瞬间掩盖剪辑点。",
+  "original": "The camera holds composition A perfectly static, then executes ONE violent horizontal whip pan to the left — a 0.4-second full-blur smear — landing hard on composition B with a 2-degree overshoot-and-settle, then holds composition B perfectly static. No dolly, no truck, no crane, no handheld drift; a pure rotation between two directed static frames.",
+  "zh": "摄像机先保持构图 A 完全静止，随后向左执行一次剧烈的水平甩镜头（whip pan）——0.4秒的全动态模糊拖影——稳准狠地落幅在构图 B 上（带有2度的轻微过冲并迅速回稳），随后保持构图 B 完全静止。无推拉轨道、无机位横移、无摇臂、无手持漂移；仅为两个定向静止画幅之间的纯粹旋转。",
+  "tags": [
+   "运镜",
+   "摇镜",
+   "急甩镜头"
+  ],
+  "chars": 351,
+  "lang": "en",
+  "src": "Higgsfield Camera Prompt Bank#36"
+ },
+ {
+  "id": "gen-037",
+  "cat": "运镜词典",
+  "sub": "摇镜 · Pan & tilt",
+  "name": "Whip pan right",
+  "name_zh": "向右急甩镜头 Whip Pan Right",
+  "desc": "向右急甩：镜像 whip pan，高频用于转场遮蔽剪辑点或喜剧节奏。",
+  "original": "The camera holds composition A perfectly static on the tripod, then executes ONE violent horizontal whip pan to the right — a 0.4-second full-blur smear — landing hard on composition B with a 2-degree overshoot-and-settle, then holds composition B perfectly static. No dolly, no truck, no crane, no handheld drift; a pure rotation between two directed static frames.",
+  "zh": "摄像机在三脚架上先保持构图 A 完全静止，随后向右执行一次剧烈的水平甩镜头（whip pan）——0.4秒的全动态模糊拖影——稳准狠地落幅在构图 B 上（带有2度的轻微过冲并迅速回稳），随后保持构图 B 完全静止。无推拉轨道、无机位横移、无摇臂、无手持漂移；仅为两个定向静止画幅之间的纯粹旋转。",
+  "tags": [
+   "运镜",
+   "摇镜",
+   "急甩镜头"
+  ],
+  "chars": 366,
+  "lang": "en",
+  "src": "Higgsfield Camera Prompt Bank#37"
+ },
+ {
+  "id": "gen-038",
+  "cat": "运镜词典",
+  "sub": "变焦与焦点 · Zoom & focus",
+  "name": "Slow zoom out",
+  "name_zh": "慢速光学变焦拉远 Slow Zoom Out",
+  "desc": "慢速变焦拉远：不急不躁的 optical zoom out，环境缓缓入画、情绪缓缓摊开。",
+  "original": "Locked tripod bolted in place, zero rotation, zero travel — the entire move is inside the lens: a purely OPTICAL zoom out, a focal-length pull from telephoto to wide on a stationary camera, exactly like a photographer standing in one spot and slowly turning the zoom ring. One single perfectly even continuous zoom from [18] degrees to [84] degrees across the entire duration, no speed changes, no steps, no drift. NOT a dolly out, NOT a pull-back, NOT a track backward — no rearward travel, no crane, no jib, no pedestal, no drone pull-away, no floating retreat; the camera's position and height are identical in the first and last frame. ZERO parallax: the far background keeps the exact same apparent size relative to the subject from the first frame to the last, and new space enters the picture only at the frame edges as the view opens.",
+  "zh": "三脚架牢固栓锁在原地，零旋转，零位移——整个运动完全在镜头内部完成：纯粹的光学变焦拉远，在静止的摄像机上将焦距从长焦端平拉至广角端，宛如摄影师站在原地缓慢转动变焦环。在整个时长内进行一次从 [18] 度到 [84] 度的单一、完美均匀且连续的变焦，无速度变化、无阶梯感、无漂移。绝非轨道后拉（dolly out），绝非机身后退，绝非向后平移跟拍——无向后位移、无吊臂、无摇臂、无垂直升降、无无人机拉升后退、无悬浮退后；摄像机在第一帧和最后一帧的位置与高度完全一致。零视差：从首帧到尾帧，远景背景相对于主体保持完全相同的视大小，新空间仅随着画幅开阔而从画面边缘进入。",
+  "tags": [
+   "运镜",
+   "变焦与焦点",
+   "慢速拉远"
+  ],
+  "chars": 842,
+  "lang": "en",
+  "src": "Higgsfield Camera Prompt Bank#38"
+ },
+ {
+  "id": "gen-039",
+  "cat": "运镜词典",
+  "sub": "推轨与跟拍 · Dolly & tracking",
+  "name": "Reverse tracking: Walk-and-talk",
+  "name_zh": "倒退跟拍：边走边聊 Walk-and-talk",
+  "desc": "倒退跟拍 walk-and-talk：镜头面对主体倒退行走，边走边聊的对白戏标配。",
+  "original": "One continuous reverse tracking move — the camera travels backward at exactly the subject's walking speed for the entire take, keeping their size in frame perfectly constant while the world flows past them toward the camera on both edges. No pan, no tilt, no zoom, no speed changes; the eyeline stays just above the lens. Fixed 47-degree normal field of view; focus locked on the face; [the passing elements and hands] flowing past read soft at the frame edges.",
+  "zh": "一次连续的倒退跟拍运镜——在整段镜头中，摄像机以完全匹配主体步行的速度向后移动，在周围世界沿两侧边缘向摄像机方向流淌掠过的同时，保持主体在画面中的比例大小绝对恒定。无摇摄、无俯仰、无变焦、无速度突变；视线高度保持在镜头略上方。固定的 47 度标准视场角；焦点牢牢锁定在面部；两侧掠过的[经过的元素与手势]在画面边缘呈现柔和虚化。",
+  "tags": [
+   "运镜",
+   "推轨与跟拍",
+   "倒退跟拍"
+  ],
+  "chars": 461,
+  "lang": "en",
+  "src": "Higgsfield Camera Prompt Bank#39"
+ },
+ {
+  "id": "gen-040",
+  "cat": "运镜词典",
+  "sub": "推轨与跟拍 · Dolly & tracking",
+  "name": "Arc left",
+  "name_zh": "向左环形弧形运镜",
+  "desc": "向左弧形环绕：沿左侧圆弧运动，出画入画更顺滑的动势衔接。",
+  "original": "One continuous arc left — the camera sweeps along a circular path around the subject through about [60] degrees on a locked constant radius of [2.5] meters at a locked constant height, panning continuously to keep the subject dead-center at constant size while the background sweeps behind them. The pace through the bend is even, calm and deliberate; the subject stays planted, facing one fixed direction in the world — it is the camera that travels. No radius drift, no height change, no zoom, no turntable effect where the subject rotates in place. The arc resolves on a fresh vantage point taken from the left.",
+  "zh": "一次连续的向左弧形运镜——摄像机在锁定的 [2.5] 米恒定半径和恒定高度下，围绕主体沿圆弧路径扫过约 [60] 度，持续摇摄以使主体始终居中且大小恒定，同时背景在其身后扫过流转。过弯节奏均匀、沉稳且从容；主体站立不动，始终朝向现实世界中的一个固定方向——运动的是摄像机。无半径漂移、无高度变化、无变焦、无主体原地自转的转盘效应。弧形运镜最终落幅在一个来自左侧的崭新视点上。",
+  "tags": [
+   "运镜",
+   "推轨与跟拍",
+   "弧形运镜"
+  ],
+  "chars": 614,
+  "lang": "en",
+  "src": "Higgsfield Camera Prompt Bank#40"
+ },
+ {
+  "id": "gen-041",
+  "cat": "运镜词典",
+  "sub": "推轨与跟拍 · Dolly & tracking",
+  "name": "Slider right",
+  "name_zh": "滑轨向右平移 Slider Right",
+  "desc": "滑轨右移：slider 右向平移，微幅丝滑的构图微调。",
+  "original": "The camera eases sideways over a compact distance — about [40] centimeters — riding a smooth slider track toward the right, the lens axis locked straight ahead, with a soft ease-in and ease-out at both ends. Its pace is deliberately slow, held constant, and under full control at every moment. During the travel the depth planes separate cleanly — near objects, the central subject and the distant background each sliding at distinct rates, keeping the parallax legible. The travel never exceeds the slider's short throw — no pan, no zoom, no full truck, no handheld drift. The move closes on an elegant, resolved frame where the newly gained right-hand angle reads clearly.",
+  "zh": "摄像机在紧凑的距离内（约 [40] 厘米）向侧方移动，沿着平滑的滑轨向右行进，镜头光轴锁定直视前方，并在两端带有柔和的淡入与淡出缓冲。其节奏刻意放慢、保持恒定且每时每刻都处于完全受控状态。在移动过程中，各个纵深平面清晰分离——近处物体、中心主体和远处背景各自以不同速率滑动，保持视差层次分明。行程绝不超过滑轨的短行程范围——无摇摄、无变焦、无大幅机身横移、无手持漂移。运镜在典雅大方的定格画面中结束，新获得的右侧角度清晰可辨。",
+  "tags": [
+   "运镜",
+   "推轨与跟拍",
+   "滑轨右移"
+  ],
+  "chars": 674,
+  "lang": "en",
+  "src": "Higgsfield Camera Prompt Bank#41"
+ },
+ {
+  "id": "gen-042",
+  "cat": "运镜词典",
+  "sub": "推轨与跟拍 · Dolly & tracking",
+  "name": "Vehicle tracking",
+  "name_zh": "载具同速追踪跟拍",
+  "desc": "载具同速追踪：车载/机载与目标完全同速，背景流动而目标凝固的公路感。",
+  "original": "The camera travels in tandem with the [vehicle], following the same route it takes. Velocity is synced precisely to the vehicle's own speed — no drifting ahead, no falling behind, no independent motion. Locked to that shared motion, the vehicle sits steady and anchored at a constant size in frame while the road surface, markings and roadside scenery rush past in a continuous flow on every parallax layer. No zoom, no pan drift; the shot ends holding that stable, unmistakable image of the machine in motion.",
+  "zh": "摄像机与[载具/车辆]并排同行，沿其行驶路线同步前进。移动速度与车辆自身速度精确同步——不向前漂移超前，不向后落后脱节，无独立杂乱晃动。由于锁定了这种共同运动，车辆在画面中保持平稳锚定且尺寸恒定，而路面、标线和路边风景在各个视差层上以连续流动的状态呼啸掠过。无变焦、无摇摄漂移；镜头以保持这种运动中机械的稳定、标志性形象而收尾。",
+  "tags": [
+   "运镜",
+   "推轨与跟拍",
+   "载具追踪"
+  ],
+  "chars": 510,
+  "lang": "en",
+  "src": "Higgsfield Camera Prompt Bank#42"
+ },
+ {
+  "id": "gen-043",
+  "cat": "运镜词典",
+  "sub": "航拍与摇臂 · Aerial & crane",
+  "name": "Drone push in",
+  "name_zh": "无人机低空俯冲冲刺推进",
+  "desc": "无人机低空俯冲：贴地高速冲刺推进，FPV 风格的速度与失重冲击。",
+  "original": "Skim the camera low and fast over [the terrain] straight toward [the target] with gentle left-right banking, climb along [the slope / the obstacle], then pitch up hard and track [the rising subject] as it sweeps directly overhead. Speed: fast from the start, ramping to full throttle on the approach, with real flight inertia, no instant direction changes. Framing: keep [the target] centered ahead while the ground rushes under the lens; [the rising subject] grows to fill the frame as it passes over. End: settle on [the final composition] and hold.",
+  "zh": "贴着[地形]低空快速掠过，直奔[目标]，伴随轻微的左右倾斜侧倾（banking），沿着[斜坡 / 障碍物]爬升，然后大幅度向上仰角（pitch up）并跟拍掠过头顶正上方的[上升主体]。速度：从一开始就很快，在接近时加速至全油门冲刺，具备真实的飞行惯性，无生硬的瞬间方向突变。构图：在地面于镜头下快速呼啸而过的同时保持前方[目标]居中；[上升主体]在越过上方时逐渐放大填满画面。结尾：定格在[最终构图]上并保持。",
+  "tags": [
+   "运镜",
+   "航拍与摇臂",
+   "低空俯冲"
+  ],
+  "chars": 551,
+  "lang": "en",
+  "src": "Higgsfield Camera Prompt Bank#43"
+ },
+ {
+  "id": "gen-044",
+  "cat": "运镜词典",
+  "sub": "推轨与跟拍 · Dolly & tracking",
+  "name": "Truck left",
+  "name_zh": "向左水平横移 Truck Left",
+  "desc": "向左横移：truck left，整体平行左移的镜像横移。",
+  "original": "One continuous truck left — pure lateral travel of the camera to the left at constant speed with the lens axis locked straight ahead, no panning to compensate: the scene slides through the frame with strong natural parallax, near objects sweeping past fast, the far layer drifting slow, the subject crossing gradually toward the right frame edge. No pan, no arc, no dolly, no zoom, no handheld drift; the lens points the same world direction in the first and last frame.",
+  "zh": "一次连续的向左横移——摄像机以恒定速度纯粹向左侧平移，镜头光轴锁定直视前方，不做任何旋转摇摄补偿：场景以强烈的自然视差滑过画面，近处物体快速掠过，远处图层缓慢漂移，主体逐渐向画面右边缘穿行。无水平摇摄、无弧形移动、无前后推拉、无变焦、无手持漂移；镜头在首帧和尾帧始终指向现实世界中的同一方向。",
+  "tags": [
+   "运镜",
+   "推轨与跟拍",
+   "向左横移"
+  ],
+  "chars": 470,
+  "lang": "en",
+  "src": "Higgsfield Camera Prompt Bank#44"
+ },
+ {
+  "id": "gen-045",
+  "cat": "运镜词典",
+  "sub": "航拍与摇臂 · Aerial & crane",
+  "name": "Helicopter shot",
+  "name_zh": "直升机航拍环绕与瞬间变焦抓拍",
+  "desc": "直升机航拍：大范围环绕巡航+瞬间变焦抓拍，电影级大场面开场。",
+  "original": "Arc the camera in a slow counter-clockwise orbit around the scene from a distance, like a stabilized news gimbal panning and tilting to follow [the subject] with slight operator overshoots and corrections — then punch in with one fast snap-zoom onto [the detail]; a zoom within the same take, not a cut. Speed: slow steady orbit with fine vibration and micro-drift; the snap-zoom is abrupt, overshoots slightly, hunts focus for a beat, then locks. Framing: long-lens telephoto look, [the scene planes] stacked in one compressed composition through haze; after the zoom, tight on [the detail] only. End: hold tight on [the detail]; the frame jolts at [the impact], damps, and settles while still faintly trembling.",
+  "zh": "摄像机从远处围绕场景进行缓慢的逆时针环绕飞行，宛如装有稳定云台的新闻直升机镜头，通过水平和俯仰摇摄来跟拍[主体]，带有轻微的操作员微小过冲与回正修正——随后以一次迅速利落的瞬间变焦（snap-zoom）猛推至[细节]；这是同一切片长镜头内的变焦，而非剪辑切镜。速度：缓慢平稳的环绕伴随微细震颤与微小漂移；瞬间变焦突兀迅猛，轻微过冲并短暂搜索焦点一拍，随后锁死。构图：长焦远摄质感，[场景各平面]在雾气透视中叠压压缩成一个紧凑构图；变焦后仅紧扣[细节]特写。结尾：紧紧锁定在[细节]上；画面在[冲击发生时]发生震颤抖动，随后减震平复，同时仍伴有微弱颤动。",
+  "tags": [
+   "运镜",
+   "航拍与摇臂",
+   "直升机航拍"
+  ],
+  "chars": 713,
+  "lang": "en",
+  "src": "Higgsfield Camera Prompt Bank#45"
+ },
+ {
+  "id": "gen-046",
+  "cat": "运镜词典",
+  "sub": "航拍与摇臂 · Aerial & crane",
+  "name": "Crane down",
+  "name_zh": "摇臂垂直下落 Crane Down",
+  "desc": "摇臂下落：从高点垂直降落并缓出至平视，天神视角缓缓落回人间。",
+  "original": "Descend the camera vertically from a high fixed point, facing [the target] the whole way, the tilt easing from a steep down-angle to eye level; [if the world itself moves — a rolling ship, a swaying platform — the whole frame inherits that motion and never auto-levels]. Speed: brief hold at the top, then smooth constant descent with a soft ease-out at the bottom. Framing: keep [the target] centered and growing in frame. End: settle at eye level on [the final composition] and hold.",
+  "zh": "摄像机从高处的固定点垂直下落，全程朝向[目标]，镜头俯仰角度从陡峭的高角度俯视平缓过渡至眼睛视平线水平；[如果所处环境本身在运动——例如颠簸起伏的船只、摇晃晃动的平台——整个画面都会继承该运动且绝不会自动水平校正]。速度：顶部短暂定格，随后平稳匀速下落，底部伴有柔和缓冲减速。构图：保持[目标]居中并在画面中逐渐放大。结尾：在视平线高度定格在[最终构图]上并保持。",
+  "tags": [
+   "运镜",
+   "航拍与摇臂",
+   "摇臂下落"
+  ],
+  "chars": 485,
+  "lang": "en",
+  "src": "Higgsfield Camera Prompt Bank#46"
+ }
+]
+</script>
 <script>
 /* 模型两级注册表：顶层 = 系列（厂商），第二层 = 具体版本。
    以后新增版本只需在这里加一行；即使不加，数据里出现的新 model 也会自动归位。 */
@@ -9187,8 +10243,136 @@ function fmtNote(){
 function refresh(){buildChips();renderGrid();fmtNote()}
 function render(){buildCatbar();buildTags();refresh()}
 
+/* ---------- 顶层区域：通用区 / 教程区 ---------- */
+function zoneJSON(id){var el=document.getElementById(id);if(!el)return[];try{return JSON.parse(el.textContent)}catch(e){return[]}}
+const GEN=zoneJSON('general'),TUT=zoneJSON('tutorials');
+const zst={zone:'lib',gsub:'',tq:'',tut:null};
+const zonseg=$('#zonseg'),zGen=$('#zone-gen'),zTut=$('#zone-tut'),
+      gcatbar=$('#gcatbar'),ggrid=$('#ggrid'),tgrid=$('#tgrid');
+$('#zn-lib').textContent=DATA.length;$('#zn-gen').textContent=GEN.length;$('#zn-tut').textContent=TUT.length+'篇';
+
+function wireCard(container,d){        /* 与主库一致的复制/译文切换 wiring */
+  const card=container.querySelector(`[data-id="${CSS.escape(d.id)}"]`);if(!card)return;
+  const o=card.querySelector('[data-p="o"]'),z=card.querySelector('[data-p="z"]');
+  if(o)o.textContent=d.original;if(z)z.textContent=d.zh||d.body||'';
+  const copy=card.querySelector('.copy');
+  copy.onclick=()=>{
+    const txt=copy.dataset.k==='o'?d.original:(d.zh||'');
+    const done=()=>{copy.classList.add('ok');copy.innerHTML=ICO.check+'已复制';
+      setTimeout(()=>{copy.classList.remove('ok');copy.innerHTML=ICO.copy+'复制'},1300)};
+    if(navigator.clipboard&&navigator.clipboard.writeText)navigator.clipboard.writeText(txt).then(done).catch(()=>{fallbackCopy(txt);done()});
+    else{fallbackCopy(txt);done()}
+  };
+  card.querySelectorAll('.pt').forEach(t=>t.onclick=()=>{
+    card.querySelectorAll('.pt').forEach(x=>x.classList.toggle('on',x===t));
+    const k=t.dataset.t;copy.dataset.k=k;o.hidden=k!=='o';if(z)z.hidden=k!=='z';
+  });
+}
+
+/* ---- 通用区渲染 ---- */
+function genRows(){
+  const ql=state.q.toLowerCase();
+  return GEN.filter(d=>{
+    if(zst.gsub&&d.sub!==zst.gsub)return false;
+    if(!ql)return true;
+    return (d.name+' '+d.name_zh+' '+d.desc+' '+d.sub+' '+(d.tags||[]).join(' ')+' '+d.original+' '+(d.zh||'')).toLowerCase().indexOf(ql)>-1;
+  });
+}
+function renderGen(){
+  const subs=[...new Set(GEN.map(d=>d.sub))];
+  gcatbar.innerHTML=`<div class="crow"><button type="button" class="cbtn ${zst.gsub?'':'on'}" data-g="">全部<s>${GEN.length}</s></button>`+
+    subs.map(s=>{const zh=s.split(' · ')[0],n=GEN.filter(d=>d.sub===s).length;
+      return `<button type="button" class="cbtn ${zst.gsub===s?'on':''}" data-g="${esc(s)}">${esc(zh)}<s>${n}</s></button>`}).join('')+`</div>`;
+  gcatbar.querySelectorAll('[data-g]').forEach(b=>b.onclick=()=>{zst.gsub=b.dataset.g;renderGen()});
+  const rows=genRows();
+  if(!rows.length){ggrid.innerHTML=`<div class="empty">${ICO.film}<div>没有匹配的运镜条目</div><button class="ebtn" onclick="zst.gsub='';renderGen()">清除筛选</button></div>`;
+    note.textContent=`通用区 · 运镜词典 ${GEN.length} 条 · 原文逐字保留 · Higgsfield Camera Prompt Bank`;
+    return}
+  ggrid.innerHTML=rows.map(d=>{
+    const zhSub=(d.sub||'').split(' · ')[0],enSub=(d.sub||'').split(' · ')[1]||d.sub;
+    return `<article class="card gcard" data-id="${d.id}">
+      <div class="chead"><h3>${hl(d.name_zh)}<span class="gname-en">${hl(d.name)}</span></h3><span class="cno">${esc(d.src)}</span></div>
+      <p class="cdesc">${hl(d.desc)}</p>
+      <div class="cchips"><span class="chip acc">${esc(zhSub)}</span><span class="chip">${esc(enSub)}</span><span class="chip lang">EN · 双语</span></div>
+      <div class="pane">
+        <div class="phead"><div class="ptabs"><button class="pt on" data-t="o">原文 EN</button><button class="pt" data-t="z">中文译文</button></div><button class="copy" data-k="o">${ICO.copy}复制</button></div>
+        <div class="pv" tabindex="0"><pre data-p="o"></pre><pre data-p="z" hidden></pre></div>
+      </div>
+      <div class="cfoot"><div class="ctags">${(d.tags||[]).map(t=>`<span class="chip">#${esc(t)}</span>`).join('')}</div><span class="cch">${d.chars} 字</span></div>
+    </article>`;
+  }).join('');
+  rows.forEach(d=>wireCard(ggrid,d));
+  note.textContent=`通用区 · 运镜词典 ${GEN.length} 条 · 当前 ${rows.length} 条 · 中英对照 · 原文逐字保留`;
+}
+
+/* ---- 教程区渲染 ---- */
+function tutPhase(t){const m=t.match(/^(第[一二三四五六七八九十]+阶段)(?: · | — )(.+)$/);
+  if(m)return{ph:m[1],title:m[2]};if(/^开始之前/.test(t))return{ph:'开始之前',title:t};return{ph:null,title:t}}
+function renderTut(){
+  const ql=state.q.toLowerCase();
+  if(zst.tut){                                   /* 展开视图：时间线 */
+    const t=TUT.find(x=>x.id===zst.tut);
+    if(!t){zst.tut=null;return renderTut()}
+    let ph='',n=0;
+    const steps=t.steps.map((s,i)=>{
+      const p=tutPhase(s.t);n++;
+      let out='';
+      if(p.ph&&p.ph!==ph){ph=p.ph;out+=`<li class="tlphase"><span>${esc(ph)}</span></li>`}
+      out+=`<li class="tlstep" data-si="${i}"><span class="tlnum">${n}</span><div class="tlbody">
+        <h4>${hl(p.title)}</h4>${s.body?`<p class="tlrole">${hl(s.body)}</p>`:''}
+        ${s.prompt?`<div class="pane"><div class="phead"><span class="plab">提示词</span><button class="copy" data-k="o">${ICO.copy}复制</button></div>
+        <div class="pv" tabindex="0"><pre data-p="o"></pre></div></div>`:''}
+      </div></li>`;
+      return out;
+    }).join('');
+    tgrid.innerHTML=`<button class="tback" id="tback">← 返回教程列表</button>
+      <article class="tcover"><h3>${esc(t.title)}</h3><p class="tdesc">${esc(t.desc)}</p>
+      <div class="tmeta">${(t.tags||[]).map(x=>`<span class="chip">#${esc(x)}</span>`).join('')}
+      <span>${t.steps.length} 个步骤</span>${t.url?`<a href="${esc(t.url)}" target="_blank" rel="noopener">原文 ↗</a>`:''}<span>${esc(t.src)}</span></div></article>
+      <ol class="tl">${steps}</ol>`;
+    $('#tback').onclick=()=>{zst.tut=null;renderTut()};
+    t.steps.forEach((s,i)=>{
+      if(!s.prompt)return;
+      const card=tgrid.querySelector(`.tlstep[data-si="${i}"]`);
+      if(!card)return;const pre=card.querySelector('pre');pre.textContent=s.prompt;
+      const copy=card.querySelector('.copy');
+      copy.onclick=()=>{const done=()=>{copy.classList.add('ok');copy.innerHTML=ICO.check+'已复制';
+        setTimeout(()=>{copy.classList.remove('ok');copy.innerHTML=ICO.copy+'复制'},1300)};
+        if(navigator.clipboard&&navigator.clipboard.writeText)navigator.clipboard.writeText(s.prompt).then(done).catch(()=>{fallbackCopy(s.prompt);done()});
+        else{fallbackCopy(s.prompt);done()}};
+    });
+    note.textContent=`教程区 · ${t.title} · ${t.steps.length} 个步骤 · 提示词逐字保留 · 来源 ${t.src}`;
+    return;
+  }
+  const rows=TUT.filter(t=>!ql||(t.title+' '+t.desc+' '+(t.tags||[]).join(' ')+t.steps.map(s=>s.t).join(' ')).toLowerCase().indexOf(ql)>-1);
+  tgrid.innerHTML=rows.length?rows.map(t=>`<article class="tcover">
+    <h3>${hl(t.title)}</h3><p class="tdesc">${hl(t.desc)}</p>
+    <div class="tmeta">${(t.tags||[]).map(x=>`<span class="chip">#${esc(x)}</span>`).join(' ')}
+      <span>${t.steps.length} 个步骤</span>${sumPrompts(t)} 条提示词${t.url?`<a href="${esc(t.url)}" target="_blank" rel="noopener">原文 ↗</a>`:''}</div>
+    <button class="topen" data-open="${t.id}">展开完整教程</button>
+  </article>`).join(''):`<div class="empty">${ICO.film}<div>没有匹配的教程</div></div>`;
+  tgrid.querySelectorAll('[data-open]').forEach(b=>b.onclick=()=>{zst.tut=b.dataset.open;renderTut()});
+  note.textContent=`教程区 · ${TUT.length} 篇完整工作流教程 · 每步附可复制提示词`;
+}
+function sumPrompts(t){return t.steps.filter(s=>s.prompt).length}
+
+/* ---- 区域切换 ---- */
+function switchZone(z){
+  zst.zone=z;state.q=q.value.trim();
+  zonseg.querySelectorAll('button').forEach(b=>b.classList.toggle('on',b.dataset.z===z));
+  const isLib=z==='lib';
+  $('#verbar').hidden=!isLib;catbar.hidden=!isLib;document.querySelector('main .toolbar').hidden=!isLib;grid.hidden=!isLib;
+  $('#modelseg').hidden=!isLib;zGen.hidden=z!=='gen';zTut.hidden=z!=='tut';
+  q.placeholder=z==='lib'?'搜索提示词、用途或标签':z==='gen'?'搜索运镜、译文或标签':'搜索教程、步骤或标签';
+  if(z==='gen')renderGen();else if(z==='tut')renderTut();else refresh();
+}
+zonseg.querySelectorAll('button').forEach(b=>b.onclick=()=>switchZone(b.dataset.z));
+
 /* ---------- search & theme ---------- */
-let deb;q.addEventListener('input',()=>{clearTimeout(deb);deb=setTimeout(()=>{state.q=q.value.trim();refresh()},150)});
+let deb;q.addEventListener('input',()=>{clearTimeout(deb);deb=setTimeout(()=>{
+  state.q=q.value.trim();
+  if(zst.zone==='gen')renderGen();else if(zst.zone==='tut')renderTut();else refresh();
+},150)});
 const root=document.documentElement;
 function applyTheme(d){root.classList.toggle('dark',d)}
 let saved=null;try{saved=localStorage.getItem('sd-theme')}catch(e){}
