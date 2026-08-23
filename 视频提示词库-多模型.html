@@ -233,30 +233,27 @@ footer{max-width:1240px;margin:0 auto;padding:0 24px 40px;font-size:11px;color:v
 .gcard .cno{font-size:10.5px;max-width:52%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .gname-en{display:block;font-size:11.5px;font-weight:500;color:var(--faint);letter-spacing:.02em;margin-top:1px}
 @media(max-width:760px){#ggrid{grid-template-columns:1fr}}
-/* ---- 教程列表：紧凑网格卡 ---- */
-#tgrid.list{display:grid;grid-template-columns:repeat(auto-fill,minmax(330px,1fr));gap:14px;align-items:start}
+/* ---- 教程列表：紧凑网格卡（整卡可点） ---- */
+#tgrid.list{display:grid;grid-template-columns:repeat(auto-fill,minmax(330px,1fr));gap:14px;align-items:stretch}
 @media(max-width:760px){#tgrid.list{grid-template-columns:1fr}}
 .tcover{border:1px solid var(--line);border-radius:14px;background:var(--card);box-shadow:var(--sh);
-  padding:14px 16px;transition:border-color .15s,box-shadow .15s;display:flex;flex-direction:column}
-.tcover:hover{border-color:var(--acc-line)}
+  padding:14px 16px;transition:border-color .15s,box-shadow .15s;display:flex;flex-direction:column;cursor:pointer}
+.tcover:hover{border-color:var(--acc-line);box-shadow:0 4px 16px rgba(59,130,246,.12)}
 .tcover-img{display:block;width:100%;height:auto;border-radius:9px;border:1px solid var(--line);margin-bottom:12px}
 .tcover h3{font-size:14px;line-height:1.45;margin-bottom:6px}
 .tcover .tdesc{font-size:12.5px;color:var(--sub);line-height:1.6;margin-bottom:10px;
   display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
-.tcover .tmeta{display:flex;align-items:center;gap:8px;flex-wrap:wrap;font-size:11.5px;color:var(--faint)}
+.tcover .tmeta{display:flex;align-items:center;gap:8px;flex-wrap:wrap;font-size:11.5px;color:var(--faint);margin-top:auto}
 .tcover .tmeta a{color:var(--acc);text-decoration:none}
 .tcover .tmeta a:hover{text-decoration:underline}
-.topen{height:28px;padding:0 12px;border-radius:8px;border:1px solid var(--acc-line);background:var(--acc-soft);
-  color:var(--acc);font-size:12px;font-weight:600;margin-top:auto;align-self:flex-start;transition:filter .15s}
-.topen:hover{filter:brightness(.96)}
 .tback{display:inline-flex;align-items:center;gap:6px;height:30px;padding:0 12px;border-radius:8px;
   border:1px solid var(--line);background:var(--card);color:var(--sub);font-size:12.5px;margin-bottom:14px;transition:color .15s,border-color .15s}
 .tback:hover{color:var(--ink);border-color:var(--acc)}
-/* 教程详情：阶段分组 + 步骤双列紧凑网格（全直出无折叠） */
+/* 教程详情：阶段分组 + 步骤三列统一卡（全直出无折叠） */
 .tdetail{max-width:1180px;margin:0 auto}
 .tdhead{border:1px solid var(--line);border-radius:14px;background:var(--card);box-shadow:var(--sh);
-  padding:16px 18px;margin-bottom:14px;display:flex;gap:16px;align-items:flex-start;flex-wrap:wrap}
-.tdhead-img{width:168px;height:auto;border-radius:9px;border:1px solid var(--line);flex-shrink:0}
+  padding:14px 16px;margin-bottom:14px;display:flex;gap:14px;align-items:center;flex-wrap:wrap}
+.tdhead-img{width:128px;height:auto;border-radius:9px;border:1px solid var(--line);flex-shrink:0}
 .tdhead .tdinfo{flex:1;min-width:240px}
 .tdhead h3{font-size:15.5px;line-height:1.45;margin-bottom:8px}
 .tdhead .tdesc{font-size:12.5px;color:var(--sub);line-height:1.65;margin-bottom:10px;
@@ -10431,17 +10428,20 @@ function renderTut(){
     note.textContent=`教程区 · ${t.title} · ${t.steps.length} 个步骤 · 提示词逐字保留 · 来源 ${t.src}`;
     return;
   }
-  /* 列表：紧凑网格 */
+  /* 列表：紧凑网格（整卡可点） */
   const rows=TUT.filter(t=>!ql||(t.title+' '+t.desc+' '+(t.tags||[]).join(' ')+t.steps.map(s=>s.t).join(' ')).toLowerCase().indexOf(ql)>-1);
   tgrid.className='list';
-  tgrid.innerHTML=rows.length?rows.map(t=>`<article class="tcover">
+  tgrid.innerHTML=rows.length?rows.map(t=>`<article class="tcover" data-open="${t.id}" tabindex="0" role="button">
     ${t.cover_img?`<img class="tcover-img" src="${t.cover_img}" alt="" loading="lazy">`:''}
     <h3>${hl(t.title)}</h3><p class="tdesc">${hl(t.desc)}</p>
     <div class="tmeta">${(t.tags||[]).slice(0,3).map(x=>`<span class="chip">#${esc(x)}</span>`).join(' ')}
       <span>${t.steps.length} 步</span><span>${sumPrompts(t)} 提示词</span>${t.url?`<a href="${esc(t.url)}" target="_blank" rel="noopener">原文↗</a>`:''}</div>
-    <button class="topen" data-open="${t.id}">展开完整教程</button>
   </article>`).join(''):`<div class="empty">${ICO.film}<div>没有匹配的教程</div></div>`;
-  tgrid.querySelectorAll('[data-open]').forEach(b=>b.onclick=()=>{zst.tut=b.dataset.open;renderTut()});
+  tgrid.querySelectorAll('[data-open]').forEach(c=>{
+    const open=()=>{zst.tut=c.dataset.open;renderTut()};
+    c.onclick=e=>{if(e.target.closest('a'))return;open()};
+    c.onkeydown=e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();open()}};
+  });
   note.textContent=`教程区 · ${TUT.length} 篇完整工作流教程 · 每步附可复制提示词`;
 }
 function sumPrompts(t){return t.steps.filter(s=>s.prompt).length}
