@@ -305,6 +305,7 @@ footer{max-width:1240px;margin:0 auto;padding:0 24px 40px;font-size:11px;color:v
     <div class="seg zonseg" id="zonseg" role="tablist" aria-label="区域切换">
       <button type="button" data-z="lib" class="on">提示词库<s id="zn-lib"></s></button>
       <button type="button" data-z="gen">通用区<s id="zn-gen"></s></button>
+      <button type="button" data-z="gear">器材词典<s id="zn-gear"></s></button>
       <button type="button" data-z="tut">教程区<s id="zn-tut"></s></button>
     </div>
     <div class="search">
@@ -363,6 +364,10 @@ footer{max-width:1240px;margin:0 auto;padding:0 24px 40px;font-size:11px;color:v
   <section id="zone-gen" hidden>
     <div class="catbar" id="gcatbar"></div>
     <div id="ggrid"></div>
+  </section>
+  <section id="zone-gear" hidden>
+    <div class="catbar" id="gcatbar2"></div>
+    <div id="ggrid2"></div>
   </section>
   <section id="zone-tut" hidden>
     <div id="tgrid"></div>
@@ -11577,11 +11582,12 @@ function render(){buildCatbar();buildTags();refresh()}
 
 /* ---------- 顶层区域：通用区 / 教程区 ---------- */
 function zoneJSON(id){var el=document.getElementById(id);if(!el)return[];try{return JSON.parse(el.textContent)}catch(e){return[]}}
-const GEN=zoneJSON('general'),TUT=zoneJSON('tutorials');
-const zst={zone:'lib',gsub:'',tq:'',tut:null};
-const zonseg=$('#zonseg'),zGen=$('#zone-gen'),zTut=$('#zone-tut'),
-      gcatbar=$('#gcatbar'),ggrid=$('#ggrid'),tgrid=$('#tgrid');
-$('#zn-lib').textContent=DATA.length;$('#zn-gen').textContent=GEN.length;$('#zn-tut').textContent=TUT.length+'篇';
+const GENALL=zoneJSON('general'),TUT=zoneJSON('tutorials');
+const GEAR=GENALL.filter(d=>d.cat==='器材词典'),GEN=GENALL.filter(d=>d.cat!=='器材词典');
+const zst={zone:'lib',gsub:'',gsub2:'',tq:'',tut:null};
+const zonseg=$('#zonseg'),zGen=$('#zone-gen'),zGear=$('#zone-gear'),zTut=$('#zone-tut'),
+      gcatbar=$('#gcatbar'),ggrid=$('#ggrid'),gcatbar2=$('#gcatbar2'),ggrid2=$('#ggrid2'),tgrid=$('#tgrid');
+$('#zn-lib').textContent=DATA.length;$('#zn-gen').textContent=GEN.length;$('#zn-gear').textContent=GEAR.length;$('#zn-tut').textContent=TUT.length+'篇';
 
 function wireCard(container,d){        /* 与主库一致的复制/译文切换 wiring */
   const card=container.querySelector(`[data-id="${CSS.escape(d.id)}"]`);if(!card)return;
@@ -11601,27 +11607,26 @@ function wireCard(container,d){        /* 与主库一致的复制/译文切换 
   });
 }
 
-/* ---- 通用区渲染 ---- */
-function genRows(){
+/* ---- 通用区/器材词典渲染（参数化，两个独立分区） ---- */
+function genRowsOf(data,subKey){
   const ql=state.q.toLowerCase();
-  return GEN.filter(d=>{
-    if(zst.gsub&&d.sub!==zst.gsub)return false;
+  return data.filter(d=>{
+    if(zst[subKey]&&d.sub!==zst[subKey])return false;
     if(!ql)return true;
     return (d.name+' '+d.name_zh+' '+d.desc+' '+d.sub+' '+(d.tags||[]).join(' ')+' '+d.original+' '+(d.zh||'')).toLowerCase().indexOf(ql)>-1;
   });
 }
-function renderGen(){
-  const subs=[...new Set(GEN.map(d=>d.sub))];
-  gcatbar.innerHTML=`<div class="crow"><button type="button" class="cbtn ${zst.gsub?'':'on'}" data-g="">全部<s>${GEN.length}</s></button>`+
-    subs.map(s=>{const zh=s.split(' · ')[0],n=GEN.filter(d=>d.sub===s).length;
-      return `<button type="button" class="cbtn ${zst.gsub===s?'on':''}" data-g="${esc(s)}">${esc(zh)}<s>${n}</s></button>`}).join('')+`</div>`;
-  gcatbar.querySelectorAll('[data-g]').forEach(b=>b.onclick=()=>{zst.gsub=b.dataset.g;renderGen()});
-  const rows=genRows();
-  if(!rows.length){ggrid.innerHTML=`<div class="empty">${ICO.film}<div>没有匹配的条目</div><button class="ebtn" onclick="zst.gsub='';renderGen()">清除筛选</button></div>`;
-    note.textContent=`通用区 · ${cats.join(' + ')} · 共 ${GEN.length} 条 · 原文逐字保留`;
+function renderGenSet(data,catbarEl,gridEl,subKey,zoneName){
+  const subs=[...new Set(data.map(d=>d.sub))];
+  catbarEl.innerHTML=`<div class="crow"><button type="button" class="cbtn ${zst[subKey]?'':'on'}" data-g="">全部<s>${data.length}</s></button>`+
+    subs.map(s=>{const zh=s.split(' · ')[0],n=data.filter(d=>d.sub===s).length;
+      return `<button type="button" class="cbtn ${zst[subKey]===s?'on':''}" data-g="${esc(s)}">${esc(zh)}<s>${n}</s></button>`}).join('')+`</div>`;
+  catbarEl.querySelectorAll('[data-g]').forEach(b=>b.onclick=()=>{zst[subKey]=b.dataset.g;renderGenSet(data,catbarEl,gridEl,subKey,zoneName)});
+  const rows=genRowsOf(data,subKey);
+  if(!rows.length){gridEl.innerHTML=`<div class="empty">${ICO.film}<div>没有匹配的条目</div><button class="ebtn" onclick="zst.${subKey}='';${subKey==='gsub2'?'renderGear()':'renderGen()'}">清除筛选</button></div>`;
+    note.textContent=`${zoneName} · 共 ${data.length} 条 · 原文逐字保留`;
     return}
-  const cats=[...new Set(GEN.map(d=>d.cat||'运镜词典'))];
-  ggrid.innerHTML=rows.map(d=>{
+  gridEl.innerHTML=rows.map(d=>{
     const zhSub=(d.sub||'').split(' · ')[0],enSub=(d.sub||'').split(' · ')[1]||d.sub;
     const en=d.lang!=='zh';
     return `<article class="card gcard" data-id="${d.id}">
@@ -11638,9 +11643,11 @@ function renderGen(){
       <div class="cfoot"><div class="ctags">${(d.tags||[]).map(t=>`<span class="chip">#${esc(t)}</span>`).join('')}</div><span class="cch">${d.chars} 字</span></div>
     </article>`;
   }).join('');
-  rows.forEach(d=>wireCard(ggrid,d));
-  note.textContent=`通用区 · ${cats.join(' + ')} · 共 ${GEN.length} 条 · 当前 ${rows.length} 条 · 原文逐字保留`;
+  rows.forEach(d=>wireCard(gridEl,d));
+  note.textContent=`${zoneName} · 共 ${data.length} 条 · 当前 ${rows.length} 条 · 原文逐字保留`;
 }
+function renderGen(){renderGenSet(GEN,gcatbar,ggrid,'gsub','通用区 · 运镜词典')}
+function renderGear(){renderGenSet(GEAR,gcatbar2,ggrid2,'gsub2','器材词典')}
 
 /* ---- 教程区渲染 ---- */
 function tutPhase(t){const m=t.match(/^(第[一二三四五六七八九十]+阶段)(?: · | — )(.+)$/);
@@ -11730,16 +11737,16 @@ function switchZone(z){
   zonseg.querySelectorAll('button').forEach(b=>b.classList.toggle('on',b.dataset.z===z));
   const isLib=z==='lib';
   $('#verbar').hidden=!isLib;catbar.hidden=!isLib;document.querySelector('main .toolbar').hidden=!isLib;grid.hidden=!isLib;
-  $('#modelseg').hidden=!isLib;zGen.hidden=z!=='gen';zTut.hidden=z!=='tut';
-  q.placeholder=z==='lib'?'搜索提示词、用途或标签':z==='gen'?'搜索运镜、译文或标签':'搜索教程、步骤或标签';
-  if(z==='gen')renderGen();else if(z==='tut')renderTut();else refresh();
+  $('#modelseg').hidden=!isLib;zGen.hidden=z!=='gen';zGear.hidden=z!=='gear';zTut.hidden=z!=='tut';
+  q.placeholder=z==='lib'?'搜索提示词、用途或标签':z==='gen'?'搜索运镜、译文或标签':z==='gear'?'搜索器材、特性或标签':'搜索教程、步骤或标签';
+  if(z==='gen')renderGen();else if(z==='gear')renderGear();else if(z==='tut')renderTut();else refresh();
 }
 zonseg.querySelectorAll('button').forEach(b=>b.onclick=()=>switchZone(b.dataset.z));
 
 /* ---------- search & theme ---------- */
 let deb;q.addEventListener('input',()=>{clearTimeout(deb);deb=setTimeout(()=>{
   state.q=q.value.trim();
-  if(zst.zone==='gen')renderGen();else if(zst.zone==='tut')renderTut();else refresh();
+  if(zst.zone==='gen')renderGen();else if(zst.zone==='gear')renderGear();else if(zst.zone==='tut')renderTut();else refresh();
 },150)});
 const root=document.documentElement;
 function applyTheme(d){root.classList.toggle('dark',d)}
