@@ -268,22 +268,23 @@ footer{max-width:1240px;margin:0 auto;padding:0 24px 40px;font-size:11px;color:v
   display:flex;align-items:center;gap:8px;margin:0 0 10px}
 .tlzone h5:after{content:"";flex:1;height:1px;background:var(--line2)}
 .tlzone h5 span{background:var(--acc-soft);border:1px solid var(--acc-line);border-radius:999px;padding:2px 12px}
-.tlgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(400px,1fr));gap:12px;align-items:start}
+.tlgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(330px,1fr));gap:12px;align-items:stretch}
 @media(max-width:860px){.tlgrid{grid-template-columns:1fr}}
-.tstep{border:1px solid var(--line);border-radius:12px;background:var(--card);box-shadow:var(--sh);
-  padding:12px 14px;transition:border-color .15s;overflow:hidden}
+.tstep{height:400px;display:flex;flex-direction:column;border:1px solid var(--line);border-radius:12px;
+  background:var(--card);box-shadow:var(--sh);padding:12px 14px;transition:border-color .15s;overflow:hidden}
 .tstep:hover{border-color:var(--acc-line)}
-.tstep .thead{display:flex;align-items:center;gap:9px;margin-bottom:8px}
+.tstep .thead{display:flex;align-items:center;gap:9px;margin-bottom:8px;flex:none}
 .tstep .tnum{width:20px;height:20px;border-radius:50%;background:var(--acc-soft);border:1px solid var(--acc-line);
   color:var(--acc);font-size:10.5px;font-weight:650;display:grid;place-items:center;flex-shrink:0}
 .tstep h4{font-size:13px;font-weight:600;line-height:1.4;flex:1;min-width:0}
 .tlb{font-size:10px;font-weight:600;border-radius:5px;padding:1px 6px;letter-spacing:.03em;flex-shrink:0}
 .tlb.p{background:var(--acc-soft);color:var(--acc);border:1px solid var(--acc-line)}
-.tstep img{display:block;width:104px;height:auto;border-radius:7px;border:1px solid var(--line);float:right;margin:2px 0 8px 10px}
+.tstep .tbody{flex:1;min-height:0;overflow:auto;scrollbar-width:thin}
+.tstep img{display:block;width:96px;height:auto;border-radius:7px;border:1px solid var(--line);float:right;margin:2px 0 8px 10px}
 .tstep .trole{font-size:12px;color:var(--sub);line-height:1.6;white-space:pre-wrap}
 .tstep .trole:after{content:"";display:block;clear:both}
-.tstep .pane{margin:10px 0 0}
-.tstep .trole+.pane{clear:none}
+.tstep .pane{flex:none;margin-top:10px}
+.tstep .pv{height:128px}
 </style>
 <meta name="description" content="Seedance 视频生成提示词知识库：中英双语对照、分类导航、标签筛选与全文搜索，单文件离线可用。">
 <script>try{var s=localStorage.getItem('sd-theme');if(s?s==='d':matchMedia('(prefers-color-scheme: dark)').matches)document.documentElement.classList.add('dark')}catch(e){}</script>
@@ -10393,8 +10394,7 @@ function renderTut(){
         const p=tutPhase(s.t);
         return `<article class="tstep" data-si="${i}">
           <div class="thead"><span class="tnum">${n}</span><h4>${hl(p.title)}</h4>${s.prompt?`<span class="tlb p">提示词</span>`:''}</div>
-          ${s.img?`<img src="${s.img}" alt="" loading="lazy">`:''}
-          ${s.body?`<p class="trole">${hl(s.body)}</p>`:''}
+          <div class="tbody">${s.img?`<img src="${s.img}" alt="" loading="lazy">`:''}${s.body?`<p class="trole">${hl(s.body)}</p>`:''}</div>
           ${s.prompt?`<div class="pane"><div class="phead"><div class="ptabs"><button class="pt on" data-t="o">原文 EN</button><button class="pt" data-t="z">中文</button></div><button class="copy" data-k="o">${ICO.copy}复制</button></div>
           <div class="pv" tabindex="0"><pre data-p="o"></pre><pre data-p="z" hidden></pre></div></div>`:''}
         </article>`;
