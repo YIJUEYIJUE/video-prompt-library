@@ -1,0 +1,78 @@
+[
+ {
+  "model": "Seedance 2.0",
+  "cat": "写实人物·剧情",
+  "sub": "真实素材·VFX",
+  "name": "右臂机械化·义肢逐件组装",
+  "desc": "真实素材VFX：纹身亮起青光，皮肤如面板逐段翻开，碳纤维机械义肢从腕到指尖逐节组装锁定。",
+  "tags": [
+   "真实素材",
+   "VFX",
+   "机械义肢",
+   "变身",
+   "办公室"
+  ],
+  "lang": "en",
+  "langname": "English",
+  "original": "@video_1: same young man looking down at his bent right forearm and clenched fist, in a modern office. Subject, face, pose, office, camera and motion reference — preserve exactly.\nPhotoreal. 16:9. 10s. Filmic look — natural grain, neutral cool indoor color, soft contrast, handheld. NON-IP — original cybernetic limb design. Preserve source subject, face, office and camera move; right-arm cybernetic transformation added as VFX, assembling part by part. SFX only.\nThe transformation builds piece by piece across the shot. It starts at the tattoo: its lines light up with faint cyan. Then the skin opens in sequence — fine seams split one section at a time along the wrist and peel back like panels, revealing dark carbon-fibre and brushed-metal structure, servo joints and routed cabling. Components seat one at a time — a servo pivots, a cable plugs in, an actuator line lights cyan. Segmented metal plates fold out and lock up the forearm a single plate at a time. The reveal reaches the back of the hand, then sheaths each finger knuckle by knuckle in articulated metal, each joint locking and flexing to test. The tattoo's lines reflow into glowing cyan circuitry. By the end his right hand and forearm are a complete clean cybernetic limb; the rest of him and the office unchanged. Face and identity unchanged.\nSFX only: a faint rising electronic hum, skin seams parting with soft ticks, servos whirring and seating, connectors clicking, crisp snaps as finger segments lock, building to a steady resonant hum; low ambient office tone throughout.",
+  "zh": "@video_1：同一个年轻男子在现代办公室中低头看着自己弯曲的右前臂和握紧的拳头。主体、脸、姿势、办公室、摄影机与运动参考——完全保留。\n照片级真实。16:9。10 秒。电影感画面——自然颗粒、中性偏冷室内色彩、柔和对比、手持感。非 IP——原创机械义肢设计。保留源主体、脸、办公室与摄影机运动；只把右臂的机械化转变作为 VFX 添加，并以零件逐步组装。只用音效。\n整段镜头中，改造一块一块地完成。它从纹身开始：纹身线条亮起微弱青色光。随后皮肤按顺序打开——细密接缝沿手腕一段段裂开，像面板一样翻起，露出深色碳纤维与拉丝金属结构、伺服关节和布线。组件逐一就位——一个伺服件转动，一根线缆插入，一条执行器线路亮起青光。分段金属甲片展开，并一片片锁定到前臂上。变化延伸到手背，再让每根手指一节一节被铰接金属包覆，每个关节锁定并弯曲测试。纹身线条重新流动成发光青色电路。到最后，他的右手和前臂变成完整干净的机械义肢；其余身体与办公室不变。脸和身份不变。\n仅音效：逐渐升起的微弱电子嗡鸣，皮肤接缝以轻微咔嗒声打开，伺服件转动并入位，连接器点击，手指分段锁定时清脆咔哒，最终形成稳定共振嗡鸣；全程保持低音量办公室环境声。",
+  "src": "seedance2.0测试集#5"
+ },
+ {
+  "model": "Seedance 2.0",
+  "cat": "写实人物·剧情",
+  "sub": "真实素材·VFX",
+  "name": "右臂隐形·玻璃折射",
+  "desc": "真实素材VFX：右臂从纹身起逐渐透明如扭曲玻璃，终至完全隐形，只余热浪般微光轮廓。",
+  "tags": [
+   "真实素材",
+   "VFX",
+   "隐形",
+   "折射",
+   "渐隐"
+  ],
+  "lang": "en",
+  "langname": "English",
+  "original": "@video_1: same young man looking down at his bent right forearm and clenched fist, in a modern office. Subject, face, pose, office, camera and motion reference — preserve exactly.\nPhotoreal. 16:9. 10s. Filmic look — natural grain, neutral cool indoor color, soft contrast, handheld. Preserve source subject, face, office and camera move; right-arm invisibility added as VFX. SFX only.\nThe effect builds gradually, starting at the tattoo: its inked lines shimmer and turn translucent, then the skin turns glassy and refractive. The transparency spreads from the wrist up the forearm and across the hand — the limb bending the office behind it like warped glass, the table, glass partition and colleague visible and rippling through where the arm used to be. The arm fades toward fully see-through; only a faint shimmering ripple outline marks its edge and every flex of the fingers. The loose sleeve sags and shifts emptily. By the end his right hand and forearm are completely invisible — the office seen cleanly through the empty space, just a soft heat-haze shimmer. The rest of him and the office unchanged. Face and identity unchanged.\nSFX only: a soft crystalline shimmer, a low airy phasing hum sweeping up the arm, a faint glassy rippling, a thin high tone as the limb fades out, settling into near-silence; low ambient office tone throughout.",
+  "zh": "@video_1：同一个年轻男子在现代办公室中低头看着自己弯曲的右前臂和握紧的拳头。主体、脸、姿势、办公室、摄影机与运动参考——完全保留。\n照片级真实。16:9。10 秒。电影感画面——自然颗粒、中性偏冷室内色彩、柔和对比、手持感。保留源主体、脸、办公室与摄影机运动；只把右臂隐形效果作为 VFX 添加。只用音效。\n效果逐渐形成，从纹身开始：墨线闪烁并变得半透明，随后皮肤变成玻璃般透明且具有折射。透明度从手腕扩散到前臂和手掌——肢体像扭曲玻璃一样弯折背后的办公室，桌子、玻璃隔断和同事都能透过原本手臂的位置看见并产生波纹。手臂逐步接近完全透明；只剩下微弱闪烁的涟漪轮廓标记边缘和每次手指弯曲。宽松袖口空荡地下垂并移动。到最后，他的右手和前臂完全隐形——办公室通过空白空间清晰可见，只留柔和热浪般的抖动。其余身体与办公室不变。脸和身份不变。\n仅音效：柔和水晶般闪烁声，低沉空气相位嗡鸣沿手臂扫过，轻微玻璃波纹声，肢体消失时一道细高音，最后归于近乎安静；全程保持低音量办公室环境声。",
+  "src": "seedance2.0测试集#6"
+ },
+ {
+  "model": "Seedance 2.0",
+  "cat": "写实人物·剧情",
+  "sub": "真实素材·VFX",
+  "name": "右臂熔岩化·白热拳峰",
+  "desc": "真实素材VFX：橙红裂缝沿纹身蔓延，右臂焦黑成壳岩浆流动，紧握的拳头白热发光。",
+  "tags": [
+   "真实素材",
+   "VFX",
+   "熔岩",
+   "变身",
+   "火星"
+  ],
+  "lang": "en",
+  "langname": "English",
+  "original": "@video_1: same young man looking down at his bent right forearm and clenched fist, in a modern office. Subject, face, pose, office, camera and motion reference — preserve exactly.\nPhotoreal. 16:9. 10s. Filmic look — natural grain, neutral cool indoor color warming toward the hand, soft contrast, handheld. Preserve source subject, face, office and camera move; right-arm transformation added as VFX. SFX only.\nIt begins at the tattoo: fine glowing-orange cracks open along the inked lines and spread through the skin like cooling lava, throwing warm light up onto his face against the cool office. The cracks widen into molten fissures; the surface darkens to charred crust between veins of bright magma that pulse and flow. Heat-haze shimmer rises and small embers lift away. The hand glows hottest — the clenched fist a core of molten rock, knuckles cracked and glowing white-hot, thin smoke curling between the fingers. By the end his right hand and forearm are blackened crust laced with flowing magma; the rest of him and the office unchanged. Face and identity unchanged.\nSFX only: low crackle as the cracks open, deep molten rumble, faint hiss and ember pops, soft heat roar at the hand, ambient office tone.",
+  "zh": "@video_1：同一个年轻男子在现代办公室中低头看着自己弯曲的右前臂和握紧的拳头。主体、脸、姿势、办公室、摄影机与运动参考——完全保留。\n照片级真实。16:9。10 秒。电影感画面——自然颗粒，室内冷色调在手部附近逐渐变暖，柔和对比，手持感。保留源主体、脸、办公室与摄影机运动；只把右臂变形效果作为 VFX 添加。只用音效。\n从纹身开始：细小橙色发光裂缝沿墨线打开，并像冷却中的熔岩一样在皮肤中扩散，与办公室冷色形成对比，把温暖光线投到他的脸上。裂缝扩大为熔融缝隙；表面变暗成焦黑外壳，明亮岩浆脉络在其中脉动流动。热浪抖动升起，小火星飘离。手部最炽热——紧握的拳头像熔岩岩核，指节开裂并发出白热光，手指之间卷起细烟。到最后，他的右手和前臂成为布满流动岩浆的黑色焦壳；其余身体与办公室不变。脸和身份不变。\n仅音效：裂缝打开时的低沉噼啪声，深层熔融隆隆声，轻微嘶嘶声与火星爆裂声，手部柔和热焰轰鸣，办公室环境音。",
+  "src": "seedance2.0测试集#7"
+ },
+ {
+  "model": "Seedance 2.0",
+  "cat": "喜剧·动画·萌趣",
+  "sub": "拟人·萌趣",
+  "name": "女孩骑萌宠·飞越奇幻世界",
+  "desc": "虹彩羽鳞萌宠载女孩穿越英里高巨树穹拱，俯冲微小文明，冲出世界边缘悬崖俯瞰绿松石海。",
+  "tags": [
+   "萌趣",
+   "飞行",
+   "奇幻",
+   "治愈",
+   "大场景"
+  ],
+  "lang": "en",
+  "langname": "English",
+  "original": "SURREAL FANTASY — GIRL FLIES HER COLORFUL WORLD ON A CUTE CREATURE (CINEMATIC, 15s)\nLush cinematic fantasy, hyperreal yet painterly — like a living classic matte-painting brought to motion: rich, luminous, deeply SATURATED color, crisp detail, soft volumetric light, fine film grain, anamorphic widescreen. Awe and wonder, colossal surreal scale. A young woman flies on a small, cute, brightly colored creature, swooping around her impossible homeland to reveal its vastness. 16:9, 15s. Coherent, grounded flight physics, magical.\n\nTHE WORLD: an impossible homeland of COLOSSAL natural cathedral arches — mile-high rows of giant trees fused into vaulted green archways marching to the horizon, sunlight and waterfall-mist pouring between them. Far below, a tiny vibrant civilization: patchwork emerald fields, white-and-terracotta towns, slender towers, orchards in red-and-gold bloom. At the edge of the world the land drops in a monumental city-cliff into a glittering turquoise sea dotted with white sailboats. Everything human is tiny.\nTHE COLOR: maximum vibrancy — deep emerald greens, cobalt-to-turquoise sky and sea, warm golden sunlight, pops of flowering red, coral and gold. Rich, glowing, never muddy.\nTHE GIRL: a joyful young woman, 20-25, windswept hair streaming, flowing earth-and-jewel-toned clothes, eyes wide with wonder, leaning with the creature's banks.\nTHE CREATURE: a small friendly flying creature — soft rounded body, big soulful eyes, a gentle beaky face, iridescent rainbow plumage-scales (teal, magenta, gold), broad membranous-feathered wings, a long ribboned tail. Same design in every frame, no drift.\n\nKEY LOCKS: constantly sell the immensity — the girl and creature a tiny bright speck against mile-high arches and the world-edge cliff; deep parallax on every move. Keep color rich and glowing. The creature flaps, glides and banks with real wing dynamics and weight; wind ripples its plumage and her hair. Consistent design and same girl throughout — no morphing. Camera flies WITH the creature — banking alongside, dropping into dives, craning up for reveals. Solid architecture and real perspective, no warping or melting.\n\nSHOTS — ONE CONTINUOUS FLIGHT (or 2-3 clean cuts on motion)\n0–4s — UNDER THE GREEN ARCHES: the camera sweeps through a towering emerald cathedral-arch, light and mist pouring down, then finds the girl and her creature gliding through the vast green tunnel, tiny against the scale.\n4–9s — OVER THE HOMELAND: the creature banks and dives toward the tiny civilization — fields, towns, orchards rushing past below in deep parallax, the girl laughing; the camera soars alongside.\n9–15s — THE WORLD'S EDGE: they burst out into open sky — the land drops away in a monumental city-cliff into a turquoise sea with sailboats below; the creature spreads its wings and the camera cranes back into a colossal wide. Hold on the wonder.\nFORBIDDEN — no franchise or IP references, no recognizable characters, no readable text or logos, no desaturated grading, no warping or melting geometry, no design drift, no plastic CGI gloss, no neon eyes.\n15s. 16:9. 24fps. SFX only: wind and wing-beats, the creature's soft chirps, the girl's delighted laughter, faint birdsong, surf and a soft town hum far below. No dialogue.",
+  "zh": "超现实幻想——女孩骑着可爱生物飞越她的彩色世界（电影感，15 秒）。\n浓郁电影幻想风，超真实但带绘画感——像一幅被赋予运动的经典遮罩绘景：色彩丰富、发光、深度饱和，细节锐利，柔和体积光，细腻胶片颗粒，变形宽银幕。充满敬畏与奇观，巨大超现实尺度。一名年轻女子骑在小巧、可爱、色彩明亮的飞行生物身上，环绕她不可能存在的家园飞行，以展现它的广阔。16:9，15 秒。飞行物理连贯扎实，带魔法感。\n\n世界：一个不可能的家园，由巨大自然大教堂拱门构成——成排一英里高的巨树融合成绿色穹顶拱廊，延伸到地平线；阳光与瀑布水雾从拱间倾泻而下。下方极远处有微小而鲜艳的文明：翡翠色拼布田野、白墙陶瓦小镇、细长塔楼、红金花开的果园。在世界边缘，陆地以宏伟城市悬崖坠入闪亮的绿松石海，海面点缀白色帆船。一切人类造物都显得很小。\n色彩：最高鲜艳度——深翡翠绿，钴蓝到绿松石的天空与海洋，温暖金色阳光，红色、珊瑚色与金色花朵点缀。丰富发光，绝不浑浊。\n女孩：欢乐的年轻女性，20–25 岁，被风吹起的头发飘扬，穿着土色与宝石色调的飘逸服装，眼中充满惊奇，随着生物的倾斜而倾身。\n生物：小型友好飞行生物——柔软圆润身体，大而有灵魂感的眼睛，温柔鸟喙脸，虹彩羽鳞（青绿、洋红、金色），宽大的膜羽翼，长长的缎带尾。每一帧保持同一设计，不漂移。\n\n关键锁定：持续展现宏大尺度——女孩和生物只是英里高拱门与世界边缘悬崖前一粒明亮小点；每次运动都要有深层视差。保持色彩丰富发光。生物用真实翼动力与重量感拍翼、滑翔和转弯；风吹动羽鳞和女孩头发。全程同一女孩与同一生物设计——不要变形。摄影机与生物一起飞行——并肩倾斜、下坠俯冲、抬升揭示。建筑稳固、透视真实，不要扭曲或融化。\n\n镜头——一次连续飞行（或 2–3 个顺动作干净切镜）。\n0–4 秒——绿色拱门下：摄影机穿过高耸翡翠大教堂拱门，光与雾倾泻而下，然后找到女孩与她的生物滑翔穿过巨大的绿色隧道，在尺度对比中显得很小。\n4–9 秒——飞越家园：生物转弯并俯冲向微小文明——田野、城镇、果园在深视差中从下方掠过，女孩大笑；摄影机并肩飞行。\n9–15 秒——世界边缘：他们冲入开阔天空——陆地以宏伟城市悬崖坠入绿松石海，海面有帆船；生物张开翅膀，摄影机后撤成巨大全景。停留在奇观感上。\n禁止——不要任何系列/IP 引用，不要可识别角色，不要可读文字或标志，不要低饱和调色，不要几何扭曲或融化，不要设计漂移，不要塑料感 CG 光泽，不要霓虹眼睛。\n15 秒。16:9。24fps。仅音效：风声与拍翼声，生物柔和鸣叫，女孩开心笑声，远处鸟鸣、海浪声与下方城镇柔和嗡声。无对白。",
+  "src": "seedance2.0测试集#8"
+ }
+]
