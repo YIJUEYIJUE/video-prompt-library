@@ -16,5 +16,5 @@
 1. 把拿到的提示词整理成 9 字段 JSON 数组：`model`（系列+空格+版本）/ `cat` / `sub` / `name`（中文）/ `desc`（中文）/ `tags`（数组 3–6 个）/ `lang` / `original`（逐字保留）/ `src`；外文条目另加 `zh` 中文译文。
 2. 分类优先复用 README §4 的现有 cat/sub；新建子类用「X·Y」式。
 3. 能跑 Python：拉最新库 → 追加 → `python 库维护工具.py verify` 全绿 → 推送 main（提交信息 `追加 N 条：<简述>`）→ 回读远端再 verify。
-4. 跑不了 Python：把 9 字段 JSON 提交到 `待入库/`；大文件改提交两行 `.url` 文件（第 1 行直链、第 2 行 SHA-256）。CI 自动入库并同步 README 统计（`同步README统计.py`），结果看 Actions 绿勾与 `运行记录/最近入库.log`。
+4. 用户投自由格式素材（md / txt / 截图 / 粘贴文本 / 链接）：你负责解析、归类、补全中文名/简介/标签/译文，生成 9 字段 JSON（§3）——用户不手填字段。JSON 就绪后：能跑 Python 走 `追加提示词.py`；跑不了就把 JSON 提交到 `待入库/`（小批次单文件即可，≥50 条再分片），大文件改两行 `.url` 文件（第 1 行直链、第 2 行 SHA-256）。CI 自动入库并同步 README 统计（`同步README统计.py`），结果看 Actions 绿勾与 `运行记录/最近入库.log`。
 5. 校验红灯 = 零写入：修 JSON 重来；已推坏就 `git revert`，不要 force push。
