@@ -62,6 +62,10 @@ jobs:
           grep -oE '"全库指纹"[^,}]*' "视频提示词库-多模型.html" | head -1 | tee -a "$log" || true
           echo "changed=1" >> "$GITHUB_OUTPUT"
 
+      - name: 同步 README 统计（随入库提交一并生效）
+        if: steps.doit.outputs.changed == '1'
+        run: python "同步README统计.py" "视频提示词库-多模型.html" | tee -a 运行记录/最近入库.log
+
       - name: 提交入库结果
         if: steps.doit.outputs.changed == '1'
         run: |
