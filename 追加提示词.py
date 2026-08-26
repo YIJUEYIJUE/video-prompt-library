@@ -8,17 +8,10 @@
 #       标题/简介中文、外文须有译文、标签 3-6 且合法。
 import sys, os, re, json, hashlib, datetime, shutil
 
-DATA_RE = re.compile(r'(<script[^>]*id="data"[^>]*>)(.*?)(</script>)', re.S)
-META_RE = re.compile(r'(<script id="meta" type="application/json">)(.*?)(</script>)', re.S)
-MODEL_TREE = [
-    {'family': 'Seedance', 'versions': {'Seedance 2.0': 'sd2', 'Seedance 2.5': 'sd25'}},
-    {'family': '海螺', 'versions': {'海螺 H3': 'hl3'}},
-    {'family': '可灵', 'versions': {'可灵 O3': 'klo3', '可灵 3.0': 'kl3'}},
-]
+from 库共享定义 import (DATA_RE, META_RE, MODEL_TREE, TECH_OK, REQUIRED,
+                       cjk, ok_tag, sha, check_fields, DANGER_RE, NOISE_RE, ERR_TYPES)
+
 PREFIX = {m: pf for f in MODEL_TREE for m, pf in f['versions'].items()}
-TECH_OK = {'FPV', 'IMAX', 'CG', 'UE5', 'AI', 'VFX', 'HDR', 'LUT', 'Glitch',
-           'Motion', 'Logo', 'Arri', 'Bokeh', 'Loop'}
-REQUIRED = ['model', 'cat', 'sub', 'name', 'desc', 'tags', 'lang', 'original', 'src']
 
 
 def fam_of(m):

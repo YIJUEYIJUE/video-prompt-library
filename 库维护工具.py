@@ -8,14 +8,11 @@
 # 铁律：绝不原地覆盖；老条目 original 指纹必须全部不变，任一不符立即中止。
 import sys, os, re, json, hashlib, datetime
 
-DATA_RE = re.compile(r'(<script[^>]*id="data"[^>]*>)(.*?)(</script>)', re.S)
-META_RE = re.compile(r'(<script id="meta" type="application/json">)(.*?)(</script>)', re.S)
+from 库共享定义 import (DATA_RE, META_RE, MODEL_TREE, MODELS, TECH_OK, REQUIRED,
+                       ERR_TYPES, DANGER_RE, NOISE_RE,
+                       cjk, ok_tag, sha, check_fields, check_errata)
 # 模型两级注册表：顶层系列 → 具体版本 → id 前缀
-MODEL_TREE = [
-    {'family': 'Seedance', 'versions': {'Seedance 2.0': 'sd2', 'Seedance 2.5': 'sd25'}},
-    {'family': '海螺', 'versions': {'海螺 H3': 'hl3'}},
-    {'family': '可灵', 'versions': {'可灵 O3': 'klo3', '可灵 3.0': 'kl3'}},
-]
+MODEL_TREE = __import__('库共享定义').MODEL_TREE
 PREFIX = {m: pf for f in MODEL_TREE for m, pf in f['versions'].items()}
 def fam_of(m):
     m = str(m or '')
@@ -26,21 +23,8 @@ def fam_of(m):
 def ver_of(m):
     f = fam_of(m)
     return str(m or '')[len(f):].strip() or '默认'
-TECH_OK = {'FPV', 'IMAX', 'CG', 'UE5', 'AI', 'VFX', 'HDR', 'LUT', 'Glitch', 'Motion', 'Logo', 'Arri', 'Bokeh', 'Loop'}
-def ok_tag(x):
-    x = str(x)
-    if any('\u4e00' <= c <= '\u9fff' for c in x):
-        return True
-    if x in TECH_OK or re.match(r'^[0-9]', x) or x.isupper():
-        return True
-    return False
-REQUIRED = ['model', 'cat', 'sub', 'name', 'desc', 'tags', 'lang', 'original', 'src']
 
-def cjk(s):
-    return any('\u4e00' <= c <= '\u9fff' for c in str(s))
 
-def sha(s):
-    return hashlib.sha256(str(s).encode()).hexdigest()[:16]
 
 def load(path, strict=True):
     h = open(path, encoding='utf-8').read()
@@ -162,6 +146,14 @@ def check(data, meta):
         o = d.get('original', '')
         if isinstance(o, str) and NOISE.search(o):
             bad.append((d.get('id', '?'), '原文疑似含页脚/CTA 噪音：%s' % NOISE.search(o).group(0)[:20]))
+    # —— 勘误登记格式校验（P2：meta.勘误登记 存在时必检）——
+    ERR_TYPES = {'OCR修正', '噪音清理', '重构拆分', '补全', '字段修正', '语义去重'}
+    for e in (meta.get('勘误登记') or []):
+        for f in ('日期', '条目', '类型', '详情'):
+            if not e.get(f):
+                bad.append(('(meta)', '勘误登记缺字段 %s：%s' % (f, str(e)[:50])))
+        if e.get('类型') and e['类型'] not in ERR_TYPES:
+            bad.append(('(meta)', '勘误登记类型非法 %r（合法：%s）' % (e['类型'], '/'.join(sorted(ERR_TYPES)))))
     _LAST_WARN.extend(warn)
     return bad
 
