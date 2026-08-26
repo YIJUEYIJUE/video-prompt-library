@@ -51,7 +51,7 @@ out.append('## 主库条目索引')
 out.append('')
 for x in data:
     out.append('- `%s`｜%s｜%s/%s｜%d字｜%s' % (
-        x['id'], x['name'], x['cat'], x['sub'], len(x.get('original', '')),
+        x.get('id', '?'), x.get('name', '?'), x.get('cat', '?'), x.get('sub', '?'), len(x.get('original', '')),
         '、'.join(x.get('tags', [])[:3])))
 out.append('')
 out.append('## 通用区分类（%d 条）' % len(gen))
@@ -61,7 +61,7 @@ for c, n in Counter(x['cat'] for x in gen).most_common():
 out.append('')
 for x in gen:
     out.append('- `%s`｜%s｜%s/%s｜%s' % (
-        x['id'], x['name'], x['cat'], x.get('sub', ''), (x.get('desc') or '')[:60]))
+        x.get('id', '?'), x.get('name', '?'), x.get('cat', '?'), x.get('sub', '?'), (x.get('desc') or '')[:60]))
 out.append('')
 out.append('## 教程区（%d 篇）' % len(tut))
 out.append('')
