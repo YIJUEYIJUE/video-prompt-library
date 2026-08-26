@@ -32,11 +32,24 @@ def main():
     fp = meta['完整性指纹']['全库指纹']
     date = meta.get('updatedAt', '')
 
+    # —— 扩展区统计（通用区/教程区），规模行全量覆盖，防手写漂移 ——
+    gm = re.search(r'<script[^>]*id="general"[^>]*>(.*?)</script>', h, re.S)
+    tm = re.search(r'<script[^>]*id="tutorials"[^>]*>(.*?)</script>', h, re.S)
+    try:
+        gen = json.loads(gm.group(1)) if gm else []
+        tut = json.loads(tm.group(1)) if tm else []
+    except Exception:
+        gen, tut = [], []
+    gcat = Counter(x.get('cat', '未分类') for x in gen)
+    gen_str = ' / '.join('%s %d' % (k, v) for k, v in gcat.most_common())
+
     # —— 统计 ——
     fam = Counter(d['model'] for d in rows)
     model_str = '、'.join('%s ×%d' % (k, v) for k, v in fam.most_common())
-    stats_line = '- 当前规模：**%d 条**（%s）｜ 版本标签 `%s` ｜ 全库指纹 `%s`（%s）' % (
-        n, model_str, meta.get('version'), fp, date)
+    stats_line = ('- 当前规模：**主库 %d 条**（%s）＋ **通用区 %d 条**（%s）＋ **教程区 %d 篇**，'
+                  '合计 **%d 条 + %d 篇**｜ 版本标签 `%s` ｜ 主库全库指纹 `%s`') % (
+        n, model_str, len(gen), gen_str, len(tut), n + len(gen), len(tut),
+        meta.get('version'), fp)
 
     cats = OrderedDict()
     for d in rows:
@@ -56,7 +69,7 @@ def main():
     i_stats = next((i for i, l in enumerate(lines) if l.startswith('- 当前规模：')), None)
     if i_stats is None:
         soft_fail('找不到「- 当前规模：」锚点行')
-    m_old = re.search(r'\*\*(\d+) 条\*\*', lines[i_stats])
+    m_old = re.search(r'\*\*(?:主库 )?(\d+) 条\*\*', lines[i_stats])
     if not m_old:
         soft_fail('规模行条数解析失败')
     old_n = int(m_old.group(1))

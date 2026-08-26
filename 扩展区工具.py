@@ -11,9 +11,13 @@
   - meta['扩展区'] 登记两块的条目数与全块 SHA-256 指纹，篡改即被发现；
   - data 块逐字节不可动（断言保护）；meta 只增不改既有键。
 """
-import json, re, sys, hashlib
+import json, re, sys, hashlib, datetime
 
-BIRTH = '2026-08-24'
+BIRTH = '2026-08-24'  # 仅作历史基线；写入时一律用当天日期
+
+
+def today():
+    return datetime.date.today().isoformat()
 
 
 def sha(s):
@@ -75,15 +79,28 @@ def do_append(html_path, zone, batch_path):
     assert zone in ('general', 'tutorials')
     blk = get_block(h, zone)
     assert blk is not None, '%s 块不存在，先 init' % zone
+    # fail-closed：写入前必须确认现状与登记指纹一致，防止把坏状态重新盖章
+    reg = meta.get('扩展区', {}).get(zone)
+    assert reg is not None, 'meta.扩展区.%s 登记缺失，先 init' % zone
+    cur_fp = sha(json.dumps(blk, ensure_ascii=False))
+    assert cur_fp == reg['全块指纹'] and len(blk) == reg['条目数'], \
+        '%s 块现状与登记指纹不一致（%s/%s vs %s/%s），拒绝在未知状态上追加' % (
+            zone, len(blk), cur_fp, reg['条目数'], reg['全块指纹'])
     batch = json.load(open(batch_path, encoding='utf-8'))
+    # 批次内容校验：必填字段 + original 非空 + id 规范
+    need = {'general': ['id', 'cat', 'sub', 'name', 'desc', 'original'],
+            'tutorials': ['id', 'title', 'steps', 'src']}[zone]
+    for e in batch:
+        for f in need:
+            assert e.get(f), '批次缺字段 %s：%s' % (f, e.get('id', '(无 id)'))
     ids = {e['id'] for e in blk}
     for e in batch:
         assert e['id'] not in ids, 'ID 重复：%s' % e['id']
         blk.append(e)
     h = set_block(h, zone, blk)
     meta['扩展区'][zone] = {'条目数': len(blk), '全块指纹': sha(json.dumps(blk, ensure_ascii=False))}
-    meta['变更日志'].append({'日期': BIRTH, '内容': '%s区追加 %d 条（→ 共 %d）' % (zone, len(batch), len(blk))})
-    meta['updatedAt'] = BIRTH
+    meta['变更日志'].append({'日期': today(), '内容': '%s区追加 %d 条（→ 共 %d）' % (zone, len(batch), len(blk))})
+    meta['updatedAt'] = today()
     h = re.sub(r'(<script id="meta"[^>]*>\n).*?(\n</script>)',
                lambda m: m.group(1) + json.dumps(meta, ensure_ascii=False, indent=1) + m.group(2), h, count=1, flags=re.S)
     guard(load(html_path)[0], h)

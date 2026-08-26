@@ -5,11 +5,16 @@ on:
     paths:
       - "视频提示词库-多模型.html"
       - "追加提示词.py"
+      - "扩展区工具.py"
       - "库维护工具.py"
+      - "同步README统计.py"
       - ".github/workflows/verify.yml"
   pull_request:
     paths:
       - "视频提示词库-多模型.html"
+      - "追加提示词.py"
+      - "扩展区工具.py"
+      - "库维护工具.py"
   workflow_dispatch:
 
 jobs:
@@ -20,5 +25,7 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-      - name: verify 必须全绿
+      - name: 主库 verify 必须全绿（fail-closed）
         run: python "库维护工具.py" verify "视频提示词库-多模型.html"
+      - name: 扩展区（通用/教程）verify 必须全绿
+        run: python "扩展区工具.py" verify "视频提示词库-多模型.html"

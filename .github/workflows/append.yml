@@ -5,6 +5,10 @@ on:
     branches: [main]
     paths:
       - "待入库/**"
+      - "追加提示词.py"
+      - "扩展区工具.py"
+      - "库维护工具.py"
+      - "同步README统计.py"
   workflow_dispatch:
 
 permissions:
@@ -27,6 +31,7 @@ jobs:
       - name: 下载直链、逐个追加并校验
         id: doit
         run: |
+          set -o pipefail
           shopt -s nullglob
           mkdir -p 已入库 运行记录
           log=运行记录/最近入库.log
@@ -43,7 +48,7 @@ jobs:
             if [ -n "$want" ]; then
               echo "$want  $out" | sha256sum -c - | tee -a "$log"
             else
-              sha256sum "$out" | tee -a "$log"
+              echo "⚠ .url 缺第二行哈希，跳过强校验：$u" | tee -a "$log"
             fi
             mv "$u" "已入库/$(date +%Y%m%d-%H%M%S)__$(basename "$u")"
           done
@@ -53,25 +58,47 @@ jobs:
             echo "changed=0" >> "$GITHUB_OUTPUT"
             exit 0
           fi
+          fail=0
           for f in "${files[@]}"; do
             echo "== 追加 $f ==" | tee -a "$log"
-            python "追加提示词.py" "视频提示词库-多模型.html" "$f" | tee -a "$log"
+            # 分流：general-/tutorials- 前缀批次走扩展区工具（gen-/tut- 系列，无 model 字段）；
+            #       其余走主库追加（sd2/hl3/klo3/kl3 系列，须有 model 字段）。
+            base=$(basename "$f")
+            if [[ "$base" == general-* || "$base" == tutorials-* ]]; then
+              zone="general"; [[ "$base" == tutorials-* ]] && zone="tutorials"
+              python "扩展区工具.py" append "视频提示词库-多模型.html" "$zone" "$f" 2>&1 | tee -a "$log"
+            else
+              python "追加提示词.py" "视频提示词库-多模型.html" "$f" 2>&1 | tee -a "$log"
+            fi
+            rc=${PIPESTATUS[0]}
+            if [ $rc -ne 0 ]; then
+              echo "× 追加失败（退出码 $rc），批次保留在 待入库/ 等待人工处理，不归档：$f" | tee -a "$log"
+              fail=1
+              continue
+            fi
             mv "$f" "已入库/$(date +%Y%m%d-%H%M%S)__$(basename "$f")"
           done
-          python "库维护工具.py" verify "视频提示词库-多模型.html" | tee -a "$log"
+          if [ $fail -ne 0 ]; then
+            echo "× 本轮有批次入库失败，中止提交（失败批次仍留在 待入库/）" | tee -a "$log"
+            exit 1
+          fi
+          echo "== 双区全量校验 ==" | tee -a "$log"
+          python "库维护工具.py" verify "视频提示词库-多模型.html" 2>&1 | tee -a "$log"
+          python "扩展区工具.py" verify "视频提示词库-多模型.html" 2>&1 | tee -a "$log"
           grep -oE '"全库指纹"[^,}]*' "视频提示词库-多模型.html" | head -1 | tee -a "$log" || true
           echo "changed=1" >> "$GITHUB_OUTPUT"
 
       - name: 同步 README 统计（随入库提交一并生效）
         if: steps.doit.outputs.changed == '1'
-        run: python "同步README统计.py" "视频提示词库-多模型.html" | tee -a 运行记录/最近入库.log
+        run: python "同步README统计.py" "视频提示词库-多模型.html" 2>&1 | tee -a 运行记录/最近入库.log
 
       - name: 提交入库结果
         if: steps.doit.outputs.changed == '1'
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
+          git pull --rebase origin main || true
           git add -A
-          msg=$(grep -oE '入库 [0-9]+ 条（[0-9]+ → [0-9]+' 运行记录/最近入库.log | tail -1 | sed -E 's/入库 ([0-9]+) 条（[0-9]+ → ([0-9]+)/CI 自动入库：追加 \1 条 → 共 \2 条/' || true)
+          msg=$(grep -oE '(入库|追加) [0-9]+ 条[（(][0-9]+ → [0-9]+' 运行记录/最近入库.log | tail -1 | sed -E 's/(入库|追加) ([0-9]+) 条[（(][0-9]+ → ([0-9]+)/CI 自动入库：追加 \2 条 → 共 \3 条/' || true)
           git commit -m "${msg:-CI 自动入库：处理待入库批次}"
           git push

@@ -42,7 +42,7 @@ def cjk(s):
 def sha(s):
     return hashlib.sha256(str(s).encode()).hexdigest()[:16]
 
-def load(path):
+def load(path, strict=True):
     h = open(path, encoding='utf-8').read()
     def pick(rx, opener):
         for m in rx.finditer(h):
@@ -57,7 +57,11 @@ def load(path):
     if data is None:
         sys.exit('× 找不到可解析的数据块 script#data')
     mm, meta = pick(META_RE, '{')
-    return h, data, (meta or {})
+    if meta is None:
+        sys.exit('× 找不到可解析的 meta 块 script#meta（fail-closed：指纹基准缺失即拒判）')
+    if strict and not ((meta.get('完整性指纹') or {}).get('逐条指纹')):
+        sys.exit('× meta 缺少 完整性指纹.逐条指纹 登记（fail-closed：无基准即拒判，旧版会静默跳过全部校验）')
+    return h, data, meta
 
 def save(h, data, meta, out):
     if meta:
@@ -108,6 +112,10 @@ def cmd_verify(html):
     h, data, meta = load(html)
     bad = check(data, meta)
     fp = (meta.get('完整性指纹') or {}).get('逐条指纹') or {}
+    uncovered = [d.get('id', '?') for d in data if d.get('id') not in fp]
+    if uncovered:
+        print('⚠ %d 条未登记指纹（不在逐条指纹表内，保护缺口）：%s' % (len(uncovered), '、'.join(map(str, uncovered[:10]))))
+        bad.append(('(全局)', '%d 条未登记指纹' % len(uncovered)))
     print('文件：%s' % html)
     print('版本：%s ｜ 条目：%d ｜ 原文总字数：%d'
           % (meta.get('version', '?'), len(data), sum(len(d.get('original', '')) for d in data)))
