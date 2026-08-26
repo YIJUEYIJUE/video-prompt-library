@@ -13,6 +13,9 @@ import re, json, sys, os
 from collections import Counter
 
 HTML = sys.argv[1] if len(sys.argv) > 1 else '视频提示词库-多模型.html'
+# 输出目录 = HTML 所在目录（测试非仓库库文件时不污染仓库导出）
+import os
+OUT_DIR = os.path.dirname(os.path.abspath(HTML)) or '.'
 h = open(HTML, encoding='utf-8').read()
 
 blocks = {}
@@ -69,11 +72,11 @@ for x in tut:
     out.append('- `%s`｜%s｜%s' % (
         x['id'], x.get('title') or x.get('name', ''), (x.get('src') or '')[:60]))
 
-open('AI导读索引.md', 'w', encoding='utf-8').write('\n'.join(out))
-print('✓ AI导读索引.md：%.0fK 字符' % (os.path.getsize('AI导读索引.md') / 1000))
+open(os.path.join(OUT_DIR, 'AI导读索引.md'), 'w', encoding='utf-8').write('\n'.join(out))
+print('✓ AI导读索引.md：%.0fK 字符' % (os.path.getsize(os.path.join(OUT_DIR, 'AI导读索引.md')) / 1000))
 
 # ---------- AI-全库.jsonl ----------
-with open('AI-全库.jsonl', 'w', encoding='utf-8') as f:
+with open(os.path.join(OUT_DIR, 'AI-全库.jsonl'), 'w', encoding='utf-8') as f:
     for x in data:
         f.write(json.dumps({'区': '主库', **{k: x.get(k) for k in (
             'id', 'model', 'cat', 'sub', 'name', 'desc', 'tags', 'lang', 'original', 'zh', 'src')}},
@@ -88,4 +91,4 @@ with open('AI-全库.jsonl', 'w', encoding='utf-8') as f:
                             'src': x.get('src'), 'steps': x.get('steps')},
                            ensure_ascii=False) + '\n')
 print('✓ AI-全库.jsonl：%.1fM 字节，%d 行' % (
-    os.path.getsize('AI-全库.jsonl') / 1e6, len(data) + len(gen) + len(tut)))
+    os.path.getsize(os.path.join(OUT_DIR, 'AI-全库.jsonl')) / 1e6, len(data) + len(gen) + len(tut)))

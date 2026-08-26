@@ -41,6 +41,22 @@ def load(path):
     return h, data, (meta or {})
 
 
+
+def _refresh_ai_exports(html):
+    """入库成功后自动刷新 AI 静态导出（AI导读索引.md / AI-全库.jsonl）。
+    刷新失败视为入库失败——防止 AI 导出静默过期。"""
+    import subprocess, sys as _s, os
+    script = os.path.join(os.path.dirname(os.path.abspath(__file__)), '生成AI导出.py')
+    if not os.path.exists(script):
+        return  # 独立部署环境无此脚本时跳过
+    r = subprocess.run([_s.executable, script, html], capture_output=True, text=True)
+    if r.returncode != 0:
+        print('× AI 静态导出刷新失败：')
+        print(r.stdout[-500:] if r.stdout else '', r.stderr[-500:] if r.stderr else '')
+        raise SystemExit(1)
+    print(r.stdout.strip().split('\n')[-1] if r.stdout.strip() else '✓ AI 导出已刷新')
+
+
 def save(h, data, meta, out):
     # 防 script 标签提前闭合：json.dumps 不转义 /，必须手动转义 </ 为 <\/
     def dump(x):
@@ -131,6 +147,7 @@ def main(html, newjson):
     _, d2, m2 = load(html)
     assert len(d2) == len(rows), '条目数对不上'
     assert all(x['original'] == before[x['id']] for x in d2 if x['id'] in before), '!! 老条目原文被改动'
+    _refresh_ai_exports(html)
     print('✓ 追加 %d 条 → 共 %d 条；版本标签未变（%s）；已生成备份 %s__%s'
           % (len(added), len(d2), m2.get('version'), ts, os.path.basename(html)))
     for e in added:

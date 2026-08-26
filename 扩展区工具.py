@@ -109,6 +109,16 @@ def do_append(html_path, zone, batch_path):
     meta['扩展区'][zone] = {'条目数': len(blk), '全块指纹': sha(json.dumps(blk, ensure_ascii=False))}
     meta['变更日志'].append({'日期': today(), '内容': '%s区追加 %d 条（→ 共 %d）' % (zone, len(batch), len(blk))})
     meta['updatedAt'] = today()
+    # 入库成功后自动刷新 AI 静态导出（防手动路径过期）
+    import subprocess, os
+    script = os.path.join(os.path.dirname(os.path.abspath(__file__)), '生成AI导出.py')
+    if os.path.exists(script):
+        r = subprocess.run(['python3', script, html_path], capture_output=True, text=True)
+        if r.returncode != 0:
+            print('× AI 导出刷新失败：', (r.stderr or r.stdout)[-300:])
+            raise SystemExit(1)
+        print('✓ AI 静态导出已随入库刷新')
+
     h = re.sub(r'(<script id="meta"[^>]*>\n).*?(\n</script>)',
                lambda m: m.group(1) + json.dumps(meta, ensure_ascii=False, indent=1) + m.group(2), h, count=1, flags=re.S)
     guard(load(html_path)[0], h)

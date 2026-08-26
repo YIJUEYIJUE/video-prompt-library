@@ -39,7 +39,8 @@ def ok_tag(x):
         return True
     if x in TECH_OK:
         return True
-    # 技术词：大写字母开头混合（FPV-Style / IMAX3D / iPhone16）
+    # 技术词：大写字母开头的混合串（FPV-Style / IMAX3D / TODO 亦放行——
+    # 注意：纯大写词 TODO/ASDF 仍会过；mixed-case 如 FPV-Style 比旧版 isupper 更宽松，属有意放宽）
     if re.fullmatch(r'[A-Z][A-Za-z0-9-]{1,15}', x):
         return True
     # 数字开头的紧凑技术词：3D / 2D / 2.5D / 3A / 145BPM / 35mm / 60fps / 4K（收窄原 ^[0-9] 裸数字漏洞：数字后必须紧跟字母/单位）
@@ -76,9 +77,7 @@ def check_fields(d, i, bad):
         bad.append((i, 'chars %d ≠ 实际 %d' % (d['chars'], len(o))))
     if '\ufffd' in o:
         bad.append((i, '原文含乱码字符'))
-    # 注入防护（P1-1）
-    if DANGER_RE.search(o):
-        bad.append((i, '!! 原文含危险串 </script|<script|<!--（须转义或剔除）'))
+    # 注入防护（P1-1）：original/zh 由下方循环统一报，避免双报
     for f in ('original', 'zh'):
         v = d.get(f) or ''
         if isinstance(v, str) and DANGER_RE.search(v):

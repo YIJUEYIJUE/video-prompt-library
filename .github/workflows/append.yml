@@ -62,14 +62,14 @@ jobs:
           fail=0
           for f in "${files[@]}"; do
             echo "== 追加 $f ==" | tee -a "$log"
-            # 分流：general-/tutorials- 前缀批次走扩展区工具（gen-/tut- 系列，无 model 字段）；
-            #       其余走主库追加（sd2/hl3/klo3/kl3 系列，须有 model 字段）。
-            base=$(basename "$f")
-            if [[ "$base" == general-* || "$base" == tutorials-* ]]; then
-              zone="general"; [[ "$base" == tutorials-* ]] && zone="tutorials"
-              python "扩展区工具.py" append "视频提示词库-多模型.html" "$zone" "$f" 2>&1 | tee -a "$log"
-            else
+            # 分流：按批次内容判定（与 AGENTS.md 文档一致，不依赖文件名习惯）——
+            #   all 条目含 model 字段 → 主库；all 条目含 title+steps → tutorials；否则 general
+            if python3 -c "import json,sys; d=json.load(open(sys.argv[1])); sys.exit(0 if d and all(x.get('model') for x in d) else 1)" "$f" 2>/dev/null; then
               python "追加提示词.py" "视频提示词库-多模型.html" "$f" 2>&1 | tee -a "$log"
+            elif python3 -c "import json,sys; d=json.load(open(sys.argv[1])); sys.exit(0 if d and all(x.get('title') and x.get('steps') for x in d) else 1)" "$f" 2>/dev/null; then
+              python "扩展区工具.py" append "视频提示词库-多模型.html" tutorials "$f" 2>&1 | tee -a "$log"
+            else
+              python "扩展区工具.py" append "视频提示词库-多模型.html" general "$f" 2>&1 | tee -a "$log"
             fi
             rc=${PIPESTATUS[0]}
             if [ $rc -ne 0 ]; then
@@ -102,6 +102,6 @@ jobs:
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git pull --rebase origin main || true
           git add -A
-          msg=$(grep -oE '(入库|追加) [0-9]+ 条[（(][0-9]+ → [0-9]+' 运行记录/最近入库.log | tail -1 | sed -E 's/(入库|追加) ([0-9]+) 条[（(][0-9]+ → ([0-9]+)/CI 自动入库：追加 \2 条 → 共 \3 条/' || true)
+          msg=$(grep -oE '(追加|入库) [0-9]+ 条 → 共 [0-9]+' 运行记录/最近入库.log | tail -1 | sed -E 's/(追加|入库) ([0-9]+) 条 → 共 ([0-9]+)/CI 自动入库：追加 \2 条 → 共 \3 条/' || true)
           git commit -m "${msg:-CI 自动入库：处理待入库批次}"
           git push

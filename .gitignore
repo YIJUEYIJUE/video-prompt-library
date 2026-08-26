@@ -9,3 +9,4 @@ build_*.py
 analyze_*.py
 extract_*.py
 probe_*.py
+.tmp/
