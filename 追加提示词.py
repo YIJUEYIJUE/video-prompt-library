@@ -9,7 +9,8 @@
 import sys, os, re, json, hashlib, datetime, shutil
 
 from 库共享定义 import (DATA_RE, META_RE, MODEL_TREE, TECH_OK, REQUIRED,
-                       cjk, ok_tag, sha, check_fields, DANGER_RE, NOISE_RE, ERR_TYPES)
+                       cjk, ok_tag, sha, check_fields, check_library,
+                       DANGER_RE, NOISE_RE, ERR_TYPES)
 
 PREFIX = {m: pf for f in MODEL_TREE for m, pf in f['versions'].items()}
 
@@ -20,23 +21,6 @@ def fam_of(m):
         if m == f['family'] or m.startswith(f['family']):
             return f['family']
     return re.split(r'[\s\-_]+', m)[0] or '其他'
-
-
-def cjk(s):
-    return any('\u4e00' <= c <= '\u9fff' for c in str(s))
-
-
-def ok_tag(x):
-    x = str(x)
-    if any('\u4e00' <= c <= '\u9fff' for c in x):
-        return True
-    if x in TECH_OK or re.match(r'^[0-9]', x) or x.isupper():
-        return True
-    return False
-
-
-def sha(s):
-    return hashlib.sha256(str(s).encode()).hexdigest()[:16]
 
 
 def load(path):
@@ -58,9 +42,17 @@ def load(path):
 
 
 def save(h, data, meta, out):
+    # 防 script 标签提前闭合：json.dumps 不转义 /，必须手动转义 </ 为 <\/
+    def dump(x):
+        return json.dumps(x, ensure_ascii=False, indent=1).replace('</', '<\\/')
     if meta:
-        h = META_RE.sub(lambda m: m.group(1) + '\n' + json.dumps(meta, ensure_ascii=False, indent=1) + '\n' + m.group(3), h, count=1)
-    h = DATA_RE.sub(lambda m: m.group(1) + '\n' + json.dumps(data, ensure_ascii=False, indent=1) + '\n' + m.group(3), h, count=1)
+        h = META_RE.sub(lambda m: m.group(1) + '\n' + dump(meta) + '\n' + m.group(3), h, count=1)
+    h = DATA_RE.sub(lambda m: m.group(1) + '\n' + dump(data) + '\n' + m.group(3), h, count=1)
+    # 写前断言：数据块内不得残留未转义危险串
+    import re as _re
+    for m in _re.finditer(r'<script id="(data|meta)"[^>]*>(.*?)</script>', h, _re.S):
+        assert not _re.search(r'</script|<script(?![a-zA-Z])|<!--', m.group(2), _re.I), \
+            '× %s 块内残留未转义危险串' % m.group(1)
     open(out, 'w', encoding='utf-8').write(h)
 
 
@@ -75,45 +67,16 @@ def next_id(rows, model):
 
 
 def check(rows, meta):
-    """与库维护工具.py 的 check 对齐：返回问题列表 [(id, 原因)]"""
-    bad = []
-    fp = (meta.get('完整性指纹') or {}).get('逐条指纹') or {}
-    seen = set()
-    for d in rows:
-        i = d['id']
-        if i in seen:
-            bad.append((i, 'id 重复'))
-        seen.add(i)
-        for f in REQUIRED:
-            if not d.get(f):
-                bad.append((i, '缺字段 ' + f))
-        o = d.get('original') or ''
-        if '\ufffd' in o:
-            bad.append((i, '原文含乱码字符'))
-        if d.get('chars') != len(o):
-            bad.append((i, 'chars 与原文长度不符'))
-        if i in fp and fp[i] != sha(o):
-            bad.append((i, '!! 原文指纹不符（原文被改动）'))
-        if not cjk(d.get('name', '')):
-            bad.append((i, '标题不是中文'))
-        if not cjk(d.get('desc', '')):
-            bad.append((i, '简介不是中文'))
-        if d.get('lang') != 'zh' and not str(d.get('zh') or '').strip():
-            bad.append((i, '外文条目缺中文译文 zh'))
-        t = d.get('tags') or []
-        if not (3 <= len(t) <= 6):
-            bad.append((i, '标签数 %d 不在 3-6' % len(t)))
-        for x in t:
-            if not ok_tag(x):
-                bad.append((i, '非中文标签：' + str(x)))
-    # 重复原文（去空白后逐字比对）
-    norm = {}
-    for d in rows:
-        norm.setdefault(re.sub(r'\s+', '', d.get('original', '')), []).append(d['id'])
-    for k, v in norm.items():
-        if len(v) > 1:
-            bad.append((v[0], '原文与 ' + '/'.join(str(x) for x in v[1:]) + ' 完全重复'))
+    """委托共享模块 check_library：入库前与 verify 同一套标准
+    （字段/指纹/完全重复/n-gram/注入/围栏/噪音/勘误登记）"""
+    from 库共享定义 import check_library
+    bad, warn = check_library(rows, meta)
+    if warn:
+        print('ℹ %d 条结构相似提示（不拦截）：' % len(warn))
+        for w in warn[:10]:
+            print('   ', w[0], w[1])
     return bad
+
 
 
 def main(html, newjson):

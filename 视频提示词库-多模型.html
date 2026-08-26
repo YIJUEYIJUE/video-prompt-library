@@ -20935,9 +20935,10 @@ function doExport(kind){
     Object.keys(by).sort().forEach(function(c){s+='\n## '+c+'\n';
       Object.keys(by[c]).sort().forEach(function(sb){s+='\n### '+sb+'\n';
         by[c][sb].forEach(function(d){
+          var f2=(d.original||'').indexOf('```')>=0?'~~~~':'```';
           s+='\n#### '+d.name+'\n\n- ID：'+d.id+' ｜ 模型：'+d.model+' ｜ 来源：'+d.src+' ｜ '+d.chars+' 字\n'+
-             '- 标签：'+(d.tags||[]).join('、')+'\n- 简介：'+d.desc+'\n\n```text\n'+d.original+'\n```\n';
-          if(d.zh)s+='\n<details><summary>中文译文</summary>\n\n'+d.zh+'\n\n</details>\n';
+             '- 标签：'+(d.tags||[]).join('、')+'\n- 简介：'+d.desc+'\n\n'+f2+'text\n'+d.original+'\n'+f2+'\n';
+          if(d.zh){var f3=(d.zh||'').indexOf('```')>=0?'~~~~':'```';s+='\n<details><summary>中文译文</summary>\n\n'+f3+'text\n'+d.zh+'\n'+f3+'\n\n</details>\n'}
         })})});
     dl(base+'.md',s,'text/markdown')}
   openExp(false);

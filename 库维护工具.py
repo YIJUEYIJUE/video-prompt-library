@@ -4,6 +4,7 @@
 # 用法：
 #   python3 库维护工具.py verify <库.html>
 #   （add 已废弃删除：与 追加提示词.py 功能重复且指纹算法 64 位不一致，2026-08-26 对抗式审查 P1-26）
+#   python3 库维护工具.py backup <库.html> [保留份数=10]（清理旧备份，防 100MB 膨胀）
 #   python3 库维护工具.py export <库.html> [输出目录]
 # 铁律：绝不原地覆盖；老条目 original 指纹必须全部不变，任一不符立即中止。
 import sys, os, re, json, hashlib, datetime
@@ -47,115 +48,17 @@ def load(path, strict=True):
         sys.exit('× meta 缺少 完整性指纹.逐条指纹 登记（fail-closed：无基准即拒判，旧版会静默跳过全部校验）')
     return h, data, meta
 
-def save(h, data, meta, out):
-    def dump(x):
-        # 防 script 标签提前闭合：json.dumps 不转义 /，必须手动转义 </ 为 <\/
-        return json.dumps(x, ensure_ascii=False, indent=1).replace('</', '<\\/')
-    if meta:
-        h = META_RE.sub(lambda m: m.group(1) + '\n' + dump(meta) + '\n' + m.group(3), h, count=1)
-    h = DATA_RE.sub(lambda m: m.group(1) + '\n' + dump(data) + '\n' + m.group(3), h, count=1)
-    # 写前断言：三个 script 数据块内不得残留未转义的闭合串
-    for m in re.finditer(r'<script id="(data|meta|general|tutorials)"[^>]*>(.*?)</script>', h, re.S):
-        body = m.group(2)
-        assert not re.search(r'</script|<script(?![a-zA-Z])|<!--', body, re.I), \
-            '× %s 块内残留未转义危险串（</script / <script / <!--）' % m.group(1)
-    open(out, 'w', encoding='utf-8').write(h)
 
 _LAST_WARN = []  # check() 的警告通道（结构相似提示等，不拦截写入）
 
 def check(data, meta):
-    bad = []
-    warn = []
+    """委托共享模块 check_library（P2-3 消重复后唯一权威实现）"""
+    from 库共享定义 import check_library
+    bad, warn = check_library(data, meta)
     _LAST_WARN.clear()
-    fp = (meta.get('完整性指纹') or {}).get('逐条指纹') or {}
-    seen_id = set()
-    for d in data:
-        i = d.get('id', '?')
-        if i in seen_id:
-            bad.append((i, 'id 重复'))
-        seen_id.add(i)
-        for f in REQUIRED:
-            if not d.get(f):
-                bad.append((i, '缺字段 ' + f))
-        o = d.get('original') or ''
-        if '\ufffd' in o:
-            bad.append((i, '原文含乱码字符'))
-        # 注入防护：原文含未转义 script 闭合/注释串（会劈开 JSON script 块，真 XSS 向量）
-        if re.search(r'</script|<script(?![a-zA-Z])|<!--', o, re.I):
-            bad.append((i, '!! 原文含危险串 </script|<script|<!--（须转义或剔除）'))
-        for f in ('original', 'zh'):
-            v = d.get(f) or ''
-            if isinstance(v, str) and re.search(r'</script|<script(?![a-zA-Z])|<!--', v, re.I):
-                bad.append((i, '!! %s 字段含危险串（须转义或剔除）' % f))
-        if d.get('chars') != len(o):
-            bad.append((i, 'chars 与原文长度不符'))
-        if i in fp and fp[i] != sha(o):
-            bad.append((i, '!! 原文指纹不符（原文被改动）'))
-        if not cjk(d.get('name', '')):
-            bad.append((i, '标题不是中文'))
-        if not cjk(d.get('desc', '')):
-            bad.append((i, '简介不是中文'))
-        if d.get('lang') != 'zh' and not str(d.get('zh') or '').strip():
-            bad.append((i, '外文条目缺中文译文 zh'))
-        t = d.get('tags') or []
-        if not (3 <= len(t) <= 6):
-            bad.append((i, '标签数 %d 不在 3-6' % len(t)))
-        for x in t:
-            if not ok_tag(x):
-                bad.append((i, '非中文标签：' + str(x)))
-    # —— 完全重复（去空白后逐字比对）——
-    norm = {}
-    for d in data:
-        norm.setdefault(re.sub(r'\s+', '', d.get('original', '')), []).append(d.get('id'))
-    for v in norm.values():
-        if len(v) > 1:
-            bad.append((v[0], '原文与 ' + '/'.join(str(x) for x in v[1:]) + ' 完全重复'))
-    # —— n-gram 近重复检测（二元组 Jaccard：>0.90 红警=复制粘贴/翻译副本级（实测真雷 99-100%）；0.45-0.90 警告=模板变体/规格话术复用（实测 67-88% 合法）——
-    # 提示词模板换主角换颜色是产品特性不是重复（shou1 系列 45-56%、中文短文本二元组碰撞 60% 内均为合法变体）。
-    # 真正要拦的是「整段翻译副本/复制粘贴」级重复（实测真雷 99-100%，阈值 0.65 裕度充足）。
-    by_cat = {}
-    for d in data:
-        o = re.sub(r'\s+', '', d.get('original', ''))
-        if len(o) >= 40:
-            by_cat.setdefault(d.get('cat', '?'), []).append((d.get('id', '?'), set(o[j:j+2] for j in range(len(o)-1))))
-    exempt = {(p['对'][0], p['对'][1]) for p in (meta.get('相似豁免') or [])}
-    exempt |= {(b, a) for a, b in exempt}
-    for cat, lst in by_cat.items():
-        lst = lst[:400]
-        for a in range(len(lst)):
-            ida, ga = lst[a]
-            for b in range(a + 1, len(lst)):
-                idb, gb = lst[b]
-                if (ida, idb) in exempt:
-                    continue
-                inter = len(ga & gb)
-                if inter:
-                    sim = inter / len(ga | gb)
-                    if sim > 0.90:
-                        bad.append((ida, '与 %s 语义高度重复（n-gram 相似度 %.0f%%，翻译副本/复制粘贴级）' % (idb, 100 * sim)))
-                    elif sim > 0.45:
-                        warn.append((ida, '与 %s 结构相似（n-gram %.0f%%，模板变体/规格话术复用）' % (idb, 100 * sim)))
-    # —— 围栏泄漏检测（commit 4fad874 事故固化：``` 泄漏进原文）——
-    for d in data:
-        o = d.get('original', '')
-        if isinstance(o, str) and '```' in o:
-            bad.append((d.get('id', '?'), '原文含 %d 处 ``` 围栏泄漏' % o.count('```')))
-    # —— 噪音卡检测（commit 80ea097 事故固化：页脚 CTA 被当内容抓取）——
-    NOISE = re.compile(r'作者[：:]\s*\S|分享[到至].{0,6}平台|订阅.{0,8}频道|Try it in|Follow us|©\s*\d{4}')
-    for d in data:
-        o = d.get('original', '')
-        if isinstance(o, str) and NOISE.search(o):
-            bad.append((d.get('id', '?'), '原文疑似含页脚/CTA 噪音：%s' % NOISE.search(o).group(0)[:20]))
-    # —— 勘误登记格式校验（P2：meta.勘误登记 存在时必检）——
-    ERR_TYPES = {'OCR修正', '噪音清理', '重构拆分', '补全', '字段修正', '语义去重'}
-    for e in (meta.get('勘误登记') or []):
-        for f in ('日期', '条目', '类型', '详情'):
-            if not e.get(f):
-                bad.append(('(meta)', '勘误登记缺字段 %s：%s' % (f, str(e)[:50])))
-        if e.get('类型') and e['类型'] not in ERR_TYPES:
-            bad.append(('(meta)', '勘误登记类型非法 %r（合法：%s）' % (e['类型'], '/'.join(sorted(ERR_TYPES)))))
     _LAST_WARN.extend(warn)
     return bad
+
 
 def cmd_verify(html):
     h, data, meta = load(html)
@@ -356,6 +259,20 @@ def changelog_md(data, meta):
     return '\n'.join(o)
 
 
+def cmd_backup(html, keep=10):
+    import glob, os
+    d = os.path.join(os.path.dirname(os.path.abspath(html)) or '.', '视频提示词库_备份')
+    if not os.path.isdir(d):
+        print('备份目录不存在，无旧备份可清'); return 0
+    files = sorted(glob.glob(os.path.join(d, '*.html')), key=os.path.getmtime, reverse=True)
+    old = files[keep:]
+    for f in old:
+        os.remove(f)
+        print('  删', os.path.basename(f))
+    print('✓ 备份清理：保留 %d 份，删 %d 份（共 %.1fMB）' % (min(keep, len(files)), len(old),
+          sum(os.path.getsize(f) for f in files[:keep]) / 1e6))
+    return 0
+
 def cmd_export(html, outdir=None):
     h, data, meta = load(html)
     outdir = outdir or os.path.dirname(os.path.abspath(html))
@@ -406,10 +323,12 @@ def cmd_export(html, outdir=None):
 
 if __name__ == '__main__':
     a = sys.argv[1:]
-    if not a or a[0] not in ('verify', 'export'):
+    if not a or a[0] not in ('verify', 'backup', 'export'):
         print(__doc__ or '')
-        print('用法：verify <库.html> ｜ export <库.html> [目录]（add 已废弃删除，追加请用 追加提示词.py）')
+        print('用法：verify <库.html> ｜ backup <库.html> [保留份数=10] ｜ export <库.html> [目录]（add 已废弃删除）')
         sys.exit(2)
     if a[0] == 'verify':
         sys.exit(cmd_verify(a[1]))
+    if a[0] == 'backup':
+        sys.exit(cmd_backup(a[1] if len(a) > 1 else '视频提示词库-多模型.html', int(a[2]) if len(a) > 2 else 10))
     sys.exit(cmd_export(a[1], a[2] if len(a) > 2 else None))

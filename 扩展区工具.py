@@ -12,6 +12,7 @@
   - data 块逐字节不可动（断言保护）；meta 只增不改既有键。
 """
 import json, re, sys, hashlib, datetime
+from 库共享定义 import DANGER_RE
 
 BIRTH = '2026-08-24'  # 仅作历史基线；写入时一律用当天日期
 
@@ -36,7 +37,9 @@ def get_block(h, bid):
 
 
 def set_block(h, bid, obj):
-    body = json.dumps(obj, ensure_ascii=False, indent=1)
+    # 防 script 标签提前闭合：json.dumps 不转义 /，必须转义 </ 为 <\/
+    body = json.dumps(obj, ensure_ascii=False, indent=1).replace('</', '<\\/')
+    assert not re.search(r'</script', body, re.I), '%s 块写入体含未转义 </script' % bid
     tag = '<script id="%s" type="application/json">\n%s\n</script>' % (bid, body)
     if re.search(r'<script id="%s"[^>]*>.*?</script>' % bid, h, re.S):
         return re.sub(r'<script id="%s"[^>]*>.*?</script>' % bid, lambda m: tag, h, count=1, flags=re.S)
@@ -93,6 +96,11 @@ def do_append(html_path, zone, batch_path):
     for e in batch:
         for f in need:
             assert e.get(f), '批次缺字段 %s：%s' % (f, e.get('id', '(无 id)'))
+        # 注入防护：条目任何字符串值含 </script|<script|<!-- 即拒收
+        for k, v in e.items():
+            if isinstance(v, str) and DANGER_RE.search(v):
+                raise SystemExit('× 批次 %s 的 %s 字段含危险串（</script|<script|<!--）：%s'
+                                 % (e.get('id', '?'), k, DANGER_RE.search(v).group(0)[:30]))
     ids = {e['id'] for e in blk}
     for e in batch:
         assert e['id'] not in ids, 'ID 重复：%s' % e['id']
@@ -119,6 +127,11 @@ def do_verify(html_path):
         fp = sha(json.dumps(blk, ensure_ascii=False))
         n = len(blk)
         match = (fp == reg['全块指纹'] and n == reg['条目数'])
+        for e in blk:
+            for k, v in e.items():
+                if isinstance(v, str) and DANGER_RE.search(v):
+                    print('✗ %s %s.%s 含危险串：%s' % (zone, e.get('id', '?'), k, DANGER_RE.search(v).group(0)[:20]))
+                    ok = False
         print('%s %s：%d 条，指纹 %s %s' % ('✓' if match else '✗', zone, n, fp,
               '' if match else '≠ 登记 %s/%s' % (reg['条目数'], reg['全块指纹'])))
         ok = ok and match

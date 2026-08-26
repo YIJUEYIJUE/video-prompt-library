@@ -57,8 +57,8 @@ def check_fields(d, i, bad):
     for f in REQUIRED:
         if f not in d or not d[f]:
             bad.append((i, '缺字段 %s' % f))
-    if d.get('model') not in MODEL_TREE:
-        bad.append((i, 'model 未登记（合法：%s）' % '/'.join(MODEL_TREE)))
+    if d.get('model') not in MODELS:
+        bad.append((i, 'model 未登记（合法：%s）' % '/'.join(sorted(MODELS))))
     if d.get('cat') and not cjk(d['cat']):
         bad.append((i, 'cat 必须含汉字'))
     if d.get('name') and not cjk(d['name']):
@@ -101,3 +101,56 @@ def check_errata(meta, bad):
         if e.get('类型') and e['类型'] not in ERR_TYPES:
             bad.append(('(meta)', '勘误登记类型非法 %r（合法：%s）' % (e['类型'], '/'.join(sorted(ERR_TYPES)))))
     return bad
+
+
+def check_library(data, meta):
+    """全库内容校验（库维护工具.verify 与 追加提示词.入库前校验 共用同一套标准）
+    返回 (bad, warn)：bad 非空即拒判/拒写；warn 仅提示。
+    """
+    bad, warn = [], []
+    fp = (meta.get('完整性指纹') or {}).get('逐条指纹') or {}
+    seen_id = set()
+    for d in data:
+        i = d.get('id', '?')
+        if i in seen_id:
+            bad.append((i, 'id 重复'))
+        seen_id.add(i)
+        check_fields(d, i, bad)
+        o = d.get('original') or ''
+        if i in fp and fp[i] != sha(o):
+            bad.append((i, '!! 原文指纹不符（原文被改动）'))
+        if d.get('lang') != 'zh' and not str(d.get('zh') or '').strip():
+            bad.append((i, '外文条目缺中文译文 zh'))
+    # 完全重复（去空白逐字）
+    norm = {}
+    for d in data:
+        norm.setdefault(re.sub(r'\s+', '', d.get('original', '')), []).append(d.get('id'))
+    for v in norm.values():
+        if len(v) > 1:
+            bad.append((v[0], '原文与 ' + '/'.join(str(x) for x in v[1:]) + ' 完全重复'))
+    # n-gram 近重复：>0.90 红警（复制粘贴/翻译副本级，实测真雷 99-100%）
+    # 0.45-0.90 警告（模板变体/规格话术复用，实测 67-88% 合法）
+    by_cat = {}
+    for d in data:
+        o = re.sub(r'\s+', '', d.get('original', ''))
+        if len(o) >= 40:
+            by_cat.setdefault(d.get('cat', '?'), []).append((d.get('id', '?'), set(o[j:j+2] for j in range(len(o)-1))))
+    exempt = {(p['对'][0], p['对'][1]) for p in (meta.get('相似豁免') or [])}
+    exempt |= {(b, a) for a, b in exempt}
+    for cat, lst in by_cat.items():
+        lst = lst[:400]
+        for a in range(len(lst)):
+            ida, ga = lst[a]
+            for b in range(a + 1, len(lst)):
+                idb, gb = lst[b]
+                if (ida, idb) in exempt:
+                    continue
+                inter = len(ga & gb)
+                if inter:
+                    sim = inter / len(ga | gb)
+                    if sim > 0.90:
+                        bad.append((ida, '与 %s 语义高度重复（n-gram 相似度 %.0f%%，翻译副本/复制粘贴级）' % (idb, 100 * sim)))
+                    elif sim > 0.45:
+                        warn.append((ida, '与 %s 结构相似（n-gram %.0f%%，模板变体/规格话术复用）' % (idb, 100 * sim)))
+    check_errata(meta, bad)
+    return bad, warn
