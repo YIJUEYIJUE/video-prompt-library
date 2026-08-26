@@ -417,7 +417,7 @@ footer{max-width:1240px;margin:0 auto;padding:0 24px 40px;font-size:11px;color:v
 {
  "库名": "视频提示词库",
  "version": "V1.1",
- "updatedAt": "2026-08-24",
+ "updatedAt": "2026-08-26",
  "schemaVersion": 1,
  "顶层结构": "模型系列（顶层）→ 模型版本（第二层）→ 大类 cat → 小类 sub → 条目",
  "模型注册表": {
@@ -653,6 +653,10 @@ footer{max-width:1240px;margin:0 auto;padding:0 24px 40px;font-size:11px;color:v
   {
    "日期": "2026-08-26",
    "内容": "二轮对抗审查：修正勘误登记 2 条失实条目（3886b19 实为 tut-002；sd25 条目系 staging 修正主库零变更）"
+  },
+  {
+   "日期": "2026-08-26",
+   "内容": "三轮审查修复：重算全库指纹（4838de3b→9ea3e34d，P2-4 id 重命名改变了排序键序但未重算）；updatedAt 08-24→08-26（手工 meta 脚本未 bump）"
   }
  ],
  "导出说明": {
@@ -666,7 +670,7 @@ footer{max-width:1240px;margin:0 auto;padding:0 24px 40px;font-size:11px;color:v
   "字段映射": "cat→category / sub→subcategory / name→title / desc→summary / original→prompt / zh→prompt_zh，另附 model_family、model_version。"
  },
  "完整性指纹": {
-  "全库指纹": "4838de3beecf30ad",
+  "全库指纹": "9ea3e34d00c33f27",
   "逐条指纹": {
    "sd2-240": "6316b34937d2e551",
    "sd2-241": "7359391c33913fef",

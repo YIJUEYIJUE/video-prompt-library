@@ -118,6 +118,12 @@ def check_library(data, meta):
         o = d.get('original') or ''
         if i in fp and fp[i] != sha(o):
             bad.append((i, '!! 原文指纹不符（原文被改动）'))
+    # 全库指纹一致性（三轮审查修复：P2-4 id 重命名后曾漂移而无人发现）
+    fp_all = (meta.get('完整性指纹') or {}).get('全库指纹')
+    if fp_all:
+        recompute = hashlib.sha256(''.join(fp[k] for k in sorted(fp)).encode()).hexdigest()[:16]
+        if recompute != fp_all:
+            bad.append(('(meta)', '!! 全库指纹不符：登记 %s vs 重算 %s（逐条指纹被改后未重算全库）' % (fp_all, recompute)))
         if d.get('lang') != 'zh' and not str(d.get('zh') or '').strip():
             bad.append((i, '外文条目缺中文译文 zh'))
     # 完全重复（去空白逐字）

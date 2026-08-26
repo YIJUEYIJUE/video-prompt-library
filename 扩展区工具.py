@@ -69,7 +69,7 @@ def do_init(html_path, gen_path, tut_path):
     meta['变更日志'].append({
         '日期': BIRTH, '内容': '新增顶层「通用区」（运镜词典 46 条，Higgsfield Camera Prompt Bank）'
         '与「教程区」（Higgsfield 耳机案例 3 步工作流 27 步）；网页增加区域切换导航'})
-    meta['updatedAt'] = BIRTH
+    meta['updatedAt'] = today()
     h = re.sub(r'(<script id="meta"[^>]*>\n).*?(\n</script>)',
                lambda m: m.group(1) + json.dumps(meta, ensure_ascii=False, indent=1) + m.group(2), h, count=1, flags=re.S)
     guard(load(html_path)[0], h)
