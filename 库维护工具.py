@@ -3,7 +3,7 @@
 # 提示词库维护工具 v2（模型两级：系列 → 版本）
 # 用法：
 #   python3 库维护工具.py verify <库.html>
-#   python3 库维护工具.py add    <库.html> <新提示词.json> [输出.html]
+#   （add 已废弃删除：与 追加提示词.py 功能重复且指纹算法 64 位不一致，2026-08-26 对抗式审查 P1-26）
 #   python3 库维护工具.py export <库.html> [输出目录]
 # 铁律：绝不原地覆盖；老条目 original 指纹必须全部不变，任一不符立即中止。
 import sys, os, re, json, hashlib, datetime
@@ -64,13 +64,25 @@ def load(path, strict=True):
     return h, data, meta
 
 def save(h, data, meta, out):
+    def dump(x):
+        # 防 script 标签提前闭合：json.dumps 不转义 /，必须手动转义 </ 为 <\/
+        return json.dumps(x, ensure_ascii=False, indent=1).replace('</', '<\\/')
     if meta:
-        h = META_RE.sub(lambda m: m.group(1) + '\n' + json.dumps(meta, ensure_ascii=False, indent=1) + '\n' + m.group(3), h, count=1)
-    h = DATA_RE.sub(lambda m: m.group(1) + '\n' + json.dumps(data, ensure_ascii=False, indent=1) + '\n' + m.group(3), h, count=1)
+        h = META_RE.sub(lambda m: m.group(1) + '\n' + dump(meta) + '\n' + m.group(3), h, count=1)
+    h = DATA_RE.sub(lambda m: m.group(1) + '\n' + dump(data) + '\n' + m.group(3), h, count=1)
+    # 写前断言：三个 script 数据块内不得残留未转义的闭合串
+    for m in re.finditer(r'<script id="(data|meta|general|tutorials)"[^>]*>(.*?)</script>', h, re.S):
+        body = m.group(2)
+        assert not re.search(r'</script|<script(?![a-zA-Z])|<!--', body, re.I), \
+            '× %s 块内残留未转义危险串（</script / <script / <!--）' % m.group(1)
     open(out, 'w', encoding='utf-8').write(h)
+
+_LAST_WARN = []  # check() 的警告通道（结构相似提示等，不拦截写入）
 
 def check(data, meta):
     bad = []
+    warn = []
+    _LAST_WARN.clear()
     fp = (meta.get('完整性指纹') or {}).get('逐条指纹') or {}
     seen_id = set()
     for d in data:
@@ -84,6 +96,13 @@ def check(data, meta):
         o = d.get('original') or ''
         if '\ufffd' in o:
             bad.append((i, '原文含乱码字符'))
+        # 注入防护：原文含未转义 script 闭合/注释串（会劈开 JSON script 块，真 XSS 向量）
+        if re.search(r'</script|<script(?![a-zA-Z])|<!--', o, re.I):
+            bad.append((i, '!! 原文含危险串 </script|<script|<!--（须转义或剔除）'))
+        for f in ('original', 'zh'):
+            v = d.get(f) or ''
+            if isinstance(v, str) and re.search(r'</script|<script(?![a-zA-Z])|<!--', v, re.I):
+                bad.append((i, '!! %s 字段含危险串（须转义或剔除）' % f))
         if d.get('chars') != len(o):
             bad.append((i, 'chars 与原文长度不符'))
         if i in fp and fp[i] != sha(o):
@@ -100,12 +119,50 @@ def check(data, meta):
         for x in t:
             if not ok_tag(x):
                 bad.append((i, '非中文标签：' + str(x)))
-    dup = {}
+    # —— 完全重复（去空白后逐字比对）——
+    norm = {}
     for d in data:
-        dup.setdefault(sha(re.sub(r'\s+', '', d.get('original', ''))), []).append(d.get('id'))
-    for v in dup.values():
+        norm.setdefault(re.sub(r'\s+', '', d.get('original', '')), []).append(d.get('id'))
+    for v in norm.values():
         if len(v) > 1:
             bad.append((v[0], '原文与 ' + '/'.join(str(x) for x in v[1:]) + ' 完全重复'))
+    # —— n-gram 近重复检测（二元组 Jaccard：>0.90 红警=复制粘贴/翻译副本级（实测真雷 99-100%）；0.45-0.90 警告=模板变体/规格话术复用（实测 67-88% 合法）——
+    # 提示词模板换主角换颜色是产品特性不是重复（shou1 系列 45-56%、中文短文本二元组碰撞 60% 内均为合法变体）。
+    # 真正要拦的是「整段翻译副本/复制粘贴」级重复（实测真雷 99-100%，阈值 0.65 裕度充足）。
+    by_cat = {}
+    for d in data:
+        o = re.sub(r'\s+', '', d.get('original', ''))
+        if len(o) >= 40:
+            by_cat.setdefault(d.get('cat', '?'), []).append((d.get('id', '?'), set(o[j:j+2] for j in range(len(o)-1))))
+    exempt = {(p['对'][0], p['对'][1]) for p in (meta.get('相似豁免') or [])}
+    exempt |= {(b, a) for a, b in exempt}
+    for cat, lst in by_cat.items():
+        lst = lst[:400]
+        for a in range(len(lst)):
+            ida, ga = lst[a]
+            for b in range(a + 1, len(lst)):
+                idb, gb = lst[b]
+                if (ida, idb) in exempt:
+                    continue
+                inter = len(ga & gb)
+                if inter:
+                    sim = inter / len(ga | gb)
+                    if sim > 0.90:
+                        bad.append((ida, '与 %s 语义高度重复（n-gram 相似度 %.0f%%，翻译副本/复制粘贴级）' % (idb, 100 * sim)))
+                    elif sim > 0.45:
+                        warn.append((ida, '与 %s 结构相似（n-gram %.0f%%，模板变体/规格话术复用）' % (idb, 100 * sim)))
+    # —— 围栏泄漏检测（commit 4fad874 事故固化：``` 泄漏进原文）——
+    for d in data:
+        o = d.get('original', '')
+        if isinstance(o, str) and '```' in o:
+            bad.append((d.get('id', '?'), '原文含 %d 处 ``` 围栏泄漏' % o.count('```')))
+    # —— 噪音卡检测（commit 80ea097 事故固化：页脚 CTA 被当内容抓取）——
+    NOISE = re.compile(r'作者[：:]\s*\S|分享[到至].{0,6}平台|订阅.{0,8}频道|Try it in|Follow us|©\s*\d{4}')
+    for d in data:
+        o = d.get('original', '')
+        if isinstance(o, str) and NOISE.search(o):
+            bad.append((d.get('id', '?'), '原文疑似含页脚/CTA 噪音：%s' % NOISE.search(o).group(0)[:20]))
+    _LAST_WARN.extend(warn)
     return bad
 
 def cmd_verify(html):
@@ -130,12 +187,17 @@ def cmd_verify(html):
     if unreg:
         print('  ⚠ 未登记到模型注册表：%s（仍可显示，建议补登记）' % '、'.join(unreg))
     print('指纹可比对条目：%d' % len(fp))
+    warn = _LAST_WARN
+    if warn:
+        print('ℹ %d 条结构相似提示（同模板变体，不拦截）：' % len(warn))
+        for w in warn[:10]:
+            print('   ', w[0], w[1])
     if bad:
         print('× 发现 %d 个问题：' % len(bad))
         for b in bad[:30]:
             print('   ', b[0], b[1])
     else:
-        print('✓ 全部通过：原文指纹一致、字段齐全、标题简介中文、标签合规、无重复')
+        print('✓ 全部通过：原文指纹一致、字段齐全、标题简介中文、标签合规、无重复；围栏/噪音/注入扫描清')
     return 1 if bad else 0
 
 def next_id(rows, model):
@@ -147,60 +209,6 @@ def next_id(rows, model):
             n = max(n, int(m.group(1)))
     return p, n
 
-def cmd_add(html, newjson, out=None):
-    h, data, meta = load(html)
-    before = {d['id']: d['original'] for d in data}
-    items = json.load(open(newjson, encoding='utf-8'))
-    if isinstance(items, dict):
-        items = [items]
-    added = []
-    for it in items:
-        for f in REQUIRED:
-            if not it.get(f):
-                sys.exit('× 新条目缺字段 %s：%s' % (f, it.get('name', '(无标题)')))
-        if not re.search(r'\s', str(it['model']).strip()):
-            sys.exit('× model 必须写成「系列 + 空格 + 版本」，如 Seedance 2.5 / 海螺 H3 / 可灵 O3，当前：%s' % it['model'])
-        p, n = next_id(data + added, it['model'])
-        lang = it.get('lang', 'zh')
-        added.append({
-            'id': '%s-%03d' % (p, n + 1), 'model': it['model'], 'cat': it['cat'], 'sub': it['sub'],
-            'name': it['name'], 'desc': it['desc'], 'tags': it['tags'], 'lang': lang,
-            'langname': it.get('langname', '中文' if lang == 'zh' else str(lang).upper()),
-            'zh': it.get('zh', ''), 'original': it['original'], 'chars': len(it['original']),
-            'src': it['src'], 'srcs': it.get('srcs') or [it['src']], 'num': it.get('num', ''),
-            'primary': it.get('primary', True), 'sha1': sha(it['original'])})
-    rows = data + added
-    bad = check(rows, meta)
-    if bad:
-        print('× 校验未通过，未写出任何文件：')
-        for b in bad[:30]:
-            print('   ', b[0], b[1])
-        sys.exit(1)
-    per = {d['id']: sha(d['original']) for d in rows}
-    today = datetime.datetime.now().strftime('%Y-%m-%d')
-    old = str(meta.get('version', 'v0'))
-    nv = 'v%d' % (int(re.sub(r'\D', '', old) or 0) + 1)
-    meta['version'] = nv
-    meta['updatedAt'] = today
-    meta['完整性指纹'] = {'条目数': len(rows), '原文总字数': sum(len(d['original']) for d in rows),
-                        '全库指纹': hashlib.sha256(''.join(per[k] for k in sorted(per)).encode()).hexdigest(),
-                        '逐条指纹': per}
-    meta.setdefault('变更日志', []).append(
-        {'日期': today, '版本': nv,
-         '内容': '追加 %d 条（%s），老条目原文指纹全部未变' % (len(added), '、'.join(sorted(set(x['model'] for x in added))))})
-    if not out:
-        out = re.sub(r'(-v\d+)?\.html$', '', html) + '-' + nv + '.html'
-    if os.path.abspath(out) == os.path.abspath(html):
-        sys.exit('× 拒绝原地覆盖，请换一个输出文件名')
-    save(h, rows, meta, out)
-    _, d2, m2 = load(out)
-    assert len(d2) == len(rows), '条目数对不上'
-    assert all(x['original'] == before[x['id']] for x in d2 if x['id'] in before), '!! 老条目原文被改动'
-    print('✓ 追加 %d 条 → 共 %d 条；老条目原文指纹全部未变' % (len(added), len(d2)))
-    print('✓ 新文件：%s（原文件未动）' % out)
-    for e in added:
-        print('   +', e['id'], e['model'], e['cat'], '/', e['sub'], e['name'])
-    return 0
 
 def _tally(data):
     fam, cat, tag, chars = {}, {}, {}, 0
@@ -406,12 +414,10 @@ def cmd_export(html, outdir=None):
 
 if __name__ == '__main__':
     a = sys.argv[1:]
-    if not a or a[0] not in ('verify', 'add', 'export'):
+    if not a or a[0] not in ('verify', 'export'):
         print(__doc__ or '')
-        print('用法：verify <库.html> ｜ add <库.html> <新提示词.json> [输出.html] ｜ export <库.html> [目录]')
+        print('用法：verify <库.html> ｜ export <库.html> [目录]（add 已废弃删除，追加请用 追加提示词.py）')
         sys.exit(2)
     if a[0] == 'verify':
         sys.exit(cmd_verify(a[1]))
-    if a[0] == 'add':
-        sys.exit(cmd_add(a[1], a[2], a[3] if len(a) > 3 else None))
     sys.exit(cmd_export(a[1], a[2] if len(a) > 2 else None))

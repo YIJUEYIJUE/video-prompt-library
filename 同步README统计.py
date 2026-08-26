@@ -7,7 +7,7 @@
   2. 软失败 —— 任何异常只打警告、退出码恒为 0，绝不阻断 CI 的入库提交（数据优先，README 可后补）；
   3. 只读 HTML 的 data/meta 块，绝不写 HTML（唯一数据源只能由 追加提示词.py 写入）。
 """
-import json, re, sys
+import json, re, sys, os
 from collections import Counter, OrderedDict
 
 HTML = sys.argv[1] if len(sys.argv) > 1 else '视频提示词库-多模型.html'
@@ -87,8 +87,8 @@ def main():
 
     # 3) §12 变更记录（仅当条数变化时补一条；只追加，绝不改写历史条目）
     if old_n != n:
-        if n < old_n:
-            soft_fail('库条数(%d)少于 README 记载(%d)，疑似异常，不同步' % (n, old_n))
+        if n < old_n and not os.environ.get('ALLOW_SHRINK'):
+            soft_fail('库条数(%d)少于 README 记载(%d)，疑似异常，不同步（授权勘误清理请用 ALLOW_SHRINK=1）' % (n, old_n))
         i_log = next((i for i, l in enumerate(lines) if l.startswith('## 12')), None)
         if i_log is None:
             soft_fail('找不到「## 12. 变更记录」章节')
