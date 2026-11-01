@@ -230,8 +230,8 @@
 - `sd2-155`｜飞车猎影·极限FPV追车｜创意转场·运镜/运镜感｜813字｜运镜感、运镜、AI视频
 - `sd2-156`｜3D国漫·奔跑长镜头｜创意转场·运镜/一镜到底/长镜头｜801字｜一镜到底/长镜头、长镜头、AI视频
 - `sd2-157`｜日系胶片·生活故事感｜写实人物·剧情/生活故事｜968字｜生活故事感、生活、AI视频
-- `sd2-158`｜船舱湿身·喜剧惊吓｜喜剧·动画·萌趣/喜剧搞笑｜646字｜故事偏向喜剧向搞笑类型提示词、喜剧、AI视频
-- `sd2-159`｜门边偷听·喜剧反差｜喜剧·动画·萌趣/喜剧搞笑｜591字｜故事偏向喜剧向搞笑类型提示词、喜剧、AI视频
+- `sd2-158`｜船舱湿身·喜剧惊吓｜喜剧·动画·萌趣/喜剧搞笑｜646字｜喜剧向、喜剧、AI视频
+- `sd2-159`｜门边偷听·喜剧反差｜喜剧·动画·萌趣/喜剧搞笑｜591字｜喜剧向、喜剧、AI视频
 - `sd2-160`｜巨型木乃伊袭击吉萨金字塔｜脑洞·超现实/巨物破坏｜2589字｜巨物攻击破坏等的视频、巨物、AI视频
 - `sd2-161`｜恶魔双女·霓虹巷战五镜｜动作·打斗/打戏｜2886字｜打戏、打斗、AI视频
 - `sd2-162`｜雪峡逃亡·骑马甩狼长镜头｜创意转场·运镜/一镜到底/长镜头｜4190字｜一镜到底/长镜头、长镜头、AI视频
@@ -497,454 +497,454 @@
 - `gen-116`｜ƒ/8｜器材词典/光圈 · Aperture｜全景深起点，画面从前到后清晰锐利，高精度细节呈现
 - `gen-117`｜ƒ/11｜器材词典/光圈 · Aperture｜小光圈，全画面合焦，纹理细节全面清晰，无虚化干扰（Deep Focus keeps the whole scene sh
 - `gen-118`｜ƒ/16｜器材词典/光圈 · Aperture｜极小光圈，极致全景深，微小结构毫发毕现，画面整体锐利
-- `gen-119`｜推镜头｜镜头语言/基础镜头｜摄像机向被拍摄物体靠近，画面主题逐渐放大，背景范围缩小
-- `gen-120`｜拉镜头｜镜头语言/基础镜头｜摄像机远离被拍摄物体，画面视野扩大，主体缩小
-- `gen-121`｜摇镜头｜镜头语言/基础镜头｜摄像机水平旋转（左右移动），模拟人物转头视角，展示横向场景
-- `gen-122`｜移镜头｜镜头语言/基础镜头｜摄像机横向平移（左右移动），保持与被拍摄物体的距离，跟随移动主体
-- `gen-123`｜俯仰镜头｜镜头语言/基础镜头｜摄像机垂直旋转（上下移动），如镜头上升展示高大物体全景
-- `gen-124`｜升降镜头｜镜头语言/基础镜头｜摄像机整体垂直上下移动（非旋转），从地面升到高处，下降镜头视角变化
-- `gen-125`｜斯坦尼康镜头｜镜头语言/特殊设备镜头｜使用稳定器拍摄的平滑移动镜头，适合复杂路线
-- `gen-126`｜摇臂镜头｜镜头语言/特殊设备镜头｜利用机械臂实现升降 + 平移的复合运动，适合大场面开场或结尾
-- `gen-127`｜手持镜头｜镜头语言/特殊设备镜头｜故意制造晃动感，增强纪实性或紧张感
-- `gen-128`｜无人机航拍镜头｜镜头语言/特殊设备镜头｜高空大范围运动镜头，展现宏大场景
-- `gen-129`｜跟拍镜头｜镜头语言/复合镜头｜摄像机跟随主体移动，保持相对距离，如长镜头跟拍主体动作
-- `gen-130`｜弧镜头｜镜头语言/复合镜头｜摄像机以被拍摄物体为中心做弧形运动，增加画面动态感
-- `gen-131`｜希区柯克变焦镜头｜镜头语言/复合镜头｜边推 / 拉镜头，边反向变焦，背景压缩或拉伸，制造眩晕的效果
-- `gen-132`｜Pan｜运镜词典/基础｜横摇是一种基础运镜技术，常用于纪录片中
-- `gen-133`｜Tilt｜运镜词典/基础｜纵摇是一种基础运镜技术，常用于直播活动中
-- `gen-134`｜Dolly｜运镜词典/基础｜推拉是一种基础运镜技术，常用于音乐MV中
-- `gen-135`｜Truck｜运镜词典/基础｜平移是一种基础运镜技术，常用于广告制作中
-- `gen-136`｜Crane｜运镜词典/基础｜升降是一种基础运镜技术，常用于音乐MV中
-- `gen-137`｜Zoom｜运镜词典/基础｜变焦是一种基础运镜技术，常用于直播活动中
-- `gen-138`｜Arc｜运镜词典/基础｜弧形运动是一种基础运镜技术，常用于纪录片中
-- `gen-139`｜Pedestal｜运镜词典/基础｜底座升降是一种基础运镜技术，常用于广告制作中
-- `gen-140`｜Steadicam｜运镜词典/基础｜斯坦尼康是一种基础运镜技术，常用于短视频中
-- `gen-141`｜Tilt Pan｜运镜词典/复合｜摇镜头是一种复合运镜技术，常用于音乐MV中
-- `gen-142`｜Tracking Shot｜运镜词典/复合｜跟拍是一种复合运镜技术，常用于电视剧中
-- `gen-143`｜Dolly Tilt｜运镜词典/复合｜俯仰移动是一种复合运镜技术，常用于直播活动中
-- `gen-144`｜Crane Shot｜运镜词典/复合｜吊臂拍摄是一种复合运镜技术，常用于短视频中
-- `gen-145`｜Steadicam Tracking｜运镜词典/复合｜斯坦尼康跟拍是一种复合运镜技术，常用于直播活动中
-- `gen-146`｜Whip Pan｜运镜词典/复合｜甩镜头是一种复合运镜技术，常用于广告制作中
-- `gen-147`｜Tilt Zoom｜运镜词典/复合｜俯仰变焦是一种复合运镜技术，常用于短视频中
-- `gen-148`｜Orbit Shot｜运镜词典/复合｜环绕拍摄是一种复合运镜技术，常用于音乐MV中
-- `gen-149`｜Spiral Shot｜运镜词典/复合｜螺旋拍摄是一种复合运镜技术，常用于电影拍摄中
-- `gen-150`｜POV Shot｜运镜词典/特殊｜主观视角是一种特殊运镜技术，常用于纪录片中
-- `gen-151`｜Point of View｜运镜词典/特殊｜视点镜头是一种特殊运镜技术，常用于音乐MV中
-- `gen-152`｜Steadicam Shot｜运镜词典/特殊｜稳定器拍摄是一种特殊运镜技术，常用于纪录片中
-- `gen-153`｜Drone Shot｜运镜词典/特殊｜无人机拍摄是一种特殊运镜技术，常用于短视频中
-- `gen-154`｜Car Mount｜运镜词典/特殊｜车载拍摄是一种特殊运镜技术，常用于广告制作中
-- `gen-155`｜Underwater Shooting｜运镜词典/特殊｜水下拍摄是一种特殊运镜技术，常用于短视频中
-- `gen-156`｜Time Lapse｜运镜词典/特殊｜延时摄影是一种特殊运镜技术，常用于电影拍摄中
-- `gen-157`｜High Speed Photography｜运镜词典/特殊｜高速摄影是一种特殊运镜技术，常用于纪录片中
-- `gen-158`｜Macro Photography｜运镜词典/特殊｜微距摄影是一种特殊运镜技术，常用于直播活动中
-- `gen-159`｜Locked-Off Shot｜运镜词典/静态｜锁定镜头是一种静态运镜技术，常用于广告制作中
-- `gen-160`｜Long Take｜运镜词典/静态｜长镜头是一种静态运镜技术，常用于电视剧中
-- `gen-161`｜Wide Shot｜运镜词典/静态｜全景镜头是一种静态运镜技术，常用于电视剧中
-- `gen-162`｜Medium Shot｜运镜词典/静态｜中景镜头是一种静态运镜技术，常用于广告制作中
-- `gen-163`｜Close-Up｜运镜词典/静态｜特写镜头是一种静态运镜技术，常用于纪录片中
-- `gen-164`｜Extreme Close-Up｜运镜词典/静态｜大特写镜头是一种静态运镜技术，常用于直播活动中
-- `gen-165`｜Extreme Wide Shot｜运镜词典/静态｜大全景镜头是一种静态运镜技术，常用于电影拍摄中
-- `gen-166`｜Over-the-Shoulder Shot｜运镜词典/静态｜过肩镜头是一种静态运镜技术，常用于纪录片中
-- `gen-167`｜Two-Shot｜运镜词典/静态｜双人镜头是一种静态运镜技术，常用于广告制作中
-- `gen-168`｜Moving Shot｜运镜词典/动态｜移动镜头是一种动态运镜技术，常用于音乐MV中
-- `gen-169`｜Handheld Shot｜运镜词典/动态｜手持拍摄是一种动态运镜技术，常用于音乐MV中
-- `gen-170`｜Jib Shot｜运镜词典/动态｜摇臂拍摄是一种动态运镜技术，常用于电影拍摄中
-- `gen-171`｜Dolly Shot｜运镜词典/动态｜推拉拍摄是一种动态运镜技术，常用于音乐MV中
-- `gen-172`｜Truck Shot｜运镜词典/动态｜平移拍摄是一种动态运镜技术，常用于纪录片中
-- `gen-173`｜Sudden Tracking Shot｜运镜词典/复合｜Sudden的跟拍是一种基于跟拍的复合运镜变体技术，增强了短视频中的视觉表现力
-- `gen-174`｜Over-the-Shoulder Shot with Aggressive Focus｜运镜词典/静态｜过肩镜头（Aggressive风格）是一种基于过肩镜头的静态运镜变体技术，增强了广告制作中的视觉表现力
-- `gen-175`｜Car Mount with Sudden Focus｜运镜词典/特殊｜Sudden的车载拍摄是一种基于车载拍摄的特殊运镜变体技术，增强了纪录片中的视觉表现力
-- `gen-176`｜Rapid Dolly Tilt｜运镜词典/复合｜俯仰移动（Rapid风格）是一种基于俯仰移动的复合运镜变体技术，增强了广告制作中的视觉表现力
-- `gen-177`｜Rapid Pedestal｜运镜词典/基础｜Rapid的底座升降是一种基于底座升降的基础运镜变体技术，增强了电影拍摄中的视觉表现力
-- `gen-178`｜Fast Crane Shot｜运镜词典/动态｜Fast的吊臂拍摄是一种基于吊臂拍摄的动态运镜变体技术，增强了纪录片中的视觉表现力
-- `gen-179`｜Aggressive Point of View｜运镜词典/特殊｜Aggressive的视点镜头是一种基于视点镜头的特殊运镜变体技术，增强了电视剧中的视觉表现力
-- `gen-180`｜Tracking Shot with Slow Lens｜运镜词典/动态｜Slow的轨道拍摄是一种基于轨道拍摄的动态运镜变体技术，增强了广告制作中的视觉表现力
-- `gen-181`｜Rapid Orbit Shot｜运镜词典/复合｜环绕拍摄（Rapid风格）是一种基于环绕拍摄的复合运镜变体技术，增强了纪录片中的视觉表现力
-- `gen-182`｜Static Shot with Subtle Lens｜运镜词典/静态｜固定镜头（Subtle风格）是一种基于固定镜头的静态运镜变体技术，增强了短视频中的视觉表现力
-- `gen-183`｜Extreme Wide Shot with Gradual Perspective｜运镜词典/静态｜大全景镜头（Gradual风格）是一种基于大全景镜头的静态运镜变体技术，增强了广告制作中的视觉表现力
-- `gen-184`｜Dolly Shot with Quick Angle｜运镜词典/动态｜推拉拍摄（Quick风格）是一种基于推拉拍摄的动态运镜变体技术，增强了音乐MV中的视觉表现力
-- `gen-185`｜Bullet Time with Gentle Movement｜运镜词典/特殊｜Gentle的子弹时间是一种基于子弹时间的特殊运镜变体技术，增强了短视频中的视觉表现力
-- `gen-186`｜Underwater Shooting with Quick Motion｜运镜词典/特殊｜水下拍摄（Quick风格）是一种基于水下拍摄的特殊运镜变体技术，增强了直播活动中的视觉表现力
-- `gen-187`｜Fast Extreme Close-Up｜运镜词典/静态｜Fast的大特写镜头是一种基于大特写镜头的静态运镜变体技术，增强了音乐MV中的视觉表现力
-- `gen-188`｜Gentle Orbit Shot｜运镜词典/复合｜环绕拍摄（Gentle风格）是一种基于环绕拍摄的复合运镜变体技术，增强了音乐MV中的视觉表现力
-- `gen-189`｜Quick Drone Shot｜运镜词典/特殊｜无人机拍摄（Quick风格）是一种基于无人机拍摄的特殊运镜变体技术，增强了直播活动中的视觉表现力
-- `gen-190`｜Tilt with Subtle Motion｜运镜词典/基础｜纵摇（Subtle风格）是一种基于纵摇的基础运镜变体技术，增强了短视频中的视觉表现力
-- `gen-191`｜Tilt with Smooth Shot｜运镜词典/基础｜Smooth的纵摇是一种基于纵摇的基础运镜变体技术，增强了广告制作中的视觉表现力
-- `gen-192`｜Subtle Arc｜运镜词典/基础｜弧形运动（Subtle风格）是一种基于弧形运动的基础运镜变体技术，增强了直播活动中的视觉表现力
-- `gen-193`｜Rapid Macro Photography｜运镜词典/特殊｜微距摄影（Rapid风格）是一种基于微距摄影的特殊运镜变体技术，增强了短视频中的视觉表现力
-- `gen-194`｜Gentle Steadicam Tracking｜运镜词典/复合｜斯坦尼康跟拍（Gentle风格）是一种基于斯坦尼康跟拍的复合运镜变体技术，增强了直播活动中的视觉表现力
-- `gen-195`｜Tracking Shot with Gradual Focus｜运镜词典/复合｜跟拍（Gradual风格）是一种基于跟拍的复合运镜变体技术，增强了电影拍摄中的视觉表现力
-- `gen-196`｜Gradual Orbit Shot｜运镜词典/复合｜环绕拍摄（Gradual风格）是一种基于环绕拍摄的复合运镜变体技术，增强了广告制作中的视觉表现力
-- `gen-197`｜Zoom with Rapid Perspective｜运镜词典/基础｜变焦（Rapid风格）是一种基于变焦的基础运镜变体技术，增强了电影拍摄中的视觉表现力
-- `gen-198`｜Quick Medium Shot｜运镜词典/静态｜Quick的中景镜头是一种基于中景镜头的静态运镜变体技术，增强了电视剧中的视觉表现力
-- `gen-199`｜Dolly with Fast Movement｜运镜词典/基础｜Fast的推拉是一种基于推拉的基础运镜变体技术，增强了短视频中的视觉表现力
-- `gen-200`｜Slow Drone Shot｜运镜词典/动态｜Slow的无人机拍摄是一种基于无人机拍摄的动态运镜变体技术，增强了短视频中的视觉表现力
-- `gen-201`｜Slow Close-Up｜运镜词典/静态｜特写镜头（Slow风格）是一种基于特写镜头的静态运镜变体技术，增强了电视剧中的视觉表现力
-- `gen-202`｜Extreme Close-Up with Gentle Movement｜运镜词典/静态｜Gentle的大特写镜头是一种基于大特写镜头的静态运镜变体技术，增强了音乐MV中的视觉表现力
-- `gen-203`｜Extreme Close-Up with Gentle Camera｜运镜词典/静态｜大特写镜头（Gentle风格）是一种基于大特写镜头的静态运镜变体技术，增强了直播活动中的视觉表现力
-- `gen-204`｜Fast Steadicam Shot｜运镜词典/动态｜斯坦尼康拍摄（Fast风格）是一种基于斯坦尼康拍摄的动态运镜变体技术，增强了短视频中的视觉表现力
-- `gen-205`｜Smooth Handheld Shot｜运镜词典/动态｜手持拍摄（Smooth风格）是一种基于手持拍摄的动态运镜变体技术，增强了广告制作中的视觉表现力
-- `gen-206`｜Tilt Pan with Gentle Movement｜运镜词典/复合｜摇镜头（Gentle风格）是一种基于摇镜头的复合运镜变体技术，增强了短视频中的视觉表现力
-- `gen-207`｜Quick Crane Shot｜运镜词典/复合｜Quick的吊臂拍摄是一种基于吊臂拍摄的复合运镜变体技术，增强了直播活动中的视觉表现力
-- `gen-208`｜Aggressive Steadicam Shot｜运镜词典/特殊｜稳定器拍摄（Aggressive风格）是一种基于稳定器拍摄的特殊运镜变体技术，增强了纪录片中的视觉表现力
-- `gen-209`｜Rapid Two-Shot｜运镜词典/静态｜双人镜头（Rapid风格）是一种基于双人镜头的静态运镜变体技术，增强了音乐MV中的视觉表现力
-- `gen-210`｜Aggressive Arc｜运镜词典/基础｜弧形运动（Aggressive风格）是一种基于弧形运动的基础运镜变体技术，增强了广告制作中的视觉表现力
-- `gen-211`｜Quick Car Mount｜运镜词典/特殊｜车载拍摄（Quick风格）是一种基于车载拍摄的特殊运镜变体技术，增强了纪录片中的视觉表现力
-- `gen-212`｜Crane Shot with Smooth Movement｜运镜词典/动态｜Smooth的吊臂拍摄是一种基于吊臂拍摄的动态运镜变体技术，增强了电影拍摄中的视觉表现力
-- `gen-213`｜Slow Medium Shot｜运镜词典/静态｜中景镜头（Slow风格）是一种基于中景镜头的静态运镜变体技术，增强了音乐MV中的视觉表现力
-- `gen-214`｜Gentle Handheld｜运镜词典/基础｜Gentle的手持拍摄是一种基于手持拍摄的基础运镜变体技术，增强了广告制作中的视觉表现力
-- `gen-215`｜High Speed Photography with Quick Perspective｜运镜词典/特殊｜Quick的高速摄影是一种基于高速摄影的特殊运镜变体技术，增强了直播活动中的视觉表现力
-- `gen-216`｜Two-Shot with Gradual Movement｜运镜词典/静态｜Gradual的双人镜头是一种基于双人镜头的静态运镜变体技术，增强了广告制作中的视觉表现力
-- `gen-217`｜Drone Shot with Gentle View｜运镜词典/特殊｜无人机拍摄（Gentle风格）是一种基于无人机拍摄的特殊运镜变体技术，增强了广告制作中的视觉表现力
-- `gen-218`｜Moving Shot with Gentle Focus｜运镜词典/动态｜移动镜头（Gentle风格）是一种基于移动镜头的动态运镜变体技术，增强了电影拍摄中的视觉表现力
-- `gen-219`｜Tilt Zoom with Rapid Frame｜运镜词典/复合｜俯仰变焦（Rapid风格）是一种基于俯仰变焦的复合运镜变体技术，增强了直播活动中的视觉表现力
-- `gen-220`｜Dolly Tilt with Sudden Camera｜运镜词典/复合｜Sudden的俯仰移动是一种基于俯仰移动的复合运镜变体技术，增强了直播活动中的视觉表现力
-- `gen-221`｜Spiral Shot with Rapid Focus｜运镜词典/复合｜Rapid的螺旋拍摄是一种基于螺旋拍摄的复合运镜变体技术，增强了音乐MV中的视觉表现力
-- `gen-222`｜Handheld with Sudden Camera｜运镜词典/基础｜手持拍摄（Sudden风格）是一种基于手持拍摄的基础运镜变体技术，增强了电影拍摄中的视觉表现力
-- `gen-223`｜Dolly with Quick Movement｜运镜词典/基础｜推拉（Quick风格）是一种基于推拉的基础运镜变体技术，增强了广告制作中的视觉表现力
-- `gen-224`｜Long Take with Quick Angle｜运镜词典/静态｜长镜头（Quick风格）是一种基于长镜头的静态运镜变体技术，增强了广告制作中的视觉表现力
-- `gen-225`｜Close-Up with Quick Camera｜运镜词典/静态｜Quick的特写镜头是一种基于特写镜头的静态运镜变体技术，增强了广告制作中的视觉表现力
-- `gen-226`｜POV Shot with Slow Frame｜运镜词典/特殊｜Slow的主观视角是一种基于主观视角的特殊运镜变体技术，增强了音乐MV中的视觉表现力
-- `gen-227`｜Long Take with Fast Camera｜运镜词典/静态｜长镜头（Fast风格）是一种基于长镜头的静态运镜变体技术，增强了广告制作中的视觉表现力
-- `gen-228`｜Dolly Shot with Smooth Focus｜运镜词典/动态｜Smooth的推拉拍摄是一种基于推拉拍摄的动态运镜变体技术，增强了短视频中的视觉表现力
-- `gen-229`｜Handheld Shot with Gentle Focus｜运镜词典/动态｜手持拍摄（Gentle风格）是一种基于手持拍摄的动态运镜变体技术，增强了电视剧中的视觉表现力
-- `gen-230`｜Subtle Tilt Zoom｜运镜词典/复合｜Subtle的俯仰变焦是一种基于俯仰变焦的复合运镜变体技术，增强了电视剧中的视觉表现力
-- `gen-231`｜Aggressive Long Take｜运镜词典/静态｜Aggressive的长镜头是一种基于长镜头的静态运镜变体技术，增强了音乐MV中的视觉表现力
-- `gen-232`｜Quick Follow Shot｜运镜词典/动态｜跟镜头（Quick风格）是一种基于跟镜头的动态运镜变体技术，增强了纪录片中的视觉表现力
-- `gen-233`｜Slow Extreme Wide Shot｜运镜词典/静态｜Slow的大全景镜头是一种基于大全景镜头的静态运镜变体技术，增强了短视频中的视觉表现力
-- `gen-234`｜Steadicam Shot with Slow Angle｜运镜词典/动态｜斯坦尼康拍摄（Slow风格）是一种基于斯坦尼康拍摄的动态运镜变体技术，增强了短视频中的视觉表现力
-- `gen-235`｜Jib Shot with Aggressive View｜运镜词典/动态｜Aggressive的摇臂拍摄是一种基于摇臂拍摄的动态运镜变体技术，增强了广告制作中的视觉表现力
-- `gen-236`｜Sudden Drone Shot｜运镜词典/动态｜无人机拍摄（Sudden风格）是一种基于无人机拍摄的动态运镜变体技术，增强了纪录片中的视觉表现力
-- `gen-237`｜POV Shot with Rapid Focus｜运镜词典/特殊｜Rapid的主观视角是一种基于主观视角的特殊运镜变体技术，增强了电视剧中的视觉表现力
-- `gen-238`｜Gentle Underwater Shooting｜运镜词典/特殊｜Gentle的水下拍摄是一种基于水下拍摄的特殊运镜变体技术，增强了广告制作中的视觉表现力
-- `gen-239`｜POV Shot with Subtle Camera｜运镜词典/特殊｜主观视角（Subtle风格）是一种基于主观视角的特殊运镜变体技术，增强了电视剧中的视觉表现力
-- `gen-240`｜Tilt with Subtle Shot｜运镜词典/基础｜纵摇（Subtle风格）是一种基于纵摇的基础运镜变体技术，增强了音乐MV中的视觉表现力
-- `gen-241`｜Aggressive Two-Shot｜运镜词典/静态｜Aggressive的双人镜头是一种基于双人镜头的静态运镜变体技术，增强了电影拍摄中的视觉表现力
-- `gen-242`｜Rapid Tilt Zoom｜运镜词典/复合｜俯仰变焦（Rapid风格）是一种基于俯仰变焦的复合运镜变体技术，增强了广告制作中的视觉表现力
-- `gen-243`｜Handheld with Gentle Angle｜运镜词典/基础｜手持拍摄（Gentle风格）是一种基于手持拍摄的基础运镜变体技术，增强了短视频中的视觉表现力
-- `gen-244`｜Car Mount with Slow Shot｜运镜词典/特殊｜车载拍摄（Slow风格）是一种基于车载拍摄的特殊运镜变体技术，增强了直播活动中的视觉表现力
-- `gen-245`｜Spiral Shot with Gradual View｜运镜词典/复合｜Gradual的螺旋拍摄是一种基于螺旋拍摄的复合运镜变体技术，增强了音乐MV中的视觉表现力
-- `gen-246`｜Orbit Shot with Rapid Motion｜运镜词典/复合｜Rapid的环绕拍摄是一种基于环绕拍摄的复合运镜变体技术，增强了电影拍摄中的视觉表现力
-- `gen-247`｜Steadicam Shot with Smooth Angle｜运镜词典/特殊｜Smooth的稳定器拍摄是一种基于稳定器拍摄的特殊运镜变体技术，增强了电影拍摄中的视觉表现力
-- `gen-248`｜Smooth Steadicam Shot｜运镜词典/动态｜Smooth的斯坦尼康拍摄是一种基于斯坦尼康拍摄的动态运镜变体技术，增强了电影拍摄中的视觉表现力
-- `gen-249`｜Quick Moving Shot｜运镜词典/动态｜Quick的移动镜头是一种基于移动镜头的动态运镜变体技术，增强了纪录片中的视觉表现力
-- `gen-250`｜Sudden Zoom｜运镜词典/基础｜Sudden的变焦是一种基于变焦的基础运镜变体技术，增强了电影拍摄中的视觉表现力
-- `gen-251`｜Bullet Time with Gentle Perspective｜运镜词典/特殊｜Gentle的子弹时间是一种基于子弹时间的特殊运镜变体技术，增强了电视剧中的视觉表现力
-- `gen-252`｜Car Mount with Quick Shot｜运镜词典/特殊｜车载拍摄（Quick风格）是一种基于车载拍摄的特殊运镜变体技术，增强了纪录片中的视觉表现力
-- `gen-253`｜Tracking Shot with Subtle Perspective｜运镜词典/动态｜轨道拍摄（Subtle风格）是一种基于轨道拍摄的动态运镜变体技术，增强了电视剧中的视觉表现力
-- `gen-254`｜Fast Over-the-Shoulder Shot｜运镜词典/静态｜Fast的过肩镜头是一种基于过肩镜头的静态运镜变体技术，增强了电影拍摄中的视觉表现力
-- `gen-255`｜Aggressive Follow Shot｜运镜词典/动态｜跟镜头（Aggressive风格）是一种基于跟镜头的动态运镜变体技术，增强了纪录片中的视觉表现力
-- `gen-256`｜Drone Shot with Aggressive View｜运镜词典/特殊｜Aggressive的无人机拍摄是一种基于无人机拍摄的特殊运镜变体技术，增强了电影拍摄中的视觉表现力
-- `gen-257`｜Slow Truck Shot｜运镜词典/动态｜Slow的平移拍摄是一种基于平移拍摄的动态运镜变体技术，增强了电影拍摄中的视觉表现力
-- `gen-258`｜Gentle Tilt｜运镜词典/基础｜纵摇（Gentle风格）是一种基于纵摇的基础运镜变体技术，增强了音乐MV中的视觉表现力
-- `gen-259`｜Handheld Shot with Slow Lens｜运镜词典/动态｜Slow的手持拍摄是一种基于手持拍摄的动态运镜变体技术，增强了电视剧中的视觉表现力
-- `gen-260`｜High Speed Photography with Slow Movement｜运镜词典/特殊｜Slow的高速摄影是一种基于高速摄影的特殊运镜变体技术，增强了纪录片中的视觉表现力
-- `gen-261`｜Aggressive Crane Shot｜运镜词典/动态｜Aggressive的吊臂拍摄是一种基于吊臂拍摄的动态运镜变体技术，增强了电视剧中的视觉表现力
-- `gen-262`｜Subtle Dolly Tilt｜运镜词典/复合｜Subtle的俯仰移动是一种基于俯仰移动的复合运镜变体技术，增强了音乐MV中的视觉表现力
-- `gen-263`｜Rapid Dolly｜运镜词典/基础｜Rapid的推拉是一种基于推拉的基础运镜变体技术，增强了电视剧中的视觉表现力
-- `gen-264`｜Fast Tilt Zoom｜运镜词典/复合｜俯仰变焦（Fast风格）是一种基于俯仰变焦的复合运镜变体技术，增强了短视频中的视觉表现力
-- `gen-265`｜Rapid Steadicam Tracking｜运镜词典/复合｜斯坦尼康跟拍（Rapid风格）是一种基于斯坦尼康跟拍的复合运镜变体技术，增强了直播活动中的视觉表现力
-- `gen-266`｜Drone Shot with Fast Lens｜运镜词典/特殊｜Fast的无人机拍摄是一种基于无人机拍摄的特殊运镜变体技术，增强了短视频中的视觉表现力
-- `gen-267`｜Aggressive Medium Shot｜运镜词典/静态｜Aggressive的中景镜头是一种基于中景镜头的静态运镜变体技术，增强了电影拍摄中的视觉表现力
-- `gen-268`｜Gentle Locked-Off Shot｜运镜词典/静态｜锁定镜头（Gentle风格）是一种基于锁定镜头的静态运镜变体技术，增强了电视剧中的视觉表现力
-- `gen-269`｜Fast Moving Shot｜运镜词典/动态｜移动镜头（Fast风格）是一种基于移动镜头的动态运镜变体技术，增强了广告制作中的视觉表现力
-- `gen-270`｜Gentle Dolly Shot｜运镜词典/动态｜推拉拍摄（Gentle风格）是一种基于推拉拍摄的动态运镜变体技术，增强了电视剧中的视觉表现力
-- `gen-271`｜Rapid Steadicam｜运镜词典/基础｜斯坦尼康（Rapid风格）是一种基于斯坦尼康的基础运镜变体技术，增强了广告制作中的视觉表现力
-- `gen-272`｜High Speed Photography with Subtle Perspective｜运镜词典/特殊｜高速摄影（Subtle风格）是一种基于高速摄影的特殊运镜变体技术，增强了电影拍摄中的视觉表现力
-- `gen-273`｜Gentle Pedestal｜运镜词典/基础｜底座升降（Gentle风格）是一种基于底座升降的基础运镜变体技术，增强了音乐MV中的视觉表现力
-- `gen-274`｜Gradual Steadicam｜运镜词典/基础｜Gradual的斯坦尼康是一种基于斯坦尼康的基础运镜变体技术，增强了直播活动中的视觉表现力
-- `gen-275`｜Aggressive Tilt Pan｜运镜词典/复合｜摇镜头（Aggressive风格）是一种基于摇镜头的复合运镜变体技术，增强了纪录片中的视觉表现力
-- `gen-276`｜Steadicam Shot with Aggressive Movement｜运镜词典/动态｜斯坦尼康拍摄（Aggressive风格）是一种基于斯坦尼康拍摄的动态运镜变体技术，增强了纪录片中的视觉表现力
-- `gen-277`｜Subtle Drone Shot｜运镜词典/特殊｜无人机拍摄（Subtle风格）是一种基于无人机拍摄的特殊运镜变体技术，增强了纪录片中的视觉表现力
-- `gen-278`｜Aggressive Crane｜运镜词典/基础｜Aggressive的升降是一种基于升降的基础运镜变体技术，增强了音乐MV中的视觉表现力
-- `gen-279`｜Aggressive Extreme Wide Shot｜运镜词典/静态｜大全景镜头（Aggressive风格）是一种基于大全景镜头的静态运镜变体技术，增强了电影拍摄中的视觉表现力
-- `gen-280`｜Smooth Follow Shot｜运镜词典/动态｜跟镜头（Smooth风格）是一种基于跟镜头的动态运镜变体技术，增强了广告制作中的视觉表现力
-- `gen-281`｜Gradual Locked-Off Shot｜运镜词典/静态｜Gradual的锁定镜头是一种基于锁定镜头的静态运镜变体技术，增强了直播活动中的视觉表现力
-- `gen-282`｜Static Shot with Smooth View｜运镜词典/静态｜Smooth的固定镜头是一种基于固定镜头的静态运镜变体技术，增强了广告制作中的视觉表现力
-- `gen-283`｜Fast Orbit Shot｜运镜词典/复合｜Fast的环绕拍摄是一种基于环绕拍摄的复合运镜变体技术，增强了音乐MV中的视觉表现力
-- `gen-284`｜Steadicam Tracking with Gentle Movement｜运镜词典/复合｜Gentle的斯坦尼康跟拍是一种基于斯坦尼康跟拍的复合运镜变体技术，增强了音乐MV中的视觉表现力
-- `gen-285`｜Two-Shot with Aggressive Angle｜运镜词典/静态｜双人镜头（Aggressive风格）是一种基于双人镜头的静态运镜变体技术，增强了广告制作中的视觉表现力
-- `gen-286`｜Dolly with Gentle Frame｜运镜词典/基础｜Gentle的推拉是一种基于推拉的基础运镜变体技术，增强了电视剧中的视觉表现力
-- `gen-287`｜Smooth Jib Shot｜运镜词典/动态｜Smooth的摇臂拍摄是一种基于摇臂拍摄的动态运镜变体技术，增强了纪录片中的视觉表现力
-- `gen-288`｜Macro Photography with Gentle Lens｜运镜词典/特殊｜Gentle的微距摄影是一种基于微距摄影的特殊运镜变体技术，增强了短视频中的视觉表现力
-- `gen-289`｜Aggressive Zoom｜运镜词典/基础｜Aggressive的变焦是一种基于变焦的基础运镜变体技术，增强了电影拍摄中的视觉表现力
-- `gen-290`｜Medium Shot with Smooth Angle｜运镜词典/静态｜中景镜头（Smooth风格）是一种基于中景镜头的静态运镜变体技术，增强了广告制作中的视觉表现力
-- `gen-291`｜Slow Dolly Shot｜运镜词典/动态｜Slow的推拉拍摄是一种基于推拉拍摄的动态运镜变体技术，增强了广告制作中的视觉表现力
-- `gen-292`｜Tracking Shot with Fast Movement｜运镜词典/动态｜轨道拍摄（Fast风格）是一种基于轨道拍摄的动态运镜变体技术，增强了电影拍摄中的视觉表现力
-- `gen-293`｜Extreme Close-Up with Slow Lens｜运镜词典/静态｜Slow的大特写镜头是一种基于大特写镜头的静态运镜变体技术，增强了直播活动中的视觉表现力
-- `gen-294`｜Gradual Spiral Shot｜运镜词典/复合｜Gradual的螺旋拍摄是一种基于螺旋拍摄的复合运镜变体技术，增强了音乐MV中的视觉表现力
-- `gen-295`｜Fast Static Shot｜运镜词典/静态｜Fast的固定镜头是一种基于固定镜头的静态运镜变体技术，增强了电影拍摄中的视觉表现力
-- `gen-296`｜Locked-Off Shot with Aggressive Movement｜运镜词典/静态｜锁定镜头（Aggressive风格）是一种基于锁定镜头的静态运镜变体技术，增强了广告制作中的视觉表现力
-- `gen-297`｜Tracking Shot with Gentle Frame｜运镜词典/动态｜轨道拍摄（Gentle风格）是一种基于轨道拍摄的动态运镜变体技术，增强了短视频中的视觉表现力
-- `gen-298`｜Arc with Quick Shot｜运镜词典/基础｜Quick的弧形运动是一种基于弧形运动的基础运镜变体技术，增强了短视频中的视觉表现力
-- `gen-299`｜Tilt Pan with Gradual Frame｜运镜词典/复合｜摇镜头（Gradual风格）是一种基于摇镜头的复合运镜变体技术，增强了音乐MV中的视觉表现力
-- `gen-300`｜Drone Shot with Slow Motion｜运镜词典/动态｜无人机拍摄（Slow风格）是一种基于无人机拍摄的动态运镜变体技术，增强了广告制作中的视觉表现力
-- `gen-301`｜Long Take with Smooth Motion｜运镜词典/静态｜长镜头（Smooth风格）是一种基于长镜头的静态运镜变体技术，增强了短视频中的视觉表现力
-- `gen-302`｜Slow Arc｜运镜词典/基础｜弧形运动（Slow风格）是一种基于弧形运动的基础运镜变体技术，增强了直播活动中的视觉表现力
-- `gen-303`｜Gentle Point of View｜运镜词典/特殊｜视点镜头（Gentle风格）是一种基于视点镜头的特殊运镜变体技术，增强了纪录片中的视觉表现力
-- `gen-304`｜Quick Truck｜运镜词典/基础｜Quick的平移是一种基于平移的基础运镜变体技术，增强了电影拍摄中的视觉表现力
-- `gen-305`｜Macro Photography with Quick Angle｜运镜词典/特殊｜Quick的微距摄影是一种基于微距摄影的特殊运镜变体技术，增强了音乐MV中的视觉表现力
-- `gen-306`｜Sudden Long Take｜运镜词典/静态｜长镜头（Sudden风格）是一种基于长镜头的静态运镜变体技术，增强了直播活动中的视觉表现力
-- `gen-307`｜Wide Shot with Fast Perspective｜运镜词典/静态｜全景镜头（Fast风格）是一种基于全景镜头的静态运镜变体技术，增强了直播活动中的视觉表现力
-- `gen-308`｜Sudden Crane｜运镜词典/基础｜升降（Sudden风格）是一种基于升降的基础运镜变体技术，增强了纪录片中的视觉表现力
-- `gen-309`｜Quick Spiral Shot｜运镜词典/复合｜Quick的螺旋拍摄是一种基于螺旋拍摄的复合运镜变体技术，增强了广告制作中的视觉表现力
-- `gen-310`｜POV Shot with Slow Motion｜运镜词典/特殊｜主观视角（Slow风格）是一种基于主观视角的特殊运镜变体技术，增强了纪录片中的视觉表现力
-- `gen-311`｜Handheld with Rapid View｜运镜词典/基础｜Rapid的手持拍摄是一种基于手持拍摄的基础运镜变体技术，增强了纪录片中的视觉表现力
-- `gen-312`｜Dolly Zoom with Gentle Movement｜运镜词典/复合｜滑动变焦（Gentle风格）是一种基于滑动变焦的复合运镜变体技术，增强了电视剧中的视觉表现力
-- `gen-313`｜Quick Jib Shot｜运镜词典/动态｜Quick的摇臂拍摄是一种基于摇臂拍摄的动态运镜变体技术，增强了纪录片中的视觉表现力
-- `gen-314`｜Spiral Shot with Quick Camera｜运镜词典/复合｜螺旋拍摄（Quick风格）是一种基于螺旋拍摄的复合运镜变体技术，增强了短视频中的视觉表现力
-- `gen-315`｜Steadicam Shot with Gradual Perspective｜运镜词典/特殊｜Gradual的稳定器拍摄是一种基于稳定器拍摄的特殊运镜变体技术，增强了电影拍摄中的视觉表现力
-- `gen-316`｜Aggressive Over-the-Shoulder Shot｜运镜词典/静态｜过肩镜头（Aggressive风格）是一种基于过肩镜头的静态运镜变体技术，增强了音乐MV中的视觉表现力
-- `gen-317`｜Over-the-Shoulder Shot with Aggressive Angle｜运镜词典/静态｜过肩镜头（Aggressive风格）是一种基于过肩镜头的静态运镜变体技术，增强了直播活动中的视觉表现力
-- `gen-318`｜Aggressive Orbit Shot｜运镜词典/复合｜Aggressive的环绕拍摄是一种基于环绕拍摄的复合运镜变体技术，增强了直播活动中的视觉表现力
-- `gen-319`｜Tilt Pan with Fast Perspective｜运镜词典/复合｜Fast的摇镜头是一种基于摇镜头的复合运镜变体技术，增强了电影拍摄中的视觉表现力
-- `gen-320`｜Follow Shot with Slow Angle｜运镜词典/动态｜Slow的跟镜头是一种基于跟镜头的动态运镜变体技术，增强了纪录片中的视觉表现力
-- `gen-321`｜Car Mount with Smooth View｜运镜词典/特殊｜车载拍摄（Smooth风格）是一种基于车载拍摄的特殊运镜变体技术，增强了电视剧中的视觉表现力
-- `gen-322`｜Rapid Extreme Wide Shot｜运镜词典/静态｜大全景镜头（Rapid风格）是一种基于大全景镜头的静态运镜变体技术，增强了短视频中的视觉表现力
-- `gen-323`｜Rapid Handheld｜运镜词典/基础｜手持拍摄（Rapid风格）是一种基于手持拍摄的基础运镜变体技术，增强了电影拍摄中的视觉表现力
-- `gen-324`｜Subtle Steadicam Shot｜运镜词典/动态｜Subtle的斯坦尼康拍摄是一种基于斯坦尼康拍摄的动态运镜变体技术，增强了直播活动中的视觉表现力
-- `gen-325`｜Truck Shot with Aggressive Lens｜运镜词典/动态｜Aggressive的平移拍摄是一种基于平移拍摄的动态运镜变体技术，增强了广告制作中的视觉表现力
-- `gen-326`｜Point of View with Slow Perspective｜运镜词典/特殊｜Slow的视点镜头是一种基于视点镜头的特殊运镜变体技术，增强了直播活动中的视觉表现力
-- `gen-327`｜Slow Crane Shot｜运镜词典/复合｜吊臂拍摄（Slow风格）是一种基于吊臂拍摄的复合运镜变体技术，增强了电影拍摄中的视觉表现力
-- `gen-328`｜Gentle Over-the-Shoulder Shot｜运镜词典/静态｜过肩镜头（Gentle风格）是一种基于过肩镜头的静态运镜变体技术，增强了广告制作中的视觉表现力
-- `gen-329`｜Crane Shot with Aggressive Motion｜运镜词典/动态｜吊臂拍摄（Aggressive风格）是一种基于吊臂拍摄的动态运镜变体技术，增强了电影拍摄中的视觉表现力
-- `gen-330`｜Steadicam Tracking with Smooth Motion｜运镜词典/复合｜斯坦尼康跟拍（Smooth风格）是一种基于斯坦尼康跟拍的复合运镜变体技术，增强了音乐MV中的视觉表现力
-- `gen-331`｜Extreme Close-Up with Aggressive Shot｜运镜词典/静态｜Aggressive的大特写镜头是一种基于大特写镜头的静态运镜变体技术，增强了电视剧中的视觉表现力
-- `gen-332`｜Steadicam with Rapid Motion｜运镜词典/基础｜斯坦尼康（Rapid风格）是一种基于斯坦尼康的基础运镜变体技术，增强了短视频中的视觉表现力
-- `gen-333`｜Gentle Time Lapse｜运镜词典/特殊｜延时摄影（Gentle风格）是一种基于延时摄影的特殊运镜变体技术，增强了广告制作中的视觉表现力
-- `gen-334`｜Steadicam with Smooth Focus｜运镜词典/基础｜斯坦尼康（Smooth风格）是一种基于斯坦尼康的基础运镜变体技术，增强了电视剧中的视觉表现力
-- `gen-335`｜Tilt Pan with Gradual Shot｜运镜词典/复合｜Gradual的摇镜头是一种基于摇镜头的复合运镜变体技术，增强了广告制作中的视觉表现力
-- `gen-336`｜Spiral Shot with Gradual Camera｜运镜词典/复合｜螺旋拍摄（Gradual风格）是一种基于螺旋拍摄的复合运镜变体技术，增强了广告制作中的视觉表现力
-- `gen-337`｜Steadicam Shot with Subtle Perspective｜运镜词典/动态｜斯坦尼康拍摄（Subtle风格）是一种基于斯坦尼康拍摄的动态运镜变体技术，增强了直播活动中的视觉表现力
-- `gen-338`｜Tilt Zoom with Gradual Movement｜运镜词典/复合｜俯仰变焦（Gradual风格）是一种基于俯仰变焦的复合运镜变体技术，增强了纪录片中的视觉表现力
-- `gen-339`｜Macro Photography with Smooth Camera｜运镜词典/特殊｜微距摄影（Smooth风格）是一种基于微距摄影的特殊运镜变体技术，增强了电影拍摄中的视觉表现力
-- `gen-340`｜Rapid Whip Pan｜运镜词典/复合｜Rapid的甩镜头是一种基于甩镜头的复合运镜变体技术，增强了电视剧中的视觉表现力
-- `gen-341`｜Aggressive POV Shot｜运镜词典/特殊｜主观视角（Aggressive风格）是一种基于主观视角的特殊运镜变体技术，增强了音乐MV中的视觉表现力
-- `gen-342`｜Dolly Shot with Subtle Perspective｜运镜词典/动态｜推拉拍摄（Subtle风格）是一种基于推拉拍摄的动态运镜变体技术，增强了电影拍摄中的视觉表现力
-- `gen-343`｜Crane Shot with Subtle Perspective｜运镜词典/动态｜吊臂拍摄（Subtle风格）是一种基于吊臂拍摄的动态运镜变体技术，增强了电视剧中的视觉表现力
-- `gen-344`｜Extreme Wide Shot with Quick Movement｜运镜词典/静态｜大全景镜头（Quick风格）是一种基于大全景镜头的静态运镜变体技术，增强了纪录片中的视觉表现力
-- `gen-345`｜Macro Photography with Subtle Motion｜运镜词典/特殊｜微距摄影（Subtle风格）是一种基于微距摄影的特殊运镜变体技术，增强了电影拍摄中的视觉表现力
-- `gen-346`｜Fast POV Shot｜运镜词典/特殊｜Fast的主观视角是一种基于主观视角的特殊运镜变体技术，增强了音乐MV中的视觉表现力
-- `gen-347`｜High Speed Photography with Gentle Focus｜运镜词典/特殊｜Gentle的高速摄影是一种基于高速摄影的特殊运镜变体技术，增强了纪录片中的视觉表现力
-- `gen-348`｜Smooth Car Mount｜运镜词典/特殊｜车载拍摄（Smooth风格）是一种基于车载拍摄的特殊运镜变体技术，增强了直播活动中的视觉表现力
-- `gen-349`｜Macro Photography with Sudden Frame｜运镜词典/特殊｜Sudden的微距摄影是一种基于微距摄影的特殊运镜变体技术，增强了广告制作中的视觉表现力
-- `gen-350`｜Gentle Macro Photography｜运镜词典/特殊｜微距摄影（Gentle风格）是一种基于微距摄影的特殊运镜变体技术，增强了音乐MV中的视觉表现力
-- `gen-351`｜Sudden Static Shot｜运镜词典/静态｜固定镜头（Sudden风格）是一种基于固定镜头的静态运镜变体技术，增强了直播活动中的视觉表现力
-- `gen-352`｜Handheld Shot with Smooth View｜运镜词典/动态｜Smooth的手持拍摄是一种基于手持拍摄的动态运镜变体技术，增强了音乐MV中的视觉表现力
-- `gen-353`｜Zoom with Sudden Focus｜运镜词典/基础｜Sudden的变焦是一种基于变焦的基础运镜变体技术，增强了纪录片中的视觉表现力
-- `gen-354`｜Rapid Bullet Time｜运镜词典/特殊｜Rapid的子弹时间是一种基于子弹时间的特殊运镜变体技术，增强了广告制作中的视觉表现力
-- `gen-355`｜Crane with Gentle Frame｜运镜词典/基础｜升降（Gentle风格）是一种基于升降的基础运镜变体技术，增强了电影拍摄中的视觉表现力
-- `gen-356`｜Smooth Tilt Zoom｜运镜词典/复合｜Smooth的俯仰变焦是一种基于俯仰变焦的复合运镜变体技术，增强了直播活动中的视觉表现力
-- `gen-357`｜Fast Steadicam Tracking｜运镜词典/复合｜Fast的斯坦尼康跟拍是一种基于斯坦尼康跟拍的复合运镜变体技术，增强了短视频中的视觉表现力
-- `gen-358`｜Gradual Two-Shot｜运镜词典/静态｜双人镜头（Gradual风格）是一种基于双人镜头的静态运镜变体技术，增强了电视剧中的视觉表现力
-- `gen-359`｜Gradual Car Mount｜运镜词典/特殊｜车载拍摄（Gradual风格）是一种基于车载拍摄的特殊运镜变体技术，增强了短视频中的视觉表现力
-- `gen-360`｜Gradual Macro Photography｜运镜词典/特殊｜Gradual的微距摄影是一种基于微距摄影的特殊运镜变体技术，增强了电视剧中的视觉表现力
-- `gen-361`｜Tilt with Smooth Angle｜运镜词典/基础｜Smooth的纵摇是一种基于纵摇的基础运镜变体技术，增强了直播活动中的视觉表现力
-- `gen-362`｜Handheld with Slow Angle｜运镜词典/基础｜Slow的手持拍摄是一种基于手持拍摄的基础运镜变体技术，增强了直播活动中的视觉表现力
-- `gen-363`｜Gradual POV Shot｜运镜词典/特殊｜主观视角（Gradual风格）是一种基于主观视角的特殊运镜变体技术，增强了纪录片中的视觉表现力
-- `gen-364`｜Macro Photography with Slow View｜运镜词典/特殊｜Slow的微距摄影是一种基于微距摄影的特殊运镜变体技术，增强了短视频中的视觉表现力
-- `gen-365`｜Sudden Close-Up｜运镜词典/静态｜Sudden的特写镜头是一种基于特写镜头的静态运镜变体技术，增强了电视剧中的视觉表现力
-- `gen-366`｜Handheld Shot with Aggressive View｜运镜词典/动态｜Aggressive的手持拍摄是一种基于手持拍摄的动态运镜变体技术，增强了纪录片中的视觉表现力
-- `gen-367`｜Smooth Dolly Tilt｜运镜词典/复合｜俯仰移动（Smooth风格）是一种基于俯仰移动的复合运镜变体技术，增强了广告制作中的视觉表现力
-- `gen-368`｜Point of View with Gentle Lens｜运镜词典/特殊｜Gentle的视点镜头是一种基于视点镜头的特殊运镜变体技术，增强了广告制作中的视觉表现力
-- `gen-369`｜Drone Shot with Subtle Frame｜运镜词典/动态｜Subtle的无人机拍摄是一种基于无人机拍摄的动态运镜变体技术，增强了广告制作中的视觉表现力
-- `gen-370`｜Sudden Whip Pan｜运镜词典/复合｜Sudden的甩镜头是一种基于甩镜头的复合运镜变体技术，增强了直播活动中的视觉表现力
-- `gen-371`｜Subtle Whip Pan｜运镜词典/复合｜甩镜头（Subtle风格）是一种基于甩镜头的复合运镜变体技术，增强了短视频中的视觉表现力
-- `gen-372`｜Macro Photography with Fast Movement｜运镜词典/特殊｜微距摄影（Fast风格）是一种基于微距摄影的特殊运镜变体技术，增强了音乐MV中的视觉表现力
-- `gen-373`｜Quick Tilt Pan｜运镜词典/复合｜Quick的摇镜头是一种基于摇镜头的复合运镜变体技术，增强了电影拍摄中的视觉表现力
-- `gen-374`｜Follow Shot with Gentle Lens｜运镜词典/动态｜Gentle的跟镜头是一种基于跟镜头的动态运镜变体技术，增强了音乐MV中的视觉表现力
-- `gen-375`｜Aggressive Underwater Shooting｜运镜词典/特殊｜水下拍摄（Aggressive风格）是一种基于水下拍摄的特殊运镜变体技术，增强了电视剧中的视觉表现力
-- `gen-376`｜Fast Truck｜运镜词典/基础｜平移（Fast风格）是一种基于平移的基础运镜变体技术，增强了纪录片中的视觉表现力
-- `gen-377`｜Truck Shot with Gentle Frame｜运镜词典/动态｜平移拍摄（Gentle风格）是一种基于平移拍摄的动态运镜变体技术，增强了短视频中的视觉表现力
-- `gen-378`｜Crane with Slow View｜运镜词典/基础｜升降（Slow风格）是一种基于升降的基础运镜变体技术，增强了短视频中的视觉表现力
-- `gen-379`｜Sudden Orbit Shot｜运镜词典/复合｜Sudden的环绕拍摄是一种基于环绕拍摄的复合运镜变体技术，增强了纪录片中的视觉表现力
-- `gen-380`｜Car Mount with Subtle Angle｜运镜词典/特殊｜Subtle的车载拍摄是一种基于车载拍摄的特殊运镜变体技术，增强了音乐MV中的视觉表现力
-- `gen-381`｜Handheld with Fast Shot｜运镜词典/基础｜Fast的手持拍摄是一种基于手持拍摄的基础运镜变体技术，增强了短视频中的视觉表现力
-- `gen-382`｜Quick Steadicam Shot｜运镜词典/动态｜斯坦尼康拍摄（Quick风格）是一种基于斯坦尼康拍摄的动态运镜变体技术，增强了直播活动中的视觉表现力
-- `gen-383`｜Gentle Pan｜运镜词典/基础｜横摇（Gentle风格）是一种基于横摇的基础运镜变体技术，增强了电视剧中的视觉表现力
-- `gen-384`｜Orbit Shot with Subtle Lens｜运镜词典/复合｜环绕拍摄（Subtle风格）是一种基于环绕拍摄的复合运镜变体技术，增强了直播活动中的视觉表现力
-- `gen-385`｜Tracking Shot with Fast Angle｜运镜词典/复合｜跟拍（Fast风格）是一种基于跟拍的复合运镜变体技术，增强了电视剧中的视觉表现力
-- `gen-386`｜Gentle Crane Shot｜运镜词典/复合｜吊臂拍摄（Gentle风格）是一种基于吊臂拍摄的复合运镜变体技术，增强了电视剧中的视觉表现力
-- `gen-387`｜Tilt with Rapid Lens｜运镜词典/基础｜Rapid的纵摇是一种基于纵摇的基础运镜变体技术，增强了电视剧中的视觉表现力
-- `gen-388`｜Dolly with Fast Motion｜运镜词典/基础｜Fast的推拉是一种基于推拉的基础运镜变体技术，增强了广告制作中的视觉表现力
-- `gen-389`｜Over-the-Shoulder Shot with Quick Camera｜运镜词典/静态｜Quick的过肩镜头是一种基于过肩镜头的静态运镜变体技术，增强了广告制作中的视觉表现力
-- `gen-390`｜Tracking Shot with Aggressive Movement｜运镜词典/动态｜轨道拍摄（Aggressive风格）是一种基于轨道拍摄的动态运镜变体技术，增强了直播活动中的视觉表现力
-- `gen-391`｜Fast Jib Shot｜运镜词典/动态｜摇臂拍摄（Fast风格）是一种基于摇臂拍摄的动态运镜变体技术，增强了纪录片中的视觉表现力
-- `gen-392`｜Static Shot with Quick View｜运镜词典/静态｜Quick的固定镜头是一种基于固定镜头的静态运镜变体技术，增强了纪录片中的视觉表现力
-- `gen-393`｜Aggressive Dolly Shot｜运镜词典/动态｜推拉拍摄（Aggressive风格）是一种基于推拉拍摄的动态运镜变体技术，增强了短视频中的视觉表现力
-- `gen-394`｜Jib Shot with Aggressive Perspective｜运镜词典/动态｜Aggressive的摇臂拍摄是一种基于摇臂拍摄的动态运镜变体技术，增强了电视剧中的视觉表现力
-- `gen-395`｜Gentle Moving Shot｜运镜词典/动态｜移动镜头（Gentle风格）是一种基于移动镜头的动态运镜变体技术，增强了电影拍摄中的视觉表现力
-- `gen-396`｜Time Lapse with Quick Movement｜运镜词典/特殊｜延时摄影（Quick风格）是一种基于延时摄影的特殊运镜变体技术，增强了广告制作中的视觉表现力
-- `gen-397`｜Truck Shot with Smooth View｜运镜词典/动态｜Smooth的平移拍摄是一种基于平移拍摄的动态运镜变体技术，增强了电视剧中的视觉表现力
-- `gen-398`｜Aggressive Close-Up｜运镜词典/静态｜Aggressive的特写镜头是一种基于特写镜头的静态运镜变体技术，增强了广告制作中的视觉表现力
-- `gen-399`｜Extreme Close-Up with Smooth Lens｜运镜词典/静态｜大特写镜头（Smooth风格）是一种基于大特写镜头的静态运镜变体技术，增强了纪录片中的视觉表现力
-- `gen-400`｜Steadicam with Rapid Focus｜运镜词典/基础｜斯坦尼康（Rapid风格）是一种基于斯坦尼康的基础运镜变体技术，增强了直播活动中的视觉表现力
-- `gen-401`｜Steadicam Shot with Rapid Perspective｜运镜词典/特殊｜稳定器拍摄（Rapid风格）是一种基于稳定器拍摄的特殊运镜变体技术，增强了广告制作中的视觉表现力
-- `gen-402`｜Quick Orbit Shot｜运镜词典/复合｜环绕拍摄（Quick风格）是一种基于环绕拍摄的复合运镜变体技术，增强了纪录片中的视觉表现力
-- `gen-403`｜Gradual Tracking Shot｜运镜词典/动态｜Gradual的轨道拍摄是一种基于轨道拍摄的动态运镜变体技术，增强了短视频中的视觉表现力
-- `gen-404`｜Tracking Shot with Gradual Frame｜运镜词典/复合｜Gradual的跟拍是一种基于跟拍的复合运镜变体技术，增强了纪录片中的视觉表现力
-- `gen-405`｜Steadicam Shot with Rapid Motion｜运镜词典/动态｜Rapid的斯坦尼康拍摄是一种基于斯坦尼康拍摄的动态运镜变体技术，增强了音乐MV中的视觉表现力
-- `gen-406`｜Steadicam with Aggressive Motion｜运镜词典/基础｜斯坦尼康（Aggressive风格）是一种基于斯坦尼康的基础运镜变体技术，增强了广告制作中的视觉表现力
-- `gen-407`｜Handheld with Rapid Motion｜运镜词典/基础｜Rapid的手持拍摄是一种基于手持拍摄的基础运镜变体技术，增强了短视频中的视觉表现力
-- `gen-408`｜Long Take with Aggressive Camera｜运镜词典/静态｜长镜头（Aggressive风格）是一种基于长镜头的静态运镜变体技术，增强了广告制作中的视觉表现力
-- `gen-409`｜Macro Photography with Slow Movement｜运镜词典/特殊｜Slow的微距摄影是一种基于微距摄影的特殊运镜变体技术，增强了音乐MV中的视觉表现力
-- `gen-410`｜Tracking Shot with Aggressive Perspective｜运镜词典/动态｜Aggressive的轨道拍摄是一种基于轨道拍摄的动态运镜变体技术，增强了电视剧中的视觉表现力
-- `gen-411`｜Slow Tilt Zoom｜运镜词典/复合｜Slow的俯仰变焦是一种基于俯仰变焦的复合运镜变体技术，增强了短视频中的视觉表现力
-- `gen-412`｜Drone Shot with Sudden Angle｜运镜词典/特殊｜无人机拍摄（Sudden风格）是一种基于无人机拍摄的特殊运镜变体技术，增强了直播活动中的视觉表现力
-- `gen-413`｜Truck with Aggressive Frame｜运镜词典/基础｜平移（Aggressive风格）是一种基于平移的基础运镜变体技术，增强了电视剧中的视觉表现力
-- `gen-414`｜Drone Shot with Subtle Focus｜运镜词典/特殊｜无人机拍摄（Subtle风格）是一种基于无人机拍摄的特殊运镜变体技术，增强了电视剧中的视觉表现力
-- `gen-415`｜Fast Tilt Pan｜运镜词典/复合｜摇镜头（Fast风格）是一种基于摇镜头的复合运镜变体技术，增强了音乐MV中的视觉表现力
-- `gen-416`｜Tilt with Gentle Lens｜运镜词典/基础｜纵摇（Gentle风格）是一种基于纵摇的基础运镜变体技术，增强了短视频中的视觉表现力
-- `gen-417`｜Dolly Zoom with Smooth Frame｜运镜词典/复合｜滑动变焦（Smooth风格）是一种基于滑动变焦的复合运镜变体技术，增强了纪录片中的视觉表现力
-- `gen-418`｜Aggressive Static Shot｜运镜词典/静态｜固定镜头（Aggressive风格）是一种基于固定镜头的静态运镜变体技术，增强了广告制作中的视觉表现力
-- `gen-419`｜Subtle Static Shot｜运镜词典/静态｜固定镜头（Subtle风格）是一种基于固定镜头的静态运镜变体技术，增强了纪录片中的视觉表现力
-- `gen-420`｜Orbit Shot with Fast Shot｜运镜词典/复合｜Fast的环绕拍摄是一种基于环绕拍摄的复合运镜变体技术，增强了广告制作中的视觉表现力
-- `gen-421`｜Spiral Shot with Sudden Angle｜运镜词典/复合｜Sudden的螺旋拍摄是一种基于螺旋拍摄的复合运镜变体技术，增强了广告制作中的视觉表现力
-- `gen-422`｜Quick Static Shot｜运镜词典/静态｜固定镜头（Quick风格）是一种基于固定镜头的静态运镜变体技术，增强了短视频中的视觉表现力
-- `gen-423`｜Car Mount with Aggressive Focus｜运镜词典/特殊｜车载拍摄（Aggressive风格）是一种基于车载拍摄的特殊运镜变体技术，增强了直播活动中的视觉表现力
-- `gen-424`｜Tilt Pan with Gentle Angle｜运镜词典/复合｜摇镜头（Gentle风格）是一种基于摇镜头的复合运镜变体技术，增强了直播活动中的视觉表现力
-- `gen-425`｜Aggressive Dolly｜运镜词典/基础｜Aggressive的推拉是一种基于推拉的基础运镜变体技术，增强了音乐MV中的视觉表现力
-- `gen-426`｜Whip Pan with Aggressive Perspective｜运镜词典/复合｜Aggressive的甩镜头是一种基于甩镜头的复合运镜变体技术，增强了广告制作中的视觉表现力
-- `gen-427`｜Quick High Speed Photography｜运镜词典/特殊｜高速摄影（Quick风格）是一种基于高速摄影的特殊运镜变体技术，增强了音乐MV中的视觉表现力
-- `gen-428`｜Medium Shot with Rapid Angle｜运镜词典/静态｜Rapid的中景镜头是一种基于中景镜头的静态运镜变体技术，增强了电影拍摄中的视觉表现力
-- `gen-429`｜Locked-Off Shot with Rapid View｜运镜词典/静态｜Rapid的锁定镜头是一种基于锁定镜头的静态运镜变体技术，增强了音乐MV中的视觉表现力
-- `gen-430`｜Bullet Time with Gradual Camera｜运镜词典/特殊｜Gradual的子弹时间是一种基于子弹时间的特殊运镜变体技术，增强了电视剧中的视觉表现力
-- `gen-431`｜Whip Pan with Sudden Camera｜运镜词典/复合｜Sudden的甩镜头是一种基于甩镜头的复合运镜变体技术，增强了短视频中的视觉表现力
-- `gen-432`｜Long Take with Sudden Frame｜运镜词典/静态｜长镜头（Sudden风格）是一种基于长镜头的静态运镜变体技术，增强了短视频中的视觉表现力
-- `gen-433`｜Quick Locked-Off Shot｜运镜词典/静态｜Quick的锁定镜头是一种基于锁定镜头的静态运镜变体技术，增强了直播活动中的视觉表现力
-- `gen-434`｜Drone Shot with Gentle Camera｜运镜词典/动态｜无人机拍摄（Gentle风格）是一种基于无人机拍摄的动态运镜变体技术，增强了电影拍摄中的视觉表现力
-- `gen-435`｜Rapid Long Take｜运镜词典/静态｜Rapid的长镜头是一种基于长镜头的静态运镜变体技术，增强了直播活动中的视觉表现力
-- `gen-436`｜Gradual Dolly Shot｜运镜词典/动态｜Gradual的推拉拍摄是一种基于推拉拍摄的动态运镜变体技术，增强了电视剧中的视觉表现力
-- `gen-437`｜Dolly Tilt with Quick Perspective｜运镜词典/复合｜俯仰移动（Quick风格）是一种基于俯仰移动的复合运镜变体技术，增强了短视频中的视觉表现力
-- `gen-438`｜Moving Shot with Sudden Movement｜运镜词典/动态｜Sudden的移动镜头是一种基于移动镜头的动态运镜变体技术，增强了广告制作中的视觉表现力
-- `gen-439`｜Sudden Tilt｜运镜词典/基础｜Sudden的纵摇是一种基于纵摇的基础运镜变体技术，增强了直播活动中的视觉表现力
-- `gen-440`｜Close-Up with Sudden Perspective｜运镜词典/静态｜特写镜头（Sudden风格）是一种基于特写镜头的静态运镜变体技术，增强了短视频中的视觉表现力
-- `gen-441`｜Steadicam with Quick Movement｜运镜词典/基础｜Quick的斯坦尼康是一种基于斯坦尼康的基础运镜变体技术，增强了电视剧中的视觉表现力
-- `gen-442`｜Fast Long Take｜运镜词典/静态｜Fast的长镜头是一种基于长镜头的静态运镜变体技术，增强了纪录片中的视觉表现力
-- `gen-443`｜Gradual Truck｜运镜词典/基础｜平移（Gradual风格）是一种基于平移的基础运镜变体技术，增强了短视频中的视觉表现力
-- `gen-444`｜Crane Shot with Aggressive Shot｜运镜词典/动态｜Aggressive的吊臂拍摄是一种基于吊臂拍摄的动态运镜变体技术，增强了纪录片中的视觉表现力
-- `gen-445`｜Two-Shot with Subtle View｜运镜词典/静态｜双人镜头（Subtle风格）是一种基于双人镜头的静态运镜变体技术，增强了短视频中的视觉表现力
-- `gen-446`｜Subtle Dolly｜运镜词典/基础｜推拉（Subtle风格）是一种基于推拉的基础运镜变体技术，增强了短视频中的视觉表现力
-- `gen-447`｜Follow Shot with Gradual Focus｜运镜词典/动态｜跟镜头（Gradual风格）是一种基于跟镜头的动态运镜变体技术，增强了短视频中的视觉表现力
-- `gen-448`｜Slow Car Mount｜运镜词典/特殊｜车载拍摄（Slow风格）是一种基于车载拍摄的特殊运镜变体技术，增强了纪录片中的视觉表现力
-- `gen-449`｜Static Shot with Quick Frame｜运镜词典/静态｜固定镜头（Quick风格）是一种基于固定镜头的静态运镜变体技术，增强了直播活动中的视觉表现力
-- `gen-450`｜Tracking Shot with Sudden Frame｜运镜词典/复合｜跟拍（Sudden风格）是一种基于跟拍的复合运镜变体技术，增强了广告制作中的视觉表现力
-- `gen-451`｜Time Lapse with Gradual Motion｜运镜词典/特殊｜延时摄影（Gradual风格）是一种基于延时摄影的特殊运镜变体技术，增强了音乐MV中的视觉表现力
-- `gen-452`｜Rapid Wide Shot｜运镜词典/静态｜Rapid的全景镜头是一种基于全景镜头的静态运镜变体技术，增强了广告制作中的视觉表现力
-- `gen-453`｜Macro Photography with Subtle Movement｜运镜词典/特殊｜微距摄影（Subtle风格）是一种基于微距摄影的特殊运镜变体技术，增强了音乐MV中的视觉表现力
-- `gen-454`｜Follow Shot with Sudden Angle｜运镜词典/动态｜Sudden的跟镜头是一种基于跟镜头的动态运镜变体技术，增强了广告制作中的视觉表现力
-- `gen-455`｜Tracking Shot with Smooth Focus｜运镜词典/动态｜Smooth的轨道拍摄是一种基于轨道拍摄的动态运镜变体技术，增强了短视频中的视觉表现力
-- `gen-456`｜Subtle Wide Shot｜运镜词典/静态｜Subtle的全景镜头是一种基于全景镜头的静态运镜变体技术，增强了广告制作中的视觉表现力
-- `gen-457`｜Long Take with Rapid Angle｜运镜词典/静态｜长镜头（Rapid风格）是一种基于长镜头的静态运镜变体技术，增强了广告制作中的视觉表现力
-- `gen-458`｜Quick Dolly Shot｜运镜词典/动态｜Quick的推拉拍摄是一种基于推拉拍摄的动态运镜变体技术，增强了直播活动中的视觉表现力
-- `gen-459`｜Steadicam Shot with Gradual Motion｜运镜词典/动态｜斯坦尼康拍摄（Gradual风格）是一种基于斯坦尼康拍摄的动态运镜变体技术，增强了直播活动中的视觉表现力
-- `gen-460`｜Rapid Truck｜运镜词典/基础｜平移（Rapid风格）是一种基于平移的基础运镜变体技术，增强了音乐MV中的视觉表现力
-- `gen-461`｜Fast Dolly Zoom｜运镜词典/复合｜滑动变焦（Fast风格）是一种基于滑动变焦的复合运镜变体技术，增强了广告制作中的视觉表现力
-- `gen-462`｜Slow Underwater Shooting｜运镜词典/特殊｜水下拍摄（Slow风格）是一种基于水下拍摄的特殊运镜变体技术，增强了纪录片中的视觉表现力
-- `gen-463`｜Slow POV Shot｜运镜词典/特殊｜Slow的主观视角是一种基于主观视角的特殊运镜变体技术，增强了纪录片中的视觉表现力
-- `gen-464`｜Pedestal with Gentle Frame｜运镜词典/基础｜Gentle的底座升降是一种基于底座升降的基础运镜变体技术，增强了广告制作中的视觉表现力
-- `gen-465`｜Slow Time Lapse｜运镜词典/特殊｜延时摄影（Slow风格）是一种基于延时摄影的特殊运镜变体技术，增强了电影拍摄中的视觉表现力
-- `gen-466`｜Point of View with Subtle Lens｜运镜词典/特殊｜视点镜头（Subtle风格）是一种基于视点镜头的特殊运镜变体技术，增强了音乐MV中的视觉表现力
-- `gen-467`｜Rapid Time Lapse｜运镜词典/特殊｜延时摄影（Rapid风格）是一种基于延时摄影的特殊运镜变体技术，增强了电视剧中的视觉表现力
-- `gen-468`｜Crane with Sudden Shot｜运镜词典/基础｜升降（Sudden风格）是一种基于升降的基础运镜变体技术，增强了电视剧中的视觉表现力
-- `gen-469`｜Zoom with Fast Frame｜运镜词典/基础｜Fast的变焦是一种基于变焦的基础运镜变体技术，增强了纪录片中的视觉表现力
-- `gen-470`｜Steadicam Shot with Rapid Lens｜运镜词典/动态｜Rapid的斯坦尼康拍摄是一种基于斯坦尼康拍摄的动态运镜变体技术，增强了广告制作中的视觉表现力
-- `gen-471`｜Subtle Tracking Shot｜运镜词典/动态｜Subtle的轨道拍摄是一种基于轨道拍摄的动态运镜变体技术，增强了短视频中的视觉表现力
-- `gen-472`｜Macro Photography with Quick Lens｜运镜词典/特殊｜Quick的微距摄影是一种基于微距摄影的特殊运镜变体技术，增强了电视剧中的视觉表现力
-- `gen-473`｜Dolly with Aggressive Focus｜运镜词典/基础｜推拉（Aggressive风格）是一种基于推拉的基础运镜变体技术，增强了电影拍摄中的视觉表现力
-- `gen-474`｜Sudden Jib Shot｜运镜词典/动态｜摇臂拍摄（Sudden风格）是一种基于摇臂拍摄的动态运镜变体技术，增强了纪录片中的视觉表现力
-- `gen-475`｜Smooth Time Lapse｜运镜词典/特殊｜Smooth的延时摄影是一种基于延时摄影的特殊运镜变体技术，增强了电视剧中的视觉表现力
-- `gen-476`｜Gradual Steadicam Shot｜运镜词典/特殊｜Gradual的稳定器拍摄是一种基于稳定器拍摄的特殊运镜变体技术，增强了电视剧中的视觉表现力
-- `gen-477`｜Follow Shot with Subtle View｜运镜词典/动态｜Subtle的跟镜头是一种基于跟镜头的动态运镜变体技术，增强了短视频中的视觉表现力
-- `gen-478`｜Truck with Subtle Angle｜运镜词典/基础｜平移（Subtle风格）是一种基于平移的基础运镜变体技术，增强了广告制作中的视觉表现力
-- `gen-479`｜Gradual Dolly Tilt｜运镜词典/复合｜Gradual的俯仰移动是一种基于俯仰移动的复合运镜变体技术，增强了广告制作中的视觉表现力
-- `gen-480`｜High Speed Photography with Rapid Movement｜运镜词典/特殊｜Rapid的高速摄影是一种基于高速摄影的特殊运镜变体技术，增强了电影拍摄中的视觉表现力
-- `gen-481`｜Bullet Time with Rapid Focus｜运镜词典/特殊｜Rapid的子弹时间是一种基于子弹时间的特殊运镜变体技术，增强了音乐MV中的视觉表现力
-- `gen-482`｜Sudden Tilt Pan｜运镜词典/复合｜摇镜头（Sudden风格）是一种基于摇镜头的复合运镜变体技术，增强了直播活动中的视觉表现力
-- `gen-483`｜Handheld Shot with Slow Frame｜运镜词典/动态｜Slow的手持拍摄是一种基于手持拍摄的动态运镜变体技术，增强了音乐MV中的视觉表现力
-- `gen-484`｜Sudden Dolly Tilt｜运镜词典/复合｜Sudden的俯仰移动是一种基于俯仰移动的复合运镜变体技术，增强了短视频中的视觉表现力
-- `gen-485`｜Whip Pan with Aggressive Motion｜运镜词典/复合｜Aggressive的甩镜头是一种基于甩镜头的复合运镜变体技术，增强了直播活动中的视觉表现力
-- `gen-486`｜Handheld with Smooth Movement｜运镜词典/基础｜Smooth的手持拍摄是一种基于手持拍摄的基础运镜变体技术，增强了广告制作中的视觉表现力
-- `gen-487`｜Gentle Steadicam Shot｜运镜词典/特殊｜稳定器拍摄（Gentle风格）是一种基于稳定器拍摄的特殊运镜变体技术，增强了短视频中的视觉表现力
-- `gen-488`｜Zoom with Fast Lens｜运镜词典/基础｜Fast的变焦是一种基于变焦的基础运镜变体技术，增强了音乐MV中的视觉表现力
-- `gen-489`｜Subtle Truck｜运镜词典/基础｜平移（Subtle风格）是一种基于平移的基础运镜变体技术，增强了广告制作中的视觉表现力
-- `gen-490`｜Aggressive Pan｜运镜词典/基础｜Aggressive的横摇是一种基于横摇的基础运镜变体技术，增强了短视频中的视觉表现力
-- `gen-491`｜Steadicam Shot with Subtle Movement｜运镜词典/动态｜斯坦尼康拍摄（Subtle风格）是一种基于斯坦尼康拍摄的动态运镜变体技术，增强了短视频中的视觉表现力
-- `gen-492`｜Sudden Truck Shot｜运镜词典/动态｜平移拍摄（Sudden风格）是一种基于平移拍摄的动态运镜变体技术，增强了直播活动中的视觉表现力
-- `gen-493`｜Steadicam Shot with Slow Motion｜运镜词典/动态｜斯坦尼康拍摄（Slow风格）是一种基于斯坦尼康拍摄的动态运镜变体技术，增强了广告制作中的视觉表现力
-- `gen-494`｜Truck Shot with Quick Frame｜运镜词典/动态｜平移拍摄（Quick风格）是一种基于平移拍摄的动态运镜变体技术，增强了电影拍摄中的视觉表现力
-- `gen-495`｜Rapid Drone Shot｜运镜词典/特殊｜无人机拍摄（Rapid风格）是一种基于无人机拍摄的特殊运镜变体技术，增强了电视剧中的视觉表现力
-- `gen-496`｜Fast Extreme Wide Shot｜运镜词典/静态｜大全景镜头（Fast风格）是一种基于大全景镜头的静态运镜变体技术，增强了直播活动中的视觉表现力
-- `gen-497`｜Pan with Quick Frame｜运镜词典/基础｜横摇（Quick风格）是一种基于横摇的基础运镜变体技术，增强了直播活动中的视觉表现力
-- `gen-498`｜Moving Shot with Sudden Shot｜运镜词典/动态｜Sudden的移动镜头是一种基于移动镜头的动态运镜变体技术，增强了电视剧中的视觉表现力
-- `gen-499`｜Time Lapse with Aggressive Frame｜运镜词典/特殊｜Aggressive的延时摄影是一种基于延时摄影的特殊运镜变体技术，增强了电视剧中的视觉表现力
-- `gen-500`｜Locked-Off Shot with Smooth View｜运镜词典/静态｜锁定镜头（Smooth风格）是一种基于锁定镜头的静态运镜变体技术，增强了电影拍摄中的视觉表现力
-- `gen-501`｜Dolly with Gentle Motion｜运镜词典/基础｜推拉（Gentle风格）是一种基于推拉的基础运镜变体技术，增强了电视剧中的视觉表现力
-- `gen-502`｜Crane with Fast Angle｜运镜词典/基础｜Fast的升降是一种基于升降的基础运镜变体技术，增强了直播活动中的视觉表现力
-- `gen-503`｜Drone Shot with Quick Focus｜运镜词典/特殊｜Quick的无人机拍摄是一种基于无人机拍摄的特殊运镜变体技术，增强了短视频中的视觉表现力
-- `gen-504`｜Extreme Wide Shot with Rapid Motion｜运镜词典/静态｜Rapid的大全景镜头是一种基于大全景镜头的静态运镜变体技术，增强了音乐MV中的视觉表现力
-- `gen-505`｜Slow Bullet Time｜运镜词典/特殊｜子弹时间（Slow风格）是一种基于子弹时间的特殊运镜变体技术，增强了电视剧中的视觉表现力
-- `gen-506`｜Crane Shot with Gradual Perspective｜运镜词典/动态｜Gradual的吊臂拍摄是一种基于吊臂拍摄的动态运镜变体技术，增强了纪录片中的视觉表现力
-- `gen-507`｜Subtle Dolly Zoom｜运镜词典/复合｜Subtle的滑动变焦是一种基于滑动变焦的复合运镜变体技术，增强了纪录片中的视觉表现力
-- `gen-508`｜Dolly Zoom with Aggressive Camera｜运镜词典/复合｜滑动变焦（Aggressive风格）是一种基于滑动变焦的复合运镜变体技术，增强了短视频中的视觉表现力
-- `gen-509`｜Aggressive Car Mount｜运镜词典/特殊｜车载拍摄（Aggressive风格）是一种基于车载拍摄的特殊运镜变体技术，增强了纪录片中的视觉表现力
-- `gen-510`｜Dolly Tilt with Sudden Perspective｜运镜词典/复合｜俯仰移动（Sudden风格）是一种基于俯仰移动的复合运镜变体技术，增强了纪录片中的视觉表现力
-- `gen-511`｜Handheld with Rapid Camera｜运镜词典/基础｜Rapid的手持拍摄是一种基于手持拍摄的基础运镜变体技术，增强了电影拍摄中的视觉表现力
-- `gen-512`｜Subtle Underwater Shooting｜运镜词典/特殊｜Subtle的水下拍摄是一种基于水下拍摄的特殊运镜变体技术，增强了电影拍摄中的视觉表现力
-- `gen-513`｜Sudden Follow Shot｜运镜词典/动态｜跟镜头（Sudden风格）是一种基于跟镜头的动态运镜变体技术，增强了电影拍摄中的视觉表现力
-- `gen-514`｜Underwater Shooting with Fast View｜运镜词典/特殊｜Fast的水下拍摄是一种基于水下拍摄的特殊运镜变体技术，增强了直播活动中的视觉表现力
-- `gen-515`｜Slow Orbit Shot｜运镜词典/复合｜环绕拍摄（Slow风格）是一种基于环绕拍摄的复合运镜变体技术，增强了音乐MV中的视觉表现力
-- `gen-516`｜Tilt Pan with Subtle Angle｜运镜词典/复合｜摇镜头（Subtle风格）是一种基于摇镜头的复合运镜变体技术，增强了广告制作中的视觉表现力
-- `gen-517`｜Truck Shot with Subtle Motion｜运镜词典/动态｜Subtle的平移拍摄是一种基于平移拍摄的动态运镜变体技术，增强了纪录片中的视觉表现力
-- `gen-518`｜Orbit Shot with Aggressive Frame｜运镜词典/复合｜Aggressive的环绕拍摄是一种基于环绕拍摄的复合运镜变体技术，增强了纪录片中的视觉表现力
-- `gen-519`｜Subtle Over-the-Shoulder Shot｜运镜词典/静态｜过肩镜头（Subtle风格）是一种基于过肩镜头的静态运镜变体技术，增强了短视频中的视觉表现力
-- `gen-520`｜High Speed Photography with Gentle View｜运镜词典/特殊｜Gentle的高速摄影是一种基于高速摄影的特殊运镜变体技术，增强了电影拍摄中的视觉表现力
-- `gen-521`｜Aggressive Pedestal｜运镜词典/基础｜底座升降（Aggressive风格）是一种基于底座升降的基础运镜变体技术，增强了直播活动中的视觉表现力
-- `gen-522`｜Orbit Shot with Gentle Movement｜运镜词典/复合｜Gentle的环绕拍摄是一种基于环绕拍摄的复合运镜变体技术，增强了短视频中的视觉表现力
-- `gen-523`｜Crane Shot with Aggressive Frame｜运镜词典/复合｜吊臂拍摄（Aggressive风格）是一种基于吊臂拍摄的复合运镜变体技术，增强了电影拍摄中的视觉表现力
-- `gen-524`｜Subtle Spiral Shot｜运镜词典/复合｜螺旋拍摄（Subtle风格）是一种基于螺旋拍摄的复合运镜变体技术，增强了电视剧中的视觉表现力
-- `gen-525`｜Tracking Shot with Gentle Camera｜运镜词典/复合｜Gentle的跟拍是一种基于跟拍的复合运镜变体技术，增强了电视剧中的视觉表现力
-- `gen-526`｜Extreme Wide Shot with Sudden Frame｜运镜词典/静态｜大全景镜头（Sudden风格）是一种基于大全景镜头的静态运镜变体技术，增强了纪录片中的视觉表现力
-- `gen-527`｜Steadicam with Sudden Movement｜运镜词典/基础｜斯坦尼康（Sudden风格）是一种基于斯坦尼康的基础运镜变体技术，增强了电影拍摄中的视觉表现力
-- `gen-528`｜Over-the-Shoulder Shot with Smooth Lens｜运镜词典/静态｜Smooth的过肩镜头是一种基于过肩镜头的静态运镜变体技术，增强了电视剧中的视觉表现力
-- `gen-529`｜Subtle Long Take｜运镜词典/静态｜长镜头（Subtle风格）是一种基于长镜头的静态运镜变体技术，增强了纪录片中的视觉表现力
-- `gen-530`｜Subtle Handheld｜运镜词典/基础｜Subtle的手持拍摄是一种基于手持拍摄的基础运镜变体技术，增强了短视频中的视觉表现力
-- `gen-531`｜Gradual Crane Shot｜运镜词典/复合｜Gradual的吊臂拍摄是一种基于吊臂拍摄的复合运镜变体技术，增强了电影拍摄中的视觉表现力
-- `gen-532`｜Steadicam Tracking with Fast Shot｜运镜词典/复合｜斯坦尼康跟拍（Fast风格）是一种基于斯坦尼康跟拍的复合运镜变体技术，增强了广告制作中的视觉表现力
-- `gen-533`｜Quick Handheld Shot｜运镜词典/动态｜Quick的手持拍摄是一种基于手持拍摄的动态运镜变体技术，增强了音乐MV中的视觉表现力
-- `gen-534`｜Pedestal with Slow Camera｜运镜词典/基础｜Slow的底座升降是一种基于底座升降的基础运镜变体技术，增强了广告制作中的视觉表现力
-- `gen-535`｜Dolly Shot with Slow Frame｜运镜词典/动态｜推拉拍摄（Slow风格）是一种基于推拉拍摄的动态运镜变体技术，增强了纪录片中的视觉表现力
-- `gen-536`｜Gentle Dolly Zoom｜运镜词典/复合｜滑动变焦（Gentle风格）是一种基于滑动变焦的复合运镜变体技术，增强了音乐MV中的视觉表现力
-- `gen-537`｜Crane Shot with Fast Frame｜运镜词典/动态｜Fast的吊臂拍摄是一种基于吊臂拍摄的动态运镜变体技术，增强了直播活动中的视觉表现力
-- `gen-538`｜Fast Underwater Shooting｜运镜词典/特殊｜水下拍摄（Fast风格）是一种基于水下拍摄的特殊运镜变体技术，增强了电影拍摄中的视觉表现力
-- `gen-539`｜Subtle Two-Shot｜运镜词典/静态｜双人镜头（Subtle风格）是一种基于双人镜头的静态运镜变体技术，增强了电影拍摄中的视觉表现力
-- `gen-540`｜Medium Shot with Subtle Movement｜运镜词典/静态｜Subtle的中景镜头是一种基于中景镜头的静态运镜变体技术，增强了纪录片中的视觉表现力
-- `gen-541`｜Gentle Tracking Shot｜运镜词典/复合｜Gentle的跟拍是一种基于跟拍的复合运镜变体技术，增强了电影拍摄中的视觉表现力
-- `gen-542`｜Fast Drone Shot｜运镜词典/特殊｜无人机拍摄（Fast风格）是一种基于无人机拍摄的特殊运镜变体技术，增强了广告制作中的视觉表现力
-- `gen-543`｜Subtle High Speed Photography｜运镜词典/特殊｜高速摄影（Subtle风格）是一种基于高速摄影的特殊运镜变体技术，增强了直播活动中的视觉表现力
-- `gen-544`｜Subtle Close-Up｜运镜词典/静态｜特写镜头（Subtle风格）是一种基于特写镜头的静态运镜变体技术，增强了广告制作中的视觉表现力
-- `gen-545`｜Rapid Medium Shot｜运镜词典/静态｜中景镜头（Rapid风格）是一种基于中景镜头的静态运镜变体技术，增强了电视剧中的视觉表现力
-- `gen-546`｜Drone Shot with Quick Shot｜运镜词典/特殊｜无人机拍摄（Quick风格）是一种基于无人机拍摄的特殊运镜变体技术，增强了电视剧中的视觉表现力
-- `gen-547`｜Dolly Zoom with Rapid Focus｜运镜词典/复合｜Rapid的滑动变焦是一种基于滑动变焦的复合运镜变体技术，增强了广告制作中的视觉表现力
-- `gen-548`｜Smooth Drone Shot｜运镜词典/特殊｜Smooth的无人机拍摄是一种基于无人机拍摄的特殊运镜变体技术，增强了电视剧中的视觉表现力
-- `gen-549`｜Dolly with Smooth Lens｜运镜词典/基础｜Smooth的推拉是一种基于推拉的基础运镜变体技术，增强了电视剧中的视觉表现力
-- `gen-550`｜Point of View with Rapid Motion｜运镜词典/特殊｜Rapid的视点镜头是一种基于视点镜头的特殊运镜变体技术，增强了广告制作中的视觉表现力
-- `gen-551`｜Extreme Wide Shot with Aggressive Shot｜运镜词典/静态｜大全景镜头（Aggressive风格）是一种基于大全景镜头的静态运镜变体技术，增强了电视剧中的视觉表现力
-- `gen-552`｜Sudden Two-Shot｜运镜词典/静态｜双人镜头（Sudden风格）是一种基于双人镜头的静态运镜变体技术，增强了短视频中的视觉表现力
-- `gen-553`｜Rapid Static Shot｜运镜词典/静态｜固定镜头（Rapid风格）是一种基于固定镜头的静态运镜变体技术，增强了广告制作中的视觉表现力
-- `gen-554`｜Fast Locked-Off Shot｜运镜词典/静态｜锁定镜头（Fast风格）是一种基于锁定镜头的静态运镜变体技术，增强了直播活动中的视觉表现力
-- `gen-555`｜Moving Shot with Slow Camera｜运镜词典/动态｜移动镜头（Slow风格）是一种基于移动镜头的动态运镜变体技术，增强了直播活动中的视觉表现力
-- `gen-556`｜Follow Shot with Slow Frame｜运镜词典/动态｜跟镜头（Slow风格）是一种基于跟镜头的动态运镜变体技术，增强了广告制作中的视觉表现力
-- `gen-557`｜Aggressive Tracking Shot｜运镜词典/动态｜Aggressive的轨道拍摄是一种基于轨道拍摄的动态运镜变体技术，增强了直播活动中的视觉表现力
-- `gen-558`｜Sudden Moving Shot｜运镜词典/动态｜移动镜头（Sudden风格）是一种基于移动镜头的动态运镜变体技术，增强了音乐MV中的视觉表现力
-- `gen-559`｜Time Lapse with Rapid Frame｜运镜词典/特殊｜延时摄影（Rapid风格）是一种基于延时摄影的特殊运镜变体技术，增强了音乐MV中的视觉表现力
-- `gen-560`｜Dolly Shot with Aggressive Angle｜运镜词典/动态｜推拉拍摄（Aggressive风格）是一种基于推拉拍摄的动态运镜变体技术，增强了音乐MV中的视觉表现力
-- `gen-561`｜Smooth Tracking Shot｜运镜词典/动态｜Smooth的轨道拍摄是一种基于轨道拍摄的动态运镜变体技术，增强了广告制作中的视觉表现力
-- `gen-562`｜Zoom with Quick Lens｜运镜词典/基础｜Quick的变焦是一种基于变焦的基础运镜变体技术，增强了短视频中的视觉表现力
-- `gen-563`｜Handheld Shot with Smooth Movement｜运镜词典/动态｜手持拍摄（Smooth风格）是一种基于手持拍摄的动态运镜变体技术，增强了电视剧中的视觉表现力
-- `gen-564`｜Point of View with Smooth Lens｜运镜词典/特殊｜视点镜头（Smooth风格）是一种基于视点镜头的特殊运镜变体技术，增强了电视剧中的视觉表现力
-- `gen-565`｜Locked-Off Shot with Sudden Shot｜运镜词典/静态｜Sudden的锁定镜头是一种基于锁定镜头的静态运镜变体技术，增强了纪录片中的视觉表现力
-- `gen-566`｜Long Take with Subtle Focus｜运镜词典/静态｜Subtle的长镜头是一种基于长镜头的静态运镜变体技术，增强了电视剧中的视觉表现力
+- `gen-119`｜推镜头｜镜头语言/基础镜头｜推向主体放大细节或制造压迫感，经典如《教父》开场推向白兰度强调权威
+- `gen-120`｜拉镜头｜镜头语言/基础镜头｜拉远揭示主体与环境关系或收束情绪，经典如《银翼杀手 2049》雪地孤独拉远
+- `gen-121`｜摇镜头｜镜头语言/基础镜头｜水平横摇展示大场景或跟随转头视角，经典如《阿拉伯的劳伦斯》沙漠浩瀚横摇
+- `gen-122`｜移镜头｜镜头语言/基础镜头｜横向平移跟随主体或对比群像，经典如《布达佩斯大饭店》走廊横移
+- `gen-123`｜俯仰镜头｜镜头语言/基础镜头｜垂直俯仰塑造权威或渺小感，经典如《肖申克》雨中张臂从天而下摇
+- `gen-124`｜升降镜头｜镜头语言/基础镜头｜整体升降展空间层级与主观视角，经典如《沉默的羔羊》井口垂落地窖
+- `gen-125`｜斯坦尼康镜头｜镜头语言/特殊设备镜头｜稳定器平滑走复杂路线或模拟主观视角，经典如《闪灵》三轮车走廊跟拍
+- `gen-126`｜摇臂镜头｜镜头语言/特殊设备镜头｜摇臂升降加平移的大场面开场收尾，经典如《泰坦尼克号》海底沉船切老年露丝
+- `gen-127`｜手持镜头｜镜头语言/特殊设备镜头｜刻意晃动强化纪实与紧张感，经典如《谍影重重》手持打斗混乱临场
+- `gen-128`｜无人机航拍镜头｜镜头语言/特殊设备镜头｜无人机高空建立宏观时空或复杂一镜到底，经典如《荒野猎人》穿越落基山脉
+- `gen-129`｜跟拍镜头｜镜头语言/复合镜头｜跟随主体移动增强长镜叙事与临场感，经典如《荒野猎人》人熊搏斗跟拍
+- `gen-130`｜弧镜头｜镜头语言/复合镜头｜绕主体弧形运动展 360° 状态加动感，经典如《社交网络》"被审视"式环绕
+- `gen-131`｜希区柯克变焦镜头｜镜头语言/复合镜头｜推拉反向变焦压缩背景制造眩晕，经典如《大白鲨》发现尸体的变焦
+- `gen-132`｜Pan｜运镜词典/基础｜横摇：基础运镜变体 · 适用于纪录片
+- `gen-133`｜Tilt｜运镜词典/基础｜纵摇：基础运镜变体 · 适用于直播活动
+- `gen-134`｜Dolly｜运镜词典/基础｜推拉：基础运镜变体 · 适用于音乐MV
+- `gen-135`｜Truck｜运镜词典/基础｜平移：基础运镜变体 · 适用于广告制作
+- `gen-136`｜Crane｜运镜词典/基础｜升降：基础运镜变体 · 适用于音乐MV
+- `gen-137`｜Zoom｜运镜词典/基础｜变焦：基础运镜变体 · 适用于直播活动
+- `gen-138`｜Arc｜运镜词典/基础｜弧形运动：基础运镜变体 · 适用于纪录片
+- `gen-139`｜Pedestal｜运镜词典/基础｜底座升降：基础运镜变体 · 适用于广告制作
+- `gen-140`｜Steadicam｜运镜词典/基础｜斯坦尼康：基础运镜变体 · 适用于短视频
+- `gen-141`｜Tilt Pan｜运镜词典/复合｜摇镜头：复合运镜变体 · 适用于音乐MV
+- `gen-142`｜Tracking Shot｜运镜词典/复合｜跟拍：复合运镜变体 · 适用于电视剧
+- `gen-143`｜Dolly Tilt｜运镜词典/复合｜俯仰移动：复合运镜变体 · 适用于直播活动
+- `gen-144`｜Crane Shot｜运镜词典/复合｜吊臂拍摄：复合运镜变体 · 适用于短视频
+- `gen-145`｜Steadicam Tracking｜运镜词典/复合｜斯坦尼康跟拍：复合运镜变体 · 适用于直播活动
+- `gen-146`｜Whip Pan｜运镜词典/复合｜甩镜头：复合运镜变体 · 适用于广告制作
+- `gen-147`｜Tilt Zoom｜运镜词典/复合｜俯仰变焦：复合运镜变体 · 适用于短视频
+- `gen-148`｜Orbit Shot｜运镜词典/复合｜环绕拍摄：复合运镜变体 · 适用于音乐MV
+- `gen-149`｜Spiral Shot｜运镜词典/复合｜螺旋拍摄：复合运镜变体 · 适用于电影拍摄
+- `gen-150`｜POV Shot｜运镜词典/特殊｜主观视角：特殊运镜变体 · 适用于纪录片
+- `gen-151`｜Point of View｜运镜词典/特殊｜视点镜头：特殊运镜变体 · 适用于音乐MV
+- `gen-152`｜Steadicam Shot｜运镜词典/特殊｜稳定器拍摄：特殊运镜变体 · 适用于纪录片
+- `gen-153`｜Drone Shot｜运镜词典/特殊｜无人机拍摄：特殊运镜变体 · 适用于短视频
+- `gen-154`｜Car Mount｜运镜词典/特殊｜车载拍摄：特殊运镜变体 · 适用于广告制作
+- `gen-155`｜Underwater Shooting｜运镜词典/特殊｜水下拍摄：特殊运镜变体 · 适用于短视频
+- `gen-156`｜Time Lapse｜运镜词典/特殊｜延时摄影：特殊运镜变体 · 适用于电影拍摄
+- `gen-157`｜High Speed Photography｜运镜词典/特殊｜高速摄影：特殊运镜变体 · 适用于纪录片
+- `gen-158`｜Macro Photography｜运镜词典/特殊｜微距摄影：特殊运镜变体 · 适用于直播活动
+- `gen-159`｜Locked-Off Shot｜运镜词典/静态｜锁定镜头：静态运镜变体 · 适用于广告制作
+- `gen-160`｜Long Take｜运镜词典/静态｜长镜头：静态运镜变体 · 适用于电视剧
+- `gen-161`｜Wide Shot｜运镜词典/静态｜广域全景镜头：静态运镜变体 · 适用于电视剧
+- `gen-162`｜Medium Shot｜运镜词典/静态｜中景镜头：静态运镜变体 · 适用于广告制作
+- `gen-163`｜Close-Up｜运镜词典/静态｜贴身特写镜头：静态运镜变体 · 适用于纪录片
+- `gen-164`｜Extreme Close-Up｜运镜词典/静态｜极限大特写镜头：静态运镜变体 · 适用于直播活动
+- `gen-165`｜Extreme Wide Shot｜运镜词典/静态｜极限大全景镜头：静态运镜变体 · 适用于电影拍摄
+- `gen-166`｜Over-the-Shoulder Shot｜运镜词典/静态｜过肩镜头：静态运镜变体 · 适用于纪录片
+- `gen-167`｜Two-Shot｜运镜词典/静态｜双人镜头：静态运镜变体 · 适用于广告制作
+- `gen-168`｜Moving Shot｜运镜词典/动态｜移动镜头：动态运镜变体 · 适用于音乐MV
+- `gen-169`｜Handheld Shot｜运镜词典/动态｜手持拍摄：动态运镜变体 · 适用于音乐MV
+- `gen-170`｜Jib Shot｜运镜词典/动态｜摇臂拍摄：动态运镜变体 · 适用于电影拍摄
+- `gen-171`｜Dolly Shot｜运镜词典/动态｜推拉拍摄：动态运镜变体 · 适用于音乐MV
+- `gen-172`｜Truck Shot｜运镜词典/动态｜平移拍摄：动态运镜变体 · 适用于纪录片
+- `gen-173`｜Sudden Tracking Shot｜运镜词典/复合｜突发式跟拍：复合运镜变体 · 适用于短视频
+- `gen-174`｜Over-the-Shoulder Shot with Aggressive Focus｜运镜词典/静态｜强力过肩镜头：静态运镜变体 · 适用于广告制作
+- `gen-175`｜Car Mount with Sudden Focus｜运镜词典/特殊｜突发式车载拍摄：特殊运镜变体 · 适用于纪录片
+- `gen-176`｜Rapid Dolly Tilt｜运镜词典/复合｜急速俯仰移动：复合运镜变体 · 适用于广告制作
+- `gen-177`｜Rapid Pedestal｜运镜词典/基础｜急速底座升降：基础运镜变体 · 适用于电影拍摄
+- `gen-178`｜Fast Crane Shot｜运镜词典/动态｜快速吊臂拍摄：动态运镜变体 · 适用于纪录片
+- `gen-179`｜Aggressive Point of View｜运镜词典/特殊｜强力视点镜头：特殊运镜变体 · 适用于电视剧
+- `gen-180`｜Tracking Shot with Slow Lens｜运镜词典/动态｜缓速轨道拍摄：动态运镜变体 · 适用于广告制作
+- `gen-181`｜Rapid Orbit Shot｜运镜词典/复合｜急速环绕拍摄：复合运镜变体 · 适用于纪录片
+- `gen-182`｜Static Shot with Subtle Lens｜运镜词典/静态｜细腻式固定镜头：静态运镜变体 · 适用于短视频
+- `gen-183`｜Extreme Wide Shot with Gradual Perspective｜运镜词典/静态｜渐进式大全景镜头：静态运镜变体 · 适用于广告制作
+- `gen-184`｜Dolly Shot with Quick Angle｜运镜词典/动态｜快速推拉拍摄：动态运镜变体 · 适用于音乐MV
+- `gen-185`｜Bullet Time with Gentle Movement｜运镜词典/特殊｜轻柔子弹时间：特殊运镜变体 · 适用于短视频
+- `gen-186`｜Underwater Shooting with Quick Motion｜运镜词典/特殊｜快速水下拍摄：特殊运镜变体 · 适用于直播活动
+- `gen-187`｜Fast Extreme Close-Up｜运镜词典/静态｜快速大特写镜头：静态运镜变体 · 适用于音乐MV
+- `gen-188`｜Gentle Orbit Shot｜运镜词典/复合｜轻柔环绕拍摄：复合运镜变体 · 适用于音乐MV
+- `gen-189`｜Quick Drone Shot｜运镜词典/特殊｜快速无人机拍摄：特殊运镜变体 · 适用于直播活动
+- `gen-190`｜Tilt with Subtle Motion｜运镜词典/基础｜细腻式纵摇：基础运镜变体 · 适用于短视频
+- `gen-191`｜Tilt with Smooth Shot｜运镜词典/基础｜平滑纵摇：基础运镜变体 · 适用于广告制作
+- `gen-192`｜Subtle Arc｜运镜词典/基础｜细腻式弧形运动：基础运镜变体 · 适用于直播活动
+- `gen-193`｜Rapid Macro Photography｜运镜词典/特殊｜急速微距摄影：特殊运镜变体 · 适用于短视频
+- `gen-194`｜Gentle Steadicam Tracking｜运镜词典/复合｜轻柔斯坦尼康跟拍：复合运镜变体 · 适用于直播活动
+- `gen-195`｜Tracking Shot with Gradual Focus｜运镜词典/复合｜渐进式跟拍：复合运镜变体 · 适用于电影拍摄
+- `gen-196`｜Gradual Orbit Shot｜运镜词典/复合｜渐进式环绕拍摄：复合运镜变体 · 适用于广告制作
+- `gen-197`｜Zoom with Rapid Perspective｜运镜词典/基础｜急速变焦：基础运镜变体 · 适用于电影拍摄
+- `gen-198`｜Quick Medium Shot｜运镜词典/静态｜快速中景镜头：静态运镜变体 · 适用于电视剧
+- `gen-199`｜Dolly with Fast Movement｜运镜词典/基础｜快速推拉：基础运镜变体 · 适用于短视频
+- `gen-200`｜Slow Drone Shot｜运镜词典/动态｜缓速无人机拍摄：动态运镜变体 · 适用于短视频
+- `gen-201`｜Slow Close-Up｜运镜词典/静态｜缓速特写镜头：静态运镜变体 · 适用于电视剧
+- `gen-202`｜Extreme Close-Up with Gentle Movement｜运镜词典/静态｜轻柔大特写镜头：静态运镜变体 · 适用于音乐MV
+- `gen-203`｜Extreme Close-Up with Gentle Camera｜运镜词典/静态｜轻柔大特写镜头：静态运镜变体 · 适用于直播活动
+- `gen-204`｜Fast Steadicam Shot｜运镜词典/动态｜快速斯坦尼康拍摄：动态运镜变体 · 适用于短视频
+- `gen-205`｜Smooth Handheld Shot｜运镜词典/动态｜平滑手持拍摄：动态运镜变体 · 适用于广告制作
+- `gen-206`｜Tilt Pan with Gentle Movement｜运镜词典/复合｜轻柔摇镜头：复合运镜变体 · 适用于短视频
+- `gen-207`｜Quick Crane Shot｜运镜词典/复合｜快速吊臂拍摄：复合运镜变体 · 适用于直播活动
+- `gen-208`｜Aggressive Steadicam Shot｜运镜词典/特殊｜强力稳定器拍摄：特殊运镜变体 · 适用于纪录片
+- `gen-209`｜Rapid Two-Shot｜运镜词典/静态｜急速双人镜头：静态运镜变体 · 适用于音乐MV
+- `gen-210`｜Aggressive Arc｜运镜词典/基础｜强力弧形运动：基础运镜变体 · 适用于广告制作
+- `gen-211`｜Quick Car Mount｜运镜词典/特殊｜快速车载拍摄：特殊运镜变体 · 适用于纪录片
+- `gen-212`｜Crane Shot with Smooth Movement｜运镜词典/动态｜平滑吊臂拍摄：动态运镜变体 · 适用于电影拍摄
+- `gen-213`｜Slow Medium Shot｜运镜词典/静态｜缓速中景镜头：静态运镜变体 · 适用于音乐MV
+- `gen-214`｜Gentle Handheld｜运镜词典/基础｜轻柔手持拍摄：基础运镜变体 · 适用于广告制作
+- `gen-215`｜High Speed Photography with Quick Perspective｜运镜词典/特殊｜快速高速摄影：特殊运镜变体 · 适用于直播活动
+- `gen-216`｜Two-Shot with Gradual Movement｜运镜词典/静态｜渐进式双人镜头：静态运镜变体 · 适用于广告制作
+- `gen-217`｜Drone Shot with Gentle View｜运镜词典/特殊｜轻柔无人机拍摄：特殊运镜变体 · 适用于广告制作
+- `gen-218`｜Moving Shot with Gentle Focus｜运镜词典/动态｜轻柔移动镜头：动态运镜变体 · 适用于电影拍摄
+- `gen-219`｜Tilt Zoom with Rapid Frame｜运镜词典/复合｜急速俯仰变焦：复合运镜变体 · 适用于直播活动
+- `gen-220`｜Dolly Tilt with Sudden Camera｜运镜词典/复合｜突发式俯仰移动：复合运镜变体 · 适用于直播活动
+- `gen-221`｜Spiral Shot with Rapid Focus｜运镜词典/复合｜急速螺旋拍摄：复合运镜变体 · 适用于音乐MV
+- `gen-222`｜Handheld with Sudden Camera｜运镜词典/基础｜突发式手持拍摄：基础运镜变体 · 适用于电影拍摄
+- `gen-223`｜Dolly with Quick Movement｜运镜词典/基础｜快速推拉：基础运镜变体 · 适用于广告制作
+- `gen-224`｜Long Take with Quick Angle｜运镜词典/静态｜快速长镜头：静态运镜变体 · 适用于广告制作
+- `gen-225`｜Close-Up with Quick Camera｜运镜词典/静态｜快速特写镜头：静态运镜变体 · 适用于广告制作
+- `gen-226`｜POV Shot with Slow Frame｜运镜词典/特殊｜缓速主观视角：特殊运镜变体 · 适用于音乐MV
+- `gen-227`｜Long Take with Fast Camera｜运镜词典/静态｜快速长镜头：静态运镜变体 · 适用于广告制作
+- `gen-228`｜Dolly Shot with Smooth Focus｜运镜词典/动态｜平滑推拉拍摄：动态运镜变体 · 适用于短视频
+- `gen-229`｜Handheld Shot with Gentle Focus｜运镜词典/动态｜轻柔手持拍摄：动态运镜变体 · 适用于电视剧
+- `gen-230`｜Subtle Tilt Zoom｜运镜词典/复合｜细腻式俯仰变焦：复合运镜变体 · 适用于电视剧
+- `gen-231`｜Aggressive Long Take｜运镜词典/静态｜强力长镜头：静态运镜变体 · 适用于音乐MV
+- `gen-232`｜Quick Follow Shot｜运镜词典/动态｜快速跟镜头：动态运镜变体 · 适用于纪录片
+- `gen-233`｜Slow Extreme Wide Shot｜运镜词典/静态｜缓速大全景镜头：静态运镜变体 · 适用于短视频
+- `gen-234`｜Steadicam Shot with Slow Angle｜运镜词典/动态｜缓速斯坦尼康拍摄：动态运镜变体 · 适用于短视频
+- `gen-235`｜Jib Shot with Aggressive View｜运镜词典/动态｜强力摇臂拍摄：动态运镜变体 · 适用于广告制作
+- `gen-236`｜Sudden Drone Shot｜运镜词典/动态｜突发式无人机拍摄：动态运镜变体 · 适用于纪录片
+- `gen-237`｜POV Shot with Rapid Focus｜运镜词典/特殊｜急速主观视角：特殊运镜变体 · 适用于电视剧
+- `gen-238`｜Gentle Underwater Shooting｜运镜词典/特殊｜轻柔水下拍摄：特殊运镜变体 · 适用于广告制作
+- `gen-239`｜POV Shot with Subtle Camera｜运镜词典/特殊｜细腻式主观视角：特殊运镜变体 · 适用于电视剧
+- `gen-240`｜Tilt with Subtle Shot｜运镜词典/基础｜细腻式纵摇：基础运镜变体 · 适用于音乐MV
+- `gen-241`｜Aggressive Two-Shot｜运镜词典/静态｜强力双人镜头：静态运镜变体 · 适用于电影拍摄
+- `gen-242`｜Rapid Tilt Zoom｜运镜词典/复合｜急速俯仰变焦：复合运镜变体 · 适用于广告制作
+- `gen-243`｜Handheld with Gentle Angle｜运镜词典/基础｜轻柔手持拍摄：基础运镜变体 · 适用于短视频
+- `gen-244`｜Car Mount with Slow Shot｜运镜词典/特殊｜缓速车载拍摄：特殊运镜变体 · 适用于直播活动
+- `gen-245`｜Spiral Shot with Gradual View｜运镜词典/复合｜渐进式螺旋拍摄：复合运镜变体 · 适用于音乐MV
+- `gen-246`｜Orbit Shot with Rapid Motion｜运镜词典/复合｜急速环绕拍摄：复合运镜变体 · 适用于电影拍摄
+- `gen-247`｜Steadicam Shot with Smooth Angle｜运镜词典/特殊｜平滑稳定器拍摄：特殊运镜变体 · 适用于电影拍摄
+- `gen-248`｜Smooth Steadicam Shot｜运镜词典/动态｜平滑斯坦尼康拍摄：动态运镜变体 · 适用于电影拍摄
+- `gen-249`｜Quick Moving Shot｜运镜词典/动态｜快速移动镜头：动态运镜变体 · 适用于纪录片
+- `gen-250`｜Sudden Zoom｜运镜词典/基础｜突发式变焦：基础运镜变体 · 适用于电影拍摄
+- `gen-251`｜Bullet Time with Gentle Perspective｜运镜词典/特殊｜轻柔子弹时间：特殊运镜变体 · 适用于电视剧
+- `gen-252`｜Car Mount with Quick Shot｜运镜词典/特殊｜快速车载拍摄：特殊运镜变体 · 适用于纪录片
+- `gen-253`｜Tracking Shot with Subtle Perspective｜运镜词典/动态｜细腻式轨道拍摄：动态运镜变体 · 适用于电视剧
+- `gen-254`｜Fast Over-the-Shoulder Shot｜运镜词典/静态｜快速过肩镜头：静态运镜变体 · 适用于电影拍摄
+- `gen-255`｜Aggressive Follow Shot｜运镜词典/动态｜强力跟镜头：动态运镜变体 · 适用于纪录片
+- `gen-256`｜Drone Shot with Aggressive View｜运镜词典/特殊｜强力无人机拍摄：特殊运镜变体 · 适用于电影拍摄
+- `gen-257`｜Slow Truck Shot｜运镜词典/动态｜缓速平移拍摄：动态运镜变体 · 适用于电影拍摄
+- `gen-258`｜Gentle Tilt｜运镜词典/基础｜轻柔纵摇：基础运镜变体 · 适用于音乐MV
+- `gen-259`｜Handheld Shot with Slow Lens｜运镜词典/动态｜缓速手持拍摄：动态运镜变体 · 适用于电视剧
+- `gen-260`｜High Speed Photography with Slow Movement｜运镜词典/特殊｜缓速高速摄影：特殊运镜变体 · 适用于纪录片
+- `gen-261`｜Aggressive Crane Shot｜运镜词典/动态｜强力吊臂拍摄：动态运镜变体 · 适用于电视剧
+- `gen-262`｜Subtle Dolly Tilt｜运镜词典/复合｜细腻式俯仰移动：复合运镜变体 · 适用于音乐MV
+- `gen-263`｜Rapid Dolly｜运镜词典/基础｜急速推拉：基础运镜变体 · 适用于电视剧
+- `gen-264`｜Fast Tilt Zoom｜运镜词典/复合｜快速俯仰变焦：复合运镜变体 · 适用于短视频
+- `gen-265`｜Rapid Steadicam Tracking｜运镜词典/复合｜急速斯坦尼康跟拍：复合运镜变体 · 适用于直播活动
+- `gen-266`｜Drone Shot with Fast Lens｜运镜词典/特殊｜快速无人机拍摄：特殊运镜变体 · 适用于短视频
+- `gen-267`｜Aggressive Medium Shot｜运镜词典/静态｜强力中景镜头：静态运镜变体 · 适用于电影拍摄
+- `gen-268`｜Gentle Locked-Off Shot｜运镜词典/静态｜轻柔锁定镜头：静态运镜变体 · 适用于电视剧
+- `gen-269`｜Fast Moving Shot｜运镜词典/动态｜快速移动镜头：动态运镜变体 · 适用于广告制作
+- `gen-270`｜Gentle Dolly Shot｜运镜词典/动态｜轻柔推拉拍摄：动态运镜变体 · 适用于电视剧
+- `gen-271`｜Rapid Steadicam｜运镜词典/基础｜急速斯坦尼康：基础运镜变体 · 适用于广告制作
+- `gen-272`｜High Speed Photography with Subtle Perspective｜运镜词典/特殊｜细腻式高速摄影：特殊运镜变体 · 适用于电影拍摄
+- `gen-273`｜Gentle Pedestal｜运镜词典/基础｜轻柔底座升降：基础运镜变体 · 适用于音乐MV
+- `gen-274`｜Gradual Steadicam｜运镜词典/基础｜渐进式斯坦尼康：基础运镜变体 · 适用于直播活动
+- `gen-275`｜Aggressive Tilt Pan｜运镜词典/复合｜强力摇镜头：复合运镜变体 · 适用于纪录片
+- `gen-276`｜Steadicam Shot with Aggressive Movement｜运镜词典/动态｜强力斯坦尼康拍摄：动态运镜变体 · 适用于纪录片
+- `gen-277`｜Subtle Drone Shot｜运镜词典/特殊｜细腻式无人机拍摄：特殊运镜变体 · 适用于纪录片
+- `gen-278`｜Aggressive Crane｜运镜词典/基础｜强力升降：基础运镜变体 · 适用于音乐MV
+- `gen-279`｜Aggressive Extreme Wide Shot｜运镜词典/静态｜强力大全景镜头：静态运镜变体 · 适用于电影拍摄
+- `gen-280`｜Smooth Follow Shot｜运镜词典/动态｜平滑跟镜头：动态运镜变体 · 适用于广告制作
+- `gen-281`｜Gradual Locked-Off Shot｜运镜词典/静态｜渐进式锁定镜头：静态运镜变体 · 适用于直播活动
+- `gen-282`｜Static Shot with Smooth View｜运镜词典/静态｜平滑固定镜头：静态运镜变体 · 适用于广告制作
+- `gen-283`｜Fast Orbit Shot｜运镜词典/复合｜快速环绕拍摄：复合运镜变体 · 适用于音乐MV
+- `gen-284`｜Steadicam Tracking with Gentle Movement｜运镜词典/复合｜轻柔斯坦尼康跟拍：复合运镜变体 · 适用于音乐MV
+- `gen-285`｜Two-Shot with Aggressive Angle｜运镜词典/静态｜强力双人镜头：静态运镜变体 · 适用于广告制作
+- `gen-286`｜Dolly with Gentle Frame｜运镜词典/基础｜轻柔推拉：基础运镜变体 · 适用于电视剧
+- `gen-287`｜Smooth Jib Shot｜运镜词典/动态｜平滑摇臂拍摄：动态运镜变体 · 适用于纪录片
+- `gen-288`｜Macro Photography with Gentle Lens｜运镜词典/特殊｜轻柔微距摄影：特殊运镜变体 · 适用于短视频
+- `gen-289`｜Aggressive Zoom｜运镜词典/基础｜强力变焦：基础运镜变体 · 适用于电影拍摄
+- `gen-290`｜Medium Shot with Smooth Angle｜运镜词典/静态｜平滑中景镜头：静态运镜变体 · 适用于广告制作
+- `gen-291`｜Slow Dolly Shot｜运镜词典/动态｜缓速推拉拍摄：动态运镜变体 · 适用于广告制作
+- `gen-292`｜Tracking Shot with Fast Movement｜运镜词典/动态｜快速轨道拍摄：动态运镜变体 · 适用于电影拍摄
+- `gen-293`｜Extreme Close-Up with Slow Lens｜运镜词典/静态｜缓速大特写镜头：静态运镜变体 · 适用于直播活动
+- `gen-294`｜Gradual Spiral Shot｜运镜词典/复合｜渐进式螺旋拍摄：复合运镜变体 · 适用于音乐MV
+- `gen-295`｜Fast Static Shot｜运镜词典/静态｜快速固定镜头：静态运镜变体 · 适用于电影拍摄
+- `gen-296`｜Locked-Off Shot with Aggressive Movement｜运镜词典/静态｜强力锁定镜头：静态运镜变体 · 适用于广告制作
+- `gen-297`｜Tracking Shot with Gentle Frame｜运镜词典/动态｜轻柔轨道拍摄：动态运镜变体 · 适用于短视频
+- `gen-298`｜Arc with Quick Shot｜运镜词典/基础｜快速弧形运动：基础运镜变体 · 适用于短视频
+- `gen-299`｜Tilt Pan with Gradual Frame｜运镜词典/复合｜渐进式摇镜头：复合运镜变体 · 适用于音乐MV
+- `gen-300`｜Drone Shot with Slow Motion｜运镜词典/动态｜缓速无人机拍摄：动态运镜变体 · 适用于广告制作
+- `gen-301`｜Long Take with Smooth Motion｜运镜词典/静态｜平滑长镜头：静态运镜变体 · 适用于短视频
+- `gen-302`｜Slow Arc｜运镜词典/基础｜缓速弧形运动：基础运镜变体 · 适用于直播活动
+- `gen-303`｜Gentle Point of View｜运镜词典/特殊｜轻柔视点镜头：特殊运镜变体 · 适用于纪录片
+- `gen-304`｜Quick Truck｜运镜词典/基础｜快速平移：基础运镜变体 · 适用于电影拍摄
+- `gen-305`｜Macro Photography with Quick Angle｜运镜词典/特殊｜快速微距摄影：特殊运镜变体 · 适用于音乐MV
+- `gen-306`｜Sudden Long Take｜运镜词典/静态｜突发式长镜头：静态运镜变体 · 适用于直播活动
+- `gen-307`｜Wide Shot with Fast Perspective｜运镜词典/静态｜快速全景镜头：静态运镜变体 · 适用于直播活动
+- `gen-308`｜Sudden Crane｜运镜词典/基础｜突发式升降：基础运镜变体 · 适用于纪录片
+- `gen-309`｜Quick Spiral Shot｜运镜词典/复合｜快速螺旋拍摄：复合运镜变体 · 适用于广告制作
+- `gen-310`｜POV Shot with Slow Motion｜运镜词典/特殊｜缓速主观视角：特殊运镜变体 · 适用于纪录片
+- `gen-311`｜Handheld with Rapid View｜运镜词典/基础｜急速手持拍摄：基础运镜变体 · 适用于纪录片
+- `gen-312`｜Dolly Zoom with Gentle Movement｜运镜词典/复合｜轻柔滑动变焦：复合运镜变体 · 适用于电视剧
+- `gen-313`｜Quick Jib Shot｜运镜词典/动态｜快速摇臂拍摄：动态运镜变体 · 适用于纪录片
+- `gen-314`｜Spiral Shot with Quick Camera｜运镜词典/复合｜快速螺旋拍摄：复合运镜变体 · 适用于短视频
+- `gen-315`｜Steadicam Shot with Gradual Perspective｜运镜词典/特殊｜渐进式稳定器拍摄：特殊运镜变体 · 适用于电影拍摄
+- `gen-316`｜Aggressive Over-the-Shoulder Shot｜运镜词典/静态｜强力过肩镜头：静态运镜变体 · 适用于音乐MV
+- `gen-317`｜Over-the-Shoulder Shot with Aggressive Angle｜运镜词典/静态｜强力过肩镜头：静态运镜变体 · 适用于直播活动
+- `gen-318`｜Aggressive Orbit Shot｜运镜词典/复合｜强力环绕拍摄：复合运镜变体 · 适用于直播活动
+- `gen-319`｜Tilt Pan with Fast Perspective｜运镜词典/复合｜快速摇镜头：复合运镜变体 · 适用于电影拍摄
+- `gen-320`｜Follow Shot with Slow Angle｜运镜词典/动态｜缓速跟镜头：动态运镜变体 · 适用于纪录片
+- `gen-321`｜Car Mount with Smooth View｜运镜词典/特殊｜平滑车载拍摄：特殊运镜变体 · 适用于电视剧
+- `gen-322`｜Rapid Extreme Wide Shot｜运镜词典/静态｜急速大全景镜头：静态运镜变体 · 适用于短视频
+- `gen-323`｜Rapid Handheld｜运镜词典/基础｜急速手持拍摄：基础运镜变体 · 适用于电影拍摄
+- `gen-324`｜Subtle Steadicam Shot｜运镜词典/动态｜细腻式斯坦尼康拍摄：动态运镜变体 · 适用于直播活动
+- `gen-325`｜Truck Shot with Aggressive Lens｜运镜词典/动态｜强力平移拍摄：动态运镜变体 · 适用于广告制作
+- `gen-326`｜Point of View with Slow Perspective｜运镜词典/特殊｜缓速视点镜头：特殊运镜变体 · 适用于直播活动
+- `gen-327`｜Slow Crane Shot｜运镜词典/复合｜缓速吊臂拍摄：复合运镜变体 · 适用于电影拍摄
+- `gen-328`｜Gentle Over-the-Shoulder Shot｜运镜词典/静态｜轻柔过肩镜头：静态运镜变体 · 适用于广告制作
+- `gen-329`｜Crane Shot with Aggressive Motion｜运镜词典/动态｜强力吊臂拍摄：动态运镜变体 · 适用于电影拍摄
+- `gen-330`｜Steadicam Tracking with Smooth Motion｜运镜词典/复合｜平滑斯坦尼康跟拍：复合运镜变体 · 适用于音乐MV
+- `gen-331`｜Extreme Close-Up with Aggressive Shot｜运镜词典/静态｜强力大特写镜头：静态运镜变体 · 适用于电视剧
+- `gen-332`｜Steadicam with Rapid Motion｜运镜词典/基础｜急速斯坦尼康：基础运镜变体 · 适用于短视频
+- `gen-333`｜Gentle Time Lapse｜运镜词典/特殊｜轻柔延时摄影：特殊运镜变体 · 适用于广告制作
+- `gen-334`｜Steadicam with Smooth Focus｜运镜词典/基础｜平滑斯坦尼康：基础运镜变体 · 适用于电视剧
+- `gen-335`｜Tilt Pan with Gradual Shot｜运镜词典/复合｜渐进式摇镜头：复合运镜变体 · 适用于广告制作
+- `gen-336`｜Spiral Shot with Gradual Camera｜运镜词典/复合｜渐进式螺旋拍摄：复合运镜变体 · 适用于广告制作
+- `gen-337`｜Steadicam Shot with Subtle Perspective｜运镜词典/动态｜细腻式斯坦尼康拍摄：动态运镜变体 · 适用于直播活动
+- `gen-338`｜Tilt Zoom with Gradual Movement｜运镜词典/复合｜渐进式俯仰变焦：复合运镜变体 · 适用于纪录片
+- `gen-339`｜Macro Photography with Smooth Camera｜运镜词典/特殊｜平滑微距摄影：特殊运镜变体 · 适用于电影拍摄
+- `gen-340`｜Rapid Whip Pan｜运镜词典/复合｜急速甩镜头：复合运镜变体 · 适用于电视剧
+- `gen-341`｜Aggressive POV Shot｜运镜词典/特殊｜强力主观视角：特殊运镜变体 · 适用于音乐MV
+- `gen-342`｜Dolly Shot with Subtle Perspective｜运镜词典/动态｜细腻式推拉拍摄：动态运镜变体 · 适用于电影拍摄
+- `gen-343`｜Crane Shot with Subtle Perspective｜运镜词典/动态｜细腻式吊臂拍摄：动态运镜变体 · 适用于电视剧
+- `gen-344`｜Extreme Wide Shot with Quick Movement｜运镜词典/静态｜快速大全景镜头：静态运镜变体 · 适用于纪录片
+- `gen-345`｜Macro Photography with Subtle Motion｜运镜词典/特殊｜细腻式微距摄影：特殊运镜变体 · 适用于电影拍摄
+- `gen-346`｜Fast POV Shot｜运镜词典/特殊｜快速主观视角：特殊运镜变体 · 适用于音乐MV
+- `gen-347`｜High Speed Photography with Gentle Focus｜运镜词典/特殊｜轻柔高速摄影：特殊运镜变体 · 适用于纪录片
+- `gen-348`｜Smooth Car Mount｜运镜词典/特殊｜平滑车载拍摄：特殊运镜变体 · 适用于直播活动
+- `gen-349`｜Macro Photography with Sudden Frame｜运镜词典/特殊｜突发式微距摄影：特殊运镜变体 · 适用于广告制作
+- `gen-350`｜Gentle Macro Photography｜运镜词典/特殊｜轻柔微距摄影：特殊运镜变体 · 适用于音乐MV
+- `gen-351`｜Sudden Static Shot｜运镜词典/静态｜突发式固定镜头：静态运镜变体 · 适用于直播活动
+- `gen-352`｜Handheld Shot with Smooth View｜运镜词典/动态｜平滑手持拍摄：动态运镜变体 · 适用于音乐MV
+- `gen-353`｜Zoom with Sudden Focus｜运镜词典/基础｜突发式变焦：基础运镜变体 · 适用于纪录片
+- `gen-354`｜Rapid Bullet Time｜运镜词典/特殊｜急速子弹时间：特殊运镜变体 · 适用于广告制作
+- `gen-355`｜Crane with Gentle Frame｜运镜词典/基础｜轻柔升降：基础运镜变体 · 适用于电影拍摄
+- `gen-356`｜Smooth Tilt Zoom｜运镜词典/复合｜平滑俯仰变焦：复合运镜变体 · 适用于直播活动
+- `gen-357`｜Fast Steadicam Tracking｜运镜词典/复合｜快速斯坦尼康跟拍：复合运镜变体 · 适用于短视频
+- `gen-358`｜Gradual Two-Shot｜运镜词典/静态｜渐进式双人镜头：静态运镜变体 · 适用于电视剧
+- `gen-359`｜Gradual Car Mount｜运镜词典/特殊｜渐进式车载拍摄：特殊运镜变体 · 适用于短视频
+- `gen-360`｜Gradual Macro Photography｜运镜词典/特殊｜渐进式微距摄影：特殊运镜变体 · 适用于电视剧
+- `gen-361`｜Tilt with Smooth Angle｜运镜词典/基础｜平滑纵摇：基础运镜变体 · 适用于直播活动
+- `gen-362`｜Handheld with Slow Angle｜运镜词典/基础｜缓速手持拍摄：基础运镜变体 · 适用于直播活动
+- `gen-363`｜Gradual POV Shot｜运镜词典/特殊｜渐进式主观视角：特殊运镜变体 · 适用于纪录片
+- `gen-364`｜Macro Photography with Slow View｜运镜词典/特殊｜缓速微距摄影：特殊运镜变体 · 适用于短视频
+- `gen-365`｜Sudden Close-Up｜运镜词典/静态｜突发式特写镜头：静态运镜变体 · 适用于电视剧
+- `gen-366`｜Handheld Shot with Aggressive View｜运镜词典/动态｜强力手持拍摄：动态运镜变体 · 适用于纪录片
+- `gen-367`｜Smooth Dolly Tilt｜运镜词典/复合｜平滑俯仰移动：复合运镜变体 · 适用于广告制作
+- `gen-368`｜Point of View with Gentle Lens｜运镜词典/特殊｜轻柔视点镜头：特殊运镜变体 · 适用于广告制作
+- `gen-369`｜Drone Shot with Subtle Frame｜运镜词典/动态｜细腻式无人机拍摄：动态运镜变体 · 适用于广告制作
+- `gen-370`｜Sudden Whip Pan｜运镜词典/复合｜突发式甩镜头：复合运镜变体 · 适用于直播活动
+- `gen-371`｜Subtle Whip Pan｜运镜词典/复合｜细腻式甩镜头：复合运镜变体 · 适用于短视频
+- `gen-372`｜Macro Photography with Fast Movement｜运镜词典/特殊｜快速微距摄影：特殊运镜变体 · 适用于音乐MV
+- `gen-373`｜Quick Tilt Pan｜运镜词典/复合｜快速摇镜头：复合运镜变体 · 适用于电影拍摄
+- `gen-374`｜Follow Shot with Gentle Lens｜运镜词典/动态｜轻柔跟镜头：动态运镜变体 · 适用于音乐MV
+- `gen-375`｜Aggressive Underwater Shooting｜运镜词典/特殊｜强力水下拍摄：特殊运镜变体 · 适用于电视剧
+- `gen-376`｜Fast Truck｜运镜词典/基础｜快速平移：基础运镜变体 · 适用于纪录片
+- `gen-377`｜Truck Shot with Gentle Frame｜运镜词典/动态｜轻柔平移拍摄：动态运镜变体 · 适用于短视频
+- `gen-378`｜Crane with Slow View｜运镜词典/基础｜缓速升降：基础运镜变体 · 适用于短视频
+- `gen-379`｜Sudden Orbit Shot｜运镜词典/复合｜突发式环绕拍摄：复合运镜变体 · 适用于纪录片
+- `gen-380`｜Car Mount with Subtle Angle｜运镜词典/特殊｜细腻式车载拍摄：特殊运镜变体 · 适用于音乐MV
+- `gen-381`｜Handheld with Fast Shot｜运镜词典/基础｜快速手持拍摄：基础运镜变体 · 适用于短视频
+- `gen-382`｜Quick Steadicam Shot｜运镜词典/动态｜快速斯坦尼康拍摄：动态运镜变体 · 适用于直播活动
+- `gen-383`｜Gentle Pan｜运镜词典/基础｜轻柔横摇：基础运镜变体 · 适用于电视剧
+- `gen-384`｜Orbit Shot with Subtle Lens｜运镜词典/复合｜细腻式环绕拍摄：复合运镜变体 · 适用于直播活动
+- `gen-385`｜Tracking Shot with Fast Angle｜运镜词典/复合｜快速跟拍：复合运镜变体 · 适用于电视剧
+- `gen-386`｜Gentle Crane Shot｜运镜词典/复合｜轻柔吊臂拍摄：复合运镜变体 · 适用于电视剧
+- `gen-387`｜Tilt with Rapid Lens｜运镜词典/基础｜急速纵摇：基础运镜变体 · 适用于电视剧
+- `gen-388`｜Dolly with Fast Motion｜运镜词典/基础｜快速推拉：基础运镜变体 · 适用于广告制作
+- `gen-389`｜Over-the-Shoulder Shot with Quick Camera｜运镜词典/静态｜快速过肩镜头：静态运镜变体 · 适用于广告制作
+- `gen-390`｜Tracking Shot with Aggressive Movement｜运镜词典/动态｜强力轨道拍摄：动态运镜变体 · 适用于直播活动
+- `gen-391`｜Fast Jib Shot｜运镜词典/动态｜快速摇臂拍摄：动态运镜变体 · 适用于纪录片
+- `gen-392`｜Static Shot with Quick View｜运镜词典/静态｜快速固定镜头：静态运镜变体 · 适用于纪录片
+- `gen-393`｜Aggressive Dolly Shot｜运镜词典/动态｜强力推拉拍摄：动态运镜变体 · 适用于短视频
+- `gen-394`｜Jib Shot with Aggressive Perspective｜运镜词典/动态｜强力摇臂拍摄：动态运镜变体 · 适用于电视剧
+- `gen-395`｜Gentle Moving Shot｜运镜词典/动态｜轻柔移动镜头：动态运镜变体 · 适用于电影拍摄
+- `gen-396`｜Time Lapse with Quick Movement｜运镜词典/特殊｜快速延时摄影：特殊运镜变体 · 适用于广告制作
+- `gen-397`｜Truck Shot with Smooth View｜运镜词典/动态｜平移拍摄：动态运镜变体 · 适用于电视剧
+- `gen-398`｜Aggressive Close-Up｜运镜词典/静态｜强力特写镜头：静态运镜变体 · 适用于广告制作
+- `gen-399`｜Extreme Close-Up with Smooth Lens｜运镜词典/静态｜平滑大特写镜头：静态运镜变体 · 适用于纪录片
+- `gen-400`｜Steadicam with Rapid Focus｜运镜词典/基础｜急速斯坦尼康：基础运镜变体 · 适用于直播活动
+- `gen-401`｜Steadicam Shot with Rapid Perspective｜运镜词典/特殊｜急速稳定器拍摄：特殊运镜变体 · 适用于广告制作
+- `gen-402`｜Quick Orbit Shot｜运镜词典/复合｜快速环绕拍摄：复合运镜变体 · 适用于纪录片
+- `gen-403`｜Gradual Tracking Shot｜运镜词典/动态｜渐进式轨道拍摄：动态运镜变体 · 适用于短视频
+- `gen-404`｜Tracking Shot with Gradual Frame｜运镜词典/复合｜渐进式跟拍：复合运镜变体 · 适用于纪录片
+- `gen-405`｜Steadicam Shot with Rapid Motion｜运镜词典/动态｜急速斯坦尼康拍摄：动态运镜变体 · 适用于音乐MV
+- `gen-406`｜Steadicam with Aggressive Motion｜运镜词典/基础｜强力斯坦尼康：基础运镜变体 · 适用于广告制作
+- `gen-407`｜Handheld with Rapid Motion｜运镜词典/基础｜急速手持拍摄：基础运镜变体 · 适用于短视频
+- `gen-408`｜Long Take with Aggressive Camera｜运镜词典/静态｜强力长镜头：静态运镜变体 · 适用于广告制作
+- `gen-409`｜Macro Photography with Slow Movement｜运镜词典/特殊｜缓速微距摄影：特殊运镜变体 · 适用于音乐MV
+- `gen-410`｜Tracking Shot with Aggressive Perspective｜运镜词典/动态｜强力轨道拍摄：动态运镜变体 · 适用于电视剧
+- `gen-411`｜Slow Tilt Zoom｜运镜词典/复合｜缓速俯仰变焦：复合运镜变体 · 适用于短视频
+- `gen-412`｜Drone Shot with Sudden Angle｜运镜词典/特殊｜突发式无人机拍摄：特殊运镜变体 · 适用于直播活动
+- `gen-413`｜Truck with Aggressive Frame｜运镜词典/基础｜强力平移：基础运镜变体 · 适用于电视剧
+- `gen-414`｜Drone Shot with Subtle Focus｜运镜词典/特殊｜细腻式无人机拍摄：特殊运镜变体 · 适用于电视剧
+- `gen-415`｜Fast Tilt Pan｜运镜词典/复合｜快速摇镜头：复合运镜变体 · 适用于音乐MV
+- `gen-416`｜Tilt with Gentle Lens｜运镜词典/基础｜轻柔纵摇：基础运镜变体 · 适用于短视频
+- `gen-417`｜Dolly Zoom with Smooth Frame｜运镜词典/复合｜平滑滑动变焦：复合运镜变体 · 适用于纪录片
+- `gen-418`｜Aggressive Static Shot｜运镜词典/静态｜强力固定镜头：静态运镜变体 · 适用于广告制作
+- `gen-419`｜Subtle Static Shot｜运镜词典/静态｜细腻式固定镜头：静态运镜变体 · 适用于纪录片
+- `gen-420`｜Orbit Shot with Fast Shot｜运镜词典/复合｜快速环绕拍摄：复合运镜变体 · 适用于广告制作
+- `gen-421`｜Spiral Shot with Sudden Angle｜运镜词典/复合｜突发式螺旋拍摄：复合运镜变体 · 适用于广告制作
+- `gen-422`｜Quick Static Shot｜运镜词典/静态｜快速固定镜头：静态运镜变体 · 适用于短视频
+- `gen-423`｜Car Mount with Aggressive Focus｜运镜词典/特殊｜强力车载拍摄：特殊运镜变体 · 适用于直播活动
+- `gen-424`｜Tilt Pan with Gentle Angle｜运镜词典/复合｜轻柔摇镜头：复合运镜变体 · 适用于直播活动
+- `gen-425`｜Aggressive Dolly｜运镜词典/基础｜强力推拉：基础运镜变体 · 适用于音乐MV
+- `gen-426`｜Whip Pan with Aggressive Perspective｜运镜词典/复合｜强力甩镜头：复合运镜变体 · 适用于广告制作
+- `gen-427`｜Quick High Speed Photography｜运镜词典/特殊｜快速高速摄影：特殊运镜变体 · 适用于音乐MV
+- `gen-428`｜Medium Shot with Rapid Angle｜运镜词典/静态｜急速中景镜头：静态运镜变体 · 适用于电影拍摄
+- `gen-429`｜Locked-Off Shot with Rapid View｜运镜词典/静态｜急速锁定镜头：静态运镜变体 · 适用于音乐MV
+- `gen-430`｜Bullet Time with Gradual Camera｜运镜词典/特殊｜渐进式子弹时间：特殊运镜变体 · 适用于电视剧
+- `gen-431`｜Whip Pan with Sudden Camera｜运镜词典/复合｜突发式甩镜头：复合运镜变体 · 适用于短视频
+- `gen-432`｜Long Take with Sudden Frame｜运镜词典/静态｜突发式长镜头：静态运镜变体 · 适用于短视频
+- `gen-433`｜Quick Locked-Off Shot｜运镜词典/静态｜快速锁定镜头：静态运镜变体 · 适用于直播活动
+- `gen-434`｜Drone Shot with Gentle Camera｜运镜词典/动态｜轻柔无人机拍摄：动态运镜变体 · 适用于电影拍摄
+- `gen-435`｜Rapid Long Take｜运镜词典/静态｜急速长镜头：静态运镜变体 · 适用于直播活动
+- `gen-436`｜Gradual Dolly Shot｜运镜词典/动态｜渐进式推拉拍摄：动态运镜变体 · 适用于电视剧
+- `gen-437`｜Dolly Tilt with Quick Perspective｜运镜词典/复合｜快速俯仰移动：复合运镜变体 · 适用于短视频
+- `gen-438`｜Moving Shot with Sudden Movement｜运镜词典/动态｜突发式移动镜头：动态运镜变体 · 适用于广告制作
+- `gen-439`｜Sudden Tilt｜运镜词典/基础｜突发式纵摇：基础运镜变体 · 适用于直播活动
+- `gen-440`｜Close-Up with Sudden Perspective｜运镜词典/静态｜突发式特写镜头：静态运镜变体 · 适用于短视频
+- `gen-441`｜Steadicam with Quick Movement｜运镜词典/基础｜快速斯坦尼康：基础运镜变体 · 适用于电视剧
+- `gen-442`｜Fast Long Take｜运镜词典/静态｜快速长镜头：静态运镜变体 · 适用于纪录片
+- `gen-443`｜Gradual Truck｜运镜词典/基础｜渐进式平移：基础运镜变体 · 适用于短视频
+- `gen-444`｜Crane Shot with Aggressive Shot｜运镜词典/动态｜强力吊臂拍摄：动态运镜变体 · 适用于纪录片
+- `gen-445`｜Two-Shot with Subtle View｜运镜词典/静态｜细腻式双人镜头：静态运镜变体 · 适用于短视频
+- `gen-446`｜Subtle Dolly｜运镜词典/基础｜细腻式推拉：基础运镜变体 · 适用于短视频
+- `gen-447`｜Follow Shot with Gradual Focus｜运镜词典/动态｜渐进式跟镜头：动态运镜变体 · 适用于短视频
+- `gen-448`｜Slow Car Mount｜运镜词典/特殊｜缓速车载拍摄：特殊运镜变体 · 适用于纪录片
+- `gen-449`｜Static Shot with Quick Frame｜运镜词典/静态｜快速固定镜头：静态运镜变体 · 适用于直播活动
+- `gen-450`｜Tracking Shot with Sudden Frame｜运镜词典/复合｜突发式跟拍：复合运镜变体 · 适用于广告制作
+- `gen-451`｜Time Lapse with Gradual Motion｜运镜词典/特殊｜渐进式延时摄影：特殊运镜变体 · 适用于音乐MV
+- `gen-452`｜Rapid Wide Shot｜运镜词典/静态｜急速全景镜头：静态运镜变体 · 适用于广告制作
+- `gen-453`｜Macro Photography with Subtle Movement｜运镜词典/特殊｜细腻式微距摄影：特殊运镜变体 · 适用于音乐MV
+- `gen-454`｜Follow Shot with Sudden Angle｜运镜词典/动态｜突发式跟镜头：动态运镜变体 · 适用于广告制作
+- `gen-455`｜Tracking Shot with Smooth Focus｜运镜词典/动态｜平滑轨道拍摄：动态运镜变体 · 适用于短视频
+- `gen-456`｜Subtle Wide Shot｜运镜词典/静态｜细腻式全景镜头：静态运镜变体 · 适用于广告制作
+- `gen-457`｜Long Take with Rapid Angle｜运镜词典/静态｜急速长镜头：静态运镜变体 · 适用于广告制作
+- `gen-458`｜Quick Dolly Shot｜运镜词典/动态｜快速推拉拍摄：动态运镜变体 · 适用于直播活动
+- `gen-459`｜Steadicam Shot with Gradual Motion｜运镜词典/动态｜渐进式斯坦尼康拍摄：动态运镜变体 · 适用于直播活动
+- `gen-460`｜Rapid Truck｜运镜词典/基础｜急速平移：基础运镜变体 · 适用于音乐MV
+- `gen-461`｜Fast Dolly Zoom｜运镜词典/复合｜快速滑动变焦：复合运镜变体 · 适用于广告制作
+- `gen-462`｜Slow Underwater Shooting｜运镜词典/特殊｜缓速水下拍摄：特殊运镜变体 · 适用于纪录片
+- `gen-463`｜Slow POV Shot｜运镜词典/特殊｜缓速主观视角：特殊运镜变体 · 适用于纪录片
+- `gen-464`｜Pedestal with Gentle Frame｜运镜词典/基础｜轻柔底座升降：基础运镜变体 · 适用于广告制作
+- `gen-465`｜Slow Time Lapse｜运镜词典/特殊｜缓速延时摄影：特殊运镜变体 · 适用于电影拍摄
+- `gen-466`｜Point of View with Subtle Lens｜运镜词典/特殊｜细腻式视点镜头：特殊运镜变体 · 适用于音乐MV
+- `gen-467`｜Rapid Time Lapse｜运镜词典/特殊｜急速延时摄影：特殊运镜变体 · 适用于电视剧
+- `gen-468`｜Crane with Sudden Shot｜运镜词典/基础｜突发式升降：基础运镜变体 · 适用于电视剧
+- `gen-469`｜Zoom with Fast Frame｜运镜词典/基础｜快速变焦：基础运镜变体 · 适用于纪录片
+- `gen-470`｜Steadicam Shot with Rapid Lens｜运镜词典/动态｜急速斯坦尼康拍摄：动态运镜变体 · 适用于广告制作
+- `gen-471`｜Subtle Tracking Shot｜运镜词典/动态｜细腻式轨道拍摄：动态运镜变体 · 适用于短视频
+- `gen-472`｜Macro Photography with Quick Lens｜运镜词典/特殊｜快速微距摄影：特殊运镜变体 · 适用于电视剧
+- `gen-473`｜Dolly with Aggressive Focus｜运镜词典/基础｜强力推拉：基础运镜变体 · 适用于电影拍摄
+- `gen-474`｜Sudden Jib Shot｜运镜词典/动态｜突发式摇臂拍摄：动态运镜变体 · 适用于纪录片
+- `gen-475`｜Smooth Time Lapse｜运镜词典/特殊｜平滑延时摄影：特殊运镜变体 · 适用于电视剧
+- `gen-476`｜Gradual Steadicam Shot｜运镜词典/特殊｜渐进式稳定器拍摄：特殊运镜变体 · 适用于电视剧
+- `gen-477`｜Follow Shot with Subtle View｜运镜词典/动态｜细腻式跟镜头：动态运镜变体 · 适用于短视频
+- `gen-478`｜Truck with Subtle Angle｜运镜词典/基础｜细腻式平移：基础运镜变体 · 适用于广告制作
+- `gen-479`｜Gradual Dolly Tilt｜运镜词典/复合｜渐进式俯仰移动：复合运镜变体 · 适用于广告制作
+- `gen-480`｜High Speed Photography with Rapid Movement｜运镜词典/特殊｜急速高速摄影：特殊运镜变体 · 适用于电影拍摄
+- `gen-481`｜Bullet Time with Rapid Focus｜运镜词典/特殊｜急速子弹时间：特殊运镜变体 · 适用于音乐MV
+- `gen-482`｜Sudden Tilt Pan｜运镜词典/复合｜突发式摇镜头：复合运镜变体 · 适用于直播活动
+- `gen-483`｜Handheld Shot with Slow Frame｜运镜词典/动态｜缓速手持拍摄：动态运镜变体 · 适用于音乐MV
+- `gen-484`｜Sudden Dolly Tilt｜运镜词典/复合｜突发式俯仰移动：复合运镜变体 · 适用于短视频
+- `gen-485`｜Whip Pan with Aggressive Motion｜运镜词典/复合｜强力甩镜头：复合运镜变体 · 适用于直播活动
+- `gen-486`｜Handheld with Smooth Movement｜运镜词典/基础｜平滑手持拍摄：基础运镜变体 · 适用于广告制作
+- `gen-487`｜Gentle Steadicam Shot｜运镜词典/特殊｜轻柔稳定器拍摄：特殊运镜变体 · 适用于短视频
+- `gen-488`｜Zoom with Fast Lens｜运镜词典/基础｜快速变焦：基础运镜变体 · 适用于音乐MV
+- `gen-489`｜Subtle Truck｜运镜词典/基础｜细腻式平移：基础运镜变体 · 适用于广告制作
+- `gen-490`｜Aggressive Pan｜运镜词典/基础｜强力横摇：基础运镜变体 · 适用于短视频
+- `gen-491`｜Steadicam Shot with Subtle Movement｜运镜词典/动态｜细腻式斯坦尼康拍摄：动态运镜变体 · 适用于短视频
+- `gen-492`｜Sudden Truck Shot｜运镜词典/动态｜突发式平移拍摄：动态运镜变体 · 适用于直播活动
+- `gen-493`｜Steadicam Shot with Slow Motion｜运镜词典/动态｜缓速斯坦尼康拍摄：动态运镜变体 · 适用于广告制作
+- `gen-494`｜Truck Shot with Quick Frame｜运镜词典/动态｜快速平移拍摄：动态运镜变体 · 适用于电影拍摄
+- `gen-495`｜Rapid Drone Shot｜运镜词典/特殊｜急速无人机拍摄：特殊运镜变体 · 适用于电视剧
+- `gen-496`｜Fast Extreme Wide Shot｜运镜词典/静态｜快速大全景镜头：静态运镜变体 · 适用于直播活动
+- `gen-497`｜Pan with Quick Frame｜运镜词典/基础｜快速横摇：基础运镜变体 · 适用于直播活动
+- `gen-498`｜Moving Shot with Sudden Shot｜运镜词典/动态｜突发式移动镜头：动态运镜变体 · 适用于电视剧
+- `gen-499`｜Time Lapse with Aggressive Frame｜运镜词典/特殊｜强力延时摄影：特殊运镜变体 · 适用于电视剧
+- `gen-500`｜Locked-Off Shot with Smooth View｜运镜词典/静态｜平滑锁定镜头：静态运镜变体 · 适用于电影拍摄
+- `gen-501`｜Dolly with Gentle Motion｜运镜词典/基础｜轻柔推拉：基础运镜变体 · 适用于电视剧
+- `gen-502`｜Crane with Fast Angle｜运镜词典/基础｜快速升降：基础运镜变体 · 适用于直播活动
+- `gen-503`｜Drone Shot with Quick Focus｜运镜词典/特殊｜快速无人机拍摄：特殊运镜变体 · 适用于短视频
+- `gen-504`｜Extreme Wide Shot with Rapid Motion｜运镜词典/静态｜急速大全景镜头：静态运镜变体 · 适用于音乐MV
+- `gen-505`｜Slow Bullet Time｜运镜词典/特殊｜缓速子弹时间：特殊运镜变体 · 适用于电视剧
+- `gen-506`｜Crane Shot with Gradual Perspective｜运镜词典/动态｜渐进式吊臂拍摄：动态运镜变体 · 适用于纪录片
+- `gen-507`｜Subtle Dolly Zoom｜运镜词典/复合｜细腻式滑动变焦：复合运镜变体 · 适用于纪录片
+- `gen-508`｜Dolly Zoom with Aggressive Camera｜运镜词典/复合｜强力滑动变焦：复合运镜变体 · 适用于短视频
+- `gen-509`｜Aggressive Car Mount｜运镜词典/特殊｜强力车载拍摄：特殊运镜变体 · 适用于纪录片
+- `gen-510`｜Dolly Tilt with Sudden Perspective｜运镜词典/复合｜突发式俯仰移动：复合运镜变体 · 适用于纪录片
+- `gen-511`｜Handheld with Rapid Camera｜运镜词典/基础｜急速手持拍摄：基础运镜变体 · 适用于电影拍摄
+- `gen-512`｜Subtle Underwater Shooting｜运镜词典/特殊｜细腻式水下拍摄：特殊运镜变体 · 适用于电影拍摄
+- `gen-513`｜Sudden Follow Shot｜运镜词典/动态｜突发式跟镜头：动态运镜变体 · 适用于电影拍摄
+- `gen-514`｜Underwater Shooting with Fast View｜运镜词典/特殊｜快速水下拍摄：特殊运镜变体 · 适用于直播活动
+- `gen-515`｜Slow Orbit Shot｜运镜词典/复合｜缓速环绕拍摄：复合运镜变体 · 适用于音乐MV
+- `gen-516`｜Tilt Pan with Subtle Angle｜运镜词典/复合｜细腻式摇镜头：复合运镜变体 · 适用于广告制作
+- `gen-517`｜Truck Shot with Subtle Motion｜运镜词典/动态｜细腻式平移拍摄：动态运镜变体 · 适用于纪录片
+- `gen-518`｜Orbit Shot with Aggressive Frame｜运镜词典/复合｜强力环绕拍摄：复合运镜变体 · 适用于纪录片
+- `gen-519`｜Subtle Over-the-Shoulder Shot｜运镜词典/静态｜细腻式过肩镜头：静态运镜变体 · 适用于短视频
+- `gen-520`｜High Speed Photography with Gentle View｜运镜词典/特殊｜轻柔高速摄影：特殊运镜变体 · 适用于电影拍摄
+- `gen-521`｜Aggressive Pedestal｜运镜词典/基础｜强力底座升降：基础运镜变体 · 适用于直播活动
+- `gen-522`｜Orbit Shot with Gentle Movement｜运镜词典/复合｜轻柔环绕拍摄：复合运镜变体 · 适用于短视频
+- `gen-523`｜Crane Shot with Aggressive Frame｜运镜词典/复合｜强力吊臂拍摄：复合运镜变体 · 适用于电影拍摄
+- `gen-524`｜Subtle Spiral Shot｜运镜词典/复合｜细腻式螺旋拍摄：复合运镜变体 · 适用于电视剧
+- `gen-525`｜Tracking Shot with Gentle Camera｜运镜词典/复合｜轻柔跟拍：复合运镜变体 · 适用于电视剧
+- `gen-526`｜Extreme Wide Shot with Sudden Frame｜运镜词典/静态｜突发式大全景镜头：静态运镜变体 · 适用于纪录片
+- `gen-527`｜Steadicam with Sudden Movement｜运镜词典/基础｜突发式斯坦尼康：基础运镜变体 · 适用于电影拍摄
+- `gen-528`｜Over-the-Shoulder Shot with Smooth Lens｜运镜词典/静态｜平滑过肩镜头：静态运镜变体 · 适用于电视剧
+- `gen-529`｜Subtle Long Take｜运镜词典/静态｜细腻式长镜头：静态运镜变体 · 适用于纪录片
+- `gen-530`｜Subtle Handheld｜运镜词典/基础｜细腻式手持拍摄：基础运镜变体 · 适用于短视频
+- `gen-531`｜Gradual Crane Shot｜运镜词典/复合｜渐进式吊臂拍摄：复合运镜变体 · 适用于电影拍摄
+- `gen-532`｜Steadicam Tracking with Fast Shot｜运镜词典/复合｜快速斯坦尼康跟拍：复合运镜变体 · 适用于广告制作
+- `gen-533`｜Quick Handheld Shot｜运镜词典/动态｜快速手持拍摄：动态运镜变体 · 适用于音乐MV
+- `gen-534`｜Pedestal with Slow Camera｜运镜词典/基础｜缓速底座升降：基础运镜变体 · 适用于广告制作
+- `gen-535`｜Dolly Shot with Slow Frame｜运镜词典/动态｜缓速推拉拍摄：动态运镜变体 · 适用于纪录片
+- `gen-536`｜Gentle Dolly Zoom｜运镜词典/复合｜轻柔滑动变焦：复合运镜变体 · 适用于音乐MV
+- `gen-537`｜Crane Shot with Fast Frame｜运镜词典/动态｜快速吊臂拍摄：动态运镜变体 · 适用于直播活动
+- `gen-538`｜Fast Underwater Shooting｜运镜词典/特殊｜快速水下拍摄：特殊运镜变体 · 适用于电影拍摄
+- `gen-539`｜Subtle Two-Shot｜运镜词典/静态｜细腻式双人镜头：静态运镜变体 · 适用于电影拍摄
+- `gen-540`｜Medium Shot with Subtle Movement｜运镜词典/静态｜细腻式中景镜头：静态运镜变体 · 适用于纪录片
+- `gen-541`｜Gentle Tracking Shot｜运镜词典/复合｜轻柔跟拍：复合运镜变体 · 适用于电影拍摄
+- `gen-542`｜Fast Drone Shot｜运镜词典/特殊｜快速无人机拍摄：特殊运镜变体 · 适用于广告制作
+- `gen-543`｜Subtle High Speed Photography｜运镜词典/特殊｜细腻式高速摄影：特殊运镜变体 · 适用于直播活动
+- `gen-544`｜Subtle Close-Up｜运镜词典/静态｜细腻式特写镜头：静态运镜变体 · 适用于广告制作
+- `gen-545`｜Rapid Medium Shot｜运镜词典/静态｜急速中景镜头：静态运镜变体 · 适用于电视剧
+- `gen-546`｜Drone Shot with Quick Shot｜运镜词典/特殊｜快速无人机拍摄：特殊运镜变体 · 适用于电视剧
+- `gen-547`｜Dolly Zoom with Rapid Focus｜运镜词典/复合｜急速滑动变焦：复合运镜变体 · 适用于广告制作
+- `gen-548`｜Smooth Drone Shot｜运镜词典/特殊｜平滑无人机拍摄：特殊运镜变体 · 适用于电视剧
+- `gen-549`｜Dolly with Smooth Lens｜运镜词典/基础｜平滑推拉：基础运镜变体 · 适用于电视剧
+- `gen-550`｜Point of View with Rapid Motion｜运镜词典/特殊｜急速视点镜头：特殊运镜变体 · 适用于广告制作
+- `gen-551`｜Extreme Wide Shot with Aggressive Shot｜运镜词典/静态｜强力大全景镜头：静态运镜变体 · 适用于电视剧
+- `gen-552`｜Sudden Two-Shot｜运镜词典/静态｜突发式双人镜头：静态运镜变体 · 适用于短视频
+- `gen-553`｜Rapid Static Shot｜运镜词典/静态｜急速固定镜头：静态运镜变体 · 适用于广告制作
+- `gen-554`｜Fast Locked-Off Shot｜运镜词典/静态｜快速锁定镜头：静态运镜变体 · 适用于直播活动
+- `gen-555`｜Moving Shot with Slow Camera｜运镜词典/动态｜缓速移动镜头：动态运镜变体 · 适用于直播活动
+- `gen-556`｜Follow Shot with Slow Frame｜运镜词典/动态｜缓速跟镜头：动态运镜变体 · 适用于广告制作
+- `gen-557`｜Aggressive Tracking Shot｜运镜词典/动态｜强力轨道拍摄：动态运镜变体 · 适用于直播活动
+- `gen-558`｜Sudden Moving Shot｜运镜词典/动态｜突发式移动镜头：动态运镜变体 · 适用于音乐MV
+- `gen-559`｜Time Lapse with Rapid Frame｜运镜词典/特殊｜急速延时摄影：特殊运镜变体 · 适用于音乐MV
+- `gen-560`｜Dolly Shot with Aggressive Angle｜运镜词典/动态｜强力推拉拍摄：动态运镜变体 · 适用于音乐MV
+- `gen-561`｜Smooth Tracking Shot｜运镜词典/动态｜平滑轨道拍摄：动态运镜变体 · 适用于广告制作
+- `gen-562`｜Zoom with Quick Lens｜运镜词典/基础｜快速变焦：基础运镜变体 · 适用于短视频
+- `gen-563`｜Handheld Shot with Smooth Movement｜运镜词典/动态｜平滑手持拍摄：动态运镜变体 · 适用于电视剧
+- `gen-564`｜Point of View with Smooth Lens｜运镜词典/特殊｜平滑视点镜头：特殊运镜变体 · 适用于电视剧
+- `gen-565`｜Locked-Off Shot with Sudden Shot｜运镜词典/静态｜突发式锁定镜头：静态运镜变体 · 适用于纪录片
+- `gen-566`｜Long Take with Subtle Focus｜运镜词典/静态｜细腻式长镜头：静态运镜变体 · 适用于电视剧
 - `gen-580`｜淡淡微笑｜演技词典/基础表情｜人物先保持自然平静表情，然后嘴角轻轻上扬，眼神变得柔和安静，形成淡淡微笑，笑意很轻，不露齿，表情自然克制，最后稳定保持。
 - `gen-581`｜开心浅笑｜演技词典/基础表情｜人物从平静表情逐渐露出开心浅笑，嘴角自然上扬，眼睛微微弯起，脸部放松，整体气质明亮温柔，不夸张，最后保持浅笑。
 - `gen-582`｜露齿甜笑｜演技词典/基础表情｜人物从平静表情逐渐变成露齿甜笑，嘴角明显上扬，自然露出牙齿，眼神明亮，脸颊微微鼓起，笑容干净甜美，最后稳定保持。
