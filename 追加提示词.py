@@ -109,6 +109,9 @@ def main(html, newjson):
         if not re.search(r'\s', str(it['model']).strip()):
             sys.exit('× model 须写成「系列 + 空格 + 版本」，如 Seedance 2.5 / 海螺 H3 / 可灵 O3，当前：%s' % it['model'])
         p, n = next_id(data + added, it['model'])
+        if it.get('id') and it.get('id') != '%s-%03d' % (p, n + 1):
+            print('⚠ 投递 JSON 自带 id=%s 与自动分配不符，已按规则分配为 %s-%03d（id 一律由系统生成）'
+                  % (it.get('id'), p, n + 1))
         lang = it.get('lang', 'zh')
         added.append({
             'id': '%s-%03d' % (p, n + 1), 'model': it['model'], 'cat': it['cat'], 'sub': it['sub'],

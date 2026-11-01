@@ -88,6 +88,7 @@ with open(os.path.join(OUT_DIR, 'AI-全库.jsonl'), 'w', encoding='utf-8') as f:
     for x in tut:
         f.write(json.dumps({'区': '教程区', 'id': x['id'],
                             'title': x.get('title') or x.get('name'),
+                            'desc': x.get('desc', ''),
                             'src': x.get('src'), 'steps': x.get('steps')},
                            ensure_ascii=False) + '\n')
 print('✓ AI-全库.jsonl：%.1fM 字节，%d 行' % (

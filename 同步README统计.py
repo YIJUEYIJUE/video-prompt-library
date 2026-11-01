@@ -10,6 +10,10 @@
 import json, re, sys, os
 from collections import Counter, OrderedDict
 
+if any(a in ('-h', '--help', '-help') for a in sys.argv[1:]):
+    print(__doc__.strip())
+    sys.exit(0)
+
 HTML = sys.argv[1] if len(sys.argv) > 1 else '视频提示词库-多模型.html'
 README = 'README.md'
 

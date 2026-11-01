@@ -169,9 +169,9 @@ main{min-width:0}
 .card{background:var(--card);border:1px solid var(--line);border-radius:11px;padding:15px 16px 12px;min-width:0;
   transition:border-color .15s,box-shadow .15s}
 .card:hover{border-color:color-mix(in srgb,var(--ink) 16%,var(--line));box-shadow:var(--sh)}
-.chead{display:flex;align-items:baseline;gap:10px}
+.chead{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;min-width:0}
 .chead h3{font-size:14px;font-weight:650;line-height:1.45;flex:1;min-width:0}
-.cno{font-size:10px;color:var(--faint);font-variant-numeric:tabular-nums;letter-spacing:.02em;flex:none;white-space:nowrap}
+.cno{font-size:10px;color:var(--faint);font-variant-numeric:tabular-nums;letter-spacing:.02em;flex:none;white-space:nowrap;max-width:100%;overflow:hidden;text-overflow:ellipsis}
 .cdesc{font-size:12px;color:var(--sub);line-height:1.55;margin:3px 0 9px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
 .cchips{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:10px}
 .chip{font-size:10.5px;padding:2.5px 8px;border-radius:999px;background:var(--chip);color:var(--sub);line-height:1.5}
@@ -417,7 +417,7 @@ footer{max-width:1240px;margin:0 auto;padding:0 24px 40px;font-size:11px;color:v
 {
  "库名": "视频提示词库",
  "version": "V1.1",
- "updatedAt": "2026-09-17",
+ "updatedAt": "2026-11-01",
  "schemaVersion": 1,
  "顶层结构": "模型系列（顶层）→ 模型版本（第二层）→ 大类 cat → 小类 sub → 条目",
  "模型注册表": {
@@ -473,7 +473,18 @@ footer{max-width:1240px;margin:0 auto;padding:0 24px 40px;font-size:11px;color:v
   "srcs": "合并重复条目时保留的全部来源清单",
   "num": "来源文档内序号",
   "sha1": "早期校验字段，现以 meta.完整性指纹 为准",
-  "primary": "主源标记：合并重复来源时记录的主来源（工具 add 对新条目默认 True）；展示与归属以 src/srcs 为准"
+  "primary": "主源标记：合并重复来源时记录的主来源（工具 add 对新条目默认 True）；展示与归属以 src/srcs 为准",
+  "title": "教程标题（仅教程区条目使用）",
+  "name_zh": "条目中文名（通用区部分条目 name 存原名/英文名时并列此字段）",
+  "img": "条目配图（通用区器材图等，dataURL WebP base64，最小档长边 160px）",
+  "cover_img": "教程封面图（dataURL base64，仅教程区条目使用）",
+  "url": "教程原文链接（仅教程区条目使用）",
+  "steps": "教程步骤数组（仅教程区条目使用），每步对象含 t/body/prompt 等子字段",
+  "steps.t": "步骤时间点或阶段标题",
+  "steps.body": "步骤说明文本（中文）",
+  "steps.img": "步骤配图（dataURL base64，可选）",
+  "steps.prompt": "步骤提示词原文（逐字保留，外文为主）",
+  "steps.prompt_zh": "步骤提示词中文译文（可选）"
  },
  "录入规约": [
   "铁律：original 逐字原文，永不改写不删节；追加新条目时老条目指纹必须全部不变",
@@ -753,6 +764,10 @@ footer{max-width:1240px;margin:0 auto;padding:0 24px 40px;font-size:11px;color:v
   {
    "日期": "2026-09-17",
    "内容": "追加 2 条（海螺 H3），版本标签保持 V1.1"
+  },
+  {
+   "日期": "2026-11-01",
+   "内容": "字段说明补登扩展区 11 个字段（title/name_zh/img/cover_img/url/steps 及其 5 个子字段）——AI 知识库完整性修复（对抗审查 P2）"
   }
  ],
  "导出说明": {
@@ -21569,7 +21584,7 @@ function renderGen(){
     return `<article class="card gcard" data-id="${d.id}">
       <div class="chead"><h3>${hl(d.name_zh)}${d.name!==d.name_zh?`<span class="gname-en">${hl(d.name)}</span>`:''}</h3><span class="cno">${esc(d.src)}</span></div>
       <div class="gbody">
-        ${d.img?`<img class="gimg" src="${d.img}" alt="${esc(d.name)}" loading="lazy">`:''}
+        ${d.img?`<img class="gimg" src="${esc(d.img)}" alt="${esc(d.name)}" loading="lazy">`:''}
         <p class="cdesc">${hl(d.desc)}</p>
         <div class="cchips"><span class="chip acc">${esc(zhSub)}</span><span class="chip">${esc(enSub)}</span><span class="chip lang">${en?'EN · 双语':'中文'}</span></div>
       </div>
@@ -21611,7 +21626,7 @@ function renderTut(){
         const p=tutPhase(s.t);
         return `<article class="tstep${(!s.prompt||(s.role||'').length>110)?' flat':''}" data-si="${i}">
           <div class="thead"><span class="tnum">${n}</span><h4>${hl(p.title)}</h4>${s.prompt?`<span class="tlb p">提示词</span>`:''}</div>
-          <div class="tbody">${s.img?`<img src="${s.img}" alt="" loading="lazy">`:''}${s.body?`<p class="trole">${hl(s.body)}</p>`:''}</div>
+          <div class="tbody">${s.img?`<img src="${esc(s.img)}" alt="" loading="lazy">`:''}${s.body?`<p class="trole">${hl(s.body)}</p>`:''}</div>
           ${s.prompt?`<div class="pane"><div class="phead"><div class="ptabs"><button class="pt on" data-t="o">原文 EN</button><button class="pt" data-t="z">中文</button></div><button class="copy" data-k="o">${ICO.copy}复制</button></div>
           <div class="pv" tabindex="0"><pre data-p="o"></pre><pre data-p="z" hidden></pre></div></div>`:''}
         </article>`;
@@ -21652,7 +21667,7 @@ function renderTut(){
   const rows=TUT.filter(t=>!ql||(t.title+' '+t.desc+' '+(t.tags||[]).join(' ')+t.steps.map(s=>s.t).join(' ')).toLowerCase().indexOf(ql)>-1);
   tgrid.className='list';
   tgrid.innerHTML=rows.length?rows.map(t=>`<article class="tcover" data-open="${t.id}" tabindex="0" role="button">
-    ${t.cover_img?`<img class="tcover-img" src="${t.cover_img}" alt="" loading="lazy">`:''}
+    ${t.cover_img?`<img class="tcover-img" src="${esc(t.cover_img)}" alt="" loading="lazy">`:''}
     <h3>${hl(t.title)}</h3><p class="tdesc">${hl(t.desc)}</p>
     <div class="tmeta">${(t.tags||[]).slice(0,3).map(x=>`<span class="chip">#${esc(x)}</span>`).join(' ')}
       <span>${t.steps.length} 步</span><span>${sumPrompts(t)} 提示词</span>${t.url?`<a href="${esc(t.url)}" target="_blank" rel="noopener">原文↗</a>`:''}</div>
