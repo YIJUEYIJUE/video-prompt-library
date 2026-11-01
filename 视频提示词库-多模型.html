@@ -21668,7 +21668,7 @@ function renderTut(){
     return;
   }
   /* 列表：紧凑网格（整卡可点） */
-  const rows=TUT.filter(t=>!ql||(t.title+' '+t.desc+' '+(t.tags||[]).join(' ')+t.steps.map(s=>s.t).join(' ')).toLowerCase().indexOf(ql)>-1);
+  const rows=TUT.filter(t=>!ql||(t.title+' '+t.desc+' '+(t.tags||[]).join(' ')+t.steps.map(s=>s.t+' '+(s.body||'')+' '+(s.prompt||'')).join(' ')).toLowerCase().indexOf(ql)>-1);
   tgrid.className='list';
   tgrid.innerHTML=rows.length?rows.map(t=>`<article class="tcover" data-open="${t.id}" tabindex="0" role="button">
     ${t.cover_img?`<img class="tcover-img" src="${esc(t.cover_img)}" alt="" loading="lazy">`:''}
